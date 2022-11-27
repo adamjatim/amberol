@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2022  Emmanuele Bassi
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+[package]
+name = "amberol"
+authors = ["Emmanuele Bassi <ebassi@gnome.org>"]
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+color-thief = "0.2.1"
+gdk-pixbuf = { version = "0.15", features = ["v2_36"] }
+gettext-rs = { version = "0.7", features = ["gettext-system"] }
+gtk = { version = "0.4.8", package = "gtk4", features = ["v4_6"] }
+gtk-macros = "0.3"
+lofty = "0.8.0"
+log = "0.4"
+mpris-player = "0.6"
+once_cell = "1.10"
+pretty_env_logger = "0.4"
+rand = "0.8.5"
+regex = "1.3.4"
+serde_json = "1.0"
+sha2 = "0.10.2"
+srgb = "0.3"
+fuzzy-matcher = "0.3.7"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+ashpd = { version = "0.3", features = ["feature_gtk4"] }
+
+[dependencies.adw]
+package = "libadwaita"
+version = "0.2.0-alpha.2"
+features = ["v1_2"]
+
+[dependencies.gst]
+package = "gstreamer"
+version = "0.18"
+
+[dependencies.gst-audio]
+package = "gstreamer-audio"
+version = "0.18"
+
+[dependencies.gst-player]
+package = "gstreamer-player"
+version = "0.18"
