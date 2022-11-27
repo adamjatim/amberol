@@ -83,4 +83,4 @@ Copyright 2022  Emmanuele Bassi
 Amberol is released under the terms of the GNU General Public License, either
 version 3.0 or, at your option, any later version.
 
-credit : https://gitlab.gnome.org/World/amberol
+credit https://gitlab.gnome.org/World/amberol
