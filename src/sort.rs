@@ -1,0 +1,112 @@
+// SPDX-FileCopyrightText: 2022  John Toohey <john_t@mailo.com>
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+use gtk::{glib, prelude::*, subclass::prelude::*};
+
+mod imp {
+
+    use std::cell::RefCell;
+
+    use fuzzy_matcher::{skim::SkimMatcherV2, FuzzyMatcher};
+    use gtk::{
+        glib::{self, ParamFlags, ParamSpec, ParamSpecString, Value},
+        prelude::*,
+        subclass::prelude::*,
+    };
+    use once_cell::sync::Lazy;
+
+    use crate::{audio::Song, utils::cmp_two_files};
+
+    #[derive(Default)]
+    pub struct FuzzySorter {
+        pub search: RefCell<Option<String>>,
+    }
+
+    #[glib::object_subclass]
+    impl ObjectSubclass for FuzzySorter {
+        const NAME: &'static str = "AmberolFuzzySorter";
+        type Type = super::FuzzySorter;
+        type ParentType = gtk::Sorter;
+    }
+
+    impl ObjectImpl for FuzzySorter {
+        fn constructed(&self, object: &Self::Type) {
+            self.parent_constructed(object);
+        }
+
+        fn properties() -> &'static [ParamSpec] {
+            static PROPERTIES: Lazy<Vec<ParamSpec>> = Lazy::new(|| {
+                vec![ParamSpecString::new(
+                    "search",
+                    "search",
+                    "a search term",
+                    None,
+                    ParamFlags::READWRITE,
+                )]
+            });
+            PROPERTIES.as_ref()
+        }
+
+        fn set_property(&self, obj: &Self::Type, _id: usize, value: &Value, pspec: &ParamSpec) {
+            match pspec.name() {
+                "search" => {
+                    let p = value
+                        .get::<Option<String>>()
+                        .expect("Value must be a string");
+                    obj.set_search(p);
+                }
+                _ => unimplemented!(),
+            }
+        }
+    }
+
+    impl SorterImpl for FuzzySorter {
+        fn compare(
+            &self,
+            _sorter: &Self::Type,
+            item1: &glib::Object,
+            item2: &glib::Object,
+        ) -> gtk::Ordering {
+            let item1 = item1.downcast_ref::<Song>().unwrap();
+            let item2 = item2.downcast_ref::<Song>().unwrap();
+
+            if let Some(search) = self.search.borrow().as_ref() {
+                let matcher = SkimMatcherV2::default();
+                let item1_key = item1.search_key();
+                let item2_key = item2.search_key();
+                let item1_score = matcher.fuzzy_match(&item1_key, search);
+                let item2_score = matcher.fuzzy_match(&item2_key, search);
+                item1_score.cmp(&item2_score).reverse().into()
+            } else {
+                cmp_two_files(None, &item1.file(), &item2.file()).into()
+            }
+        }
+
+        fn order(&self, _sorter: &Self::Type) -> gtk::SorterOrder {
+            gtk::SorterOrder::Partial
+        }
+    }
+}
+
+glib::wrapper! {
+    pub struct FuzzySorter(ObjectSubclass<imp::FuzzySorter>)
+        @extends gtk::Sorter;
+
+}
+
+impl FuzzySorter {
+    pub fn new() -> Self {
+        glib::Object::new(&[]).expect("Failed to create `AmberolFuzzySorter`")
+    }
+
+    pub fn search(&self) -> Option<String> {
+        self.imp().search.borrow().as_ref().map(ToString::to_string)
+    }
+
+    pub fn set_search(&self, search: Option<String>) {
+        if &*self.imp().search.borrow() != &search {
+            *self.imp().search.borrow_mut() = search;
+            self.changed(gtk::SorterChange::Different);
+        }
+    }
+}
