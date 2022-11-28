@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/bassi/Amberol/icons/scalable/actions/">
+    <file alias="app-remove-symbolic.svg">assets/icons/app-remove-symbolic.svg</file>
+    <file alias="audio-only-symbolic.svg">assets/icons/audio-only-symbolic.svg</file>
+    <file alias="edit-clear-all-symbolic.svg">assets/icons/edit-clear-all-symbolic.svg</file>
+    <file alias="edit-select-all-symbolic.svg">assets/icons/edit-select-all-symbolic.svg</file>
+    <file alias="folder-music-symbolic.svg">assets/icons/folder-music-symbolic.svg</file>
+    <file alias="go-previous-symbolic.svg">assets/icons/go-previous-symbolic.svg</file>
+    <file alias="media-playback-pause.svg">assets/icons/media-playback-pause-symbolic.svg</file>
+    <file alias="media-playback-start.svg">assets/icons/media-playback-start-symbolic.svg</file>
+    <file alias="media-playlist-consecutive.svg">assets/icons/media-playlist-consecutive-symbolic.svg</file>
+    <file alias="media-playlist-repeat-song.svg">assets/icons/media-playlist-repeat-song-symbolic.svg</file>
+    <file alias="media-playlist-repeat.svg">assets/icons/media-playlist-repeat-symbolic.svg</file>
+    <file alias="media-playlist-shuffle.svg">assets/icons/media-playlist-shuffle-symbolic.svg</file>
+    <file alias="media-skip-backward-symbolic.svg">assets/icons/media-skip-backward-symbolic.svg</file>
+    <file alias="media-skip-forward-symbolic.svg">assets/icons/media-skip-forward-symbolic.svg</file>
+    <file alias="selection-mode-symbolic.svg">assets/icons/selection-mode-symbolic.svg</file>
+    <file alias="view-queue-rtl-symbolic.svg">assets/icons/view-queue-rtl-symbolic.svg</file>
+    <file alias="view-queue-symbolic.svg">assets/icons/view-queue-symbolic.svg</file>
+  </gresource>
+  <gresource prefix="/io/bassi/Amberol">
+    <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
+    <file alias="playback-control.ui" preprocess="xml-stripblanks">gtk/playback-control.ui</file>
+    <file alias="playlist-view.ui" preprocess="xml-stripblanks">gtk/playlist-view.ui</file>
+    <file alias="queue-row.ui" preprocess="xml-stripblanks">gtk/queue-row.ui</file>
+    <file alias="song-details.ui" preprocess="xml-stripblanks">gtk/song-details.ui</file>
+    <file alias="style-hc.css">gtk/style-hc.css</file>
+    <file alias="style.css">gtk/style.css</file>
+    <file alias="volume-control.ui" preprocess="xml-stripblanks">gtk/volume-control.ui</file>
+    <file alias="window.ui" preprocess="xml-stripblanks">gtk/window.ui</file>
+  </gresource>
+</gresources>
