@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="AmberolVolumeControl" parent="GtkWidget">
+    <child>
+      <object class="GtkImage" id="volume_low_image">
+        <property name="icon-name">audio-volume-low-symbolic</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkScale" id="volume_scale">
+        <property name="hexpand">true</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkImage" id="volume_high_image">
+        <property name="icon-name">audio-volume-high-symbolic</property>
+      </object>
+    </child>
+  </template>
+</interface>
