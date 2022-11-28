@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="AmberolPlaybackControl" parent="GtkWidget">
+    <child>
+
+    <object class="GtkBox" id="center_box">
+      <property name="orientation">vertical</property>
+      <property name="spacing">6</property>
+      <child>
+        <object class="GtkBox">
+          <property name="orientation">vertical</property>
+          <property name="spacing">2</property>
+          <property name="margin-bottom">6</property>
+          <child>
+            <object class="AmberolWaveformView" id="waveform_view">
+              <property name="halign">center</property>
+              <property name="valign">center</property>
+              <property name="can-focus">true</property>
+            </object>
+          </child>
+          <child>
+            <object class="GtkCenterBox">
+              <property name="orientation">horizontal</property>
+              <property name="hexpand">true</property>
+              <child type="start">
+                <object class="GtkLabel" id="elapsed_label">
+                  <property name="label">0:00</property>
+                  <accessibility>
+                    <property name="label" translatable="yes" context="a11y">Elapsed time</property>
+                  </accessibility>
+                  <style>
+                    <class name="caption"/>
+                    <class name="numeric"/>
+                  </style>
+                </object>
+              </child>
+              <child type="end">
+                <object class="GtkLabel" id="remaining_label">
+                  <property name="label">0:00</property>
+                  <accessibility>
+                    <property name="label" translatable="yes" context="a11y">Remaining time</property>
+                  </accessibility>
+                  <style>
+                    <class name="caption"/>
+                    <class name="numeric"/>
+                  </style>
+                </object>
+              </child>
+            </object>
+          </child>
+        </object>
+      </child>
+      <child>
+        <object class="GtkBox" id="controls_box">
+          <property name="spacing">24</property>
+          <property name="halign">center</property>
+          <property name="hexpand">true</property>
+          <child>
+            <object class="GtkButton" id="previous_button">
+              <property name="icon-name">media-skip-backward-symbolic</property>
+              <property name="action-name">win.previous</property>
+              <property name="valign">center</property>
+              <property name="tooltip-text" translatable="yes">Play the Previous Song</property>
+              <style>
+                <class name="circular"/>
+              </style>
+              <accessibility>
+                <property name="label" translatable="yes" context="a11y">Skip backwards</property>
+              </accessibility>
+            </object>
+          </child>
+          <child>
+            <object class="GtkButton" id="play_button">
+              <property name="icon-name">media-playback-start-symbolic</property>
+              <property name="action-name">win.play</property>
+              <property name="valign">center</property>
+              <property name="tooltip-text" translatable="yes">Toggle Play</property>
+              <style>
+                <class name="circular"/>
+                <class name="large"/>
+              </style>
+              <accessibility>
+                <property name="label" translatable="yes" context="a11y">Toggle play</property>
+              </accessibility>
+            </object>
+          </child>
+          <child>
+            <object class="GtkButton" id="next_button">
+              <property name="icon-name">media-skip-forward-symbolic</property>
+              <property name="action-name">win.next</property>
+              <property name="valign">center</property>
+              <property name="tooltip-text" translatable="yes">Play the Next Song</property>
+              <style>
+                <class name="circular"/>
+              </style>
+              <accessibility>
+                <property name="label" translatable="yes" context="a11y">Skip forward</property>
+              </accessibility>
+            </object>
+          </child>
+        </object>
+      </child>
+      <child>
+        <object class="AmberolVolumeControl" id="volume_control">
+          <property name="hexpand">true</property>
+        </object>
+      </child>
+      <child>
+        <object class="GtkCenterBox">
+          <child type="start">
+            <object class="GtkBox" id="start_box">
+              <property name="halign">start</property>
+              <property name="spacing">12</property>
+              <property name="margin-end">18</property>
+              <child>
+                <object class="GtkToggleButton" id="playlist_button">
+                  <property name="icon-name">view-queue-symbolic</property>
+                  <property name="action-name">queue.toggle</property>
+                  <property name="valign">center</property>
+                  <property name="tooltip-text" translatable="yes">Toggle Playlist</property>
+                  <style>
+                    <class name="circular"/>
+                  </style>
+                  <accessibility>
+                    <property name="label" translatable="yes" context="a11y">Toggle playlist</property>
+                  </accessibility>
+                </object>
+              </child>
+              <child>
+                <object class="GtkToggleButton" id="shuffle_button">
+                  <property name="icon-name">media-playlist-shuffle-symbolic</property>
+                  <property name="action-name">queue.shuffle</property>
+                  <property name="valign">center</property>
+                  <property name="tooltip-text" translatable="yes">Shuffle the Playlist</property>
+                  <accessibility>
+                    <property name="label" translatable="yes" context="a11y">Shuffle</property>
+                  </accessibility>
+                  <style>
+                    <class name="circular"/>
+                  </style>
+                </object>
+              </child>
+            </object>
+          </child>
+          <child type="end">
+            <object class="GtkBox" id="end_box">
+              <property name="halign">end</property>
+              <property name="spacing">12</property>
+              <property name="margin-start">18</property>
+              <child>
+                <object class="GtkButton" id="repeat_button">
+                  <property name="icon-name">media-playlist-consecutive-symbolic</property>
+                  <property name="action-name">queue.repeat-mode</property>
+                  <property name="valign">center</property>
+                  <property name="tooltip-text" translatable="yes">Enable Repeat</property>
+                  <style>
+                    <class name="circular"/>
+                  </style>
+                  <accessibility>
+                    <property name="label" translatable="yes" context="a11y">Repeat</property>
+                  </accessibility>
+                </object>
+              </child>
+              <child>
+                <object class="GtkMenuButton" id="menu_button">
+                  <property name="menu-model">primary_menu</property>
+                  <property name="icon-name">open-menu-symbolic</property>
+                  <property name="primary">true</property>
+                  <property name="halign">end</property>
+                  <property name="valign">center</property>
+                  <property name="tooltip-text" translatable="yes">Main Menu</property>
+                  <style>
+                    <class name="circular"/>
+                  </style>
+                  <accessibility>
+                    <property name="label" translatable="yes" context="a11y">Primary menu</property>
+                  </accessibility>
+                </object>
+              </child>
+            </object>
+          </child>
+        </object>
+      </child>
+    </object>
+
+    </child>
+  </template>
+
+  <menu id="primary_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Copy</attribute>
+        <attribute name="action">win.copy</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Add _Song</attribute>
+        <attribute name="action">queue.add-song</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Add _Folder</attribute>
+        <attribute name="action">queue.add-folder</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Clear</attribute>
+        <attribute name="action">queue.clear</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Match Cover Art</attribute>
+        <attribute name="action">win.enable-recoloring</attribute>
+      </item>
+    </section>
+    <section>
+      <submenu>
+        <attribute name="label" translatable="yes">_ReplayGain</attribute>
+        <item>
+          <attribute name="label" translatable="yes">_Album</attribute>
+          <attribute name="action">win.replaygain</attribute>
+          <attribute name="target">album</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_Track</attribute>
+          <attribute name="action">win.replaygain</attribute>
+          <attribute name="target">track</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_Off</attribute>
+          <attribute name="action">win.replaygain</attribute>
+          <attribute name="target">off</attribute>
+        </item>
+      </submenu>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About Amberol</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Quit</attribute>
+        <attribute name="action">app.quit</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>
