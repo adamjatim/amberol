@@ -1,0 +1,153 @@
+@define-color dimmed_color alpha(currentColor, .55);
+
+button.large {
+  min-width: 48px;
+  min-height: 48px;
+}
+
+.main-box {
+  padding: 6px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+songdetails {
+  padding-bottom: 24px;
+}
+
+songdetails label.song-title {
+  /* match title-1 */
+  font-size: 15pt;
+  font-weight: 800;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+songdetails label.song-title,
+songdetails label.song-artist,
+songdetails label.song-album {
+  min-height: 1.5em;
+}
+
+songdetails picture.cover,
+songdetails image.card {
+  box-shadow: 0px 1px 6px rgba(0,0,0,0.3),
+              0px 2px 12px rgba(0,0,0,0.15),
+              0px 6px 32px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  margin: 6px;
+}
+
+.main-window songdetails picture.cover {
+  background: linear-gradient(to bottom, @background_color_0, @background_color_1);
+}
+
+waveformview {
+  padding-bottom: 6px;
+}
+
+queuerow .currently-playing {
+  padding-left: 6px;
+  font-weight: 700;
+}
+
+queuerow box.song-details {
+  padding: 6px 0;
+  border-spacing: 12px;
+}
+
+queuerow label.song-title {
+  font-weight: 700;
+  font-size: 85%;
+}
+
+queuerow label.song-artist {
+  font-size: 85%;
+}
+
+queuerow picture.cover,
+queuerow image.card {
+  box-shadow: none;
+  border-radius: 4px;
+  margin: 0px;
+}
+
+queuerow checkbutton.selection-mode {
+  padding-right: 12px;
+  padding-left: 8px;
+}
+
+.queue-length {
+  padding: 12px;
+}
+
+dragoverlay {
+  box-shadow: none;
+}
+
+.drag-overlay-status-page {
+  background-color: alpha(@accent_bg_color, 0.5);
+  color: @accent_fg_color;
+}
+
+scrolledwindow undershoot.top {
+  box-shadow: inset 0 1px @borders;
+}
+
+.main-window {
+  background: linear-gradient(127deg, alpha(@background_color_0, .55), alpha(@background_color_0, 0) 70.71%),
+              linear-gradient(217deg, alpha(@background_color_1, .55), alpha(@background_color_1, 0) 70.71%),
+              linear-gradient(336deg, alpha(@background_color_2, .55), alpha(@background_color_2, 0) 70.71%);
+  transition-property: background;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+
+.darken {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.folded playlistview {
+  background: @window_bg_color;
+}
+
+.main-window .folded playlistview {
+  background: linear-gradient(127deg, alpha(@background_color_0, .55), alpha(@background_color_0, 0) 70.71%),
+              linear-gradient(217deg, alpha(@background_color_1, .55), alpha(@background_color_1, 0) 70.71%),
+              linear-gradient(336deg, alpha(@background_color_2, .55), alpha(@background_color_2, 0) 70.71%),
+              @window_bg_color;
+  transition-property: background;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+
+.main-window button:focus:focus-visible,
+.main-window row:focus:focus-visible,
+.main-window scale:focus:focus-visible > trough,
+.main-window searchbar entry.search {
+  outline-color: alpha(currentColor, .25);
+}
+
+.main-window searchbar {
+  background: transparent;
+}
+
+.main-window searchbar revealer box {
+  box-shadow: inset 0 1px @borders;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.main-window scale highlight,
+.main-window progressbar progress {
+  background: currentColor;
+  color: inherit;
+}
+
+.main-window scale slider {
+  background-color: white;
+}
+
+actionbar.flat > revealer > box {
+  background: none;
+  box-shadow: inset 0 1px @borders;
+}
