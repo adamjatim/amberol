@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="AmberolWindow" parent="AdwApplicationWindow">
+    <property name="handle-menubar-accel">true</property>
+    <property name="default-width">600</property>
+    <property name="resizable">true</property>
+    <property name="content">
+      <object class="GtkWindowHandle">
+        <child>
+          <object class="DragOverlay" id="drag_overlay">
+            <property name="title" translatable="yes">Drop a song to add it to the queue</property>
+            <property name="child">
+
+              <object class="AdwToastOverlay" id="toast_overlay">
+                <property name="child">
+
+                  <object class="GtkStack" id="main_stack">
+                    <property name="transition-type">crossfade</property>
+                    <child>
+                      <object class="GtkStackPage">
+                        <property name="name">initial-view</property>
+                        <property name="child">
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="spacing">6</property>
+                            <child>
+                              <object class="GtkHeaderBar">
+                                <style>
+                                  <class name="flat"/>
+                                </style>
+                                <child type="title">
+                                  <object class="GtkBox">
+                                    <property name="visible">false</property>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="AdwClamp">
+                                <property name="maximum-size">450</property>
+                                <property name="vexpand">true</property>
+                                <property name="valign">fill</property>
+                                <property name="child">
+                                  <object class="AdwStatusPage" id="status_page">
+                                    <property name="margin-start">12</property>
+                                    <property name="margin-end">12</property>
+                                    <property name="title">Amberol</property>
+                                    <property name="description" translatable="yes">Select a file or a folder, or drag files from your file manager to the application window to add songs to the playlist</property>
+                                    <property name="child">
+                                      <object class="GtkBox">
+                                        <property name="orientation">vertical</property>
+                                        <property name="halign">center</property>
+                                        <property name="homogeneous">true</property>
+                                        <property name="spacing">12</property>
+                                        <child>
+                                          <object class="GtkButton" id="add_folder_button">
+                                            <property name="label" translatable="yes">Add Folder</property>
+                                            <property name="action-name">queue.add-folder</property>
+                                            <style>
+                                              <class name="suggested-action"/>
+                                              <class name="pill"/>
+                                            </style>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkButton">
+                                            <property name="label" translatable="yes">Add File</property>
+                                            <property name="action-name">queue.add-song</property>
+                                            <style>
+                                              <class name="pill"/>
+                                            </style>
+                                          </object>
+                                        </child>
+                                      </object>
+                                    </property>
+                                  </object>
+                                </property>
+                              </object>
+
+                            </child>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkStackPage">
+                        <property name="name">main-view</property>
+                        <property name="child">
+                          <object class="AdwFlap" id="queue_revealer">
+                            <property name="reveal-flap">true</property>
+
+                            <child type="content">
+                              <object class="GtkBox">
+                                <property name="orientation">vertical</property>
+
+                                <!-- Header Bar -->
+                                <child>
+                                  <object class="GtkHeaderBar">
+                                    <style>
+                                      <class name="flat"/>
+                                    </style>
+                                    <child type="title">
+                                      <object class="GtkBox">
+                                        <property name="visible">false</property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkBox" id="main_box">
+                                    <property name="orientation">vertical</property>
+                                    <property name="valign">center</property>
+                                    <property name="vexpand">true</property>
+                                    <property name="spacing">6</property>
+                                    <style>
+                                      <class name="main-box"/>
+                                    </style>
+
+                                    <!-- Song details -->
+                                    <child>
+                                      <object class="AmberolSongDetails" id="song_details"/>
+                                    </child>
+
+                                    <!-- Playback and queue controls -->
+                                    <child>
+                                      <object class="AmberolPlaybackControl" id="playback_control">
+                                        <property name="halign">center</property>
+                                        <property name="margin-top">0</property>
+                                        <property name="margin-bottom">24</property>
+                                      </object>
+                                    </child>
+                                  </object>
+
+                                </child>
+                              </object>
+                            </child>
+
+                            <!-- Playlist view -->
+                            <child type="flap">
+                              <object class="AmberolPlaylistView" id="playlist_view"/>
+                            </child>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+
+                </property>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+</interface>
