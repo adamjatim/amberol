@@ -1,0 +1,5 @@
+.main-window button:focus:focus-visible,
+.main-window row:focus:focus-visible,
+.main-window scale:focus:focus-visible > trough {
+  outline-color: alpha(currentColor, .5);
+}
