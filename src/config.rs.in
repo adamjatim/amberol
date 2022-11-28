@@ -1,0 +1,9 @@
+// SPDX-FileCopyrightText: 2022  Emmanuele Bassi
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+pub static VERSION: &str = @VERSION@;
+pub static GETTEXT_PACKAGE: &str = @GETTEXT_PACKAGE@;
+pub static LOCALEDIR: &str = @LOCALEDIR@;
+pub static PKGDATADIR: &str = @PKGDATADIR@;
+pub static APPLICATION_ID: &str = @APPLICATION_ID@;
+pub static PROFILE: &str = @PROFILE@;
