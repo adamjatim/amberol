@@ -1,0 +1,478 @@
+# Finnish translation for amberol.
+# Copyright (C) 2022 amberol's COPYRIGHT HOLDER
+# This file is distributed under the same license as the amberol package.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: amberol main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
+"POT-Creation-Date: 2022-08-28 17:48+0000\n"
+"PO-Revision-Date: 2022-08-30 19:28+0300\n"
+"Last-Translator: \n"
+"Language-Team: Finnish <lokalisointi-lista@googlegroups.com>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: data/io.bassi.Amberol.desktop.in.in:3
+#: data/io.bassi.Amberol.appdata.xml.in.in:6
+msgid "Amberol"
+msgstr "Amberol"
+
+#: data/io.bassi.Amberol.desktop.in.in:4
+msgid "Music Player"
+msgstr "Musiikkisoitin"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/io.bassi.Amberol.desktop.in.in:12
+msgid "music;player;media;audio;playlist;"
+msgstr "music;player;media;audio;playlist;musiikki;ääni;soitin;soittolista;"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:7
+msgid "Plays music, and nothing else"
+msgstr "Toistaa musiikkia eikä mitään muuta"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:9
+msgid ""
+"Amberol is a music player with no delusions of grandeur. If you just want to "
+"play music available on your local system then Amberol is the music player "
+"you are looking for."
+msgstr ""
+"Amberol on musiikkisoitin ilman turhia kilkkeitä. Jos haluat soittaa "
+"paikallisella tietokoneella olevaa musiikkia, Amberol on oikea valinta "
+"sinulle."
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:14
+msgid "Current features:"
+msgstr "Nykyiset ominaisuudet:"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:16
+msgid "adaptive UI"
+msgstr "mukautuva käyttöliittymä"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:17
+msgid "UI recoloring using the album art"
+msgstr "Käyttöliittymän väritys albumin kansikuvitusta käyttäen"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:18
+msgid "drag and drop support to queue songs"
+msgstr "vedä ja pudota -tuki kappaleiden lisäämiseksi jonoon"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:19
+msgid "shuffle and repeat"
+msgstr "sekoitus ja kertaus"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:20
+msgid "MPRIS integration"
+msgstr "MPRIS-integraatio"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:41
+msgid "Emmanuele Bassi"
+msgstr "Emmanuele Bassi"
+
+#: src/audio/inhibit_controller.rs:40
+msgid "Playback in progress"
+msgstr "Toisto meneillään"
+
+#: src/audio/song.rs:328
+msgid "Unknown artist"
+msgstr "Tuntematon esittäjä"
+
+#: src/audio/song.rs:335
+msgid "Unknown title"
+msgstr "Tuntematon kappale"
+
+#: src/audio/song.rs:342
+msgid "Unknown album"
+msgstr "Tuntematon albumi"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Yleiset"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Toggle primary menu"
+msgstr "Avaa/sulje ensisijainen valikko"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Copy song details to the clipboard"
+msgstr "Kopioi kappaleen tiedot leikepöydälle"
+
+#: src/gtk/help-overlay.ui:26
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Näytä pikanäppäimet"
+
+#: src/gtk/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Lopeta"
+
+#: src/gtk/help-overlay.ui:40
+msgctxt "shortcut window"
+msgid "Playlist"
+msgstr "Soittolista"
+
+#: src/gtk/help-overlay.ui:43
+msgctxt "shortcut window"
+msgid "Add a song to the playlist"
+msgstr "Lisää kappale soittolistalle"
+
+#: src/gtk/help-overlay.ui:49
+msgctxt "shortcut window"
+msgid "Add a folder to the playlist"
+msgstr "Lisää kansio soittolistalle"
+
+#: src/gtk/help-overlay.ui:55
+msgctxt "shortcut window"
+msgid "Clear the playlist"
+msgstr "Tyhjennä soittolista"
+
+#: src/gtk/help-overlay.ui:61
+msgctxt "shortcut window"
+msgid "Toggle the playlist pane"
+msgstr "Näytä/piilota soittolista"
+
+#: src/gtk/help-overlay.ui:67
+msgctxt "shortcut window"
+msgid "Toggle shuffling songs"
+msgstr "Kappaleiden sekoitus päälle/pois"
+
+#: src/gtk/help-overlay.ui:75
+msgctxt "shortcut window"
+msgid "Playback"
+msgstr "Toisto"
+
+#: src/gtk/help-overlay.ui:78
+msgctxt "shortcut window"
+msgid "Toggle Play/Pause"
+msgstr "Toista/keskeytä"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Previous song"
+msgstr "Edellinen kappale"
+
+#: src/gtk/help-overlay.ui:90
+msgctxt "shortcut window"
+msgid "Next song"
+msgstr "Seuraava kappale"
+
+#: src/gtk/help-overlay.ui:96
+msgctxt "shortcut window"
+msgid "Seek backwards in the current song"
+msgstr "Siirry takaisinpäin nykyisessä kappaleessa"
+
+#: src/gtk/help-overlay.ui:102
+msgctxt "shortcut window"
+msgid "Seek forward in the current song"
+msgstr "Siirry eteenpäin nykyisessä kappaleessa"
+
+#: src/gtk/playback-control.ui:30
+msgctxt "a11y"
+msgid "Elapsed time"
+msgstr "Aikaa kulunut"
+
+#: src/gtk/playback-control.ui:42
+msgctxt "a11y"
+msgid "Remaining time"
+msgstr "Aikaa jäljellä"
+
+#: src/gtk/playback-control.ui:64
+msgid "Play the Previous Song"
+msgstr "Toista edellinen kappale"
+
+#: src/gtk/playback-control.ui:69
+msgctxt "a11y"
+msgid "Skip backwards"
+msgstr "Siirry taaksepäin"
+
+#: src/gtk/playback-control.ui:78
+msgid "Toggle Play"
+msgstr "Toista tai keskeytä"
+
+#: src/gtk/playback-control.ui:84
+msgctxt "a11y"
+msgid "Toggle play"
+msgstr "Toista tai keskeytä"
+
+#: src/gtk/playback-control.ui:93
+msgid "Play the Next Song"
+msgstr "Toista seuraava kappale"
+
+#: src/gtk/playback-control.ui:98
+msgctxt "a11y"
+msgid "Skip forward"
+msgstr "Siirry eteenpäin"
+
+#: src/gtk/playback-control.ui:121
+msgid "Toggle Playlist"
+msgstr "Näytä/piilota soittolista"
+
+#: src/gtk/playback-control.ui:126
+msgctxt "a11y"
+msgid "Toggle playlist"
+msgstr "Näytä/piilota soittolista"
+
+#: src/gtk/playback-control.ui:135
+msgid "Shuffle the Playlist"
+msgstr "Sekoita soittolista"
+
+#: src/gtk/playback-control.ui:137
+msgctxt "a11y"
+msgid "Shuffle"
+msgstr "Sekoita"
+
+#: src/gtk/playback-control.ui:156 src/playback_control.rs:153
+msgid "Enable Repeat"
+msgstr "Käytä kertausta"
+
+#: src/gtk/playback-control.ui:161
+msgctxt "a11y"
+msgid "Repeat"
+msgstr "Kertaa"
+
+#: src/gtk/playback-control.ui:172
+msgid "Main Menu"
+msgstr "Päävalikko"
+
+#: src/gtk/playback-control.ui:177
+msgctxt "a11y"
+msgid "Primary menu"
+msgstr "Ensisijainen valikko"
+
+#: src/gtk/playback-control.ui:193
+msgid "Copy"
+msgstr "Kopioi"
+
+#: src/gtk/playback-control.ui:199
+msgid "Add _Song"
+msgstr "Lisää k_appale"
+
+#: src/gtk/playback-control.ui:203
+msgid "Add _Folder"
+msgstr "Lisää _kansio"
+
+#: src/gtk/playback-control.ui:207
+msgid "Clear"
+msgstr "Tyhjennä"
+
+#: src/gtk/playback-control.ui:213
+msgid "_Match Cover Art"
+msgstr "_Täsmää kansikuvitukseen"
+
+#: src/gtk/playback-control.ui:219
+msgid "_ReplayGain"
+msgstr "_ReplayGain"
+
+#: src/gtk/playback-control.ui:221
+msgid "_Album"
+msgstr "_Albumi"
+
+#: src/gtk/playback-control.ui:226
+msgid "_Track"
+msgstr "_Kappale"
+
+#: src/gtk/playback-control.ui:231
+msgid "_Off"
+msgstr "_Pois"
+
+#: src/gtk/playback-control.ui:239
+msgid "_Keyboard Shortcuts"
+msgstr "_Pikanäppäimet"
+
+#: src/gtk/playback-control.ui:243
+msgid "_About Amberol"
+msgstr "_Tietoja - Amberol"
+
+#: src/gtk/playback-control.ui:247
+msgid "_Quit"
+msgstr "_Lopeta"
+
+#: src/gtk/playlist-view.ui:19
+msgid "Playlist"
+msgstr "Soittolista"
+
+#: src/gtk/playlist-view.ui:49
+msgid "Search Songs in the Playlist"
+msgstr "Etsi kappaleita soittolistalta"
+
+#: src/gtk/playlist-view.ui:61
+msgid "Select Songs in the Playlist"
+msgstr "Valitse kappaleet soittolistalta"
+
+#: src/gtk/playlist-view.ui:74
+msgid "Close the Playlist"
+msgstr "Sulje soittolista"
+
+#: src/gtk/playlist-view.ui:135
+msgid "Select All Songs"
+msgstr "Valitse kaikki kappaleet"
+
+#: src/gtk/playlist-view.ui:148
+msgid "Remove Selected Songs"
+msgstr "Poista valitut kappaleet"
+
+#: src/gtk/window.ui:12
+msgid "Drop a song to add it to the queue"
+msgstr "Raahaa kappale lisätäksesi sen jonoon"
+
+#: src/gtk/window.ui:49
+msgid ""
+"Select a file or a folder, or drag files from your file manager to the "
+"application window to add songs to the playlist"
+msgstr ""
+"Valitse tiedosto tai kansio, tai vedä tiedostoja tiedostonhallinnasta "
+"sovelluksen ikkunaan lisätäksesi kappaleet soittolistaan"
+
+#: src/gtk/window.ui:58
+msgid "Add Folder"
+msgstr "Lisää kansio"
+
+#: src/gtk/window.ui:68
+msgid "Add File"
+msgstr "Lisää tiedosto"
+
+#: src/application.rs:181
+msgid "Plays music and nothing else"
+msgstr "Toistaa musiikkia eikä mitään muuta"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/application.rs:188
+msgid "translator-credits"
+msgstr "Jiri Grönroos"
+
+#: src/playback_control.rs:157
+msgid "Repeat All Tracks"
+msgstr "Kertaa kaikki kappaleet"
+
+#: src/playback_control.rs:161
+msgid "Repeat the Current Track"
+msgstr "Kertaa nykyinen kappale"
+
+#: src/window.rs:409
+msgid "_Add Song"
+msgstr "_Lisää kappale"
+
+#: src/window.rs:410 src/window.rs:450
+msgid "_Cancel"
+msgstr "_Peru"
+
+#: src/window.rs:412
+msgid "Open File"
+msgstr "Avaa tiedosto"
+
+#: src/window.rs:419
+msgid "Audio files"
+msgstr "Äänitiedostot"
+
+#: src/window.rs:428 src/window.rs:1276
+msgid "Unable to access files"
+msgstr "Ei pääsyä tiedostoihin"
+
+#: src/window.rs:449
+msgid "_Add Folder"
+msgstr "_Lisää kansio"
+
+#: src/window.rs:452
+msgid "Open Folder"
+msgstr "Avaa kansio"
+
+#: src/window.rs:463
+msgid "Unable to access folders"
+msgstr "Ei pääsyä kansioihin"
+
+#: src/window.rs:475
+msgid "No available song found"
+msgstr "Saatavilla olevaa kappaletta ei löytynyt"
+
+#: src/window.rs:523
+msgid "No songs found"
+msgstr "Kappaleita ei löytynyt"
+
+#: src/window.rs:549
+msgid "Added a new song"
+msgstr "Lisättiin uusi kappale"
+
+#: src/window.rs:550
+msgid "Play"
+msgstr "Toista"
+
+#. Translators: the `{}` must be left unmodified;
+#. it will be expanded to the number of songs added
+#. to the playlist
+#: src/window.rs:559
+msgid "Added one song"
+msgid_plural "Added {} songs"
+msgstr[0] "Lisättiin yksi kappale"
+msgstr[1] "Lisättiin {} kappaletta"
+
+#: src/window.rs:1012
+msgid "Unable to access dropped files"
+msgstr "Ei pääsyä pudotettuihin tiedostoihin"
+
+#: src/window.rs:1106
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{} minuutti"
+msgstr[1] "{} minuuttia"
+
+#: src/window.rs:1117
+#| msgid "{} minute remaining"
+#| msgid_plural "{} minutes remaining"
+msgid "{hours} hour {minutes} remaining"
+msgid_plural "{hours} hours {minutes} remaining"
+msgstr[0] "{hours} tunti {minutes} jäljellä"
+msgstr[1] "{hours} tuntia {minutes} jäljellä"
+
+#. Translators: the '{}' must be left unmodified, and
+#. it will be replaced by the number of minutes remaining
+#. in the playlist
+#: src/window.rs:1127
+msgid "{} minute remaining"
+msgid_plural "{} minutes remaining"
+msgstr[0] "{} minuutti jäljellä"
+msgstr[1] "{} minuuttia jäljellä"
+
+#: src/window.rs:1256
+msgid "No song selected"
+msgstr "Kappaletta ei ole valittu"
+
+#. Translators: The '{}' must be left unmodified, and
+#. it is expanded to the number of songs selected
+#: src/window.rs:1261
+msgid "{} song selected"
+msgid_plural "{} songs selected"
+msgstr[0] "{} kappale valittu"
+msgstr[1] "{} kappaletta valittu"
+
+#. Translators: `{title}` and `{artist}` must be left
+#. untranslated; they will expand to the title and
+#. artist of the currently playing song, respectively
+#: src/window.rs:1314
+msgid "Currently playing “{title}” by “{artist}”"
+msgstr "Toistetaan kappale “{title}” esittäjältä “{artist}”"
+
+#: src/window.rs:1360
+msgid "Amberol needs to run in the background to play music"
+msgstr "Amberolin tulee olla käynnissä taustalla toistaakseen musiikkia"
+
+#: src/window.rs:1373
+msgid "Amberol cannot run in the background"
+msgstr "Amberol ei voi olla käynnissä taustalla"
+
+#~ msgid "“{}” is not a supported audio file"
+#~ msgstr "“{}” ei ole tuettu äänitiedosto"
+
+#~ msgid "Unrecognized file type for “{}”"
+#~ msgstr "Tiedoston “{}” tiedostotyyppiä ei tunnistettu"
+
+#~ msgid "Amberol is running in the background"
+#~ msgstr "Amberol on käynnissä taustalla"
