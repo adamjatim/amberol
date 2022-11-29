@@ -1,0 +1,478 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nepali Gnome Translation\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
+"POT-Creation-Date: 2022-06-13 17:32+0000\n"
+"PO-Revision-Date: 2022-06-15 16:18+0545\n"
+"Last-Translator: \n"
+"Language-Team: Nepali <chautari@gmail.com>\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1\n"
+
+#: data/io.bassi.Amberol.desktop.in.in:3
+#: data/io.bassi.Amberol.appdata.xml.in.in:6
+msgid "Amberol"
+msgstr ""
+
+#: data/io.bassi.Amberol.desktop.in.in:4
+msgid "Music Player"
+msgstr "सङ्गीत बजाउने"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/io.bassi.Amberol.desktop.in.in:12
+msgid "music;sound;player;media;audio;playlist;"
+msgstr ""
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:7
+#, fuzzy
+msgid "Plays music, and nothing else"
+msgstr "यहाँ अरु केही गर्न सकिदैन"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:9
+msgid ""
+"Amberol is a music player with no delusions of grandeur. If you just want to "
+"play music available on your local system then Amberol is the music player "
+"you are looking for."
+msgstr ""
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:14
+#, fuzzy
+msgid "Current features:"
+msgstr "विशेषता:"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:16
+#, fuzzy
+msgid "adaptive UI"
+msgstr "अनुकूल गर्नुहोस्"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:17
+msgid "UI recoloring using the album art"
+msgstr ""
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:18
+msgid "drag and drop support to queue songs"
+msgstr ""
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:19
+#, fuzzy
+msgid "shuffle and repeat"
+msgstr "फिट्नुहोस्/दोहोर्याउनुस् बन्द"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:20
+#, fuzzy
+msgid "MPRIS integration"
+msgstr "प्रणाली एकीकरण"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:41
+msgid "Emmanuele Bassi"
+msgstr ""
+
+#: src/audio/inhibit_controller.rs:42
+#, fuzzy
+msgid "Playback in progress"
+msgstr "प्रगति हुँदैछ"
+
+#: src/audio/song.rs:309
+msgid "Unknown artist"
+msgstr "अज्ञात कलाकार"
+
+#: src/audio/song.rs:316
+msgid "Unknown title"
+msgstr "अज्ञात शीर्षक"
+
+#: src/audio/song.rs:323
+msgid "Unknown album"
+msgstr "अज्ञात एल्बम"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "सामान्य"
+
+#: src/gtk/help-overlay.ui:14
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Toggle primary menu"
+msgstr "मुख्य मेनु"
+
+#: src/gtk/help-overlay.ui:20
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Copy song details to the clipboard"
+msgstr "चयन गरिएको पाठलाई क्लिपबोर्डमा प्रतिलिपि बनाउनुहोस्"
+
+#: src/gtk/help-overlay.ui:26
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "सर्टकट देखाउनुहोस्"
+
+#: src/gtk/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "अन्त्य गर्नुहोस्"
+
+#: src/gtk/help-overlay.ui:40
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Playlist"
+msgstr "बजाउने सूची"
+
+#: src/gtk/help-overlay.ui:43
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Add a song to the playlist"
+msgstr "बजाइने सुचिमा थप्नुहोस्…"
+
+#: src/gtk/help-overlay.ui:49
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Add a folder to the playlist"
+msgstr "बजाइने सुचिमा थप्नुहोस्…"
+
+#: src/gtk/help-overlay.ui:55
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Clear the playlist"
+msgstr "खाली गर्नुहोस्"
+
+#: src/gtk/help-overlay.ui:61
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Toggle the playlist pane"
+msgstr "बजाउने सूची"
+
+#: src/gtk/help-overlay.ui:69
+msgctxt "shortcut window"
+msgid "Playback"
+msgstr "प्लेब्याक"
+
+#: src/gtk/help-overlay.ui:72
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Toggle Play/Pause"
+msgstr "प्लेब्याक सुरु गर्न बाइन्डिङ (वा प्ले/पज टगल गर्नुहोस्) ।."
+
+#: src/gtk/help-overlay.ui:78
+msgctxt "shortcut window"
+msgid "Previous song"
+msgstr "_अघिल्लो गीत"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Next song"
+msgstr "अर्को गीत"
+
+#: src/gtk/help-overlay.ui:90
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Seek backwards in the current song"
+msgstr "पछाडि खोजी गर्नुहोस्"
+
+#: src/gtk/help-overlay.ui:96
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Seek forward in the current song"
+msgstr "हालको ट्रयाकमा अगाडि फड्काउनका लागि स्थिर बाइन्डिङ ।"
+
+#: src/gtk/playback-control.ui:30
+#, fuzzy
+msgctxt "a11y"
+msgid "Elapsed time"
+msgstr "सही स्टपवाचसँग बितेको समय मापन गर्नुहोस्"
+
+#: src/gtk/playback-control.ui:42
+#, fuzzy
+msgctxt "a11y"
+msgid "Remaining time"
+msgstr "%s बाकि छ"
+
+#: src/gtk/playback-control.ui:64
+#, fuzzy
+msgid "Play the previous song"
+msgstr "_अघिल्लो गीत"
+
+#: src/gtk/playback-control.ui:69
+#, fuzzy
+msgctxt "a11y"
+msgid "Skip backwards"
+msgstr "पछाडि पनि खोज्ने ।"
+
+#: src/gtk/playback-control.ui:78
+#, fuzzy
+msgid "Toggle play"
+msgstr "प्लेब्याक सुरु गर्न बाइन्डिङ (वा प्ले/पज टगल गर्नुहोस्) ।."
+
+#: src/gtk/playback-control.ui:84
+#, fuzzy
+msgctxt "a11y"
+msgid "Toggle play"
+msgstr "प्लेब्याक सुरु गर्न बाइन्डिङ (वा प्ले/पज टगल गर्नुहोस्) ।."
+
+#: src/gtk/playback-control.ui:93
+#, fuzzy
+msgid "Play the next song"
+msgstr "अर्को गीत"
+
+#: src/gtk/playback-control.ui:98
+#, fuzzy
+msgctxt "a11y"
+msgid "Skip forward"
+msgstr "हालको ट्रयाकमा अगाडि फड्काउनका लागि स्थिर बाइन्डिङ ।"
+
+#: src/gtk/playback-control.ui:121
+#, fuzzy
+msgid "Toggle playlist"
+msgstr "बजाउने सूची"
+
+#: src/gtk/playback-control.ui:126
+#, fuzzy
+msgctxt "a11y"
+msgid "Toggle playlist"
+msgstr "बजाउने सूची"
+
+#: src/gtk/playback-control.ui:135
+#, fuzzy
+msgid "Shuffle the playlist"
+msgstr "बजाउने सूची"
+
+#: src/gtk/playback-control.ui:137
+msgctxt "a11y"
+msgid "Shuffle"
+msgstr "फिट्नुहोस्"
+
+#: src/gtk/playback-control.ui:156 src/playback_control.rs:153
+#, fuzzy
+msgid "Enable repeat"
+msgstr "नदोहो-याउनु"
+
+#: src/gtk/playback-control.ui:161
+msgctxt "a11y"
+msgid "Repeat"
+msgstr "दोहो-याउनु"
+
+#: src/gtk/playback-control.ui:176
+#, fuzzy
+msgctxt "a11y"
+msgid "Primary menu"
+msgstr "मुख्य मेनु"
+
+#: src/gtk/playback-control.ui:192
+msgid "Copy"
+msgstr "प्रतिलपि गर्नुहोस्"
+
+#: src/gtk/playback-control.ui:198
+#, fuzzy
+msgid "Add _Song"
+msgstr "{} गीत"
+
+#: src/gtk/playback-control.ui:202
+#, fuzzy
+msgid "Add _Folder"
+msgstr "फोल्डर थप्नुहोस्"
+
+#: src/gtk/playback-control.ui:206
+msgid "Clear"
+msgstr "खाली गर्नुहोस्"
+
+#: src/gtk/playback-control.ui:212
+#, fuzzy
+msgid "_Match Cover Art"
+msgstr "आवरण"
+
+#: src/gtk/playback-control.ui:218
+msgid "_Keyboard Shortcuts"
+msgstr "कुञ्जीपाटी सटकर्ट"
+
+#: src/gtk/playback-control.ui:222
+#, fuzzy
+msgid "_About Amberol"
+msgstr "बारेमा"
+
+#: src/gtk/playlist-view.ui:19
+#, fuzzy
+msgid "Playlist"
+msgstr "बजाउने सूची"
+
+#: src/gtk/playlist-view.ui:49
+#, fuzzy
+msgid "Select songs in the playlist"
+msgstr "सूचिचयन गर्नुहोस्"
+
+#: src/gtk/playlist-view.ui:62
+#, fuzzy
+msgid "Close the playlist"
+msgstr "बजाउने सूची"
+
+#: src/gtk/playlist-view.ui:111
+#, fuzzy
+msgid "Select all songs"
+msgstr "सबै चयन गर्नुहोस्"
+
+#: src/gtk/playlist-view.ui:124
+#, fuzzy
+msgid "Remove selected songs"
+msgstr "{} गीतहरू छानियो"
+
+#: src/gtk/window.ui:12
+msgid "Drop a song to add it to the queue"
+msgstr ""
+
+#: src/gtk/window.ui:48
+msgid ""
+"Select a file or a folder, or drag files from your file manager to the "
+"application window to add songs to the playlist"
+msgstr ""
+
+#: src/gtk/window.ui:57
+msgid "Add Folder"
+msgstr "फोल्डर थप्नुहोस्"
+
+#: src/gtk/window.ui:67
+#, fuzzy
+msgid "Add File"
+msgstr "फाइल थप्नुहोस्"
+
+#: src/application.rs:142
+#, fuzzy
+msgid "Plays music and nothing else"
+msgstr "यहाँ अरु केही गर्न सकिदैन"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/application.rs:148
+msgid "translator-credits"
+msgstr ""
+"translator-credits Pawan Chitrakar <chautari@gmail.com>,Jyotsna Shrestha "
+"<jyoshrestha@hotmail.com>, Nabin Gautam<nabingautam2001@yahoo.com>"
+
+#: src/playback_control.rs:157
+#, fuzzy
+msgid "Repeat all tracks"
+msgstr "सबै दोहोर्याउनुस्"
+
+#: src/playback_control.rs:161
+#, fuzzy
+msgid "Repeat the current track"
+msgstr "दोहोर्याउनुहोस्"
+
+#: src/window.rs:385
+#, fuzzy
+msgid "_Add Song"
+msgstr "{} गीत"
+
+#: src/window.rs:386 src/window.rs:420
+msgid "_Cancel"
+msgstr "रद्द गर्नुहोस्"
+
+#: src/window.rs:388
+msgid "Open File"
+msgstr "फाइल खोल्नुहोस्"
+
+#: src/window.rs:394
+msgid "Audio files"
+msgstr "ध्वनि फाइल"
+
+#: src/window.rs:419
+#, fuzzy
+msgid "_Add Folder"
+msgstr "फोल्डर थप्नुहोस्"
+
+#: src/window.rs:422
+msgid "Open Folder"
+msgstr "फोल्डर खोल्नुहोस्"
+
+#: src/window.rs:439 src/window.rs:452 src/window.rs:922
+#, fuzzy
+msgid "No available song found"
+msgstr "{} गीत"
+
+#. Translators: '{}' must be left unmodified; it
+#. will expand to a file name
+#: src/window.rs:481
+#, fuzzy
+msgid "“{}” is not a supported audio file"
+msgstr "फाइल समर्थित छैन (चयन फाईल %i)"
+
+#: src/window.rs:493
+#, fuzzy
+msgid "Added a new song"
+msgstr "{} गीत"
+
+#: src/window.rs:494
+msgid "Play"
+msgstr "प्ले गर्नुहोस्"
+
+#: src/window.rs:537
+#, fuzzy
+msgid "No songs found"
+msgstr "{} गीतहरू"
+
+#. Translators: the `{}` must be left unmodified;
+#. it will be expanded to the number of songs added
+#. to the playlist
+#: src/window.rs:556 src/window.rs:940
+#, fuzzy
+msgid "Added one song"
+msgid_plural "Added {} songs"
+msgstr[0] "{} गीत"
+msgstr[1] "{} गीतहरू"
+
+#. Translators: The '{}' must be left unmodified;
+#. it will expand to a file name
+#: src/window.rs:573
+#, fuzzy
+msgid "Unrecognized file type for “{}”"
+msgstr "पहिचान नभएको छवि फाइल ढाँचा"
+
+#. Translators: the '{}' must be left unmodified, and
+#. it will be replaced by the number of minutes remaining
+#. in the playlist
+#: src/window.rs:976
+#, fuzzy
+msgid "{} minute remaining"
+msgid_plural "{} minutes remaining"
+msgstr[0] "{} मिनेट"
+msgstr[1] "%s बाकि छ"
+
+#: src/window.rs:1102
+#, fuzzy
+msgid "No song selected"
+msgstr "{} गीत छानियो"
+
+#. Translators: The '{}' must be left unmodified, and
+#. it is expanded to the number of songs selected
+#: src/window.rs:1107
+#, fuzzy
+msgid "{} song selected"
+msgid_plural "{} songs selected"
+msgstr[0] "{} गीत छानियो"
+msgstr[1] "{} गीतहरू छानियो"
+
+#. Translators: `{title}` and `{artist}` must be left
+#. untranslated; they will expand to the title and
+#. artist of the currently playing song, respectively
+#: src/window.rs:1158
+msgid "Currently playing “{title}” by “{artist}”"
+msgstr ""
+
+#: src/window.rs:1185
+msgid "Amberol needs to run in the background to play music"
+msgstr ""
+
+#: src/window.rs:1194
+#, fuzzy
+msgid "Amberol is running in the background"
+msgstr "\"%s\" पृष्ठभूमिमा चलिरहेको छ"
+
+#: src/window.rs:1198
+#, fuzzy
+msgid "Amberol cannot run in the background"
+msgstr "पृष्ठभूमि मा चलाउनुहोस्"
