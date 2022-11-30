@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="amberol">
+  <enum id="io.bassi.Amberol.ReplayGainMode">
+    <value nick="album" value="0"/>
+    <value nick="track" value="1"/>
+    <value nick="off" value="2"/>
+  </enum>
+	<schema id="io.bassi.Amberol" path="/io/bassi/Amberol/">
+	  <key name="window-width" type="i">
+	    <default>600</default>
+	  </key>
+	  <key name="window-height" type="i">
+	    <default>300</default>
+	  </key>
+	  <key name="enable-recoloring" type="b">
+	    <default>true</default>
+	  </key>
+    <key name="replay-gain" enum="io.bassi.Amberol.ReplayGainMode">
+      <default>'off'</default>
+    </key>
+	</schema>
+</schemalist>
