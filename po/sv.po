@@ -1,0 +1,526 @@
+# Swedish translation for amberol.
+# Copyright © 2022 amberol's COPYRIGHT HOLDER
+# This file is distributed under the same license as the amberol package.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2022.
+# Luna Jernberg <droidbittin@gmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: amberol main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
+"POT-Creation-Date: 2022-08-28 17:48+0000\n"
+"PO-Revision-Date: 2022-08-29 10:15+0200\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: data/io.bassi.Amberol.desktop.in.in:3
+#: data/io.bassi.Amberol.appdata.xml.in.in:6
+msgid "Amberol"
+msgstr "Amberol"
+
+#: data/io.bassi.Amberol.desktop.in.in:4
+msgid "Music Player"
+msgstr "Musikspelare"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/io.bassi.Amberol.desktop.in.in:12
+msgid "music;player;media;audio;playlist;"
+msgstr "musik;spelare;media;audio;spellista;"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:7
+msgid "Plays music, and nothing else"
+msgstr "Spelar upp musik helt enkelt"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:9
+msgid ""
+"Amberol is a music player with no delusions of grandeur. If you just want to "
+"play music available on your local system then Amberol is the music player "
+"you are looking for."
+msgstr ""
+"Amberol är en musikspelare utan storhetsvansinne. Om du helt enkelt vill "
+"spela upp musik på ditt system så är Amberol musikspelaren för dig."
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:14
+msgid "Current features:"
+msgstr "Funktioner:"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:16
+msgid "adaptive UI"
+msgstr "adaptivt användargränssnitt"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:17
+msgid "UI recoloring using the album art"
+msgstr "färgändring av användargränssnittet enligt albumgrafiken"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:18
+msgid "drag and drop support to queue songs"
+msgstr "stöd för att dra och släppa för att lägga låtar i kö"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:19
+msgid "shuffle and repeat"
+msgstr "blanda och upprepa"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:20
+msgid "MPRIS integration"
+msgstr "MPRIS-integration"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:41
+msgid "Emmanuele Bassi"
+msgstr "Emmanuele Bassi"
+
+#: src/audio/inhibit_controller.rs:40
+msgid "Playback in progress"
+msgstr "Uppspelning pågår"
+
+#: src/audio/song.rs:328
+msgid "Unknown artist"
+msgstr "Okänd artist"
+
+#: src/audio/song.rs:335
+msgid "Unknown title"
+msgstr "Okänd titel"
+
+#: src/audio/song.rs:342
+msgid "Unknown album"
+msgstr "Okänt album"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Allmänt"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Toggle primary menu"
+msgstr "Visa/dölj primär meny"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Copy song details to the clipboard"
+msgstr "Kopiera låtdetaljer till urklipp"
+
+#: src/gtk/help-overlay.ui:26
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Visa kortkommandon"
+
+#: src/gtk/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Avsluta"
+
+#: src/gtk/help-overlay.ui:40
+msgctxt "shortcut window"
+msgid "Playlist"
+msgstr "Spellista"
+
+#: src/gtk/help-overlay.ui:43
+msgctxt "shortcut window"
+msgid "Add a song to the playlist"
+msgstr "Lägg till en låt till spellistan"
+
+#: src/gtk/help-overlay.ui:49
+msgctxt "shortcut window"
+msgid "Add a folder to the playlist"
+msgstr "Lägg till en mapp till spellistan"
+
+#: src/gtk/help-overlay.ui:55
+msgctxt "shortcut window"
+msgid "Clear the playlist"
+msgstr "Töm spellistan"
+
+#: src/gtk/help-overlay.ui:61
+msgctxt "shortcut window"
+msgid "Toggle the playlist pane"
+msgstr "Visa/dölj spellistepanelen"
+
+#: src/gtk/help-overlay.ui:67
+msgctxt "shortcut window"
+msgid "Toggle shuffling songs"
+msgstr "Växla blandning av låtar"
+
+#: src/gtk/help-overlay.ui:75
+msgctxt "shortcut window"
+msgid "Playback"
+msgstr "Uppspelning"
+
+#: src/gtk/help-overlay.ui:78
+msgctxt "shortcut window"
+msgid "Toggle Play/Pause"
+msgstr "Växla uppspelning/paus"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Previous song"
+msgstr "Föregående låt"
+
+#: src/gtk/help-overlay.ui:90
+msgctxt "shortcut window"
+msgid "Next song"
+msgstr "Nästa låt"
+
+#: src/gtk/help-overlay.ui:96
+msgctxt "shortcut window"
+msgid "Seek backwards in the current song"
+msgstr "Spola bakåt i aktuell låt"
+
+#: src/gtk/help-overlay.ui:102
+msgctxt "shortcut window"
+msgid "Seek forward in the current song"
+msgstr "Spola framåt i aktuell låt"
+
+#: src/gtk/playback-control.ui:30
+msgctxt "a11y"
+msgid "Elapsed time"
+msgstr "Åtgången tid"
+
+#: src/gtk/playback-control.ui:42
+msgctxt "a11y"
+msgid "Remaining time"
+msgstr "Återstående tid"
+
+#: src/gtk/playback-control.ui:64
+msgid "Play the Previous Song"
+msgstr "Spela upp föregående låt"
+
+#: src/gtk/playback-control.ui:69
+msgctxt "a11y"
+msgid "Skip backwards"
+msgstr "Hoppa bakåt"
+
+#: src/gtk/playback-control.ui:78
+msgid "Toggle Play"
+msgstr "Spela upp/pausa"
+
+#: src/gtk/playback-control.ui:84
+msgctxt "a11y"
+msgid "Toggle play"
+msgstr "Spela upp/pausa"
+
+#: src/gtk/playback-control.ui:93
+msgid "Play the Next Song"
+msgstr "Spela upp nästa låt"
+
+#: src/gtk/playback-control.ui:98
+msgctxt "a11y"
+msgid "Skip forward"
+msgstr "Hoppa framåt"
+
+#: src/gtk/playback-control.ui:121
+msgid "Toggle Playlist"
+msgstr "Visa/dölj spellista"
+
+#: src/gtk/playback-control.ui:126
+msgctxt "a11y"
+msgid "Toggle playlist"
+msgstr "Visa/dölj spellista"
+
+#: src/gtk/playback-control.ui:135
+msgid "Shuffle the Playlist"
+msgstr "Blanda spellistan"
+
+#: src/gtk/playback-control.ui:137
+msgctxt "a11y"
+msgid "Shuffle"
+msgstr "Blanda"
+
+#: src/gtk/playback-control.ui:156 src/playback_control.rs:153
+msgid "Enable Repeat"
+msgstr "Aktivera upprepning"
+
+#: src/gtk/playback-control.ui:161
+msgctxt "a11y"
+msgid "Repeat"
+msgstr "Upprepa"
+
+#: src/gtk/playback-control.ui:172
+msgid "Main Menu"
+msgstr "Huvudmeny"
+
+#: src/gtk/playback-control.ui:177
+msgctxt "a11y"
+msgid "Primary menu"
+msgstr "Primär meny"
+
+#: src/gtk/playback-control.ui:193
+msgid "Copy"
+msgstr "Kopiera"
+
+#: src/gtk/playback-control.ui:199
+msgid "Add _Song"
+msgstr "Lägg _till låt"
+
+#: src/gtk/playback-control.ui:203
+msgid "Add _Folder"
+msgstr "Lägg till _mapp"
+
+#: src/gtk/playback-control.ui:207
+msgid "Clear"
+msgstr "Töm"
+
+#: src/gtk/playback-control.ui:213
+msgid "_Match Cover Art"
+msgstr "_Matcha omslagsgrafik"
+
+#: src/gtk/playback-control.ui:219
+msgid "_ReplayGain"
+msgstr "_ReplayGain"
+
+#: src/gtk/playback-control.ui:221
+msgid "_Album"
+msgstr "_Album"
+
+#: src/gtk/playback-control.ui:226
+msgid "_Track"
+msgstr "_Spår"
+
+#: src/gtk/playback-control.ui:231
+msgid "_Off"
+msgstr "_Av"
+
+#: src/gtk/playback-control.ui:239
+msgid "_Keyboard Shortcuts"
+msgstr "_Tangentbordsgenvägar"
+
+#: src/gtk/playback-control.ui:243
+msgid "_About Amberol"
+msgstr "_Om Amberol"
+
+#: src/gtk/playback-control.ui:247
+msgid "_Quit"
+msgstr "A_vsluta"
+
+#: src/gtk/playlist-view.ui:19
+msgid "Playlist"
+msgstr "Spellista"
+
+#: src/gtk/playlist-view.ui:49
+msgid "Search Songs in the Playlist"
+msgstr "Sök låtar i spellistan"
+
+#: src/gtk/playlist-view.ui:61
+msgid "Select Songs in the Playlist"
+msgstr "Välj låtar i spellistan"
+
+#: src/gtk/playlist-view.ui:74
+msgid "Close the Playlist"
+msgstr "Stäng spellistan"
+
+#: src/gtk/playlist-view.ui:135
+msgid "Select All Songs"
+msgstr "Markera alla låtar"
+
+#: src/gtk/playlist-view.ui:148
+msgid "Remove Selected Songs"
+msgstr "Ta bort markerade låtar"
+
+#: src/gtk/window.ui:12
+msgid "Drop a song to add it to the queue"
+msgstr "Släpp en låt för att lägga till den till kön"
+
+#: src/gtk/window.ui:49
+msgid ""
+"Select a file or a folder, or drag files from your file manager to the "
+"application window to add songs to the playlist"
+msgstr ""
+"Välj en fil eller mapp, eller dra filer från din filhanterare till "
+"programfönstret för att lägga till låtar till spellistan"
+
+#: src/gtk/window.ui:58
+msgid "Add Folder"
+msgstr "Lägg till mapp"
+
+#: src/gtk/window.ui:68
+msgid "Add File"
+msgstr "Lägg till fil"
+
+#: src/application.rs:181
+msgid "Plays music and nothing else"
+msgstr "Spelar upp musik helt enkelt"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/application.rs:188
+msgid "translator-credits"
+msgstr ""
+"Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
+"Luna Jernberg <droidbittin@gmail.com>\n"
+"\n"
+"Skicka synpunkter på översättningen till\n"
+"<tp-sv@listor.tp-sv.se>."
+
+#: src/playback_control.rs:157
+msgid "Repeat All Tracks"
+msgstr "Upprepa alla spår"
+
+#: src/playback_control.rs:161
+msgid "Repeat the Current Track"
+msgstr "Upprepa aktuellt spår"
+
+#: src/window.rs:409
+msgid "_Add Song"
+msgstr "_Lägg till låt"
+
+#: src/window.rs:410 src/window.rs:450
+msgid "_Cancel"
+msgstr "A_vbryt"
+
+#: src/window.rs:412
+msgid "Open File"
+msgstr "Öppna fil"
+
+#: src/window.rs:419
+msgid "Audio files"
+msgstr "Ljudfiler"
+
+#: src/window.rs:428 src/window.rs:1276
+msgid "Unable to access files"
+msgstr "Kunde inte komma åt filer"
+
+#: src/window.rs:449
+msgid "_Add Folder"
+msgstr "_Lägg till mapp"
+
+#: src/window.rs:452
+msgid "Open Folder"
+msgstr "Öppna mapp"
+
+#: src/window.rs:463
+msgid "Unable to access folders"
+msgstr "Kunde inte komma åt mappar"
+
+#: src/window.rs:475
+msgid "No available song found"
+msgstr "Ingen tillgänglig låt hittades"
+
+#: src/window.rs:523
+msgid "No songs found"
+msgstr "Inga låtar hittades"
+
+#: src/window.rs:549
+msgid "Added a new song"
+msgstr "Lade till en ny låt"
+
+#: src/window.rs:550
+msgid "Play"
+msgstr "Spela upp"
+
+#. Translators: the `{}` must be left unmodified;
+#. it will be expanded to the number of songs added
+#. to the playlist
+#: src/window.rs:559
+msgid "Added one song"
+msgid_plural "Added {} songs"
+msgstr[0] "Lade till en låt"
+msgstr[1] "Lade till {} låtar"
+
+#: src/window.rs:1012
+msgid "Unable to access dropped files"
+msgstr "Kunde inte komma åt släppta filer"
+
+#: src/window.rs:1106
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{} minut"
+msgstr[1] "{} minuter"
+
+#: src/window.rs:1117
+msgid "{hours} hour {minutes} remaining"
+msgid_plural "{hours} hours {minutes} remaining"
+msgstr[0] "{hours} timme {minutes} kvarstår"
+msgstr[1] "{hours} timmar {minutes} kvarstår"
+
+#. Translators: the '{}' must be left unmodified, and
+#. it will be replaced by the number of minutes remaining
+#. in the playlist
+#: src/window.rs:1127
+msgid "{} minute remaining"
+msgid_plural "{} minutes remaining"
+msgstr[0] "{} minut kvarstår"
+msgstr[1] "{} minuter kvarstår"
+
+#: src/window.rs:1256
+msgid "No song selected"
+msgstr "Ingen låt markerad"
+
+#. Translators: The '{}' must be left unmodified, and
+#. it is expanded to the number of songs selected
+#: src/window.rs:1261
+msgid "{} song selected"
+msgid_plural "{} songs selected"
+msgstr[0] "{} låt markerad"
+msgstr[1] "{} låtar markerade"
+
+#. Translators: `{title}` and `{artist}` must be left
+#. untranslated; they will expand to the title and
+#. artist of the currently playing song, respectively
+#: src/window.rs:1314
+msgid "Currently playing “{title}” by “{artist}”"
+msgstr "Spelar nu ”{title}” av ”{artist}”"
+
+#: src/window.rs:1360
+msgid "Amberol needs to run in the background to play music"
+msgstr "Amberol behöver köras i bakgrunden för att spela upp musik"
+
+#: src/window.rs:1373
+msgid "Amberol cannot run in the background"
+msgstr "Amberol kan inte köras i bakgrunden"
+
+#~ msgid "{} hour"
+#~ msgid_plural "{} hours"
+#~ msgstr[0] "{} timme"
+#~ msgstr[1] "{} timmar"
+
+#~ msgid "“{}” is not a supported audio file"
+#~ msgstr "Ljudfilen ”{}” stöds inte"
+
+#~ msgid "Unrecognized file type for “{}”"
+#~ msgstr "Okänd filtyp för ”{}”"
+
+#~ msgid "Amberol is running in the background"
+#~ msgstr "Amberol körs i bakgrunden"
+
+#~ msgid "Playing next"
+#~ msgstr "Spelar härnäst"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Songs Queue"
+#~ msgstr "Låtkö"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Queue a Song"
+#~ msgstr "Lägg en låt i kö"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Queue a Folder"
+#~ msgstr "Lägg en mapp i kö"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Clear"
+#~ msgstr "Töm"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Previous Track"
+#~ msgstr "Föregående spår"
+
+#~ msgid "Choose a file"
+#~ msgstr "Välj en fil"
+
+#~ msgid "Choose a folder"
+#~ msgstr "Välj en mapp"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Seek Backwards"
+#~ msgstr "Spola bakåt"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Seek Forward"
+#~ msgstr "Spola framåt"
+
+#~ msgid "Show the playlist"
+#~ msgstr "Visa spellistan"
