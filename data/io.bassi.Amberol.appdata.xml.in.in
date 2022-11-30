@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>@APPLICATION_ID@</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Amberol</name>
+  <summary>Plays music, and nothing else</summary>
+  <description>
+    <p>
+      Amberol is a music player with no delusions of grandeur. If you just
+      want to play music available on your local system then Amberol is the
+      music player you are looking for.
+    </p>
+    <p>Current features:</p>
+    <ul>
+      <li>adaptive UI</li>
+      <li>UI recoloring using the album art</li>
+      <li>drag and drop support to queue songs</li>
+      <li>shuffle and repeat</li>
+      <li>MPRIS integration</li>
+    </ul>
+  </description>
+  <screenshots>
+    <screenshot>
+      <image>https://www.bassi.io/~ebassi/amberol/screenshots/0.7/amberol-2.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.bassi.io/~ebassi/amberol/screenshots/0.7/amberol-1.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.bassi.io/~ebassi/amberol/screenshots/0.7/amberol-3.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.bassi.io/~ebassi/amberol/screenshots/0.7/amberol-4.png</image>
+    </screenshot>
+  </screenshots>
+  <launchable type="desktop-id">@APPLICATION_ID@.desktop</launchable>
+  <url type="homepage">https://gitlab.gnome.org/World/amberol</url>
+  <url type="bugtracker">https://gitlab.gnome.org/World/amberol/-/issues</url>
+  <url type="donation">https://ko-fi.com/emmanueleb</url>
+  <developer_name>Emmanuele Bassi</developer_name>
+  <update_contact>ebassi_at_gnome.org</update_contact>
+  <translation type="gettext">amberol</translation>
+  <custom>
+    <value key="Purism::form_factor">workstation</value>
+    <value key="Purism::form_factor">mobile</value>
+  </custom>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </recommends>
+  <releases>
+    <release version="0.9.1" date="2022-08-30">
+      <description>
+        <p>Small paper cuts, and ReplayGain</p>
+        <ul>
+          <li>Add support ReplayGain metadata in the audio files</li>
+          <li>Add support external cover art files for albums</li>
+          <li>Improve the reliability of the playlist shuffle</li>
+          <li>Tweak the playlist side bar to better fit on mobile form factors</li>
+          <li>New translation: Serbian</li>
+          <li>Translation updates</li>
+          <li>Bug fixes and performance improvements</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.0" date="2022-08-05">
+      <description>
+        <p>Searchings deserves to be fuzzy</p>
+        <ul>
+          <li>Support fuzzy matching when searching inside the playlist</li>
+          <li>Add a key shortcut for toggling shuffle</li>
+          <li>Allow opening folders with Amberol</li>
+          <li>Lots of translation updates</li>
+          <li>Bug fixes and performance improvements</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.8.1" date="2022-06-24">
+      <description>
+        <p>Bug fixes and UI improvements</p>
+      </description>
+    </release>
+    <release version="0.8.0" date="2022-06-17">
+      <description>
+        <p>More features for less memory!</p>
+        <ul>
+          <li>You can now search for songs in the playlist: just start typing and Amberol will display the matching songs. Search also works when selecting songs</li>
+          <li>Album art is shared across songs from the same album, saving memory</li>
+          <li>Amberol can now run in the background using the appropriate sandbox portal</li>
+          <li>The window size is restored across sessions</li>
+          <li>You can now build and run Amberol on macOS</li>
+          <li>Lots of bug fixes and UI improvements</li>
+          <li>Lots of translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.7.0" date="2022-06-03">
+      <description>
+        <p>Lots of small UI fixes and stability improvements</p>
+        <ul>
+          <li>Improve the consistency of the cover art display</li>
+          <li>Make the behaviour of the playlist shuffle more predictable</li>
+          <li>Fix state transitions when opening a song from the file manager</li>
+          <li>Indicate the currently playing song in the playlist</li>
+          <li>Improve the styling of the waveform scrubber</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.6.3" date="2022-05-21">
+      <description>
+        <p>Brown paper bag release!</p>
+        <ul>
+          <li>Fix drag and drop on the initial landing page</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.6.2" date="2022-05-20">
+      <description>
+        <p>Another round of small, papercut issue fixes</p>
+        <ul>
+          <li>Accessibility fixes all across the board</li>
+          <li>Better key navigation and shortcuts</li>
+          <li>Improve the consistency of the UI</li>
+          <li>Speed up the song loading</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.6.1" date="2022-05-09">
+      <description>
+        <p>Papercut fixes for the initial landing page and the playlist</p>
+        <ul>
+          <li>Fix styling of the folded playlist</li>
+          <li>Improve the cover art detection</li>
+          <li>Add localization for various languages</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.6.0" date="2022-05-06">
+      <description>
+        <p>New round of UI touch-ups, to make Amberol more readable.</p>
+        <ul>
+          <li>Improve the playlist management through a selection mode switch</li>
+          <li>Add localization for various languages</li>
+          <li>Make the text and controls more legible</li>
+          <li>Improve the MPRIS integration</li>
+          <li>Better support for right-to-left text locales</li>
+          <li>Allow disabling UI recoloring</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.5.0" date="2022-04-29">
+      <description>
+        <p>Last UI change for a while, I promise.</p>
+        <ul>
+          <li>Move the playlist panel to the left</li>
+          <li>Drop the seek buttons</li>
+          <li>Improve the rendering of the waveform</li>
+          <li>Improve extraction of the song metadata</li>
+        </ul>
+        <p>Thanks to everyone who tried Amberol and filed issues!</p>
+      </description>
+    </release>
+    <release version="0.4.3" date="2022-04-27">
+      <description>
+        <p>Bugs never end, and so does bug squashing.</p>
+        <ul>
+          <li>Fix a crash when manually advancing through the playlist</li>
+          <li>Make the waveform scrubber more legible</li>
+          <li>Keep the UI state more consistent when toggling the playlist</li>
+        </ul>
+        <p>Many, many thanks to all of those who opened an issue after the 0.4.0 release!</p>
+      </description>
+    </release>
+    <release version="0.4.2" date="2022-04-22">
+      <description>
+        <p>Fix a slight visual artefact in the playlist</p>
+      </description>
+    </release>
+    <release version="0.4.1" date="2022-04-22">
+      <description>
+        <p>A brown paper bag release fixing an embarrassing bug.</p>
+      </description>
+    </release>
+    <release version="0.4.0" date="2022-04-22">
+      <description>
+        <p>The first beta release for Amberol! Isn't this exciting?</p>
+        <ul>
+          <li>Show an initial page when launching Amberol</li>
+          <li>Make the layout more mobile friendly without impacting desktop users</li>
+          <li>Allow removing songs from the playlist</li>
+          <li>Add initial (experimental) support for recursive loading of music folders</li>
+          <li>Show the cover art for music tracks in the playlist</li>
+          <li>Show the current position inside the song</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.0" type="development" date="2022-04-15"/>
+    <release version="0.2.1" type="development" date="2022-04-11"/>
+    <release version="0.2.0" type="development" date="2022-04-11"/>
+    <release version="0.1.0" type="development" date="2022-04-02"/>
+  </releases>
+  <kudos>
+    <kudo>ModernToolkit</kudo>
+    <kudo>Notifications</kudo>
+  </kudos>
+  <content_rating type="oars-1.1"/>
+  <provides>@APPLICATION_ID@.desktop</provides>
+</component>
