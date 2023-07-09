@@ -1,20 +1,24 @@
-# Basque translation for amberol.
-# Copyright (C) 2022 amberol's COPYRIGHT HOLDER
+# Czech translation of amberol.
+# Copyright (C) 2023 the author(s) of amberol.
 # This file is distributed under the same license as the amberol package.
-# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2022, 2023.
+# Vojtěch Perník <translations@pervoj.cz>, 2022.
+# Písek Pískovec <pisekpiskovec@gmail.com>, 2022.
+# Daniel Rusek <mail@asciiwolf.com>, 2023.
 #
 msgid ""
-msgstr "Project-Id-Version: amberol main\n"
+msgstr ""
+"Project-Id-Version: amberol main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
-"POT-Creation-Date: 2023-02-22 13:07+0000\n"
-"PO-Revision-Date: 2023-03-04 20:28+0000\n"
-"Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
-"Language-Team: Basque <librezale@librezale.eus>\n"
-"Language: eu\n"
+"POT-Creation-Date: 2023-04-06 11:27+0000\n"
+"PO-Revision-Date: 2023-04-04 13:12+0200\n"
+"Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
+"Language-Team: \n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/io.bassi.Amberol.desktop.in.in:3
 #: data/io.bassi.Amberol.appdata.xml.in.in:6
@@ -23,47 +27,50 @@ msgstr "Amberol"
 
 #: data/io.bassi.Amberol.desktop.in.in:4
 msgid "Music Player"
-msgstr "Musika-erreproduzigailua"
+msgstr "Přehrávač hudby"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.bassi.Amberol.desktop.in.in:12
 msgid "music;player;media;audio;playlist;"
-msgstr "musika;erreproduzigailua;multimedia;audioa;erreprodukzio-zerrenda"
+msgstr "hudba;přehrávač;média;audio;playlist;"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:7
 msgid "Plays music, and nothing else"
-msgstr "Musika erreproduzitzen du, besterik ez"
+msgstr "Přehrává hudbu, a nic víc"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:9
 msgid ""
 "Amberol is a music player with no delusions of grandeur. If you just want to "
 "play music available on your local system then Amberol is the music player "
 "you are looking for."
-msgstr "Amberol handinahirik gabeko musika-erreproduzigailu bat da. Zure sistema lokalean duzun musika entzun nahi baduzu, Amberol da behar duzun erreproduzigailua."
+msgstr ""
+"Amberol je hudební přehrávač bez iluzí vznešenosti. Pokud chcete jen "
+"přehrávat hudbu uloženou na svém zařízení, Amberol je hudební přehrávač, "
+"který hledáte."
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:14
 msgid "Current features:"
-msgstr "Uneko eginbideak:"
+msgstr "Současné funkce:"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:16
 msgid "adaptive UI"
-msgstr "interfaze moldakorra"
+msgstr "přizpůsobivé UI"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:17
 msgid "UI recoloring using the album art"
-msgstr "interfazearen kolorea aldatzen da albumaren itxura erabilita"
+msgstr "UI měnící barvu na základě obrázku alba"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:18
 msgid "drag and drop support to queue songs"
-msgstr "arrastatu eta jaregiteko euskarria abestiak ilaran jartzeko"
+msgstr "podpora přetahování písní do řady"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:19
 msgid "shuffle and repeat"
-msgstr "ausaz erreproduzitu eta errepikatu"
+msgstr "náhodné a opakovat"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:20
 msgid "MPRIS integration"
-msgstr "MPRIS integrazioa"
+msgstr "integrace MPRIS"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:42
 msgid "Emmanuele Bassi"
@@ -71,201 +78,201 @@ msgstr "Emmanuele Bassi"
 
 #: src/audio/inhibit_controller.rs:40
 msgid "Playback in progress"
-msgstr "Erreprodukzioa abian"
+msgstr "Probíhá přehrávání"
 
-#: src/audio/song.rs:337
+#: src/audio/song.rs:325
 msgid "Unknown artist"
-msgstr "Artista ezezaguna"
+msgstr "Neznámý umělec"
 
-#: src/audio/song.rs:344
+#: src/audio/song.rs:332
 msgid "Unknown title"
-msgstr "Izenburu ezezaguna"
+msgstr "Neznámý název"
 
-#: src/audio/song.rs:351
+#: src/audio/song.rs:339
 msgid "Unknown album"
-msgstr "Album ezezaguna"
+msgstr "Neznámé album"
 
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr "Orokorra"
+msgstr "Obecné"
 
 #: src/gtk/help-overlay.ui:14
 msgctxt "shortcut window"
 msgid "Toggle primary menu"
-msgstr "Aktibatu/desaktibatu menu nagusia"
+msgstr "Zobrazit/skrýt hlavní nabídku"
 
 #: src/gtk/help-overlay.ui:20
 msgctxt "shortcut window"
 msgid "Copy song details to the clipboard"
-msgstr "Kopiatu abestiaren xehetasunak arbelean"
+msgstr "Zkopírovat detaily písně do schránky"
 
 #: src/gtk/help-overlay.ui:26
 msgctxt "shortcut window"
 msgid "Show shortcuts"
-msgstr "Erakutsi lasterbideak"
+msgstr "Zobrazit klávesové zkratky"
 
 #: src/gtk/help-overlay.ui:32
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr "Irten"
+msgstr "Ukončit"
 
 #: src/gtk/help-overlay.ui:40
 msgctxt "shortcut window"
 msgid "Playlist"
-msgstr "Erreprodukzio-zerrenda"
+msgstr "Seznam přehrávání"
 
 #: src/gtk/help-overlay.ui:43
 msgctxt "shortcut window"
 msgid "Add a song to the playlist"
-msgstr "Gehitu abesti bat erreprodukzio-zerrendari"
+msgstr "Přidat skladbu do seznamu přehrávání"
 
 #: src/gtk/help-overlay.ui:49
 msgctxt "shortcut window"
 msgid "Add a folder to the playlist"
-msgstr "Gehitu karpeta bat erreprodukzio-zerrendari"
+msgstr "Přidat složku do seznamu přehrávání"
 
 #: src/gtk/help-overlay.ui:55
 msgctxt "shortcut window"
 msgid "Clear the playlist"
-msgstr "Garbitu erreprodukzio-zerrenda"
+msgstr "Vyčistit seznam přehrávání"
 
 #: src/gtk/help-overlay.ui:61
 msgctxt "shortcut window"
 msgid "Toggle the playlist pane"
-msgstr "Txandakatu erreprodukzio-zerrendaren panela"
+msgstr "Zobrazit/skrýt seznam skladeb"
 
 #: src/gtk/help-overlay.ui:67
 msgctxt "shortcut window"
 msgid "Toggle shuffling songs"
-msgstr "Txandakatu abestiak ausaz erreproduzitzea"
+msgstr "Přepnout opakování"
 
 #: src/gtk/help-overlay.ui:75
 msgctxt "shortcut window"
 msgid "Playback"
-msgstr "Erreproduzitu"
+msgstr "Přehrávání"
 
 #: src/gtk/help-overlay.ui:78
 msgctxt "shortcut window"
 msgid "Toggle play/pause"
-msgstr "Txandakatu erreprodukzioa/pausatzea"
+msgstr "Pozastavit nebo hrát dál"
 
 #: src/gtk/help-overlay.ui:84
 msgctxt "shortcut window"
 msgid "Previous song"
-msgstr "Aurreko abestia"
+msgstr "Předchozí skladba"
 
 #: src/gtk/help-overlay.ui:90
 msgctxt "shortcut window"
 msgid "Next song"
-msgstr "Hurrengoa abestia"
+msgstr "Další skladba"
 
 #: src/gtk/help-overlay.ui:96
 msgctxt "shortcut window"
 msgid "Seek backwards in the current song"
-msgstr "Bilatu atzerantz uneko abestian"
+msgstr "Skok zpět o 10 sekund"
 
 #: src/gtk/help-overlay.ui:102
 msgctxt "shortcut window"
 msgid "Seek forward in the current song"
-msgstr "Bilatu aurrerantz uneko abestian"
+msgstr "Skok vpřed o 10 sekund"
 
 #: src/gtk/playback-control.ui:35
 msgctxt "a11y"
 msgid "Elapsed time"
-msgstr "Igarotako denbora"
+msgstr "Uběhnutý čas"
 
 #: src/gtk/playback-control.ui:47
 msgctxt "a11y"
 msgid "Remaining time"
-msgstr "Falta den denbora"
+msgstr "Zbývající čas"
 
 #: src/gtk/playback-control.ui:69
 msgid "Play the Previous Song"
-msgstr "Erreproduzitu aurreko abestia"
+msgstr "Přehrát předchozí skladbu"
 
 #: src/gtk/playback-control.ui:74
 msgctxt "a11y"
 msgid "Skip backwards"
-msgstr "Saltatu atzerantz"
+msgstr "Skočit zpět"
 
 #: src/gtk/playback-control.ui:83
 msgid "Toggle Play"
-msgstr "Txandakatu erreprodukzioa"
+msgstr "Pozastavit nebo hrát dál"
 
 #: src/gtk/playback-control.ui:89
 msgctxt "a11y"
 msgid "Toggle play"
-msgstr "Txandakatu erreprodukzioa"
+msgstr "Pozastavit nebo hrát dál"
 
 #: src/gtk/playback-control.ui:98
 msgid "Play the Next Song"
-msgstr "Erreproduzitu hurrengo abestia"
+msgstr "Přehrát další skladbu"
 
 #: src/gtk/playback-control.ui:103
 msgctxt "a11y"
 msgid "Skip forward"
-msgstr "Saltatu aurrerantz"
+msgstr "Skočit vpřed"
 
 #: src/gtk/playback-control.ui:126
 msgid "Toggle Playlist"
-msgstr "Txandakatu erreprodukzio-zerrenda"
+msgstr "Zobrazit/skrýt seznam skladeb"
 
 #: src/gtk/playback-control.ui:131
 msgctxt "a11y"
 msgid "Toggle playlist"
-msgstr "Txandakatu erreprodukzio-zerrenda"
+msgstr "Zobrazit/skrýt seznam skladeb"
 
 #: src/gtk/playback-control.ui:140
 msgid "Shuffle the Playlist"
-msgstr "Erreproduzitu zerrenda ausaz"
+msgstr "Promíchat seznam skladeb"
 
 #: src/gtk/playback-control.ui:142
 msgctxt "a11y"
 msgid "Shuffle"
-msgstr "Ausaz"
+msgstr "Náhodné"
 
 #: src/gtk/playback-control.ui:161 src/playback_control.rs:153
 msgid "Enable Repeat"
-msgstr "Gaitu errepikapena"
+msgstr "Povolit opakování"
 
 #: src/gtk/playback-control.ui:166
 msgctxt "a11y"
 msgid "Repeat"
-msgstr "Errepikatu"
+msgstr "Opakovat"
 
 #: src/gtk/playback-control.ui:177
 msgid "Main Menu"
-msgstr "Menu nagusia"
+msgstr "Hlavní nabídka"
 
 #: src/gtk/playback-control.ui:183
 msgctxt "a11y"
 msgid "Primary menu"
-msgstr "Menu nagusia"
+msgstr "Primární nabídka"
 
 #: src/gtk/playback-control.ui:199
 msgid "Copy"
-msgstr "Kopiatu"
+msgstr "Kopírovat"
 
 #: src/gtk/playback-control.ui:205
 msgid "Add _Song"
-msgstr "Gehitu _abestia"
+msgstr "Přidat _skladbu"
 
 #: src/gtk/playback-control.ui:209
 msgid "Add _Folder"
-msgstr "Gehitu _karpeta"
+msgstr "Přidat _složku"
 
 #: src/gtk/playback-control.ui:213
 msgid "Clear"
-msgstr "Garbitu"
+msgstr "Vyčistit"
 
 #: src/gtk/playback-control.ui:219
 msgid "_Match Cover Art"
-msgstr "_Egin bat azalarekin"
+msgstr "_Ladit s obrázkem alba"
 
 #: src/gtk/playback-control.ui:223
 msgid "_Background Playback"
-msgstr "A_tzeko planoko erreprodukzioa"
+msgstr "Přehrávání na _pozadí"
 
 #: src/gtk/playback-control.ui:229
 msgid "_ReplayGain"
@@ -273,243 +280,210 @@ msgstr "_ReplayGain"
 
 #: src/gtk/playback-control.ui:231
 msgid "_Album"
-msgstr "_Albuma"
+msgstr "_Album"
 
 #: src/gtk/playback-control.ui:236
 msgid "_Track"
-msgstr "_Pista"
+msgstr "_Stopa"
 
 #: src/gtk/playback-control.ui:241
 msgid "_Off"
-msgstr "_Desaktibatuta"
+msgstr "_Vypnout"
 
 #: src/gtk/playback-control.ui:249
 msgid "_Keyboard Shortcuts"
-msgstr "La_sterbideak"
+msgstr "_Klávesové zkratky"
 
 #: src/gtk/playback-control.ui:253
 msgid "_About Amberol"
-msgstr "Amberol aplikazioari _buruz"
+msgstr "_O aplikaci Amberol"
 
 #: src/gtk/playback-control.ui:257
 msgid "_Quit"
-msgstr "I_rten"
+msgstr "_Ukončit"
 
 #: src/gtk/playlist-view.ui:19
 msgid "Playlist"
-msgstr "Erreprodukzio-zerrenda"
+msgstr "Seznam skladeb"
 
 #: src/gtk/playlist-view.ui:49
 msgid "Search Songs in the Playlist"
-msgstr "Bilatu erreprodukzio-zerrendako abestiak"
+msgstr "Hledat skladby v seznamu"
 
 #: src/gtk/playlist-view.ui:61
 msgid "Select Songs in the Playlist"
-msgstr "Hautatu erreprodukzio-zerrendako abestiak"
+msgstr "Vybrat skladby v seznamu"
 
 #: src/gtk/playlist-view.ui:74
 msgid "Close the Playlist"
-msgstr "Itxi erreprodukzio-zerrenda"
+msgstr "Zavřít seznam skladeb"
 
 #: src/gtk/playlist-view.ui:135
 msgid "Select All Songs"
-msgstr "Hautatu abesti guztiak"
+msgstr "Vybrat všechny skladby"
 
 #: src/gtk/playlist-view.ui:148
 msgid "Remove Selected Songs"
-msgstr "Kendu hautatutako abestiak"
+msgstr "Odebrat vybrané skladby"
 
 #: src/gtk/window.ui:12
 msgid "Drop a song to add it to the queue"
-msgstr "Jaregin abesti bat ilaran gehitzeko"
+msgstr "Přetáhnout pro přidání skladby do řady"
 
 #: src/gtk/window.ui:49
 msgid ""
 "Select a file or a folder, or drag files from your file manager to the "
 "application window to add songs to the playlist"
-msgstr "Hautatu fitxategi edo karpeta bat, edo arrastatu zure fitxategi-kudeatzaileko fitxategiak aplikazioaren leihora, erreprodukzio-zerrendari abestiak gehitzeko"
+msgstr ""
+"Vyberte soubor nebo složku, nebo přetáhněte soubory ze svého správce souborů "
+"do okna aplikace, abyste přidali skladby do seznamu"
 
 #: src/gtk/window.ui:58
 msgid "Restore Playlist"
-msgstr "Leheneratu erreprodukzio-zerrenda"
+msgstr "Obnovit seznam skladeb"
 
 #: src/gtk/window.ui:68
 msgid "Add Folder"
-msgstr "Gehitu karpeta"
+msgstr "Přidat složku"
 
 #: src/gtk/window.ui:77
 msgid "Add Song"
-msgstr "Gehitu abestia"
+msgstr "Přidat skladbu"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:233
+#: src/application.rs:227
 msgid "translator-credits"
-msgstr "translator-credits"
+msgstr "Písek Pískovec <pisekpiskovec@gmail.com>"
 
-#: src/application.rs:247
+#: src/application.rs:239
 msgid "Amberol needs to run in the background to play music"
-msgstr "Amberol atzeko planoan exekutatu behar da musika erreproduzitu ahal izateko"
+msgstr "Amberol musí běžet na pozadí, aby hrál hudbu"
 
 #: src/playback_control.rs:157
 msgid "Repeat All Tracks"
-msgstr "Errepikatu pista guztiak"
+msgstr "Opakovat všechny skladby"
 
 #: src/playback_control.rs:161
 msgid "Repeat the Current Track"
-msgstr "Errepikatu uneko pista"
+msgstr "Opakovat současnou skladbu"
 
-#: src/window.rs:397
+#: src/window.rs:390
 msgid "_Add Song"
-msgstr "_Gehitu abestia"
+msgstr "_Přidat skladbu"
 
-#: src/window.rs:398 src/window.rs:438
+#: src/window.rs:391 src/window.rs:431
 msgid "_Cancel"
-msgstr "_Utzi"
+msgstr "_Zrušit"
+
+#: src/window.rs:393
+msgid "Open File"
+msgstr "Otevřít soubor"
 
 #: src/window.rs:400
-msgid "Open File"
-msgstr "Ireki fitxategia"
-
-#: src/window.rs:407
 msgid "Audio files"
-msgstr "Audio-fitxategiak"
+msgstr "Zvukové soubory"
 
-#: src/window.rs:416 src/window.rs:1306
+#: src/window.rs:409 src/window.rs:1300
 msgid "Unable to access files"
-msgstr "Ezin dira fitxategiak atzitu"
+msgstr "Nelze získat přístup k souborům"
 
-#: src/window.rs:437
+#: src/window.rs:430
 msgid "_Add Folder"
-msgstr "_Gehitu karpeta"
+msgstr "_Přidat složku"
 
-#: src/window.rs:440
+#: src/window.rs:433
 msgid "Open Folder"
-msgstr "Ireki karpeta"
+msgstr "Otevřít složku"
 
-#: src/window.rs:451
+#: src/window.rs:444
 msgid "Unable to access folders"
-msgstr "Ezin dira karpetak atzitu"
+msgstr "Nelze získat přístup ke složkám"
 
-#: src/window.rs:469
+#: src/window.rs:462
 msgid "No available song found"
-msgstr "Ez da aurkitu bat datorren abestirik"
+msgstr "Nenalezeny dostupné skladby"
 
-#: src/window.rs:526
+#: src/window.rs:519
 msgid "No songs found"
-msgstr "Ez da abestirik aurkitu"
+msgstr "Nalezeny žádné skladby"
 
-#: src/window.rs:556
+#: src/window.rs:549
 msgid "Added a new song"
-msgstr "Beste abesti bat gehitu da"
+msgstr "Nová skladba přidána"
 
-#: src/window.rs:557
+#: src/window.rs:550
 msgid "Play"
-msgstr "Erreproduzitu"
+msgstr "Přehrát"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:566
+#: src/window.rs:559
 msgid "Added one song"
 msgid_plural "Added {} songs"
-msgstr[0] "Abesti bat gehitu da"
-msgstr[1] "{} abesti gehitu dira"
+msgstr[0] "Přidána jedna skladba"
+msgstr[1] "Přidány {} skladby"
+msgstr[2] "Přidáno {} skladeb"
 
-#: src/window.rs:1056
+#: src/window.rs:1050
 msgid "Unable to access dropped files"
-msgstr "Ezin dira jaregindako fitxategiak atzitu"
+msgstr "Nelze získat přístup k vloženým souborům"
 
-#: src/window.rs:1149
+#: src/window.rs:1143
 msgid "{} minute"
 msgid_plural "{} minutes"
-msgstr[0] "Minutu {}"
-msgstr[1] "{} minutu"
+msgstr[0] "{} minuta"
+msgstr[1] "{} minuty"
+msgstr[2] "{} minut"
 
-#: src/window.rs:1160
+#: src/window.rs:1154
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
-msgstr[0] "Ordu {hours} eta {minutes} minutu geratzen dira"
-msgstr[1] "{hours} ordu eta {minutes} minutu geratzen dira"
+msgstr[0] "Zbývá {hours} hodina {minutes}"
+msgstr[1] "Zbývají {hours} hodiny {minutes}"
+msgstr[2] "Zbývá {hours} hodin {minutes}"
 
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1170
+#: src/window.rs:1164
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
-msgstr[0] "Minutu {} geratzen da"
-msgstr[1] "{} minutu geratzen dira"
+msgstr[0] "Zbývá {} minuta"
+msgstr[1] "Zbývá {} minuty"
+msgstr[2] "Zbývá {} minut"
 
-#: src/window.rs:1286
+#: src/window.rs:1280
 msgid "No song selected"
-msgstr "Ez da abestirik hautatu"
+msgstr "Nevybrána žádná skladba"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1291
+#: src/window.rs:1285
 msgid "{} song selected"
 msgid_plural "{} songs selected"
-msgstr[0] "Abesti {} hautatu da"
-msgstr[1] "{} abesti hautatu dira"
+msgstr[0] "Vybrána {} skladba"
+msgstr[1] "Vybrány {} skladby"
+msgstr[2] "Vybráno {} skladeb"
 
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1344
+#: src/window.rs:1338
 msgid "Currently playing “{title}” by “{artist}”"
-msgstr "Orain erreproduzitzen: “{title}”, egilea: “{artist}”"
+msgstr "Právě hraje “{title}” od “{artist}”"
 
 #~ msgid "Add File"
-#~ msgstr "Gehitu fitxategia"
-
-#~ msgid "Amberol cannot run in the background"
-#~ msgstr "Amberol ezin da atzeko planoan exekutatu"
+#~ msgstr "Přidat soubor"
 
 #~ msgid "Plays music and nothing else"
-#~ msgstr "Musika erreproduzitzen du, besterik ez"
+#~ msgstr "Přehrává hudbu, a nic víc"
 
-#~ msgid "“{}” is not a supported audio file"
-#~ msgstr "“{}” ez da onartutako audio-fitxategi bat"
+#~ msgid "{} hour"
+#~ msgid_plural "{} hours"
+#~ msgstr[0] "{} hodina"
+#~ msgstr[1] "{} hodiny"
+#~ msgstr[2] "{} hodin"
 
-#~ msgid "Unrecognized file type for “{}”"
-#~ msgstr "Fitxategi-mota ezezaguna honetarako: “{}”"
-
-#~ msgid "Amberol is running in the background"
-#~ msgstr "Amberol atzeko planoan exekutatzen ari da"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Songs Queue"
-#~ msgstr "Abestien ilara"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Queue a Song"
-#~ msgstr "Jarri abestia ilaran"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Queue a Folder"
-#~ msgstr "Jarri karpeta bat ilaran"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Clear"
-#~ msgstr "Garbitu"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Previous Track"
-#~ msgstr "Aurreko pista"
-
-#~ msgid "Playing next"
-#~ msgstr "Hurrengoa erreproduzitzen"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Seek Backwards"
-#~ msgstr "Bilatu atzerantz"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Seek Forward"
-#~ msgstr "Bilatu aurrerantz"
-
-#~ msgid "Show the playlist"
-#~ msgstr "Erakutsi erreprodukzio-zerrenda"
-
-#~ msgid "Choose a folder"
-#~ msgstr "Aukeratu karpeta bat"
+#~ msgid "Amberol cannot run in the background"
+#~ msgstr "Amberol nemůže běžet na pozadí"

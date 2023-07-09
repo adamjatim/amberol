@@ -12,6 +12,163 @@ All notable changes to this project will be documented in this file.
 
 ### Removed
 
+## [0.10.3] - 2023-05-23
+
+### Changed
+
+- Translation updates
+  - Hebrew
+  - Polish
+  - Finnish
+  - Portuguese
+  - Russian
+  - German
+
+### Fixed
+
+- Resize the waveform view when interpolating states
+- Fix cover art scaling [#324]
+- Fix deprecation warnings at build time
+
+## [0.10.2] - 2023-04-28
+
+### Changed
+
+- Use a better icon for the drop overlay [!135]
+- Translation updates
+  - Galician
+  - Slovenian
+  - Hungarian
+  - Swedish
+  - Turkish
+  - Indonesian
+  - French
+  - Occitan
+
+### Fixed
+
+- Crash when adjusting volume while in background [#317]
+- Crash when adding folder after sending app to the background [#319]
+
+## [0.10.1] - 2023-04-25
+
+### Fixed
+
+- Background playback doesn't work [#314]
+
+## [0.10.0] - 2023-04-24
+
+### Added
+
+- Allow restoring the playlist from the previous session [!120]
+- Allow disabling background playback
+- Add control to quickly muting/unmuting the audio
+- Enable ashpd on FreeBSD [!130]
+- New translations
+  - Belarusian
+  - French
+  - Korean
+  - Friulan
+  - Czech
+
+### Changed
+
+- Update the dependency to the gtk-rs bindings
+- Update the dependency to ashpd
+- Update the dependency to lofty
+- Use consistent labelling for adding single songs [#270]
+- Use consistent terms for songs and playlist [#301]
+- Improve rendering of cover art [#310]
+- Separate the volume bar from the waveform display
+- Translation updates
+  - Ukrainian
+  - German
+  - Slovenian
+  - Portuguese
+  - Brazilian Portuguese
+  - Georgian
+  - Russian
+  - Croatian
+  - Danish
+  - Turkish
+  - Swedish
+  - Hebrew
+  - Polish
+  - Indonesian
+  - Occitan
+  - Lithuanian
+  - Occitan
+  - Galician
+  - Finnish
+  - Basque
+  - Korean
+  - Persian
+  - Spanish
+  - Hungarian
+  - Serbian
+
+### Fixed
+
+- Reset the playlist position when searching [!117]
+- Use HIG-compliant capitalization in the shortcuts view [!115]
+- Narrow playlist view [#230]
+- Do not add duplicate songs to the playlist [#248]
+- Update next track button state depending on repeat mode [!114]
+- Fix styling of the search bar [#266]
+- Stop waveform pipeline when dropping the generator [!107]
+- Change the ReplayGain menu translatable context [#281]
+- Always draw last bar in waveform view [!127]
+- Fix waveform overdrawing in RTL layout [!128]
+- Fix waveform overdrawing [!124]
+- Improve the readability of the drop overlay [#288]
+
+### Removed
+
+## [0.9.2] - 2022-12-10
+
+### Added
+
+- Allow continuous seeking on the waveform widget [#99]
+- New translations
+  - Icelanding
+  - Hungarian
+  - British English
+  - Greek
+
+### Changed
+
+- Use new about window from libadwaita
+- Update build to use Cargo directly without a wrapper
+- Update the dependency on lofty to 0.9.0
+- Translation updates
+  - Finnish
+  - Persian
+  - Portuguese
+  - Turkish
+  - Chinese (China)
+  - Italian
+  - Swedish
+  - Brazilian Portuguese
+  - Danish
+  - Occitan
+  - Slovenian
+  - Hebrew
+  - Indonesian
+  - German
+  - Russian
+  - Serbian
+  - Basque
+  - Georgian
+  - Dutch
+
+### Fixed
+
+- Recolor the folded playlist background
+- Check for more file names for external covers [#247]
+- Force the direction of the primary menu
+- Remove toast for failed background portal requests
+- Fully animate waveform between tracks [#254]
+
 ## [0.9.1] - 2022-08-30
 
 ### Added

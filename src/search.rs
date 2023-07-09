@@ -9,7 +9,7 @@ mod imp {
 
     use fuzzy_matcher::{skim::SkimMatcherV2, FuzzyMatcher};
     use gtk::{
-        glib::{self, ParamFlags, ParamSpec, ParamSpecString, Value},
+        glib::{self, ParamSpec, ParamSpecString, Value},
         prelude::*,
         subclass::prelude::*,
     };
@@ -30,30 +30,19 @@ mod imp {
     }
 
     impl ObjectImpl for FuzzyFilter {
-        fn constructed(&self, object: &Self::Type) {
-            self.parent_constructed(object);
-        }
-
         fn properties() -> &'static [ParamSpec] {
-            static PROPERTIES: Lazy<Vec<ParamSpec>> = Lazy::new(|| {
-                vec![ParamSpecString::new(
-                    "search",
-                    "search",
-                    "a search term",
-                    None,
-                    ParamFlags::READWRITE,
-                )]
-            });
+            static PROPERTIES: Lazy<Vec<ParamSpec>> =
+                Lazy::new(|| vec![ParamSpecString::builder("search").build()]);
             PROPERTIES.as_ref()
         }
 
-        fn set_property(&self, obj: &Self::Type, _id: usize, value: &Value, pspec: &ParamSpec) {
+        fn set_property(&self, _id: usize, value: &Value, pspec: &ParamSpec) {
             match pspec.name() {
                 "search" => {
                     let p = value
                         .get::<Option<String>>()
                         .expect("Value must be a string");
-                    obj.set_search(p);
+                    self.obj().set_search(p);
                 }
                 _ => unimplemented!(),
             }
@@ -61,11 +50,11 @@ mod imp {
     }
 
     impl FilterImpl for FuzzyFilter {
-        fn strictness(&self, _filter: &Self::Type) -> gtk::FilterMatch {
+        fn strictness(&self) -> gtk::FilterMatch {
             gtk::FilterMatch::Some
         }
 
-        fn match_(&self, _filter: &Self::Type, song: &glib::Object) -> bool {
+        fn match_(&self, song: &glib::Object) -> bool {
             let song = song.downcast_ref::<Song>().unwrap();
 
             if let Some(search) = self.search.borrow().as_ref() {
@@ -87,7 +76,7 @@ glib::wrapper! {
 
 impl FuzzyFilter {
     pub fn new() -> Self {
-        glib::Object::new(&[]).expect("Failed to create `AmberolFuzzyFilter`")
+        glib::Object::new()
     }
 
     pub fn search(&self) -> Option<String> {

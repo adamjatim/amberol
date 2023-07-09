@@ -1,22 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Georgian translation for amblerol.
+# Copyright (C) 2023, Amberol authors
+# This file is distributed under the same license as the Amberol package.
+# Ekaterine Papava <papava.e@gtu.ge>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
-"POT-Creation-Date: 2022-09-28 20:25+0000\n"
-"PO-Revision-Date: 2022-10-26 05:20+0200\n"
-"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2023-04-24 22:31+0000\n"
+"PO-Revision-Date: 2023-04-25 06:37+0200\n"
+"Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
+"Language-Team: Georgian <(nothing)>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/io.bassi.Amberol.desktop.in.in:3
 #: data/io.bassi.Amberol.appdata.xml.in.in:6
@@ -42,6 +42,9 @@ msgid ""
 "play music available on your local system then Amberol is the music player "
 "you are looking for."
 msgstr ""
+"Amberol-ი მუსიკის დამკვრელია განდიდების მანიის გარეშე. თუ თქვენ უბრალოდ "
+"თქვენს კომპიუტერში არსებული მუსიკის დაკვრა გნებავთ, Amberol -ი ზუსტად ისაა, "
+"რასაც ეძებთ."
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:14
 msgid "Current features:"
@@ -53,11 +56,11 @@ msgstr "მორგებადი ინტერფეისი"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:17
 msgid "UI recoloring using the album art"
-msgstr ""
+msgstr "UI-ის  ფერების შეცვლა ყდის სურათის გამოყენებით"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:18
 msgid "drag and drop support to queue songs"
-msgstr ""
+msgstr "რიგში ფაილების გადათრევის მხაარდაჭერა"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:19
 msgid "shuffle and repeat"
@@ -67,7 +70,7 @@ msgstr "შემთხვევით გამეორება"
 msgid "MPRIS integration"
 msgstr "MPRIS ინტეგრაცია"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:41
+#: data/io.bassi.Amberol.appdata.xml.in.in:42
 msgid "Emmanuele Bassi"
 msgstr "Emmanuele Bassi"
 
@@ -75,15 +78,15 @@ msgstr "Emmanuele Bassi"
 msgid "Playback in progress"
 msgstr "დაკვრა მიმდინარეობს"
 
-#: src/audio/song.rs:328
+#: src/audio/song.rs:325
 msgid "Unknown artist"
 msgstr "უცნობი შემსრულებელი"
 
-#: src/audio/song.rs:335
+#: src/audio/song.rs:332
 msgid "Unknown title"
 msgstr "უცნობი სათაური"
 
-#: src/audio/song.rs:342
+#: src/audio/song.rs:339
 msgid "Unknown album"
 msgstr "უცნობი ალბომი"
 
@@ -100,11 +103,11 @@ msgstr "ძირითადი მენიუს ჩართ/გამორ
 #: src/gtk/help-overlay.ui:20
 msgctxt "shortcut window"
 msgid "Copy song details to the clipboard"
-msgstr ""
+msgstr "სიმღერის დეტალების ბუფერში კოპირება"
 
 #: src/gtk/help-overlay.ui:26
 msgctxt "shortcut window"
-msgid "Show Shortcuts"
+msgid "Show shortcuts"
 msgstr "მალსახმობების ჩვენება"
 
 #: src/gtk/help-overlay.ui:32
@@ -120,12 +123,12 @@ msgstr "დასაკრავი სია"
 #: src/gtk/help-overlay.ui:43
 msgctxt "shortcut window"
 msgid "Add a song to the playlist"
-msgstr ""
+msgstr "სიმღერის დასაკრავ სიაში ჩამატება"
 
 #: src/gtk/help-overlay.ui:49
 msgctxt "shortcut window"
 msgid "Add a folder to the playlist"
-msgstr ""
+msgstr "საქაღალდის დასაკრავ სიაში ჩამატება"
 
 #: src/gtk/help-overlay.ui:55
 msgctxt "shortcut window"
@@ -135,12 +138,12 @@ msgstr "დასაკრავი სიის გასუფთავებ�
 #: src/gtk/help-overlay.ui:61
 msgctxt "shortcut window"
 msgid "Toggle the playlist pane"
-msgstr ""
+msgstr "დასაკრავი სიის პანელის გადართვა"
 
 #: src/gtk/help-overlay.ui:67
 msgctxt "shortcut window"
 msgid "Toggle shuffling songs"
-msgstr ""
+msgstr "სიმღერების შემთხვევით დაკვრის გადართვა"
 
 #: src/gtk/help-overlay.ui:75
 msgctxt "shortcut window"
@@ -149,8 +152,8 @@ msgstr "დაკვრა"
 
 #: src/gtk/help-overlay.ui:78
 msgctxt "shortcut window"
-msgid "Toggle Play/Pause"
-msgstr ""
+msgid "Toggle play/pause"
+msgstr "დაკვრა/გაჩერების გადართვა"
 
 #: src/gtk/help-overlay.ui:84
 msgctxt "shortcut window"
@@ -165,131 +168,128 @@ msgstr "შემდეგი სიმღერა"
 #: src/gtk/help-overlay.ui:96
 msgctxt "shortcut window"
 msgid "Seek backwards in the current song"
-msgstr ""
+msgstr "მიმდინარე სიმღერის უკან გადახვევა"
 
 #: src/gtk/help-overlay.ui:102
 msgctxt "shortcut window"
 msgid "Seek forward in the current song"
-msgstr ""
+msgstr "მიმდინარე სიმღერის წინ გადახვევა"
 
-#: src/gtk/playback-control.ui:30
-msgctxt "a11y"
-msgid "Elapsed time"
-msgstr "გასული დრო"
-
-#: src/gtk/playback-control.ui:42
-msgctxt "a11y"
-msgid "Remaining time"
-msgstr "დარჩენილი დრო"
-
-#: src/gtk/playback-control.ui:64
+#: src/gtk/playback-control.ui:21
 msgid "Play the Previous Song"
 msgstr "წინა სიმღერის დაკვრა"
 
-#: src/gtk/playback-control.ui:69
+#: src/gtk/playback-control.ui:26
 msgctxt "a11y"
 msgid "Skip backwards"
 msgstr "უკან გამოტოვება"
 
-#: src/gtk/playback-control.ui:78
+#: src/gtk/playback-control.ui:35
 msgid "Toggle Play"
-msgstr "მედიის დაკვრა/გაჩერების გადართვა"
+msgstr "მედიის დაკვრის გადართვა"
 
-#: src/gtk/playback-control.ui:84
+#: src/gtk/playback-control.ui:41
 msgctxt "a11y"
 msgid "Toggle play"
-msgstr "მედიის დაკვრა/გაჩერების გადართვა"
+msgstr "მედიის დაკვრის გადართვა"
 
-#: src/gtk/playback-control.ui:93
+#: src/gtk/playback-control.ui:50
 msgid "Play the Next Song"
 msgstr "შემდეგი სიმღერის დაკვრა"
 
-#: src/gtk/playback-control.ui:98
+#: src/gtk/playback-control.ui:55
 msgctxt "a11y"
 msgid "Skip forward"
 msgstr "წინ გადახტომა"
 
-#: src/gtk/playback-control.ui:121
+#: src/gtk/playback-control.ui:78
 msgid "Toggle Playlist"
 msgstr "დასაკრავი სიის გადართვა"
 
-#: src/gtk/playback-control.ui:126
+#: src/gtk/playback-control.ui:83
 msgctxt "a11y"
 msgid "Toggle playlist"
 msgstr "დასაკრავი სიის გადართვა"
 
-#: src/gtk/playback-control.ui:135
+#: src/gtk/playback-control.ui:92
 msgid "Shuffle the Playlist"
 msgstr "დასაკრავი სის გადართვა"
 
-#: src/gtk/playback-control.ui:137
+#: src/gtk/playback-control.ui:94
 msgctxt "a11y"
 msgid "Shuffle"
 msgstr "შემთხვევით"
 
-#: src/gtk/playback-control.ui:156 src/playback_control.rs:153
+#: src/gtk/playback-control.ui:113 src/playback_control.rs:114
 msgid "Enable Repeat"
 msgstr "გამეორების ჩართვა"
 
-#: src/gtk/playback-control.ui:161
+#: src/gtk/playback-control.ui:118
 msgctxt "a11y"
 msgid "Repeat"
 msgstr "გამეორება"
 
-#: src/gtk/playback-control.ui:172
+#: src/gtk/playback-control.ui:129
 msgid "Main Menu"
 msgstr "მთავარი მენიუ"
 
-#: src/gtk/playback-control.ui:177
+#: src/gtk/playback-control.ui:135
 msgctxt "a11y"
 msgid "Primary menu"
 msgstr "ძირითადი მენიუ"
 
-#: src/gtk/playback-control.ui:193
+#: src/gtk/playback-control.ui:151
 msgid "Copy"
 msgstr "დააკოპირე"
 
-#: src/gtk/playback-control.ui:199
+#: src/gtk/playback-control.ui:157
 msgid "Add _Song"
 msgstr "_სიმღერის დამატება"
 
-#: src/gtk/playback-control.ui:203
+#: src/gtk/playback-control.ui:161
 msgid "Add _Folder"
 msgstr "_საქაღალდის დამატება"
 
-#: src/gtk/playback-control.ui:207
+#: src/gtk/playback-control.ui:165
 msgid "Clear"
 msgstr "გაწმენდა"
 
-#: src/gtk/playback-control.ui:213
+#: src/gtk/playback-control.ui:171
 msgid "_Match Cover Art"
-msgstr ""
+msgstr "_ყდის სურათის დამთხვევა"
 
-#: src/gtk/playback-control.ui:219
+#: src/gtk/playback-control.ui:175
+msgid "_Background Playback"
+msgstr "_ფონური დაკვრა"
+
+#: src/gtk/playback-control.ui:181
 msgid "_ReplayGain"
-msgstr ""
+msgstr "ხმის გაძლიერების კოეფიციენტ"
 
-#: src/gtk/playback-control.ui:221
+#: src/gtk/playback-control.ui:183
+msgctxt "replaygain-menu"
 msgid "_Album"
 msgstr "_ალბომი"
 
-#: src/gtk/playback-control.ui:226
-msgid "_Track"
-msgstr "_ტრეკი"
+#: src/gtk/playback-control.ui:188
+msgctxt "replaygain-menu"
+msgid "_Song"
+msgstr "_სიმღერა"
 
-#: src/gtk/playback-control.ui:231
-msgid "_Off"
-msgstr "_გამორთ"
+#: src/gtk/playback-control.ui:193
+msgctxt "replaygain-menu"
+msgid "_Disabled"
+msgstr "_გამორთულია"
 
-#: src/gtk/playback-control.ui:239
+#: src/gtk/playback-control.ui:201
 msgid "_Keyboard Shortcuts"
 msgstr "კლავიატურის მალსახმობები"
 
-#: src/gtk/playback-control.ui:243
+#: src/gtk/playback-control.ui:205
 msgid "_About Amberol"
 msgstr "Amberol-ის _შესახებ"
 
-#: src/gtk/playback-control.ui:247
+#: src/gtk/playback-control.ui:209
 msgid "_Quit"
 msgstr "დატოვება"
 
@@ -318,65 +318,85 @@ msgid "Remove Selected Songs"
 msgstr "მონიშნული სიმღერების წაშლა"
 
 #: src/gtk/window.ui:12
-msgid "Drop a song to add it to the queue"
-msgstr ""
+msgid "Drop a song to add it to the playlist"
+msgstr "სიმღერის რიგში ჩასამატებალად უბრალოდ დააგდეთ ფაილი აქ"
 
 #: src/gtk/window.ui:49
 msgid ""
 "Select a file or a folder, or drag files from your file manager to the "
 "application window to add songs to the playlist"
 msgstr ""
+"დასაკრავ სიაში ჩასამატებლად აირჩიეთ ფაილი ან საქაღალდე ან გადმოათრიეთ "
+"ფაილები თქვენი ფაილების მმართველიდან"
 
 #: src/gtk/window.ui:58
+msgid "Restore Playlist"
+msgstr "დასაკრავი სიის აღდგენა"
+
+#: src/gtk/window.ui:68
 msgid "Add Folder"
 msgstr "საქაღალდის დამატება"
 
-#: src/gtk/window.ui:68
-msgid "Add File"
-msgstr "ფაილის დამატება"
+#: src/gtk/window.ui:77
+msgid "Add Song"
+msgstr "სიმღერის დამატება"
+
+#: src/gtk/window.ui:161
+msgctxt "a11y"
+msgid "Elapsed time"
+msgstr "გასული დრო"
+
+#: src/gtk/window.ui:173
+msgctxt "a11y"
+msgid "Remaining time"
+msgstr "დარჩენილი დრო"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:188
+#: src/application.rs:227
 msgid "translator-credits"
 msgstr "მთარგმნელის შესახებ"
 
-#: src/playback_control.rs:157
-msgid "Repeat All Tracks"
-msgstr "ყველა ტრეკის გამეორება"
+#: src/application.rs:239
+msgid "Amberol needs to run in the background to play music"
+msgstr "Amberol-ს მუსიკის დასაკრავად ფონურად გაშვება სჭირდება"
 
-#: src/playback_control.rs:161
-msgid "Repeat the Current Track"
-msgstr "მიმდინარე ტრეკის გამეორება"
+#: src/playback_control.rs:118
+msgid "Repeat All Songs"
+msgstr "ყველა სიმღერის გამეორება"
 
-#: src/window.rs:409
+#: src/playback_control.rs:122
+msgid "Repeat the Current Song"
+msgstr "მიმდინარე სიმღერის გამეორება"
+
+#: src/window.rs:403
 msgid "_Add Song"
 msgstr "_სიმღერის დამატება"
 
-#: src/window.rs:410 src/window.rs:450
+#: src/window.rs:404 src/window.rs:444
 msgid "_Cancel"
 msgstr "_გაუქმება"
 
-#: src/window.rs:412
+#: src/window.rs:406
 msgid "Open File"
 msgstr "ფაილის გახსნა"
 
-#: src/window.rs:419
+#: src/window.rs:413
 msgid "Audio files"
 msgstr "აუდიო ფაილები"
 
-#: src/window.rs:428 src/window.rs:1276
+#: src/window.rs:422 src/window.rs:1315
 msgid "Unable to access files"
 msgstr "ფაილებთან წვდომის შეცდომა"
 
-#: src/window.rs:449
+#: src/window.rs:443
 msgid "_Add Folder"
 msgstr "_საქაღალდის დამატება"
 
-#: src/window.rs:452
+#: src/window.rs:446
 msgid "Open Folder"
 msgstr "საქაღალდის გახსნა"
 
-#: src/window.rs:463
+#: src/window.rs:457
 msgid "Unable to access folders"
 msgstr "საქაღალდეებთან წვდომის შეცდომა"
 
@@ -384,39 +404,38 @@ msgstr "საქაღალდეებთან წვდომის შე�
 msgid "No available song found"
 msgstr "სიმღერები მიუწვდომელია"
 
-#: src/window.rs:523
+#: src/window.rs:532
 msgid "No songs found"
 msgstr "სიმღერების გარეშე"
 
-#: src/window.rs:549
+#: src/window.rs:562
 msgid "Added a new song"
 msgstr "ახალი სიმღერა დაემატა"
 
-#: src/window.rs:550
+#: src/window.rs:563
 msgid "Play"
 msgstr "დაკვრა"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:559
+#: src/window.rs:572
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "დაემატა {} სიმღერა"
 msgstr[1] "დაემატა {} სიმღერა"
 
-#: src/window.rs:1012
+#: src/window.rs:1062
 msgid "Unable to access dropped files"
-msgstr ""
+msgstr "დაყრილ ფაილებთან წვდომის შეცდომა"
 
-#: src/window.rs:1106
+#: src/window.rs:1152
 msgid "{} minute"
 msgid_plural "{} minutes"
 msgstr[0] "{} წუთი"
 msgstr[1] "{} წუთი"
 
-#: src/window.rs:1117
-#| msgid "{hours} {minutes} remaining"
+#: src/window.rs:1163
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
 msgstr[0] "დარჩენილია {hours} საათი და {minutes} წუთი"
@@ -425,19 +444,19 @@ msgstr[1] "დარჩენილია {hours} საათი და {minute
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1127
+#: src/window.rs:1173
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "დარჩენილია {} წუთი"
 msgstr[1] "დარჩენილია {} წუთი"
 
-#: src/window.rs:1256
+#: src/window.rs:1295
 msgid "No song selected"
 msgstr "სიმღერა არჩეული არაა"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1261
+#: src/window.rs:1300
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "მონიშნულია {} სიმღერა"
@@ -446,17 +465,21 @@ msgstr[1] "მონიშნულია {} სიმღერა"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1314
+#: src/window.rs:1353
 msgid "Currently playing “{title}” by “{artist}”"
-msgstr ""
+msgstr "ვუკრავ “{title}”. შემსრულებელი: “{artist}”"
 
-#: src/window.rs:1360
-msgid "Amberol needs to run in the background to play music"
-msgstr ""
+#~ msgid "_Track"
+#~ msgstr "_ტრეკი"
 
-#: src/window.rs:1373
-msgid "Amberol cannot run in the background"
-msgstr ""
+#~ msgid "_Off"
+#~ msgstr "_გამორთ"
+
+#~ msgid "Repeat All Tracks"
+#~ msgstr "ყველა ტრეკის გამეორება"
+
+#~ msgid "Add File"
+#~ msgstr "ფაილის დამატება"
 
 #~ msgid "Plays music and nothing else"
 #~ msgstr "დაუკარით მუსიკა და არაფერი სხვა"

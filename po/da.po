@@ -1,14 +1,14 @@
 # Danish translation for amberol.
 # Copyright (C) 2022 amberol's COPYRIGHT HOLDER
 # This file is distributed under the same license as the amberol package.
-# Alan Mortensen <alanmortensen.am@gmail.com>, 2022.
+# Alan Mortensen <alanmortensen.am@gmail.com>, 2022-23.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: amberol main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
-"POT-Creation-Date: 2022-08-28 17:48+0000\n"
-"PO-Revision-Date: 2022-09-06 18:38+0200\n"
+"POT-Creation-Date: 2023-02-22 13:07+0000\n"
+"PO-Revision-Date: 2023-03-11 16:02+0100\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -69,7 +69,7 @@ msgstr "bland og gentag"
 msgid "MPRIS integration"
 msgstr "MPRIS-integration"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:41
+#: data/io.bassi.Amberol.appdata.xml.in.in:42
 msgid "Emmanuele Bassi"
 msgstr "Emmanuele Bassi"
 
@@ -77,15 +77,15 @@ msgstr "Emmanuele Bassi"
 msgid "Playback in progress"
 msgstr "Afspilning i gang"
 
-#: src/audio/song.rs:328
+#: src/audio/song.rs:337
 msgid "Unknown artist"
 msgstr "Ukendt kunstner"
 
-#: src/audio/song.rs:335
+#: src/audio/song.rs:344
 msgid "Unknown title"
 msgstr "Ukendt titel"
 
-#: src/audio/song.rs:342
+#: src/audio/song.rs:351
 msgid "Unknown album"
 msgstr "Ukendt album"
 
@@ -106,7 +106,7 @@ msgstr "Kopiér detaljer om sangen til udklipsholderen"
 
 #: src/gtk/help-overlay.ui:26
 msgctxt "shortcut window"
-msgid "Show Shortcuts"
+msgid "Show shortcuts"
 msgstr "Vis genveje"
 
 #: src/gtk/help-overlay.ui:32
@@ -151,7 +151,7 @@ msgstr "Afspilning"
 
 #: src/gtk/help-overlay.ui:78
 msgctxt "shortcut window"
-msgid "Toggle Play/Pause"
+msgid "Toggle play/pause"
 msgstr "Afspil/pause"
 
 #: src/gtk/help-overlay.ui:84
@@ -174,125 +174,129 @@ msgctxt "shortcut window"
 msgid "Seek forward in the current song"
 msgstr "Søg fremad i nuværende sang"
 
-#: src/gtk/playback-control.ui:30
+#: src/gtk/playback-control.ui:35
 msgctxt "a11y"
 msgid "Elapsed time"
 msgstr "Forløbet tid"
 
-#: src/gtk/playback-control.ui:42
+#: src/gtk/playback-control.ui:47
 msgctxt "a11y"
 msgid "Remaining time"
 msgstr "Resterende tid"
 
-#: src/gtk/playback-control.ui:64
+#: src/gtk/playback-control.ui:69
 msgid "Play the Previous Song"
 msgstr "Afspil forrige sang"
 
-#: src/gtk/playback-control.ui:69
+#: src/gtk/playback-control.ui:74
 msgctxt "a11y"
 msgid "Skip backwards"
 msgstr "Spring baglæns"
 
-#: src/gtk/playback-control.ui:78
+#: src/gtk/playback-control.ui:83
 msgid "Toggle Play"
 msgstr "Slå afspilning til/fra"
 
-#: src/gtk/playback-control.ui:84
+#: src/gtk/playback-control.ui:89
 msgctxt "a11y"
 msgid "Toggle play"
 msgstr "Slå afspilning til/fra"
 
-#: src/gtk/playback-control.ui:93
+#: src/gtk/playback-control.ui:98
 msgid "Play the Next Song"
 msgstr "Afspil næste sang"
 
-#: src/gtk/playback-control.ui:98
+#: src/gtk/playback-control.ui:103
 msgctxt "a11y"
 msgid "Skip forward"
 msgstr "Spring frem"
 
-#: src/gtk/playback-control.ui:121
+#: src/gtk/playback-control.ui:126
 msgid "Toggle Playlist"
 msgstr "Slå afspilningsliste til/fra"
 
-#: src/gtk/playback-control.ui:126
+#: src/gtk/playback-control.ui:131
 msgctxt "a11y"
 msgid "Toggle playlist"
 msgstr "Slå afspilningsliste til/fra"
 
-#: src/gtk/playback-control.ui:135
+#: src/gtk/playback-control.ui:140
 msgid "Shuffle the Playlist"
 msgstr "Bland afspilningslisten"
 
-#: src/gtk/playback-control.ui:137
+#: src/gtk/playback-control.ui:142
 msgctxt "a11y"
 msgid "Shuffle"
 msgstr "Bland"
 
-#: src/gtk/playback-control.ui:156 src/playback_control.rs:153
+#: src/gtk/playback-control.ui:161 src/playback_control.rs:153
 msgid "Enable Repeat"
 msgstr "Aktivér gentagelse"
 
-#: src/gtk/playback-control.ui:161
+#: src/gtk/playback-control.ui:166
 msgctxt "a11y"
 msgid "Repeat"
 msgstr "Gentag"
 
-#: src/gtk/playback-control.ui:172
+#: src/gtk/playback-control.ui:177
 msgid "Main Menu"
 msgstr "Hovedmenu"
 
-#: src/gtk/playback-control.ui:177
+#: src/gtk/playback-control.ui:183
 msgctxt "a11y"
 msgid "Primary menu"
 msgstr "Primær menu"
 
-#: src/gtk/playback-control.ui:193
+#: src/gtk/playback-control.ui:199
 msgid "Copy"
 msgstr "Kopiér"
 
-#: src/gtk/playback-control.ui:199
+#: src/gtk/playback-control.ui:205
 msgid "Add _Song"
 msgstr "Tilføj _sang"
 
-#: src/gtk/playback-control.ui:203
+#: src/gtk/playback-control.ui:209
 msgid "Add _Folder"
 msgstr "Tilføj _mappe"
 
-#: src/gtk/playback-control.ui:207
+#: src/gtk/playback-control.ui:213
 msgid "Clear"
 msgstr "Ryd"
 
-#: src/gtk/playback-control.ui:213
+#: src/gtk/playback-control.ui:219
 msgid "_Match Cover Art"
 msgstr "_Tilpas til pladeomslag"
 
+#: src/gtk/playback-control.ui:223
+msgid "_Background Playback"
+msgstr "_Afspilning i baggrunden"
+
 # https://en.wikipedia.org/wiki/ReplayGain
-#: src/gtk/playback-control.ui:219
+#: src/gtk/playback-control.ui:229
 msgid "_ReplayGain"
 msgstr "_ReplayGain"
 
-#: src/gtk/playback-control.ui:221
+#: src/gtk/playback-control.ui:231
 msgid "_Album"
 msgstr "_Album"
 
-#: src/gtk/playback-control.ui:226
+#: src/gtk/playback-control.ui:236
 msgid "_Track"
 msgstr "_Nummer"
 
-#: src/gtk/playback-control.ui:231
+#: src/gtk/playback-control.ui:241
 msgid "_Off"
 msgstr "_Fra"
 
-#: src/gtk/playback-control.ui:239
+#: src/gtk/playback-control.ui:249
 msgid "_Keyboard Shortcuts"
 msgstr "_Tastaturgenveje"
 
-#: src/gtk/playback-control.ui:243
+#: src/gtk/playback-control.ui:253
 msgid "_About Amberol"
 msgstr "_Om Amberol"
 
-#: src/gtk/playback-control.ui:247
+#: src/gtk/playback-control.ui:257
 msgid "_Quit"
 msgstr "Af_slut"
 
@@ -333,19 +337,19 @@ msgstr ""
 "programvinduet for at tilføje sange til afspilningslisten"
 
 #: src/gtk/window.ui:58
+msgid "Restore Playlist"
+msgstr "Gendan afspilningsliste"
+
+#: src/gtk/window.ui:68
 msgid "Add Folder"
 msgstr "Tilføj mappe"
 
-#: src/gtk/window.ui:68
-msgid "Add File"
-msgstr "Tilføj fil"
-
-#: src/application.rs:181
-msgid "Plays music and nothing else"
-msgstr "Afspiller musik og ikke andet"
+#: src/gtk/window.ui:77
+msgid "Add Song"
+msgstr "Tilføj sang"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:188
+#: src/application.rs:233
 msgid "translator-credits"
 msgstr ""
 "Alan Mortensen <alanmortensen.am@gmail.com>\n"
@@ -353,6 +357,10 @@ msgstr ""
 "Dansk-gruppen\n"
 "Websted http://dansk-gruppen.dk\n"
 "E-mail <dansk@dansk-gruppen.dk>"
+
+#: src/application.rs:247
+msgid "Amberol needs to run in the background to play music"
+msgstr "Amberol skal køre i baggrunden for at kunne afspille musik"
 
 #: src/playback_control.rs:157
 msgid "Repeat All Tracks"
@@ -362,76 +370,74 @@ msgstr "Gentag alle numre"
 msgid "Repeat the Current Track"
 msgstr "Gentag nuværende nummer"
 
-#: src/window.rs:409
+#: src/window.rs:397
 msgid "_Add Song"
 msgstr "_Tilføj sang"
 
-#: src/window.rs:410 src/window.rs:450
+#: src/window.rs:398 src/window.rs:438
 msgid "_Cancel"
 msgstr "_Annullér"
 
-#: src/window.rs:412
+#: src/window.rs:400
 msgid "Open File"
 msgstr "Åbn fil"
 
-#: src/window.rs:419
+#: src/window.rs:407
 msgid "Audio files"
 msgstr "Lydfiler"
 
-#: src/window.rs:428 src/window.rs:1276
+#: src/window.rs:416 src/window.rs:1306
 msgid "Unable to access files"
 msgstr "Kan ikke tilgå filer"
 
-#: src/window.rs:449
+#: src/window.rs:437
 msgid "_Add Folder"
 msgstr "_Tilføj mappe"
 
-#: src/window.rs:452
+#: src/window.rs:440
 msgid "Open Folder"
 msgstr "Åbn mappe"
 
-#: src/window.rs:463
+#: src/window.rs:451
 msgid "Unable to access folders"
 msgstr "Kan ikke tilgå mapper"
 
-#: src/window.rs:475
+#: src/window.rs:469
 msgid "No available song found"
 msgstr "Ingen tilgængelige sange fundet"
 
-#: src/window.rs:523
+#: src/window.rs:526
 msgid "No songs found"
 msgstr "Ingen sange fundet"
 
-#: src/window.rs:549
+#: src/window.rs:556
 msgid "Added a new song"
 msgstr "Tilføjede en ny sang"
 
-#: src/window.rs:550
+#: src/window.rs:557
 msgid "Play"
 msgstr "Afspil"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:559
+#: src/window.rs:566
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "Tilføjede en sang"
 msgstr[1] "Tilføjede {} sange"
 
-#: src/window.rs:1012
+#: src/window.rs:1056
 msgid "Unable to access dropped files"
 msgstr "Kan ikke tilgå droppede filer"
 
-#: src/window.rs:1106
+#: src/window.rs:1149
 msgid "{} minute"
 msgid_plural "{} minutes"
 msgstr[0] "{} minut"
 msgstr[1] "{} minutter"
 
-#: src/window.rs:1117
-#| msgid "{} minute remaining"
-#| msgid_plural "{} minutes remaining"
+#: src/window.rs:1160
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
 msgstr[0] "{hours} time {minutes} tilbage"
@@ -440,19 +446,19 @@ msgstr[1] "{hours} timer {minutes} tilbage"
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1127
+#: src/window.rs:1170
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "{} minut tilbage"
 msgstr[1] "{} minutter tilbage"
 
-#: src/window.rs:1256
+#: src/window.rs:1286
 msgid "No song selected"
 msgstr "Ingen sang valgt"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1261
+#: src/window.rs:1291
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "{} sang valgt"
@@ -461,17 +467,18 @@ msgstr[1] "{} sange valgt"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1314
+#: src/window.rs:1344
 msgid "Currently playing “{title}” by “{artist}”"
 msgstr "Afspiller nu “{title}” af “{artist}”"
 
-#: src/window.rs:1360
-msgid "Amberol needs to run in the background to play music"
-msgstr "Amberol skal køre i baggrunden for at kunne afspille musik"
+#~ msgid "Add File"
+#~ msgstr "Tilføj fil"
 
-#: src/window.rs:1373
-msgid "Amberol cannot run in the background"
-msgstr "Amberol kan ikke køre i baggrunden"
+#~ msgid "Plays music and nothing else"
+#~ msgstr "Afspiller musik og ikke andet"
+
+#~ msgid "Amberol cannot run in the background"
+#~ msgstr "Amberol kan ikke køre i baggrunden"
 
 #~ msgid "“{}” is not a supported audio file"
 #~ msgstr "“{}” er ikke en understøttet lydfil"

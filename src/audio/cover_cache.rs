@@ -182,7 +182,7 @@ impl CoverCache {
                 };
 
                 // The texture we draw on screen
-                let texture = cover_pixbuf.as_ref().map(gdk::Texture::for_pixbuf);
+                let texture = cover_pixbuf.as_ref().map(|p| gdk::Texture::for_pixbuf(&p));
 
                 // The color palette we use for styling the UI
                 let palette = if let Some(ref pixbuf) = cover_pixbuf {

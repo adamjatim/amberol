@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the amberol package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # mprogramavimai <mprogramavimai@gmail.com>, 2022.
-# Aurimas Černius <aurisc4@gmail.com>, 2022.
+# Aurimas Černius <aurisc4@gmail.com>, 2022-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: amberol main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
-"POT-Creation-Date: 2022-07-07 10:58+0000\n"
-"PO-Revision-Date: 2022-07-19 11:47+0300\n"
+"POT-Creation-Date: 2023-02-22 13:07+0000\n"
+"PO-Revision-Date: 2023-02-26 22:34+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -24,7 +24,7 @@ msgstr ""
 "X-DL-Branch: main\n"
 "X-DL-Domain: po\n"
 "X-DL-State: Translating\n"
-"X-Generator: Gtranslator 40.0\n"
+"X-Generator: Gtranslator 42.0\n"
 
 #: data/io.bassi.Amberol.desktop.in.in:3
 #: data/io.bassi.Amberol.appdata.xml.in.in:6
@@ -37,8 +37,8 @@ msgstr "Muzikos grotuvas"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.bassi.Amberol.desktop.in.in:12
-msgid "music;sound;player;media;audio;playlist;"
-msgstr "muzika;garsas;grotuvas;medija;garsas;grojaraštis;"
+msgid "music;player;media;audio;playlist;"
+msgstr "muzika;grotuvas;medija;garsas;grojaraštis;"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:7
 msgid "Plays music, and nothing else"
@@ -78,7 +78,7 @@ msgstr "maišymas ir kartojimas"
 msgid "MPRIS integration"
 msgstr "MPRIS integracija"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:41
+#: data/io.bassi.Amberol.appdata.xml.in.in:42
 msgid "Emmanuele Bassi"
 msgstr "Emmanuele Bassi"
 
@@ -86,15 +86,15 @@ msgstr "Emmanuele Bassi"
 msgid "Playback in progress"
 msgstr "Grojama"
 
-#: src/audio/song.rs:324
+#: src/audio/song.rs:337
 msgid "Unknown artist"
 msgstr "Nežinomas atlikėjas"
 
-#: src/audio/song.rs:331
+#: src/audio/song.rs:344
 msgid "Unknown title"
 msgstr "Nežinomas pavadinimas"
 
-#: src/audio/song.rs:338
+#: src/audio/song.rs:351
 msgid "Unknown album"
 msgstr "Nežinomas albumas"
 
@@ -115,7 +115,7 @@ msgstr "Kopijuoti dainos detales į iškarpinę"
 
 #: src/gtk/help-overlay.ui:26
 msgctxt "shortcut window"
-msgid "Show Shortcuts"
+msgid "Show shortcuts"
 msgstr "Rodyti trumpinius"
 
 #: src/gtk/help-overlay.ui:32
@@ -160,7 +160,7 @@ msgstr "Grojimas"
 
 #: src/gtk/help-overlay.ui:78
 msgctxt "shortcut window"
-msgid "Toggle Play/Pause"
+msgid "Toggle play/pause"
 msgstr "Groti/Pristabdyti"
 
 #: src/gtk/help-overlay.ui:84
@@ -183,108 +183,128 @@ msgctxt "shortcut window"
 msgid "Seek forward in the current song"
 msgstr "Į priekį laiku dabartinėje dainoje"
 
-#: src/gtk/playback-control.ui:30
+#: src/gtk/playback-control.ui:35
 msgctxt "a11y"
 msgid "Elapsed time"
 msgstr "Praleistas laikas"
 
-#: src/gtk/playback-control.ui:42
+#: src/gtk/playback-control.ui:47
 msgctxt "a11y"
 msgid "Remaining time"
 msgstr "Likęs laikas"
 
-#: src/gtk/playback-control.ui:64
+#: src/gtk/playback-control.ui:69
 msgid "Play the Previous Song"
 msgstr "Groti ankstesnę dainą"
 
-#: src/gtk/playback-control.ui:69
+#: src/gtk/playback-control.ui:74
 msgctxt "a11y"
 msgid "Skip backwards"
 msgstr "Prasukti atgal"
 
-#: src/gtk/playback-control.ui:78
+#: src/gtk/playback-control.ui:83
 msgid "Toggle Play"
 msgstr "Groti/pristabdyti"
 
-#: src/gtk/playback-control.ui:84
+#: src/gtk/playback-control.ui:89
 msgctxt "a11y"
 msgid "Toggle play"
 msgstr "Groti/pristabdyti"
 
-#: src/gtk/playback-control.ui:93
+#: src/gtk/playback-control.ui:98
 msgid "Play the Next Song"
 msgstr "Groti kitą dainą"
 
-#: src/gtk/playback-control.ui:98
+#: src/gtk/playback-control.ui:103
 msgctxt "a11y"
 msgid "Skip forward"
 msgstr "Prasukti pirmyn"
 
-#: src/gtk/playback-control.ui:121
+#: src/gtk/playback-control.ui:126
 msgid "Toggle Playlist"
 msgstr "Perjungti grojaraštį"
 
-#: src/gtk/playback-control.ui:126
+#: src/gtk/playback-control.ui:131
 msgctxt "a11y"
 msgid "Toggle playlist"
 msgstr "Perjungti grojaraštį"
 
-#: src/gtk/playback-control.ui:135
+#: src/gtk/playback-control.ui:140
 msgid "Shuffle the Playlist"
 msgstr "Maišyti grojaraštį"
 
-#: src/gtk/playback-control.ui:137
+#: src/gtk/playback-control.ui:142
 msgctxt "a11y"
 msgid "Shuffle"
 msgstr "Maišyti"
 
-#: src/gtk/playback-control.ui:156 src/playback_control.rs:153
+#: src/gtk/playback-control.ui:161 src/playback_control.rs:153
 msgid "Enable Repeat"
 msgstr "Įjungti kartojimą"
 
-#: src/gtk/playback-control.ui:161
+#: src/gtk/playback-control.ui:166
 msgctxt "a11y"
 msgid "Repeat"
 msgstr "Kartoti"
 
-#: src/gtk/playback-control.ui:172
+#: src/gtk/playback-control.ui:177
 msgid "Main Menu"
 msgstr "Pagrindinis meniu "
 
-#: src/gtk/playback-control.ui:177
+#: src/gtk/playback-control.ui:183
 msgctxt "a11y"
 msgid "Primary menu"
 msgstr "Pirminis meniu"
 
-#: src/gtk/playback-control.ui:193
+#: src/gtk/playback-control.ui:199
 msgid "Copy"
 msgstr "Kopijuoti"
 
-#: src/gtk/playback-control.ui:199
+#: src/gtk/playback-control.ui:205
 msgid "Add _Song"
 msgstr "Pridėti _dainą"
 
-#: src/gtk/playback-control.ui:203
+#: src/gtk/playback-control.ui:209
 msgid "Add _Folder"
 msgstr "Pridėti _aplanką"
 
-#: src/gtk/playback-control.ui:207
+#: src/gtk/playback-control.ui:213
 msgid "Clear"
 msgstr "Išvalyti"
 
-#: src/gtk/playback-control.ui:213
+#: src/gtk/playback-control.ui:219
 msgid "_Match Cover Art"
 msgstr "Sutapti su _viršeliu"
 
-#: src/gtk/playback-control.ui:219
+#: src/gtk/playback-control.ui:223
+msgid "_Background Playback"
+msgstr "Grojimas _fone"
+
+#: src/gtk/playback-control.ui:229
+msgid "_ReplayGain"
+msgstr "_ReplayGain"
+
+#: src/gtk/playback-control.ui:231
+msgid "_Album"
+msgstr "_Albumas"
+
+#: src/gtk/playback-control.ui:236
+msgid "_Track"
+msgstr "_Takelis"
+
+#: src/gtk/playback-control.ui:241
+msgid "_Off"
+msgstr "_Išjungta"
+
+#: src/gtk/playback-control.ui:249
 msgid "_Keyboard Shortcuts"
 msgstr "_Klaviatūros trumpiniai"
 
-#: src/gtk/playback-control.ui:223
+#: src/gtk/playback-control.ui:253
 msgid "_About Amberol"
 msgstr "_Apie Amberol"
 
-#: src/gtk/playback-control.ui:227
+#: src/gtk/playback-control.ui:257
 msgid "_Quit"
 msgstr "_Išeiti"
 
@@ -316,7 +336,7 @@ msgstr "Pašalinti pasirinktas dainas"
 msgid "Drop a song to add it to the queue"
 msgstr "Numeskite dainą jai pridėti į eilę"
 
-#: src/gtk/window.ui:48
+#: src/gtk/window.ui:49
 msgid ""
 "Select a file or a folder, or drag files from your file manager to the "
 "application window to add songs to the playlist"
@@ -324,25 +344,29 @@ msgstr ""
 "Pasirinkti failą arba aplanką, arba užmeskite failus iš jūsų failų naršyklės "
 "į programos langą dainoms pridėti į grojaraštį"
 
-#: src/gtk/window.ui:57
+#: src/gtk/window.ui:58
+msgid "Restore Playlist"
+msgstr "Atstatyti grojaraštį"
+
+#: src/gtk/window.ui:68
 msgid "Add Folder"
 msgstr "Pridėti aplanką"
 
-#: src/gtk/window.ui:67
-msgid "Add File"
-msgstr "Pridėti failą"
-
-#: src/application.rs:181
-msgid "Plays music and nothing else"
-msgstr "Groja muziką ir nieko daugiau"
+#: src/gtk/window.ui:77
+msgid "Add Song"
+msgstr "Pridėti dainą"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:188
+#: src/application.rs:233
 msgid "translator-credits"
 msgstr ""
 "Išvertė:\n"
 "Aurimas Černius <aurisc4@gmail.com>\n"
 "Mprogramavimai"
+
+#: src/application.rs:247
+msgid "Amberol needs to run in the background to play music"
+msgstr "Amberol turi veikti fone, kad grotų muziką"
 
 #: src/playback_control.rs:157
 msgid "Repeat All Tracks"
@@ -352,73 +376,99 @@ msgstr "Kartoti visus takelius"
 msgid "Repeat the Current Track"
 msgstr "Kartoti dabartinį takelį"
 
-#: src/window.rs:394
+#: src/window.rs:397
 msgid "_Add Song"
 msgstr "_Pridėti dainą"
 
-#: src/window.rs:395 src/window.rs:430
+#: src/window.rs:398 src/window.rs:438
 msgid "_Cancel"
 msgstr "_Atsisakyti"
 
-#: src/window.rs:397
+#: src/window.rs:400
 msgid "Open File"
 msgstr "Atverti failą"
 
-#: src/window.rs:404
+#: src/window.rs:407
 msgid "Audio files"
 msgstr "Garso failai"
 
-#: src/window.rs:429
+#: src/window.rs:416 src/window.rs:1306
+msgid "Unable to access files"
+msgstr "Nepavyksta pasiekti failų"
+
+#: src/window.rs:437
 msgid "_Add Folder"
 msgstr "Pridėti _aplanką"
 
-#: src/window.rs:432
+#: src/window.rs:440
 msgid "Open Folder"
 msgstr "Atverti aplanką"
 
-#: src/window.rs:450 src/window.rs:552
+#: src/window.rs:451
+msgid "Unable to access folders"
+msgstr "Nepavykta pasiekti aplankų"
+
+#: src/window.rs:469
 msgid "No available song found"
 msgstr "Nerasta pasiekiamų dainų"
 
-#: src/window.rs:498
+#: src/window.rs:526
 msgid "No songs found"
 msgstr "Nerasta dainų"
 
-#: src/window.rs:524
+#: src/window.rs:556
 msgid "Added a new song"
 msgstr "Pridėta nauja daina"
 
-#: src/window.rs:525
+#: src/window.rs:557
 msgid "Play"
 msgstr "Groti"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:534
+#: src/window.rs:566
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "Pridėta {} daina"
 msgstr[1] "Pridėtos {} dainos"
 msgstr[2] "Pridėtos {} dainų"
 
+#: src/window.rs:1056
+msgid "Unable to access dropped files"
+msgstr "Nepavykta pasiekti numestų failų"
+
+#: src/window.rs:1149
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{} minutė"
+msgstr[1] "{} minutės"
+msgstr[2] "{} minučių"
+
+#: src/window.rs:1160
+msgid "{hours} hour {minutes} remaining"
+msgid_plural "{hours} hours {minutes} remaining"
+msgstr[0] "{} minutė"
+msgstr[1] "{} minutės"
+msgstr[2] "{} minučių"
+
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1077
+#: src/window.rs:1170
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "Liko {} minutė"
 msgstr[1] "Liko {} minutės"
 msgstr[2] "Liko {} minučių"
 
-#: src/window.rs:1204
+#: src/window.rs:1286
 msgid "No song selected"
 msgstr "Jokia daina nepasirinkta"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1209
+#: src/window.rs:1291
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "Pasirinkta {} daina"
@@ -428,14 +478,15 @@ msgstr[2] "Pasirinktos {} dainų"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1257
+#: src/window.rs:1344
 msgid "Currently playing “{title}” by “{artist}”"
 msgstr "Dabar grojama „{artist}“ „{title}“"
 
-#: src/window.rs:1285
-msgid "Amberol needs to run in the background to play music"
-msgstr "Amberol turi veikti fone, kad grotų muziką"
+#~ msgid "Add File"
+#~ msgstr "Pridėti failą"
 
-#: src/window.rs:1298
-msgid "Amberol cannot run in the background"
-msgstr "Amberol negali veikti fone"
+#~ msgid "Plays music and nothing else"
+#~ msgstr "Groja muziką ir nieko daugiau"
+
+#~ msgid "Amberol cannot run in the background"
+#~ msgstr "Amberol negali veikti fone"

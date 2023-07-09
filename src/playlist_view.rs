@@ -52,16 +52,16 @@ mod imp {
     }
 
     impl ObjectImpl for PlaylistView {
-        fn dispose(&self, obj: &Self::Type) {
-            while let Some(child) = obj.first_child() {
+        fn dispose(&self) {
+            while let Some(child) = self.obj().first_child() {
                 child.unparent();
             }
         }
 
-        fn constructed(&self, obj: &Self::Type) {
-            self.parent_constructed(obj);
+        fn constructed(&self) {
+            self.parent_constructed();
 
-            obj.setup_searchbar();
+            self.obj().setup_searchbar();
         }
     }
 
@@ -76,7 +76,7 @@ glib::wrapper! {
 
 impl Default for PlaylistView {
     fn default() -> Self {
-        glib::Object::new(&[]).expect("Failed to create PlaylistView")
+        glib::Object::new()
     }
 }
 

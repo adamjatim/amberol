@@ -8,11 +8,9 @@ use std::{
     time::Instant,
 };
 
-use glib::{
-    ParamFlags, ParamSpec, ParamSpecBoolean, ParamSpecObject, ParamSpecString, ParamSpecUInt, Value,
-};
+use glib::{ParamSpec, ParamSpecBoolean, ParamSpecObject, ParamSpecString, ParamSpecUInt, Value};
 use gtk::{gdk, gio, glib, prelude::*, subclass::prelude::*};
-use lofty::Accessor;
+use lofty::{Accessor, TaggedFileExt};
 use log::{debug, warn};
 use once_cell::sync::Lazy;
 use sha2::{Digest, Sha256};
@@ -89,7 +87,7 @@ impl SongData {
         let file = gio::File::for_uri(uri);
         let path = file.path().expect("Unable to find file");
 
-        let tagged_file = match lofty::read_from_path(&path, true) {
+        let tagged_file = match lofty::read_from_path(&path) {
             Ok(f) => f,
             Err(e) => {
                 warn!("Unable to open file {:?}: {}", path, e);
@@ -165,7 +163,12 @@ impl SongData {
         let properties = lofty::AudioFile::properties(&tagged_file);
         let duration = properties.duration().as_secs();
 
-        debug!("Song loading time: {} ms", now.elapsed().as_millis());
+        debug!(
+            "Song {:?} ('{:?}') loading time: {} ms",
+            &uuid,
+            &title,
+            now.elapsed().as_millis()
+        );
 
         SongData {
             artist,
@@ -223,34 +226,25 @@ mod imp {
         fn properties() -> &'static [ParamSpec] {
             static PROPERTIES: Lazy<Vec<ParamSpec>> = Lazy::new(|| {
                 vec![
-                    ParamSpecString::new(
-                        "uri",
-                        "",
-                        "",
-                        None,
-                        ParamFlags::READWRITE | ParamFlags::CONSTRUCT_ONLY,
-                    ),
-                    ParamSpecString::new("artist", "", "", None, ParamFlags::READABLE),
-                    ParamSpecString::new("title", "", "", None, ParamFlags::READABLE),
-                    ParamSpecString::new("album", "", "", None, ParamFlags::READABLE),
-                    ParamSpecUInt::new("duration", "", "", 0, u32::MAX, 0, ParamFlags::READABLE),
-                    ParamSpecObject::new(
-                        "cover",
-                        "",
-                        "",
-                        gdk::Texture::static_type(),
-                        ParamFlags::READABLE,
-                    ),
-                    ParamSpecBoolean::new("playing", "", "", false, ParamFlags::READWRITE),
-                    ParamSpecBoolean::new("selected", "", "", false, ParamFlags::READWRITE),
+                    ParamSpecString::builder("uri").construct_only().build(),
+                    ParamSpecString::builder("artist").read_only().build(),
+                    ParamSpecString::builder("title").read_only().build(),
+                    ParamSpecString::builder("album").read_only().build(),
+                    ParamSpecUInt::builder("duration").read_only().build(),
+                    ParamSpecObject::builder::<gdk::Texture>("cover")
+                        .read_only()
+                        .build(),
+                    ParamSpecBoolean::builder("playing").build(),
+                    ParamSpecBoolean::builder("selected").build(),
                 ]
             });
             PROPERTIES.as_ref()
         }
 
-        fn set_property(&self, obj: &Self::Type, _id: usize, value: &Value, pspec: &ParamSpec) {
+        fn set_property(&self, _id: usize, value: &Value, pspec: &ParamSpec) {
             match pspec.name() {
                 "uri" => {
+                    let obj = self.obj();
                     if let Ok(p) = value.get::<&str>() {
                         self.data.replace(SongData::from_uri(p));
                         obj.notify("artist");
@@ -272,7 +266,8 @@ mod imp {
             }
         }
 
-        fn property(&self, obj: &Self::Type, _id: usize, pspec: &ParamSpec) -> Value {
+        fn property(&self, _id: usize, pspec: &ParamSpec) -> Value {
+            let obj = self.obj();
             match pspec.name() {
                 "artist" => obj.artist().to_value(),
                 "title" => obj.title().to_value(),
@@ -294,7 +289,9 @@ glib::wrapper! {
 
 impl Song {
     pub fn new(uri: &str) -> Self {
-        glib::Object::new::<Self>(&[("uri", &uri)]).expect("Failed to create Song object")
+        glib::Object::builder::<Self>()
+            .property("uri", &uri)
+            .build()
     }
 
     pub fn from_uri(uri: &str) -> Result<Song, &'static str> {
@@ -307,7 +304,7 @@ impl Song {
     }
 
     pub fn empty() -> Self {
-        glib::Object::new::<Self>(&[]).expect("Failed to create an empty Song object")
+        glib::Object::new()
     }
 
     pub fn equals(&self, other: &Self) -> bool {

@@ -1,23 +1,22 @@
 # Serbian translation for amberol.
 # Copyright @ 2022 amberol's COPYRIGHT HOLDER
 # This file is distributed under the same license as the amberol package.
-# Мирослав Николић <miroslavnikolić@rocketmail.com>, 2022.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2022-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: amberol main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
-"POT-Creation-Date: 2022-08-28 17:48+0000\n"
-"PO-Revision-Date: 2022-09-11 13:13+0200\n"
-"Last-Translator: Мирослав Николић <miroslavnikolić@rocketmail.com>\n"
-"Language-Team: Serbian <српски <gnome-sr@googlegroups.org>>\n"
+"POT-Creation-Date: 2023-02-22 13:07+0000\n"
+"PO-Revision-Date: 2023-03-07 06:42+0100\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Language-Team: Serbian <gnome-sr@googlegroups.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
-"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
-"X-Generator: Gtranslator 3.36.0\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
 
 #: data/io.bassi.Amberol.desktop.in.in:3
 #: data/io.bassi.Amberol.appdata.xml.in.in:6
@@ -30,7 +29,6 @@ msgstr "Програм за пуштање музике"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.bassi.Amberol.desktop.in.in:12
-#| msgid "music;sound;player;media;audio;playlist;"
 msgid "music;player;media;audio;playlist;"
 msgstr "музика;пуштач;медија;аудио;списак;music;player;media;audio;playlist;"
 
@@ -72,7 +70,7 @@ msgstr "мешање и понављање"
 msgid "MPRIS integration"
 msgstr "МПРИС обједињавање"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:41
+#: data/io.bassi.Amberol.appdata.xml.in.in:42
 msgid "Emmanuele Bassi"
 msgstr "Емануеле Баси"
 
@@ -80,15 +78,15 @@ msgstr "Емануеле Баси"
 msgid "Playback in progress"
 msgstr "Пуштање је у току"
 
-#: src/audio/song.rs:328
+#: src/audio/song.rs:337
 msgid "Unknown artist"
 msgstr "Непознат извођач"
 
-#: src/audio/song.rs:335
+#: src/audio/song.rs:344
 msgid "Unknown title"
 msgstr "Непознат наслов"
 
-#: src/audio/song.rs:342
+#: src/audio/song.rs:351
 msgid "Unknown album"
 msgstr "Непознат албум"
 
@@ -108,8 +106,10 @@ msgid "Copy song details to the clipboard"
 msgstr "Умножава податке о песми у оставу"
 
 #: src/gtk/help-overlay.ui:26
+#| msgctxt "shortcut window"
+#| msgid "Show Shortcuts"
 msgctxt "shortcut window"
-msgid "Show Shortcuts"
+msgid "Show shortcuts"
 msgstr "Приказује пречице"
 
 #: src/gtk/help-overlay.ui:32
@@ -153,8 +153,10 @@ msgid "Playback"
 msgstr "Пушта песму"
 
 #: src/gtk/help-overlay.ui:78
+#| msgctxt "shortcut window"
+#| msgid "Toggle Play/Pause"
 msgctxt "shortcut window"
-msgid "Toggle Play/Pause"
+msgid "Toggle play/pause"
 msgstr "Окида пуштање/паузирање"
 
 #: src/gtk/help-overlay.ui:84
@@ -177,124 +179,128 @@ msgctxt "shortcut window"
 msgid "Seek forward in the current song"
 msgstr "Премотава унапред у текућој песми"
 
-#: src/gtk/playback-control.ui:30
+#: src/gtk/playback-control.ui:35
 msgctxt "a11y"
 msgid "Elapsed time"
 msgstr "Протекло време"
 
-#: src/gtk/playback-control.ui:42
+#: src/gtk/playback-control.ui:47
 msgctxt "a11y"
 msgid "Remaining time"
 msgstr "Преостало време"
 
-#: src/gtk/playback-control.ui:64
+#: src/gtk/playback-control.ui:69
 msgid "Play the Previous Song"
 msgstr "Пусти претходну песму"
 
-#: src/gtk/playback-control.ui:69
+#: src/gtk/playback-control.ui:74
 msgctxt "a11y"
 msgid "Skip backwards"
 msgstr "Премотај унназад"
 
-#: src/gtk/playback-control.ui:78
+#: src/gtk/playback-control.ui:83
 msgid "Toggle Play"
 msgstr "Окини пуштање"
 
-#: src/gtk/playback-control.ui:84
+#: src/gtk/playback-control.ui:89
 msgctxt "a11y"
 msgid "Toggle play"
 msgstr "Окините пуштање"
 
-#: src/gtk/playback-control.ui:93
+#: src/gtk/playback-control.ui:98
 msgid "Play the Next Song"
 msgstr "Пусти следећу песму"
 
-#: src/gtk/playback-control.ui:98
+#: src/gtk/playback-control.ui:103
 msgctxt "a11y"
 msgid "Skip forward"
 msgstr "Премотајте унапред"
 
-#: src/gtk/playback-control.ui:121
+#: src/gtk/playback-control.ui:126
 msgid "Toggle Playlist"
 msgstr "Окини списак песама"
 
-#: src/gtk/playback-control.ui:126
+#: src/gtk/playback-control.ui:131
 msgctxt "a11y"
 msgid "Toggle playlist"
 msgstr "Окините списак песама"
 
-#: src/gtk/playback-control.ui:135
+#: src/gtk/playback-control.ui:140
 msgid "Shuffle the Playlist"
 msgstr "Измешајте списак песама"
 
-#: src/gtk/playback-control.ui:137
+#: src/gtk/playback-control.ui:142
 msgctxt "a11y"
 msgid "Shuffle"
 msgstr "Измешај"
 
-#: src/gtk/playback-control.ui:156 src/playback_control.rs:153
+#: src/gtk/playback-control.ui:161 src/playback_control.rs:153
 msgid "Enable Repeat"
 msgstr "Укључи понављање"
 
-#: src/gtk/playback-control.ui:161
+#: src/gtk/playback-control.ui:166
 msgctxt "a11y"
 msgid "Repeat"
 msgstr "Понављај"
 
-#: src/gtk/playback-control.ui:172
+#: src/gtk/playback-control.ui:177
 msgid "Main Menu"
 msgstr "Главни изборник"
 
-#: src/gtk/playback-control.ui:177
+#: src/gtk/playback-control.ui:183
 msgctxt "a11y"
 msgid "Primary menu"
 msgstr "Главни изборник"
 
-#: src/gtk/playback-control.ui:193
+#: src/gtk/playback-control.ui:199
 msgid "Copy"
 msgstr "Умножите"
 
-#: src/gtk/playback-control.ui:199
+#: src/gtk/playback-control.ui:205
 msgid "Add _Song"
 msgstr "Додај _песму"
 
-#: src/gtk/playback-control.ui:203
+#: src/gtk/playback-control.ui:209
 msgid "Add _Folder"
 msgstr "Додај _фасциклу"
 
-#: src/gtk/playback-control.ui:207
+#: src/gtk/playback-control.ui:213
 msgid "Clear"
 msgstr "Очисти"
 
-#: src/gtk/playback-control.ui:213
+#: src/gtk/playback-control.ui:219
 msgid "_Match Cover Art"
 msgstr "_Поклопи слику омота"
 
-#: src/gtk/playback-control.ui:219
+#: src/gtk/playback-control.ui:223
+msgid "_Background Playback"
+msgstr "Пуштање у _позадини"
+
+#: src/gtk/playback-control.ui:229
 msgid "_ReplayGain"
 msgstr "_Појачај понављање"
 
-#: src/gtk/playback-control.ui:221
+#: src/gtk/playback-control.ui:231
 msgid "_Album"
 msgstr "_Албум"
 
-#: src/gtk/playback-control.ui:226
+#: src/gtk/playback-control.ui:236
 msgid "_Track"
 msgstr "_Нумера"
 
-#: src/gtk/playback-control.ui:231
+#: src/gtk/playback-control.ui:241
 msgid "_Off"
 msgstr "_Искључи"
 
-#: src/gtk/playback-control.ui:239
+#: src/gtk/playback-control.ui:249
 msgid "_Keyboard Shortcuts"
 msgstr "_Пречице тастатуре"
 
-#: src/gtk/playback-control.ui:243
+#: src/gtk/playback-control.ui:253
 msgid "_About Amberol"
 msgstr "_О Амберолу"
 
-#: src/gtk/playback-control.ui:247
+#: src/gtk/playback-control.ui:257
 msgid "_Quit"
 msgstr "_Изађи"
 
@@ -335,24 +341,30 @@ msgstr ""
 "датотека до прозора програма да додате песме на списак песама"
 
 #: src/gtk/window.ui:58
+#| msgid "Toggle Playlist"
+msgid "Restore Playlist"
+msgstr "Врати списак песама"
+
+#: src/gtk/window.ui:68
 msgid "Add Folder"
 msgstr "Додај фасциклу"
 
-#: src/gtk/window.ui:68
-msgid "Add File"
-msgstr "Додај датотеку"
-
-#: src/application.rs:181
-msgid "Plays music and nothing else"
-msgstr "Пуштајте музику и ништа друго"
+#: src/gtk/window.ui:77
+#| msgid "_Add Song"
+msgid "Add Song"
+msgstr "Додај песму"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:188
+#: src/application.rs:233
 msgid "translator-credits"
 msgstr ""
 "\"Мирослав Николић <miroslavnikolic@rocketmail.com>\\n\"\n"
 "\"\\n\"\n"
 "\"Prevod.org — превод на српски језик.\""
+
+#: src/application.rs:247
+msgid "Amberol needs to run in the background to play music"
+msgstr "Амберол мора да ради у позадини да би пуштао музику"
 
 #: src/playback_control.rs:157
 msgid "Repeat All Tracks"
@@ -362,58 +374,58 @@ msgstr "Понови све нумере"
 msgid "Repeat the Current Track"
 msgstr "Понови текућу нумеру"
 
-#: src/window.rs:409
+#: src/window.rs:397
 msgid "_Add Song"
 msgstr "_Додај песму"
 
-#: src/window.rs:410 src/window.rs:450
+#: src/window.rs:398 src/window.rs:438
 msgid "_Cancel"
 msgstr "_Откажи"
 
-#: src/window.rs:412
+#: src/window.rs:400
 msgid "Open File"
 msgstr "Отвори датотеку"
 
-#: src/window.rs:419
+#: src/window.rs:407
 msgid "Audio files"
 msgstr "Аудио датотеке"
 
-#: src/window.rs:428 src/window.rs:1276
+#: src/window.rs:416 src/window.rs:1306
 msgid "Unable to access files"
 msgstr "Не могу да приступим датотекама"
 
-#: src/window.rs:449
+#: src/window.rs:437
 msgid "_Add Folder"
 msgstr "_Додај фасциклу"
 
-#: src/window.rs:452
+#: src/window.rs:440
 msgid "Open Folder"
 msgstr "Отворите фасциклу"
 
-#: src/window.rs:463
+#: src/window.rs:451
 msgid "Unable to access folders"
 msgstr "Не могу да приступим фасциклама"
 
-#: src/window.rs:475
+#: src/window.rs:469
 msgid "No available song found"
 msgstr "Нисам нашао доступних песама"
 
-#: src/window.rs:523
+#: src/window.rs:526
 msgid "No songs found"
 msgstr "Нисам нашао ниједну песму"
 
-#: src/window.rs:549
+#: src/window.rs:556
 msgid "Added a new song"
 msgstr "Додата је нова песма"
 
-#: src/window.rs:550
+#: src/window.rs:557
 msgid "Play"
 msgstr "Пусти"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:559
+#: src/window.rs:566
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "Додата је {} песма"
@@ -421,13 +433,11 @@ msgstr[1] "Додате су {} песме"
 msgstr[2] "Додато је {} песама"
 msgstr[3] "Додата је једна песма"
 
-#: src/window.rs:1012
+#: src/window.rs:1056
 msgid "Unable to access dropped files"
 msgstr "Не могу да приступим убаченим датотекама"
 
-#: src/window.rs:1106
-#| msgid "{} minute remaining"
-#| msgid_plural "{} minutes remaining"
+#: src/window.rs:1149
 msgid "{} minute"
 msgid_plural "{} minutes"
 msgstr[0] "{} минут"
@@ -435,9 +445,7 @@ msgstr[1] "{} минута"
 msgstr[2] "{} минута"
 msgstr[3] "Један минут"
 
-#: src/window.rs:1117
-#| msgid "{} minute remaining"
-#| msgid_plural "{} minutes remaining"
+#: src/window.rs:1160
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
 msgstr[0] "Преостаје {} минут"
@@ -448,7 +456,7 @@ msgstr[3] "Преостало време: {hours} {minutes}"
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1127
+#: src/window.rs:1170
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "Преостаје {} минут"
@@ -456,13 +464,13 @@ msgstr[1] "Преостају {} минута"
 msgstr[2] "Преостаје {} минута"
 msgstr[3] "Преостаје један минут"
 
-#: src/window.rs:1256
+#: src/window.rs:1286
 msgid "No song selected"
 msgstr "Није изабрана ниједна песма"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1261
+#: src/window.rs:1291
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "Изабрана је {} песма"
@@ -473,14 +481,15 @@ msgstr[3] "Изабрана је једна песма"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1314
+#: src/window.rs:1344
 msgid "Currently playing “{title}” by “{artist}”"
 msgstr "Тренутно пуштам „{title}“ коју изводи {artist}"
 
-#: src/window.rs:1360
-msgid "Amberol needs to run in the background to play music"
-msgstr "Амберол мора да ради у позадини да би пуштао музику"
+#~ msgid "Add File"
+#~ msgstr "Додај датотеку"
 
-#: src/window.rs:1373
-msgid "Amberol cannot run in the background"
-msgstr "Амберол не може да ради у позадини"
+#~ msgid "Plays music and nothing else"
+#~ msgstr "Пуштајте музику и ништа друго"
+
+#~ msgid "Amberol cannot run in the background"
+#~ msgstr "Амберол не може да ради у позадини"

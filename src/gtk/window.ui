@@ -9,7 +9,7 @@
       <object class="GtkWindowHandle">
         <child>
           <object class="DragOverlay" id="drag_overlay">
-            <property name="title" translatable="yes">Drop a song to add it to the queue</property>
+            <property name="title" translatable="yes">Drop a song to add it to the playlist</property>
             <property name="child">
 
               <object class="AdwToastOverlay" id="toast_overlay">
@@ -54,9 +54,9 @@
                                         <property name="homogeneous">true</property>
                                         <property name="spacing">12</property>
                                         <child>
-                                          <object class="GtkButton" id="add_folder_button">
-                                            <property name="label" translatable="yes">Add Folder</property>
-                                            <property name="action-name">queue.add-folder</property>
+                                          <object class="GtkButton" id="restore_playlist_button">
+                                            <property name="label" translatable="yes">Restore Playlist</property>
+                                            <property name="action-name">queue.restore-playlist</property>
                                             <style>
                                               <class name="suggested-action"/>
                                               <class name="pill"/>
@@ -64,8 +64,17 @@
                                           </object>
                                         </child>
                                         <child>
+                                          <object class="GtkButton" id="add_folder_button">
+                                            <property name="label" translatable="yes">Add Folder</property>
+                                            <property name="action-name">queue.add-folder</property>
+                                            <style>
+                                              <class name="pill"/>
+                                            </style>
+                                          </object>
+                                        </child>
+                                        <child>
                                           <object class="GtkButton">
-                                            <property name="label" translatable="yes">Add File</property>
+                                            <property name="label" translatable="yes">Add Song</property>
                                             <property name="action-name">queue.add-song</property>
                                             <style>
                                               <class name="pill"/>
@@ -116,6 +125,63 @@
                                     <style>
                                       <class name="main-box"/>
                                     </style>
+
+                                    <!-- Song cover -->
+                                    <child>
+                                      <object class="AmberolSongCover" id="song_cover">
+                                      </object>
+                                    </child>
+
+                                    <!-- Song position -->
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="orientation">vertical</property>
+                                        <property name="spacing">2</property>
+                                        <property name="margin-bottom">12</property>
+                                        <property name="width-request">256</property>
+                                        <child>
+                                          <object class="GtkBox">
+                                            <property name="halign">center</property>
+                                            <child>
+                                              <object class="AmberolWaveformView" id="waveform_view">
+                                                <property name="can-focus">true</property>
+                                              </object>
+                                            </child>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkCenterBox">
+                                            <property name="orientation">horizontal</property>
+                                            <property name="width-request">256</property>
+                                            <property name="halign">center</property>
+                                            <child type="start">
+                                              <object class="GtkLabel" id="elapsed_label">
+                                                <property name="label">0:00</property>
+                                                <accessibility>
+                                                  <property name="label" translatable="yes" context="a11y">Elapsed time</property>
+                                                </accessibility>
+                                                <style>
+                                                  <class name="caption"/>
+                                                  <class name="numeric"/>
+                                                </style>
+                                              </object>
+                                            </child>
+                                            <child type="end">
+                                              <object class="GtkLabel" id="remaining_label">
+                                                <property name="label">0:00</property>
+                                                <accessibility>
+                                                  <property name="label" translatable="yes" context="a11y">Remaining time</property>
+                                                </accessibility>
+                                                <style>
+                                                  <class name="caption"/>
+                                                  <class name="numeric"/>
+                                                </style>
+                                              </object>
+                                            </child>
+                                          </object>
+                                        </child>
+                                      </object>
+                                    </child>
 
                                     <!-- Song details -->
                                     <child>

@@ -1,69 +1,76 @@
-# Basque translation for amberol.
+# Korean translation for amberol.
 # Copyright (C) 2022 amberol's COPYRIGHT HOLDER
 # This file is distributed under the same license as the amberol package.
-# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2022, 2023.
+# Seong-ho Cho <shcho@gnome.org>, 2022, 2023.
 #
 msgid ""
-msgstr "Project-Id-Version: amberol main\n"
+msgstr ""
+"Project-Id-Version: amberol main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
 "POT-Creation-Date: 2023-02-22 13:07+0000\n"
-"PO-Revision-Date: 2023-03-04 20:28+0000\n"
-"Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
-"Language-Team: Basque <librezale@librezale.eus>\n"
-"Language: eu\n"
+"PO-Revision-Date: 2023-03-04 19:13+0900\n"
+"Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
+"Language-Team: Korean <gnome-kr@googlegroups.com>\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: data/io.bassi.Amberol.desktop.in.in:3
 #: data/io.bassi.Amberol.appdata.xml.in.in:6
 msgid "Amberol"
-msgstr "Amberol"
+msgstr "앰버롤"
 
 #: data/io.bassi.Amberol.desktop.in.in:4
 msgid "Music Player"
-msgstr "Musika-erreproduzigailua"
+msgstr "음악 재생기"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.bassi.Amberol.desktop.in.in:12
 msgid "music;player;media;audio;playlist;"
-msgstr "musika;erreproduzigailua;multimedia;audioa;erreprodukzio-zerrenda"
+msgstr ""
+"music;음악;곡;player;재생;재생기;media;매체;미디어;audio;오디오;소리;음성;"
+"playlist;재생목록;목록;"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:7
 msgid "Plays music, and nothing else"
-msgstr "Musika erreproduzitzen du, besterik ez"
+msgstr "음악을 재생하며, 다른 동작은 하지 않습니다"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:9
 msgid ""
 "Amberol is a music player with no delusions of grandeur. If you just want to "
 "play music available on your local system then Amberol is the music player "
 "you are looking for."
-msgstr "Amberol handinahirik gabeko musika-erreproduzigailu bat da. Zure sistema lokalean duzun musika entzun nahi baduzu, Amberol da behar duzun erreproduzigailua."
+msgstr ""
+"앰버롤은 장엄한 착각을 주지 않는 음악 재생 프로그램입니다. 로컬 시스템에 있"
+"는 음악을 재생하려 한다면 앰버롤은 여러분이 찾던 음악 재생 프로그램으로 안성"
+"맞춤입니다."
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:14
 msgid "Current features:"
-msgstr "Uneko eginbideak:"
+msgstr "현재 기능:"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:16
 msgid "adaptive UI"
-msgstr "interfaze moldakorra"
+msgstr "적응형 UI"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:17
 msgid "UI recoloring using the album art"
-msgstr "interfazearen kolorea aldatzen da albumaren itxura erabilita"
+msgstr "앨범 표지에 맞춰 인터페이스 색상 변경"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:18
 msgid "drag and drop support to queue songs"
-msgstr "arrastatu eta jaregiteko euskarria abestiak ilaran jartzeko"
+msgstr "재생 대기열로 곡 끌어다 놓기 기능"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:19
 msgid "shuffle and repeat"
-msgstr "ausaz erreproduzitu eta errepikatu"
+msgstr "뒤섞고 반복 재생"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:20
 msgid "MPRIS integration"
-msgstr "MPRIS integrazioa"
+msgstr "MPRIS 통합"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:42
 msgid "Emmanuele Bassi"
@@ -71,340 +78,342 @@ msgstr "Emmanuele Bassi"
 
 #: src/audio/inhibit_controller.rs:40
 msgid "Playback in progress"
-msgstr "Erreprodukzioa abian"
+msgstr "재생 중"
 
 #: src/audio/song.rs:337
 msgid "Unknown artist"
-msgstr "Artista ezezaguna"
+msgstr "알 수 없는 음악가"
 
 #: src/audio/song.rs:344
 msgid "Unknown title"
-msgstr "Izenburu ezezaguna"
+msgstr "알 수 없는 제목"
 
 #: src/audio/song.rs:351
 msgid "Unknown album"
-msgstr "Album ezezaguna"
+msgstr "알 수 없는 앨범"
 
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr "Orokorra"
+msgstr "일반"
 
 #: src/gtk/help-overlay.ui:14
 msgctxt "shortcut window"
 msgid "Toggle primary menu"
-msgstr "Aktibatu/desaktibatu menu nagusia"
+msgstr "기본 메뉴 전환"
 
 #: src/gtk/help-overlay.ui:20
 msgctxt "shortcut window"
 msgid "Copy song details to the clipboard"
-msgstr "Kopiatu abestiaren xehetasunak arbelean"
+msgstr "곡 세부 정보를 클립보드에 복사"
 
 #: src/gtk/help-overlay.ui:26
 msgctxt "shortcut window"
 msgid "Show shortcuts"
-msgstr "Erakutsi lasterbideak"
+msgstr "바로 가기 키 표시"
 
 #: src/gtk/help-overlay.ui:32
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr "Irten"
+msgstr "끝내기"
 
 #: src/gtk/help-overlay.ui:40
 msgctxt "shortcut window"
 msgid "Playlist"
-msgstr "Erreprodukzio-zerrenda"
+msgstr "재생 목록"
 
 #: src/gtk/help-overlay.ui:43
 msgctxt "shortcut window"
 msgid "Add a song to the playlist"
-msgstr "Gehitu abesti bat erreprodukzio-zerrendari"
+msgstr "곡을 재생 목록에 추가"
 
 #: src/gtk/help-overlay.ui:49
 msgctxt "shortcut window"
 msgid "Add a folder to the playlist"
-msgstr "Gehitu karpeta bat erreprodukzio-zerrendari"
+msgstr "폴더를 재생 목록에 추가"
 
 #: src/gtk/help-overlay.ui:55
 msgctxt "shortcut window"
 msgid "Clear the playlist"
-msgstr "Garbitu erreprodukzio-zerrenda"
+msgstr "재생 목록 지우기"
 
 #: src/gtk/help-overlay.ui:61
 msgctxt "shortcut window"
 msgid "Toggle the playlist pane"
-msgstr "Txandakatu erreprodukzio-zerrendaren panela"
+msgstr "재생 목록 창 전환"
 
 #: src/gtk/help-overlay.ui:67
 msgctxt "shortcut window"
 msgid "Toggle shuffling songs"
-msgstr "Txandakatu abestiak ausaz erreproduzitzea"
+msgstr "곡 재생 순서 섞기 전환"
 
 #: src/gtk/help-overlay.ui:75
 msgctxt "shortcut window"
 msgid "Playback"
-msgstr "Erreproduzitu"
+msgstr "재생"
 
 #: src/gtk/help-overlay.ui:78
 msgctxt "shortcut window"
 msgid "Toggle play/pause"
-msgstr "Txandakatu erreprodukzioa/pausatzea"
+msgstr "재생/일시정지 전환"
 
 #: src/gtk/help-overlay.ui:84
 msgctxt "shortcut window"
 msgid "Previous song"
-msgstr "Aurreko abestia"
+msgstr "이전 곡"
 
 #: src/gtk/help-overlay.ui:90
 msgctxt "shortcut window"
 msgid "Next song"
-msgstr "Hurrengoa abestia"
+msgstr "다음 곡"
 
 #: src/gtk/help-overlay.ui:96
 msgctxt "shortcut window"
 msgid "Seek backwards in the current song"
-msgstr "Bilatu atzerantz uneko abestian"
+msgstr "현재 곡 후위 탐색"
 
 #: src/gtk/help-overlay.ui:102
 msgctxt "shortcut window"
 msgid "Seek forward in the current song"
-msgstr "Bilatu aurrerantz uneko abestian"
+msgstr "현재 곡 전위 탐색"
 
 #: src/gtk/playback-control.ui:35
 msgctxt "a11y"
 msgid "Elapsed time"
-msgstr "Igarotako denbora"
+msgstr "경과 시간"
 
 #: src/gtk/playback-control.ui:47
 msgctxt "a11y"
 msgid "Remaining time"
-msgstr "Falta den denbora"
+msgstr "남은 시간"
 
 #: src/gtk/playback-control.ui:69
 msgid "Play the Previous Song"
-msgstr "Erreproduzitu aurreko abestia"
+msgstr "이전 곡 재생"
 
 #: src/gtk/playback-control.ui:74
 msgctxt "a11y"
 msgid "Skip backwards"
-msgstr "Saltatu atzerantz"
+msgstr "뒤로 건너뛰기"
 
 #: src/gtk/playback-control.ui:83
 msgid "Toggle Play"
-msgstr "Txandakatu erreprodukzioa"
+msgstr "재생 전환"
 
 #: src/gtk/playback-control.ui:89
 msgctxt "a11y"
 msgid "Toggle play"
-msgstr "Txandakatu erreprodukzioa"
+msgstr "재생 전환"
 
 #: src/gtk/playback-control.ui:98
 msgid "Play the Next Song"
-msgstr "Erreproduzitu hurrengo abestia"
+msgstr "다음 곡 재생"
 
 #: src/gtk/playback-control.ui:103
 msgctxt "a11y"
 msgid "Skip forward"
-msgstr "Saltatu aurrerantz"
+msgstr "앞으로 건너뛰기"
 
 #: src/gtk/playback-control.ui:126
 msgid "Toggle Playlist"
-msgstr "Txandakatu erreprodukzio-zerrenda"
+msgstr "재생 목록 전환"
 
 #: src/gtk/playback-control.ui:131
 msgctxt "a11y"
 msgid "Toggle playlist"
-msgstr "Txandakatu erreprodukzio-zerrenda"
+msgstr "재생 목록 전환"
 
 #: src/gtk/playback-control.ui:140
 msgid "Shuffle the Playlist"
-msgstr "Erreproduzitu zerrenda ausaz"
+msgstr "재생 목록 뒤섞기"
 
 #: src/gtk/playback-control.ui:142
 msgctxt "a11y"
 msgid "Shuffle"
-msgstr "Ausaz"
+msgstr "임의재생"
 
 #: src/gtk/playback-control.ui:161 src/playback_control.rs:153
 msgid "Enable Repeat"
-msgstr "Gaitu errepikapena"
+msgstr "반복 활성화"
 
 #: src/gtk/playback-control.ui:166
 msgctxt "a11y"
 msgid "Repeat"
-msgstr "Errepikatu"
+msgstr "반복"
 
 #: src/gtk/playback-control.ui:177
 msgid "Main Menu"
-msgstr "Menu nagusia"
+msgstr "주 메뉴"
 
 #: src/gtk/playback-control.ui:183
 msgctxt "a11y"
 msgid "Primary menu"
-msgstr "Menu nagusia"
+msgstr "기본 메뉴"
 
 #: src/gtk/playback-control.ui:199
 msgid "Copy"
-msgstr "Kopiatu"
+msgstr "복사"
 
 #: src/gtk/playback-control.ui:205
 msgid "Add _Song"
-msgstr "Gehitu _abestia"
+msgstr "곡 추가(_S)"
 
 #: src/gtk/playback-control.ui:209
 msgid "Add _Folder"
-msgstr "Gehitu _karpeta"
+msgstr "폴더 추가(_F)"
 
 #: src/gtk/playback-control.ui:213
 msgid "Clear"
-msgstr "Garbitu"
+msgstr "지우기"
 
 #: src/gtk/playback-control.ui:219
 msgid "_Match Cover Art"
-msgstr "_Egin bat azalarekin"
+msgstr "표지 그림 일치(_M)"
 
 #: src/gtk/playback-control.ui:223
 msgid "_Background Playback"
-msgstr "A_tzeko planoko erreprodukzioa"
+msgstr "백그라운드 재생(_B)"
 
 #: src/gtk/playback-control.ui:229
 msgid "_ReplayGain"
-msgstr "_ReplayGain"
+msgstr "리플레이 게인(_R)"
 
 #: src/gtk/playback-control.ui:231
 msgid "_Album"
-msgstr "_Albuma"
+msgstr "앨범(_A)"
 
 #: src/gtk/playback-control.ui:236
 msgid "_Track"
-msgstr "_Pista"
+msgstr "트랙(_T)"
 
 #: src/gtk/playback-control.ui:241
 msgid "_Off"
-msgstr "_Desaktibatuta"
+msgstr "끔(_O)"
 
 #: src/gtk/playback-control.ui:249
 msgid "_Keyboard Shortcuts"
-msgstr "La_sterbideak"
+msgstr "키보드 바로 가기 키(_K)"
 
 #: src/gtk/playback-control.ui:253
 msgid "_About Amberol"
-msgstr "Amberol aplikazioari _buruz"
+msgstr "앰버롤 정보(_A)"
 
 #: src/gtk/playback-control.ui:257
 msgid "_Quit"
-msgstr "I_rten"
+msgstr "끝내기(_Q)"
 
 #: src/gtk/playlist-view.ui:19
 msgid "Playlist"
-msgstr "Erreprodukzio-zerrenda"
+msgstr "재생 목록"
 
 #: src/gtk/playlist-view.ui:49
 msgid "Search Songs in the Playlist"
-msgstr "Bilatu erreprodukzio-zerrendako abestiak"
+msgstr "재생 목록의 곡 검색"
 
 #: src/gtk/playlist-view.ui:61
 msgid "Select Songs in the Playlist"
-msgstr "Hautatu erreprodukzio-zerrendako abestiak"
+msgstr "재생 목록의 곡 선택"
 
 #: src/gtk/playlist-view.ui:74
 msgid "Close the Playlist"
-msgstr "Itxi erreprodukzio-zerrenda"
+msgstr "재생 목록 닫기"
 
 #: src/gtk/playlist-view.ui:135
 msgid "Select All Songs"
-msgstr "Hautatu abesti guztiak"
+msgstr "모든 곡 선택"
 
 #: src/gtk/playlist-view.ui:148
 msgid "Remove Selected Songs"
-msgstr "Kendu hautatutako abestiak"
+msgstr "선택한 곡 제거"
 
 #: src/gtk/window.ui:12
 msgid "Drop a song to add it to the queue"
-msgstr "Jaregin abesti bat ilaran gehitzeko"
+msgstr "대기열에 곡을 넣어 추가하는 기능"
 
 #: src/gtk/window.ui:49
 msgid ""
 "Select a file or a folder, or drag files from your file manager to the "
 "application window to add songs to the playlist"
-msgstr "Hautatu fitxategi edo karpeta bat, edo arrastatu zure fitxategi-kudeatzaileko fitxategiak aplikazioaren leihora, erreprodukzio-zerrendari abestiak gehitzeko"
+msgstr ""
+"파일 또는 폴더를 선택하거나 파일 관리자에서 파일을 끌어다 프로그램 창에 올려"
+"두어 재생 목록에 곡을 추가하십시오"
 
 #: src/gtk/window.ui:58
 msgid "Restore Playlist"
-msgstr "Leheneratu erreprodukzio-zerrenda"
+msgstr "재생 목록 복원"
 
 #: src/gtk/window.ui:68
 msgid "Add Folder"
-msgstr "Gehitu karpeta"
+msgstr "폴더 추가"
 
 #: src/gtk/window.ui:77
 msgid "Add Song"
-msgstr "Gehitu abestia"
+msgstr "곡 추가"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
 #: src/application.rs:233
 msgid "translator-credits"
-msgstr "translator-credits"
+msgstr "조성호 <shcho@gnome.org>"
 
 #: src/application.rs:247
 msgid "Amberol needs to run in the background to play music"
-msgstr "Amberol atzeko planoan exekutatu behar da musika erreproduzitu ahal izateko"
+msgstr "앰버롤은 음악을 재생할 때 백그라운드에서 실행해야 합니다"
 
 #: src/playback_control.rs:157
 msgid "Repeat All Tracks"
-msgstr "Errepikatu pista guztiak"
+msgstr "모든 트랙 반복 재생"
 
 #: src/playback_control.rs:161
 msgid "Repeat the Current Track"
-msgstr "Errepikatu uneko pista"
+msgstr "현재 트랙 반복 재생"
 
 #: src/window.rs:397
 msgid "_Add Song"
-msgstr "_Gehitu abestia"
+msgstr "곡 추가(_A)"
 
 #: src/window.rs:398 src/window.rs:438
 msgid "_Cancel"
-msgstr "_Utzi"
+msgstr "취소(_C)"
 
 #: src/window.rs:400
 msgid "Open File"
-msgstr "Ireki fitxategia"
+msgstr "파일 열기"
 
 #: src/window.rs:407
 msgid "Audio files"
-msgstr "Audio-fitxategiak"
+msgstr "오디오 파일"
 
 #: src/window.rs:416 src/window.rs:1306
 msgid "Unable to access files"
-msgstr "Ezin dira fitxategiak atzitu"
+msgstr "파일을 열 수 없습니다"
 
 #: src/window.rs:437
 msgid "_Add Folder"
-msgstr "_Gehitu karpeta"
+msgstr "폴더 추가(_A)"
 
 #: src/window.rs:440
 msgid "Open Folder"
-msgstr "Ireki karpeta"
+msgstr "폴더 열기"
 
 #: src/window.rs:451
 msgid "Unable to access folders"
-msgstr "Ezin dira karpetak atzitu"
+msgstr "폴더를 열 수 없습니다"
 
 #: src/window.rs:469
 msgid "No available song found"
-msgstr "Ez da aurkitu bat datorren abestirik"
+msgstr "곡이 없습니다"
 
 #: src/window.rs:526
 msgid "No songs found"
-msgstr "Ez da abestirik aurkitu"
+msgstr "곡이 없습니다"
 
 #: src/window.rs:556
 msgid "Added a new song"
-msgstr "Beste abesti bat gehitu da"
+msgstr "새 곡을 추가했습니다"
 
 #: src/window.rs:557
 msgid "Play"
-msgstr "Erreproduzitu"
+msgstr "재생"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
@@ -412,24 +421,21 @@ msgstr "Erreproduzitu"
 #: src/window.rs:566
 msgid "Added one song"
 msgid_plural "Added {} songs"
-msgstr[0] "Abesti bat gehitu da"
-msgstr[1] "{} abesti gehitu dira"
+msgstr[0] "곡 {}개를 추가했습니다"
 
 #: src/window.rs:1056
 msgid "Unable to access dropped files"
-msgstr "Ezin dira jaregindako fitxategiak atzitu"
+msgstr "끌어다 놓은 파일을 열 수 없습니다"
 
 #: src/window.rs:1149
 msgid "{} minute"
 msgid_plural "{} minutes"
-msgstr[0] "Minutu {}"
-msgstr[1] "{} minutu"
+msgstr[0] "{}분"
 
 #: src/window.rs:1160
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
-msgstr[0] "Ordu {hours} eta {minutes} minutu geratzen dira"
-msgstr[1] "{hours} ordu eta {minutes} minutu geratzen dira"
+msgstr[0] "{hours}시간 {minutes}분 남음"
 
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
@@ -437,79 +443,25 @@ msgstr[1] "{hours} ordu eta {minutes} minutu geratzen dira"
 #: src/window.rs:1170
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
-msgstr[0] "Minutu {} geratzen da"
-msgstr[1] "{} minutu geratzen dira"
+msgstr[0] "{}분 남음"
 
 #: src/window.rs:1286
 msgid "No song selected"
-msgstr "Ez da abestirik hautatu"
+msgstr "선택한 곡이 없습니다"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
 #: src/window.rs:1291
 msgid "{} song selected"
 msgid_plural "{} songs selected"
-msgstr[0] "Abesti {} hautatu da"
-msgstr[1] "{} abesti hautatu dira"
+msgstr[0] "곡 {}개 선택함"
 
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
 #: src/window.rs:1344
 msgid "Currently playing “{title}” by “{artist}”"
-msgstr "Orain erreproduzitzen: “{title}”, egilea: “{artist}”"
+msgstr "현재 재생중: “{title}” ― “{artist}”"
 
 #~ msgid "Add File"
-#~ msgstr "Gehitu fitxategia"
-
-#~ msgid "Amberol cannot run in the background"
-#~ msgstr "Amberol ezin da atzeko planoan exekutatu"
-
-#~ msgid "Plays music and nothing else"
-#~ msgstr "Musika erreproduzitzen du, besterik ez"
-
-#~ msgid "“{}” is not a supported audio file"
-#~ msgstr "“{}” ez da onartutako audio-fitxategi bat"
-
-#~ msgid "Unrecognized file type for “{}”"
-#~ msgstr "Fitxategi-mota ezezaguna honetarako: “{}”"
-
-#~ msgid "Amberol is running in the background"
-#~ msgstr "Amberol atzeko planoan exekutatzen ari da"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Songs Queue"
-#~ msgstr "Abestien ilara"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Queue a Song"
-#~ msgstr "Jarri abestia ilaran"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Queue a Folder"
-#~ msgstr "Jarri karpeta bat ilaran"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Clear"
-#~ msgstr "Garbitu"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Previous Track"
-#~ msgstr "Aurreko pista"
-
-#~ msgid "Playing next"
-#~ msgstr "Hurrengoa erreproduzitzen"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Seek Backwards"
-#~ msgstr "Bilatu atzerantz"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Seek Forward"
-#~ msgstr "Bilatu aurrerantz"
-
-#~ msgid "Show the playlist"
-#~ msgstr "Erakutsi erreprodukzio-zerrenda"
-
-#~ msgid "Choose a folder"
-#~ msgstr "Aukeratu karpeta bat"
+#~ msgstr "파일 추가"

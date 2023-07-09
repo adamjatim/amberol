@@ -4,8 +4,6 @@
 use adw::subclass::prelude::*;
 use gtk::{glib, prelude::*, CompositeTemplate};
 
-use crate::cover_picture::CoverPicture;
-
 mod imp {
     use super::*;
 
@@ -19,10 +17,6 @@ mod imp {
         pub song_artist_label: TemplateChild<gtk::Label>,
         #[template_child]
         pub song_album_label: TemplateChild<gtk::Label>,
-        #[template_child]
-        pub cover_stack: TemplateChild<gtk::Stack>,
-        #[template_child]
-        pub album_image: TemplateChild<CoverPicture>,
     }
 
     #[glib::object_subclass]
@@ -40,14 +34,13 @@ mod imp {
         }
 
         fn instance_init(obj: &glib::subclass::InitializingObject<Self>) {
-            CoverPicture::static_type();
             obj.init_template();
         }
     }
 
     impl ObjectImpl for SongDetails {
-        fn dispose(&self, obj: &Self::Type) {
-            while let Some(child) = obj.first_child() {
+        fn dispose(&self) {
+            while let Some(child) = self.obj().first_child() {
                 child.unparent();
             }
         }
@@ -63,7 +56,7 @@ glib::wrapper! {
 
 impl Default for SongDetails {
     fn default() -> Self {
-        glib::Object::new(&[]).expect("Failed to create SongDetails")
+        glib::Object::new()
     }
 }
 
@@ -82,18 +75,5 @@ impl SongDetails {
 
     pub fn album_label(&self) -> gtk::Label {
         self.imp().song_album_label.get()
-    }
-
-    pub fn album_image(&self) -> CoverPicture {
-        self.imp().album_image.get()
-    }
-
-    pub fn show_cover_image(&self, has_image: bool) {
-        let cover_stack = self.imp().cover_stack.get();
-        if has_image {
-            cover_stack.set_visible_child_name("cover-image");
-        } else {
-            cover_stack.set_visible_child_name("no-image");
-        }
     }
 }

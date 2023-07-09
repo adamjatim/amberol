@@ -9,7 +9,7 @@ mod imp {
 
     use fuzzy_matcher::{skim::SkimMatcherV2, FuzzyMatcher};
     use gtk::{
-        glib::{self, ParamFlags, ParamSpec, ParamSpecString, Value},
+        glib::{self, ParamSpec, ParamSpecString, Value},
         prelude::*,
         subclass::prelude::*,
     };
@@ -30,30 +30,19 @@ mod imp {
     }
 
     impl ObjectImpl for FuzzySorter {
-        fn constructed(&self, object: &Self::Type) {
-            self.parent_constructed(object);
-        }
-
         fn properties() -> &'static [ParamSpec] {
-            static PROPERTIES: Lazy<Vec<ParamSpec>> = Lazy::new(|| {
-                vec![ParamSpecString::new(
-                    "search",
-                    "search",
-                    "a search term",
-                    None,
-                    ParamFlags::READWRITE,
-                )]
-            });
+            static PROPERTIES: Lazy<Vec<ParamSpec>> =
+                Lazy::new(|| vec![ParamSpecString::builder("search").build()]);
             PROPERTIES.as_ref()
         }
 
-        fn set_property(&self, obj: &Self::Type, _id: usize, value: &Value, pspec: &ParamSpec) {
+        fn set_property(&self, _id: usize, value: &Value, pspec: &ParamSpec) {
             match pspec.name() {
                 "search" => {
                     let p = value
                         .get::<Option<String>>()
                         .expect("Value must be a string");
-                    obj.set_search(p);
+                    self.obj().set_search(p);
                 }
                 _ => unimplemented!(),
             }
@@ -61,12 +50,7 @@ mod imp {
     }
 
     impl SorterImpl for FuzzySorter {
-        fn compare(
-            &self,
-            _sorter: &Self::Type,
-            item1: &glib::Object,
-            item2: &glib::Object,
-        ) -> gtk::Ordering {
+        fn compare(&self, item1: &glib::Object, item2: &glib::Object) -> gtk::Ordering {
             let item1 = item1.downcast_ref::<Song>().unwrap();
             let item2 = item2.downcast_ref::<Song>().unwrap();
 
@@ -82,7 +66,7 @@ mod imp {
             }
         }
 
-        fn order(&self, _sorter: &Self::Type) -> gtk::SorterOrder {
+        fn order(&self) -> gtk::SorterOrder {
             gtk::SorterOrder::Partial
         }
     }
@@ -96,7 +80,7 @@ glib::wrapper! {
 
 impl FuzzySorter {
     pub fn new() -> Self {
-        glib::Object::new(&[]).expect("Failed to create `AmberolFuzzySorter`")
+        glib::Object::new()
     }
 
     pub fn search(&self) -> Option<String> {

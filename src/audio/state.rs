@@ -9,7 +9,7 @@ use crate::audio::{PlaybackState, Song};
 
 mod imp {
     use glib::{
-        ParamFlags, ParamSpec, ParamSpecBoolean, ParamSpecDouble, ParamSpecObject, ParamSpecString,
+        ParamSpec, ParamSpecBoolean, ParamSpecDouble, ParamSpecObject, ParamSpecString,
         ParamSpecUInt64,
     };
     use once_cell::sync::Lazy;
@@ -43,27 +43,29 @@ mod imp {
         fn properties() -> &'static [ParamSpec] {
             static PROPERTIES: Lazy<Vec<ParamSpec>> = Lazy::new(|| {
                 vec![
-                    ParamSpecBoolean::new("playing", "", "", false, ParamFlags::READABLE),
-                    ParamSpecUInt64::new("position", "", "", 0, u64::MAX, 0, ParamFlags::READABLE),
-                    ParamSpecObject::new("song", "", "", Song::static_type(), ParamFlags::READABLE),
-                    ParamSpecString::new("title", "", "", None, ParamFlags::READABLE),
-                    ParamSpecString::new("artist", "", "", None, ParamFlags::READABLE),
-                    ParamSpecString::new("album", "", "", None, ParamFlags::READABLE),
-                    ParamSpecUInt64::new("duration", "", "", 0, u64::MAX, 0, ParamFlags::READABLE),
-                    ParamSpecObject::new(
-                        "cover",
-                        "",
-                        "",
-                        gdk::Texture::static_type(),
-                        ParamFlags::READABLE,
-                    ),
-                    ParamSpecDouble::new("volume", "", "", 0.0, 1.0, 1.0, ParamFlags::READABLE),
+                    ParamSpecBoolean::builder("playing").read_only().build(),
+                    ParamSpecUInt64::builder("position").read_only().build(),
+                    ParamSpecObject::builder::<Song>("song").read_only().build(),
+                    ParamSpecString::builder("title").read_only().build(),
+                    ParamSpecString::builder("artist").read_only().build(),
+                    ParamSpecString::builder("album").read_only().build(),
+                    ParamSpecUInt64::builder("duration").read_only().build(),
+                    ParamSpecObject::builder::<gdk::Texture>("cover")
+                        .read_only()
+                        .build(),
+                    ParamSpecDouble::builder("volume")
+                        .minimum(0.0)
+                        .maximum(1.0)
+                        .default_value(1.0)
+                        .read_only()
+                        .build(),
                 ]
             });
             PROPERTIES.as_ref()
         }
 
-        fn property(&self, obj: &Self::Type, _id: usize, pspec: &ParamSpec) -> glib::Value {
+        fn property(&self, _id: usize, pspec: &ParamSpec) -> glib::Value {
+            let obj = self.obj();
             match pspec.name() {
                 "playing" => obj.playing().to_value(),
                 "position" => obj.position().to_value(),
@@ -190,6 +192,6 @@ impl PlayerState {
 
 impl Default for PlayerState {
     fn default() -> Self {
-        glib::Object::new::<Self>(&[]).expect("Unable to create PlayerState instance")
+        glib::Object::new()
     }
 }

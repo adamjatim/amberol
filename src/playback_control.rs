@@ -4,10 +4,7 @@
 use adw::subclass::prelude::*;
 use gtk::{gio, glib, prelude::*, CompositeTemplate};
 
-use crate::{
-    audio::RepeatMode, i18n::i18n, utils, volume_control::VolumeControl,
-    waveform_view::WaveformView,
-};
+use crate::{audio::RepeatMode, i18n::i18n, volume_control::VolumeControl};
 
 mod imp {
     use super::*;
@@ -22,14 +19,6 @@ mod imp {
         pub center_box: TemplateChild<gtk::Box>,
         #[template_child]
         pub end_box: TemplateChild<gtk::Box>,
-
-        #[template_child]
-        pub waveform_view: TemplateChild<WaveformView>,
-
-        #[template_child]
-        pub elapsed_label: TemplateChild<gtk::Label>,
-        #[template_child]
-        pub remaining_label: TemplateChild<gtk::Label>,
 
         #[template_child]
         pub previous_button: TemplateChild<gtk::Button>,
@@ -72,14 +61,14 @@ mod imp {
     }
 
     impl ObjectImpl for PlaybackControl {
-        fn dispose(&self, obj: &Self::Type) {
-            while let Some(child) = obj.first_child() {
+        fn dispose(&self) {
+            while let Some(child) = self.obj().first_child() {
                 child.unparent();
             }
         }
 
-        fn constructed(&self, obj: &Self::Type) {
-            self.parent_constructed(obj);
+        fn constructed(&self) {
+            self.parent_constructed();
 
             self.menu_button.set_primary(true);
         }
@@ -96,7 +85,7 @@ glib::wrapper! {
 
 impl Default for PlaybackControl {
     fn default() -> Self {
-        glib::Object::new(&[]).expect("Failed to create PlaybackControl")
+        glib::Object::new()
     }
 }
 
@@ -117,34 +106,6 @@ impl PlaybackControl {
         self.imp().volume_control.get()
     }
 
-    pub fn waveform_view(&self) -> WaveformView {
-        self.imp().waveform_view.get()
-    }
-
-    pub fn set_remaining(&self, remaining: Option<u64>) {
-        if let Some(remaining) = remaining {
-            self.imp()
-                .remaining_label
-                .set_text(&utils::format_remaining_time(remaining as i64));
-        } else {
-            self.imp().remaining_label.set_text("0:00");
-        }
-    }
-
-    pub fn set_elapsed(&self, elapsed: Option<u64>) {
-        if let Some(elapsed) = elapsed {
-            self.imp()
-                .elapsed_label
-                .set_text(&utils::format_time(elapsed as i64));
-        } else {
-            self.imp().elapsed_label.set_text("0:00");
-        }
-    }
-
-    pub fn set_position(&self, position: f64) {
-        self.imp().waveform_view.set_position(position);
-    }
-
     pub fn set_repeat_mode(&self, repeat_mode: RepeatMode) {
         let repeat_button = self.imp().repeat_button.get();
         match repeat_mode {
@@ -154,11 +115,11 @@ impl PlaybackControl {
             }
             RepeatMode::RepeatAll => {
                 repeat_button.set_icon_name("media-playlist-repeat-symbolic");
-                repeat_button.set_tooltip_text(Some(&i18n("Repeat All Tracks")));
+                repeat_button.set_tooltip_text(Some(&i18n("Repeat All Songs")));
             }
             RepeatMode::RepeatOne => {
                 repeat_button.set_icon_name("media-playlist-repeat-song-symbolic");
-                repeat_button.set_tooltip_text(Some(&i18n("Repeat the Current Track")));
+                repeat_button.set_tooltip_text(Some(&i18n("Repeat the Current Song")));
             }
         }
     }

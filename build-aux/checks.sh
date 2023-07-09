@@ -168,7 +168,7 @@ install_rustfmt() {
 
 # Run rustfmt to enforce code style.
 run_rustfmt() {
-    if ! cargo +nightly fmt --version >/dev/null 2>&1; then
+    if ! cargo fmt --version >/dev/null 2>&1; then
         if [[ $force_install -eq 1 ]]; then
             install_rustfmt
         elif [ ! -t 1 ]; then
@@ -202,11 +202,11 @@ run_rustfmt() {
 
     if [[ $verbose -eq 1 ]]; then
         echo ""
-        cargo +nightly fmt --version
+        cargo fmt --version
         echo ""
     fi
 
-    if ! cargo +nightly fmt --all -- --check; then
+    if ! cargo fmt --all -- --check; then
         echo -e "  Checking code style result: $fail"
         echo "Please fix the above issues, either manually or by running: cargo fmt --all"
         exit 1

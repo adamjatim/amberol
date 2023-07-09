@@ -8,7 +8,7 @@ use gtk::{gio, glib, prelude::*, subclass::prelude::*};
 use crate::audio::{RepeatMode, ShuffleListModel, Song};
 
 mod imp {
-    use glib::{ParamFlags, ParamSpec, ParamSpecEnum, ParamSpecObject, ParamSpecUInt, Value};
+    use glib::{ParamSpec, ParamSpecEnum, ParamSpecObject, ParamSpecUInt, Value};
     use once_cell::sync::Lazy;
 
     use super::*;
@@ -45,31 +45,22 @@ mod imp {
         fn properties() -> &'static [ParamSpec] {
             static PROPERTIES: Lazy<Vec<ParamSpec>> = Lazy::new(|| {
                 vec![
-                    ParamSpecObject::new(
-                        "current",
-                        "",
-                        "",
-                        Song::static_type(),
-                        ParamFlags::READABLE,
-                    ),
-                    ParamSpecEnum::new(
-                        "repeat-mode",
-                        "",
-                        "",
-                        RepeatMode::static_type(),
-                        0,
-                        ParamFlags::READABLE,
-                    ),
-                    ParamSpecUInt::new("n-songs", "", "", 0, u32::MAX, 0, ParamFlags::READABLE),
+                    ParamSpecObject::builder::<Song>("current")
+                        .read_only()
+                        .build(),
+                    ParamSpecEnum::builder::<RepeatMode>("repeat-mode")
+                        .read_only()
+                        .build(),
+                    ParamSpecUInt::builder("n-songs").read_only().build(),
                 ]
             });
 
             PROPERTIES.as_ref()
         }
 
-        fn property(&self, obj: &Self::Type, _id: usize, pspec: &ParamSpec) -> Value {
+        fn property(&self, _id: usize, pspec: &ParamSpec) -> Value {
             match pspec.name() {
-                "current" => obj.current_song().to_value(),
+                "current" => self.obj().current_song().to_value(),
                 "repeat-mode" => self.repeat_mode.get().to_value(),
                 "n-songs" => self.store.n_items().to_value(),
                 _ => unimplemented!(),
@@ -84,7 +75,7 @@ glib::wrapper! {
 
 impl Default for Queue {
     fn default() -> Self {
-        glib::Object::new::<Self>(&[]).expect("Failed to create Queue object")
+        glib::Object::new()
     }
 }
 
@@ -319,5 +310,16 @@ impl Queue {
         }
 
         count
+    }
+
+    pub fn contains(&self, s: &Song) -> bool {
+        for i in 0..self.imp().store.n_items() {
+            let song = self.imp().store.item(i).unwrap();
+            if song.downcast_ref::<Song>().unwrap().equals(&s) {
+                return true;
+            }
+        }
+
+        false
     }
 }

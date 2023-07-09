@@ -11,6 +11,7 @@ mod playback_control;
 mod playlist_view;
 mod queue_row;
 mod search;
+mod song_cover;
 mod song_details;
 mod sort;
 mod utils;
@@ -27,10 +28,12 @@ use log::{debug, error, LevelFilter};
 
 use self::application::Application;
 
-fn main() {
+fn main() -> glib::ExitCode {
     let mut builder = pretty_env_logger::formatted_builder();
     if APPLICATION_ID.ends_with("Devel") {
         builder.filter(Some("amberol"), LevelFilter::Debug);
+    } else {
+        builder.filter(Some("amberol"), LevelFilter::Info);
     }
     builder.init();
 
@@ -63,7 +66,7 @@ fn main() {
             }
             Err(err) => {
                 error!("Unable to find the current path: {}", err);
-                return;
+                return glib::ExitCode::FAILURE;
             }
         },
     };
@@ -78,6 +81,5 @@ fn main() {
     let ctx = glib::MainContext::default();
     let _guard = ctx.acquire().unwrap();
 
-    let app = Application::new();
-    std::process::exit(app.run());
+    Application::new().run()
 }

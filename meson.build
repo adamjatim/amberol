@@ -2,20 +2,20 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 project('amberol', 'rust',
-  version: '0.9.2',
+  version: '0.10.4',
   license: ['GPL-3.0'],
   meson_version: '>= 0.59.0',
   default_options: [ 'warning_level=2', ],
 )
 
-dependency('gtk4', version: '>= 4.6.0')
-dependency('libadwaita-1')
-dependency('gstreamer-1.0', version: '>= 1.16')
-dependency('gstreamer-audio-1.0', version: '>= 1.16')
-dependency('gstreamer-player-1.0', version: '>= 1.16')
-dependency('gstreamer-plugins-base-1.0', version: '>= 1.16')
-dependency('gstreamer-plugins-bad-1.0', version: '>= 1.16')
-dependency('gstreamer-bad-audio-1.0', version: '>= 1.16')
+dependency('gtk4', version: '>= 4.10.0')
+dependency('libadwaita-1', version: '>= 1.2')
+dependency('gstreamer-1.0', version: '>= 1.20')
+dependency('gstreamer-audio-1.0', version: '>= 1.20')
+dependency('gstreamer-player-1.0', version: '>= 1.20')
+dependency('gstreamer-plugins-base-1.0', version: '>= 1.20')
+dependency('gstreamer-plugins-bad-1.0', version: '>= 1.20')
+dependency('gstreamer-bad-audio-1.0', version: '>= 1.20')
 
 i18n = import('i18n')
 gnome = import('gnome')

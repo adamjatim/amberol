@@ -8,10 +8,10 @@ use gst::prelude::*;
 use gtk::{gio, glib, prelude::*, subclass::prelude::*};
 use log::{debug, warn};
 
-use crate::audio::Song;
+use crate::audio::{Controller, PlaybackState, RepeatMode, Song};
 
 mod imp {
-    use glib::{ParamFlags, ParamSpec, ParamSpecBoolean, Value};
+    use glib::{ParamSpec, ParamSpecBoolean, Value};
     use once_cell::sync::Lazy;
 
     use super::*;
@@ -30,23 +30,26 @@ mod imp {
     }
 
     impl ObjectImpl for WaveformGenerator {
+        fn dispose(&self) {
+            if let Some(pipeline) = self.pipeline.take() {
+                pipeline.send_event(gst::event::Eos::new());
+                match pipeline.set_state(gst::State::Null) {
+                    Ok(_) => {}
+                    Err(err) => warn!("Unable to set existing pipeline to Null state: {}", err),
+                }
+            }
+        }
+
         fn properties() -> &'static [ParamSpec] {
-            static PROPERTIES: Lazy<Vec<ParamSpec>> = Lazy::new(|| {
-                vec![ParamSpecBoolean::new(
-                    "has-peaks",
-                    "",
-                    "",
-                    false,
-                    ParamFlags::READABLE,
-                )]
-            });
+            static PROPERTIES: Lazy<Vec<ParamSpec>> =
+                Lazy::new(|| vec![ParamSpecBoolean::builder("has-peaks").read_only().build()]);
 
             PROPERTIES.as_ref()
         }
 
-        fn property(&self, obj: &Self::Type, _id: usize, pspec: &ParamSpec) -> Value {
+        fn property(&self, _id: usize, pspec: &ParamSpec) -> Value {
             match pspec.name() {
-                "has-peaks" => obj.peaks().is_some().to_value(),
+                "has-peaks" => self.obj().peaks().is_some().to_value(),
                 _ => unimplemented!(),
             }
         }
@@ -59,18 +62,25 @@ glib::wrapper! {
 
 impl Default for WaveformGenerator {
     fn default() -> Self {
-        glib::Object::new(&[]).expect("Failed to create WaveformGenerator")
+        glib::Object::new()
     }
+}
+
+impl Controller for WaveformGenerator {
+    fn set_playback_state(&self, _playback_state: &PlaybackState) {}
+
+    fn set_song(&self, song: &Song) {
+        self.imp().song.replace(Some(song.clone()));
+        self.load_peaks();
+    }
+
+    fn set_position(&self, _position: u64) {}
+    fn set_repeat_mode(&self, _mode: RepeatMode) {}
 }
 
 impl WaveformGenerator {
     pub fn new() -> Self {
         WaveformGenerator::default()
-    }
-
-    pub fn set_song(&self, song: Option<Song>) {
-        self.imp().song.replace(song);
-        self.load_peaks();
     }
 
     pub fn peaks(&self) -> Option<Vec<(f64, f64)>> {

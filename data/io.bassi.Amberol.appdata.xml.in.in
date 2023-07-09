@@ -22,22 +22,23 @@
   </description>
   <screenshots>
     <screenshot>
-      <image>https://www.bassi.io/~ebassi/amberol/screenshots/0.7/amberol-2.png</image>
+      <image>https://www.bassi.io/~ebassi/amberol/screenshots/0.10/amberol-full.png</image>
     </screenshot>
     <screenshot>
-      <image>https://www.bassi.io/~ebassi/amberol/screenshots/0.7/amberol-1.png</image>
+      <image>https://www.bassi.io/~ebassi/amberol/screenshots/0.10/amberol-compact.png</image>
     </screenshot>
     <screenshot>
-      <image>https://www.bassi.io/~ebassi/amberol/screenshots/0.7/amberol-3.png</image>
+      <image>https://www.bassi.io/~ebassi/amberol/screenshots/0.10/amberol-playlist.png</image>
     </screenshot>
     <screenshot>
-      <image>https://www.bassi.io/~ebassi/amberol/screenshots/0.7/amberol-4.png</image>
+      <image>https://www.bassi.io/~ebassi/amberol/screenshots/0.10/amberol-recolor.png</image>
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">@APPLICATION_ID@.desktop</launchable>
   <url type="homepage">https://gitlab.gnome.org/World/amberol</url>
   <url type="bugtracker">https://gitlab.gnome.org/World/amberol/-/issues</url>
   <url type="donation">https://ko-fi.com/emmanueleb</url>
+  <url type="contact">https://matrix.to/#/#amberol:gnome.org</url>
   <developer_name>Emmanuele Bassi</developer_name>
   <update_contact>ebassi_at_gnome.org</update_contact>
   <translation type="gettext">amberol</translation>
@@ -54,6 +55,62 @@
     <control>touch</control>
   </recommends>
   <releases>
+    <release version="0.10.3" date="2023-05-23">
+      <description>
+        <p>Bug fixes and small UI improvements</p>
+        <ul>
+          <li>Ensure that the waveform display is always centered for short songs</li>
+          <li>Fix display of non-square cover art</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.10.2" date="2023-04-28">
+      <description>
+        <p>The bug fixing comes in waves</p>
+        <ul>
+          <li>More crash fixes related to the background playback</li>
+          <li>Minor UI tweaks</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.10.1" date="2023-04-25">
+      <description>
+        <p>Brown paper bag release!</p>
+        <ul>
+          <li>Fix a crash when playing in the background</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.10.0" date="2023-04-24">
+      <description>
+        <p>New release, lots of small changes.</p>
+        <ul>
+          <li>Allow restoring the last playlist when starting a new session</li>
+          <li>Allow toggling the background playback</li>
+          <li>Add a quick mute/unmute button</li>
+          <li>Restructure the main UI to improve legibility of the controls</li>
+          <li>Do not add duplicate songs to the playlist</li>
+          <li>Ensure that the playlist fits on mobile form factors</li>
+          <li>And lots of bug fixes and UI improvements</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.9.2" date="2022-12-10">
+      <description>
+        <p>It's been a while!</p>
+        <ul>
+          <li>Allow dragging on the waveform to seek inside a song</li>
+          <li>Use the latest libadwaita about dialog</li>
+          <li>Use the latest lofty for improved song metadata detection</li>
+          <li>Detect more external cover file names</li>
+          <li>Small improvements in the waveform animation</li>
+          <li>Remove the unnecessary notification for the background portal</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.9.1" date="2022-08-30">
       <description>
         <p>Small paper cuts, and ReplayGain</p>

@@ -4,7 +4,6 @@
 use glib::{clone, Sender};
 use gst::prelude::*;
 use gtk::glib;
-use gtk_macros::send;
 use log::{debug, error, warn};
 
 use crate::audio::{PlaybackAction, ReplayGainMode, SeekDirection};
@@ -24,8 +23,8 @@ pub struct GstReplayGain {
 
 impl GstReplayGain {
     pub fn new() -> Result<GstReplayGain, Box<dyn std::error::Error>> {
-        let rg_volume = gst::ElementFactory::make("rgvolume", Some("rg volume"))?;
-        let rg_limiter = gst::ElementFactory::make("rglimiter", Some("rg limiter"))?;
+        let rg_volume = gst::ElementFactory::make_with_name("rgvolume", Some("rg volume"))?;
+        let rg_limiter = gst::ElementFactory::make_with_name("rglimiter", Some("rg limiter"))?;
 
         let filter_bin = gst::Bin::new(Some("filter bin"));
         filter_bin.add(&rg_volume)?;
@@ -49,7 +48,7 @@ impl GstReplayGain {
     }
 
     pub fn set_mode(&self, playbin: gst::Element, replaygain: ReplayGainMode) {
-        let identity = gst::ElementFactory::make("identity", Some("identity")).unwrap();
+        let identity = gst::ElementFactory::make_with_name("identity", None).unwrap();
 
         let (filter, album_mode) = match replaygain {
             ReplayGainMode::Album => (self.rg_filter_bin.as_ref(), true),
@@ -66,8 +65,8 @@ impl GstBackend {
     pub fn new(sender: Sender<PlaybackAction>) -> Self {
         let dispatcher = gst_player::PlayerGMainContextSignalDispatcher::new(None);
         let gst_player = gst_player::Player::new(
-            None,
-            Some(&dispatcher.upcast::<gst_player::PlayerSignalDispatcher>()),
+            None::<gst_player::PlayerVideoRenderer>,
+            Some(dispatcher.upcast::<gst_player::PlayerSignalDispatcher>()),
         );
         gst_player.set_video_track_enabled(false);
 
@@ -93,13 +92,18 @@ impl GstBackend {
 
         self.gst_player
             .connect_end_of_stream(clone!(@strong self.sender as sender => move |_| {
-                send!(sender, PlaybackAction::PlayNext);
+                if let Err(e) = sender.send(PlaybackAction::PlayNext) {
+                    error!("Failed to send PlayNext: {e}");
+                }
             }));
 
         self.gst_player.connect_position_updated(
             clone!(@strong self.sender as sender => move |_, clock| {
                 if let Some(clock) = clock {
-                    send!(sender, PlaybackAction::UpdatePosition(clock.seconds()));
+                    let pos = clock.seconds();
+                    if let Err(e) = sender.send(PlaybackAction::UpdatePosition(pos)) {
+                        error!("Failed to send UpdatePosition({pos}): {e}");
+                    }
                 }
             }),
         );
@@ -111,7 +115,9 @@ impl GstBackend {
                     gst_audio::StreamVolumeFormat::Cubic,
                     player.volume(),
                 );
-                send!(sender, PlaybackAction::VolumeChanged(volume));
+                if let Err(e) = sender.send(PlaybackAction::VolumeChanged(volume)) {
+                    error!("Failed to send VolumeChanged({volume}): {e}");
+                }
             }),
         );
     }

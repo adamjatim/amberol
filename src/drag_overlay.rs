@@ -35,33 +35,17 @@ mod imp {
         fn properties() -> &'static [glib::ParamSpec] {
             static PROPERTIES: Lazy<Vec<glib::ParamSpec>> = Lazy::new(|| {
                 vec![
-                    glib::ParamSpecString::new(
-                        "title",
-                        "title",
-                        "title",
-                        None,
-                        glib::ParamFlags::READWRITE,
-                    ),
-                    glib::ParamSpecObject::new(
-                        "child",
-                        "child",
-                        "child",
-                        gtk::Widget::static_type(),
-                        glib::ParamFlags::READWRITE,
-                    ),
-                    glib::ParamSpecObject::new(
-                        "drop-target",
-                        "drop-target",
-                        "drop-target",
-                        gtk::DropTarget::static_type(),
-                        glib::ParamFlags::READWRITE | glib::ParamFlags::EXPLICIT_NOTIFY,
-                    ),
+                    glib::ParamSpecString::builder("title").build(),
+                    glib::ParamSpecObject::builder::<gtk::Widget>("child").build(),
+                    glib::ParamSpecObject::builder::<gtk::DropTarget>("drop-target")
+                        .explicit_notify()
+                        .build(),
                 ]
             });
             PROPERTIES.as_ref()
         }
 
-        fn property(&self, _obj: &Self::Type, _id: usize, pspec: &glib::ParamSpec) -> glib::Value {
+        fn property(&self, _id: usize, pspec: &glib::ParamSpec) -> glib::Value {
             match pspec.name() {
                 "title" => self.status.title().to_value(),
                 "child" => self.overlay.child().to_value(),
@@ -70,25 +54,22 @@ mod imp {
             }
         }
 
-        fn set_property(
-            &self,
-            obj: &Self::Type,
-            _id: usize,
-            value: &glib::Value,
-            pspec: &glib::ParamSpec,
-        ) {
+        fn set_property(&self, _id: usize, value: &glib::Value, pspec: &glib::ParamSpec) {
             match pspec.name() {
                 "title" => self.status.set_title(value.get().unwrap()),
                 "child" => self
                     .overlay
                     .set_child(value.get::<gtk::Widget>().ok().as_ref()),
-                "drop-target" => obj.set_drop_target(&value.get::<gtk::DropTarget>().unwrap()),
+                "drop-target" => self
+                    .obj()
+                    .set_drop_target(&value.get::<gtk::DropTarget>().unwrap()),
                 _ => unimplemented!(),
             };
         }
 
-        fn constructed(&self, obj: &Self::Type) {
-            self.overlay.set_parent(obj);
+        fn constructed(&self) {
+            self.overlay
+                .set_parent(self.obj().upcast_ref::<gtk::Widget>());
             self.overlay.add_overlay(&self.revealer);
 
             self.revealer.set_can_target(false);
@@ -96,13 +77,13 @@ mod imp {
                 .set_transition_type(gtk::RevealerTransitionType::Crossfade);
             self.revealer.set_reveal_child(false);
 
-            self.status.set_icon_name(Some("document-send-symbolic"));
+            self.status.set_icon_name(Some("folder-music-symbolic"));
             self.status.add_css_class("drag-overlay-status-page");
 
             self.revealer.set_child(Some(&self.status));
         }
 
-        fn dispose(&self, _obj: &Self::Type) {
+        fn dispose(&self) {
             self.overlay.unparent();
         }
     }
@@ -117,7 +98,7 @@ glib::wrapper! {
 
 impl Default for DragOverlay {
     fn default() -> Self {
-        glib::Object::new(&[]).unwrap()
+        glib::Object::new()
     }
 }
 
@@ -138,13 +119,19 @@ impl DragOverlay {
         }
 
         let handler_id = drop_target.connect_current_drop_notify(
-            glib::clone!(@weak priv_.revealer as revealer => move |target| {
-                revealer.set_reveal_child(target.current_drop().is_some());
+            glib::clone!(@weak priv_.revealer as revealer, @weak priv_.overlay as overlay => move |target| {
+                let reveal = target.current_drop().is_some();
+                revealer.set_reveal_child(reveal);
+                if reveal {
+                    overlay.child().unwrap().add_css_class("blurred");
+                } else {
+                    overlay.child().unwrap().remove_css_class("blurred");
+                }
             }),
         );
         priv_.handler_id.replace(Some(handler_id));
 
-        self.add_controller(drop_target);
+        self.add_controller(drop_target.clone());
         priv_.drop_target.replace(Some(drop_target.clone()));
         self.notify("drop-target");
     }

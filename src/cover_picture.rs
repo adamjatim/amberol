@@ -3,7 +3,7 @@
 
 use std::cell::{Cell, RefCell};
 
-use gtk::{gdk, gio, glib, graphene, prelude::*, subclass::prelude::*};
+use gtk::{gdk, gio, glib, graphene, gsk, prelude::*, subclass::prelude::*};
 
 #[derive(Clone, Copy, Debug, glib::Enum, PartialEq)]
 #[enum_type(name = "AmberolCoverSize")]
@@ -28,7 +28,7 @@ impl AsRef<str> for CoverSize {
 }
 
 mod imp {
-    use glib::{ParamFlags, ParamSpec, ParamSpecEnum, ParamSpecObject, Value};
+    use glib::{ParamSpec, ParamSpecEnum, ParamSpecObject, Value};
     use once_cell::sync::Lazy;
 
     use super::*;
@@ -55,37 +55,24 @@ mod imp {
     }
 
     impl ObjectImpl for CoverPicture {
-        fn constructed(&self, obj: &Self::Type) {
-            self.parent_constructed(obj);
+        fn constructed(&self) {
+            self.parent_constructed();
 
-            obj.add_css_class("cover");
-            obj.set_overflow(gtk::Overflow::Hidden);
+            self.obj().add_css_class("cover");
+            self.obj().set_overflow(gtk::Overflow::Hidden);
         }
 
         fn properties() -> &'static [ParamSpec] {
             static PROPERTIES: Lazy<Vec<ParamSpec>> = Lazy::new(|| {
                 vec![
-                    ParamSpecObject::new(
-                        "cover",
-                        "",
-                        "",
-                        gdk::Texture::static_type(),
-                        ParamFlags::READWRITE,
-                    ),
-                    ParamSpecEnum::new(
-                        "cover-size",
-                        "",
-                        "",
-                        CoverSize::static_type(),
-                        CoverSize::default() as i32,
-                        ParamFlags::READWRITE,
-                    ),
+                    ParamSpecObject::builder::<gdk::Texture>("cover").build(),
+                    ParamSpecEnum::builder::<CoverSize>("cover-size").build(),
                 ]
             });
             PROPERTIES.as_ref()
         }
 
-        fn property(&self, _obj: &Self::Type, _id: usize, pspec: &ParamSpec) -> Value {
+        fn property(&self, _id: usize, pspec: &ParamSpec) -> Value {
             match pspec.name() {
                 "cover" => self.cover.borrow().to_value(),
                 "cover-size" => self.cover_size.get().to_value(),
@@ -93,36 +80,34 @@ mod imp {
             }
         }
 
-        fn set_property(&self, obj: &Self::Type, _id: usize, value: &Value, pspec: &ParamSpec) {
+        fn set_property(&self, _id: usize, value: &Value, pspec: &ParamSpec) {
             match pspec.name() {
-                "cover" => obj.set_cover(value.get::<gdk::Texture>().ok().as_ref()),
-                "cover-size" => {
-                    obj.set_cover_size(value.get::<CoverSize>().expect("Required CoverSize"))
-                }
+                "cover" => self
+                    .obj()
+                    .set_cover(value.get::<gdk::Texture>().ok().as_ref()),
+                "cover-size" => self
+                    .obj()
+                    .set_cover_size(value.get::<CoverSize>().expect("Required CoverSize")),
                 _ => unimplemented!(),
             };
         }
     }
 
     impl WidgetImpl for CoverPicture {
-        fn request_mode(&self, _widget: &Self::Type) -> gtk::SizeRequestMode {
+        fn request_mode(&self) -> gtk::SizeRequestMode {
             gtk::SizeRequestMode::ConstantSize
         }
 
-        fn measure(
-            &self,
-            _widget: &Self::Type,
-            _orientation: gtk::Orientation,
-            _for_size: i32,
-        ) -> (i32, i32, i32, i32) {
+        fn measure(&self, _orientation: gtk::Orientation, _for_size: i32) -> (i32, i32, i32, i32) {
             match self.cover_size.get() {
                 CoverSize::Large => (LARGE_SIZE, LARGE_SIZE, -1, -1),
                 CoverSize::Small => (SMALL_SIZE, SMALL_SIZE, -1, -1),
             }
         }
 
-        fn snapshot(&self, widget: &Self::Type, snapshot: &gtk::Snapshot) {
+        fn snapshot(&self, snapshot: &gtk::Snapshot) {
             if let Some(ref cover) = *self.cover.borrow() {
+                let widget = self.obj();
                 let width = widget.width() as f64;
                 let height = widget.height() as f64;
                 let ratio = cover.intrinsic_aspect_ratio();
@@ -130,18 +115,22 @@ mod imp {
                 let h;
                 if ratio > 1.0 {
                     w = width;
-                    h = height / ratio;
+                    h = width / ratio;
                 } else {
-                    w = width / ratio;
+                    w = height * ratio;
                     h = height;
                 }
 
-                let x = (width - w.ceil()) as i32 / 2;
-                let y = (height - h.ceil()) as i32 / 2;
+                let x = (width - w.ceil()) / 2.0;
+                let y = (height - h).floor() / 2.0;
 
                 snapshot.save();
                 snapshot.translate(&graphene::Point::new(x as f32, y as f32));
-                cover.snapshot(snapshot.upcast_ref::<gdk::Snapshot>(), w, h);
+                snapshot.append_scaled_texture(
+                    cover,
+                    gsk::ScalingFilter::Trilinear,
+                    &graphene::Rect::new(0.0, 0.0, w as f32, h as f32),
+                );
                 snapshot.restore();
             }
         }
@@ -156,7 +145,7 @@ glib::wrapper! {
 
 impl Default for CoverPicture {
     fn default() -> Self {
-        glib::Object::new(&[]).unwrap()
+        glib::Object::new()
     }
 }
 

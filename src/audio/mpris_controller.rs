@@ -5,7 +5,6 @@ use std::{cell::RefCell, sync::Arc, time::Duration};
 
 use glib::{clone, Sender};
 use gtk::{gio, glib, prelude::*};
-use gtk_macros::send;
 use log::error;
 use mpris_player::{LoopStatus, Metadata, MprisPlayer, OrgMprisMediaPlayer2Player, PlaybackStatus};
 
@@ -53,41 +52,65 @@ impl MprisController {
         self.mpris.connect_play_pause(
             clone!(@weak self.mpris as mpris, @strong self.sender as sender => move || {
                 match mpris.get_playback_status().unwrap().as_ref() {
-                    "Paused" => send!(sender, PlaybackAction::Play),
-                    "Stopped" => send!(sender, PlaybackAction::Play),
-                    _ => send!(sender, PlaybackAction::Pause),
+                    "Paused" => {
+                        if let Err(e) = sender.send(PlaybackAction::Play) {
+                            error!("Unable to send Play: {e}");
+                        }
+                    },
+                    "Stopped" => {
+                        if let Err(e) = sender.send(PlaybackAction::Stop) {
+                            error!("Unable to send Stop: {e}");
+                        }
+                    },
+                    _ => {
+                        if let Err(e) = sender.send(PlaybackAction::Pause) {
+                            error!("Unable to send Pause: {e}");
+                        }
+                    },
                 };
             }),
         );
 
         self.mpris
             .connect_play(clone!(@strong self.sender as sender => move || {
-                send!(sender, PlaybackAction::Play);
+                if let Err(e) = sender.send(PlaybackAction::Play) {
+                    error!("Unable to send Play: {e}");
+                }
             }));
 
         self.mpris
             .connect_stop(clone!(@strong self.sender as sender => move || {
-                send!(sender, PlaybackAction::Stop);
+                if let Err(e) = sender.send(PlaybackAction::Stop) {
+                    error!("Unable to send Stop: {e}");
+                }
             }));
 
         self.mpris
             .connect_pause(clone!(@strong self.sender as sender => move || {
-                send!(sender, PlaybackAction::Pause);
+                if let Err(e) = sender.send(PlaybackAction::Pause) {
+                    error!("Unable to send Pause: {e}");
+                }
             }));
 
         self.mpris
             .connect_previous(clone!(@strong self.sender as sender => move || {
-                send!(sender, PlaybackAction::SkipPrevious);
+                if let Err(e) = sender.send(PlaybackAction::SkipPrevious) {
+                    error!("Unable to send SkipPrevious: {e}");
+                }
             }));
 
         self.mpris
             .connect_next(clone!(@strong self.sender as sender => move || {
-                send!(sender, PlaybackAction::SkipNext);
+                if let Err(e) = sender.send(PlaybackAction::SkipNext) {
+                    error!("Unable to send SkipNext: {e}");
+                }
             }));
 
         self.mpris
             .connect_raise(clone!(@strong self.sender as sender => move || {
-                send!(sender, PlaybackAction::Raise);
+                if let Err(e) = sender.send(PlaybackAction::Raise) {
+                    error!("Unable to send Raise: {e}");
+                }
             }));
 
         self.mpris
@@ -97,13 +120,19 @@ impl MprisController {
                     LoopStatus::Track => RepeatMode::RepeatOne,
                     LoopStatus::Playlist => RepeatMode::RepeatAll,
                 };
-                send!(sender, PlaybackAction::Repeat(mode));
+
+                if let Err(e) = sender.send(PlaybackAction::Repeat(mode)) {
+                    error!("Unable to send Repeat({mode}): {e}");
+                }
             }));
 
         self.mpris
             .connect_seek(clone!(@strong self.sender as sender => move |position| {
                 let pos = Duration::from_micros(position as u64).as_secs();
-                send!(sender, PlaybackAction::Seek(pos));
+
+                if let Err(e) = sender.send(PlaybackAction::Seek(pos)) {
+                    error!("Unable to send Seek({pos}): {e}");
+                }
             }));
     }
 

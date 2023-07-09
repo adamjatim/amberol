@@ -10,7 +10,7 @@ use gtk::{gdk, gio, glib, prelude::*, CompositeTemplate};
 use crate::{audio::Song, cover_picture::CoverPicture};
 
 mod imp {
-    use glib::{ParamFlags, ParamSpec, ParamSpecBoolean, ParamSpecObject, ParamSpecString, Value};
+    use glib::{ParamSpec, ParamSpecBoolean, ParamSpecObject, ParamSpecString, Value};
     use once_cell::sync::Lazy;
 
     use super::*;
@@ -26,15 +26,15 @@ mod imp {
         #[template_child]
         pub song_cover_image: TemplateChild<CoverPicture>,
         #[template_child]
-        pub song_title_label: TemplateChild<gtk::Label>,
+        pub song_title_label: TemplateChild<gtk::Inscription>,
         #[template_child]
-        pub song_artist_label: TemplateChild<gtk::Label>,
+        pub song_artist_label: TemplateChild<gtk::Inscription>,
         #[template_child]
         pub song_playing_image: TemplateChild<gtk::Image>,
         #[template_child]
-        pub selection_title_label: TemplateChild<gtk::Label>,
+        pub selection_title_label: TemplateChild<gtk::Inscription>,
         #[template_child]
-        pub selection_artist_label: TemplateChild<gtk::Label>,
+        pub selection_artist_label: TemplateChild<gtk::Inscription>,
         #[template_child]
         pub selected_button: TemplateChild<gtk::CheckButton>,
         #[template_child]
@@ -65,44 +65,34 @@ mod imp {
     }
 
     impl ObjectImpl for QueueRow {
-        fn dispose(&self, _obj: &Self::Type) {
-            self.row_stack.unparent();
+        fn dispose(&self) {
+            while let Some(child) = self.obj().first_child() {
+                child.unparent();
+            }
         }
 
-        fn constructed(&self, obj: &Self::Type) {
-            self.parent_constructed(obj);
+        fn constructed(&self) {
+            self.parent_constructed();
 
-            obj.init_widgets();
+            self.obj().init_widgets();
         }
 
         fn properties() -> &'static [ParamSpec] {
             static PROPERTIES: Lazy<Vec<ParamSpec>> = Lazy::new(|| {
                 vec![
-                    ParamSpecObject::new(
-                        "song",
-                        "",
-                        "",
-                        Song::static_type(),
-                        ParamFlags::READWRITE,
-                    ),
-                    ParamSpecString::new("song-artist", "", "", None, ParamFlags::READWRITE),
-                    ParamSpecString::new("song-title", "", "", None, ParamFlags::READWRITE),
-                    ParamSpecObject::new(
-                        "song-cover",
-                        "",
-                        "",
-                        gdk::Texture::static_type(),
-                        ParamFlags::READWRITE,
-                    ),
-                    ParamSpecBoolean::new("playing", "", "", false, ParamFlags::READWRITE),
-                    ParamSpecBoolean::new("selection-mode", "", "", false, ParamFlags::READWRITE),
-                    ParamSpecBoolean::new("selected", "", "", false, ParamFlags::READWRITE),
+                    ParamSpecObject::builder::<Song>("song").build(),
+                    ParamSpecString::builder("song-artist").build(),
+                    ParamSpecString::builder("song-title").build(),
+                    ParamSpecObject::builder::<gdk::Texture>("song-cover").build(),
+                    ParamSpecBoolean::builder("playing").build(),
+                    ParamSpecBoolean::builder("selection-mode").build(),
+                    ParamSpecBoolean::builder("selected").build(),
                 ]
             });
             PROPERTIES.as_ref()
         }
 
-        fn set_property(&self, obj: &Self::Type, _id: usize, value: &Value, pspec: &ParamSpec) {
+        fn set_property(&self, _id: usize, value: &Value, pspec: &ParamSpec) {
             match pspec.name() {
                 "song" => {
                     let song = value.get::<Option<Song>>().unwrap();
@@ -110,27 +100,27 @@ mod imp {
                 }
                 "song-artist" => {
                     let p = value.get::<&str>().expect("The value needs to be a string");
-                    obj.set_song_artist(p);
+                    self.obj().set_song_artist(p);
                 }
                 "song-title" => {
                     let p = value.get::<&str>().expect("The value needs to be a string");
-                    obj.set_song_title(p);
+                    self.obj().set_song_title(p);
                 }
                 "song-cover" => {
                     let p = value.get::<gdk::Texture>().ok();
-                    obj.set_song_cover(p);
+                    self.obj().set_song_cover(p);
                 }
                 "playing" => {
                     let p = value
                         .get::<bool>()
                         .expect("The value needs to be a boolean");
-                    obj.set_playing(p);
+                    self.obj().set_playing(p);
                 }
                 "selection-mode" => {
                     let p = value
                         .get::<bool>()
                         .expect("The value needs to be a boolean");
-                    obj.set_selection_mode(p);
+                    self.obj().set_selection_mode(p);
                 }
                 "selected" => {
                     let p = value
@@ -142,11 +132,11 @@ mod imp {
             }
         }
 
-        fn property(&self, _obj: &Self::Type, _id: usize, pspec: &ParamSpec) -> Value {
+        fn property(&self, _id: usize, pspec: &ParamSpec) -> Value {
             match pspec.name() {
                 "song" => self.song.borrow().to_value(),
-                "song-artist" => self.song_artist_label.label().to_value(),
-                "song-title" => self.song_title_label.label().to_value(),
+                "song-artist" => self.song_artist_label.text().to_value(),
+                "song-title" => self.song_title_label.text().to_value(),
                 "song-cover" => self.song_cover_image.cover().to_value(),
                 "playing" => self.playing.get().to_value(),
                 "selection-mode" => self.selection_mode.get().to_value(),
@@ -167,7 +157,7 @@ glib::wrapper! {
 
 impl Default for QueueRow {
     fn default() -> Self {
-        glib::Object::new(&[]).expect("Failed to create QueueRow")
+        glib::Object::new()
     }
 }
 
@@ -216,14 +206,14 @@ impl QueueRow {
 
     fn set_song_title(&self, title: &str) {
         let imp = self.imp();
-        imp.song_title_label.set_label(title);
-        imp.selection_title_label.set_label(title);
+        imp.song_title_label.set_text(Some(title));
+        imp.selection_title_label.set_text(Some(title));
     }
 
     fn set_song_artist(&self, artist: &str) {
         let imp = self.imp();
-        imp.song_artist_label.set_label(artist);
-        imp.selection_artist_label.set_label(artist);
+        imp.song_artist_label.set_text(Some(artist));
+        imp.selection_artist_label.set_text(Some(artist));
     }
 
     fn set_song_cover(&self, cover: Option<gdk::Texture>) {

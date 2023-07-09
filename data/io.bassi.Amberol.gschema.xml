@@ -18,5 +18,8 @@
     <key name="replay-gain" enum="io.bassi.Amberol.ReplayGainMode">
       <default>'off'</default>
     </key>
+	  <key name="background-play" type="b">
+	    <default>true</default>
+	  </key>
 	</schema>
 </schemalist>

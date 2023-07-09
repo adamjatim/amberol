@@ -23,7 +23,7 @@
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="title" translatable="yes" context="shortcut window">Show Shortcuts</property>
+                <property name="title" translatable="yes" context="shortcut window">Show shortcuts</property>
                 <property name="action-name">win.show-help-overlay</property>
               </object>
             </child>
@@ -75,7 +75,7 @@
             <property name="title" translatable="yes" context="shortcut window">Playback</property>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="title" translatable="yes" context="shortcut window">Toggle Play/Pause</property>
+                <property name="title" translatable="yes" context="shortcut window">Toggle play/pause</property>
                 <property name="action-name">win.play</property>
               </object>
             </child>
