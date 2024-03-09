@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: amberol main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
-"POT-Creation-Date: 2023-02-22 13:07+0000\n"
-"PO-Revision-Date: 2023-03-10 08:53+0100\n"
+"POT-Creation-Date: 2023-11-27 13:06+0000\n"
+"PO-Revision-Date: 2024-01-09 12:27+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <f.t.public@gmail.com>\n"
 "Language: fur\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Editor: HaiPO 1.4 beta\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: data/io.bassi.Amberol.desktop.in.in:3
 #: data/io.bassi.Amberol.appdata.xml.in.in:6
@@ -71,7 +71,7 @@ msgstr "messede e ripet"
 msgid "MPRIS integration"
 msgstr "Integrazion MPRIS"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:42
+#: data/io.bassi.Amberol.appdata.xml.in.in:44
 msgid "Emmanuele Bassi"
 msgstr "Emmanuele Bassi"
 
@@ -79,15 +79,15 @@ msgstr "Emmanuele Bassi"
 msgid "Playback in progress"
 msgstr "Riproduzion in vore"
 
-#: src/audio/song.rs:337
+#: src/audio/song.rs:325
 msgid "Unknown artist"
 msgstr "Artist no cognossût"
 
-#: src/audio/song.rs:344
+#: src/audio/song.rs:332
 msgid "Unknown title"
 msgstr "Titul no cognossût"
 
-#: src/audio/song.rs:351
+#: src/audio/song.rs:339
 msgid "Unknown album"
 msgstr "Album no cognossût"
 
@@ -176,132 +176,125 @@ msgctxt "shortcut window"
 msgid "Seek forward in the current song"
 msgstr "Cîr indenant in cheste cjançon"
 
-#: src/gtk/playback-control.ui:35
-msgctxt "a11y"
-msgid "Elapsed time"
-msgstr "Timp passât"
-
-#: src/gtk/playback-control.ui:47
-msgctxt "a11y"
-msgid "Remaining time"
-msgstr "Timp che al reste"
-
-#: src/gtk/playback-control.ui:69
+#: src/gtk/playback-control.ui:21
 msgid "Play the Previous Song"
 msgstr "Riprodûs la cjançon precedente"
 
-#: src/gtk/playback-control.ui:74
+#: src/gtk/playback-control.ui:26
 msgctxt "a11y"
 msgid "Skip backwards"
 msgstr "Salte indaûr"
 
-#: src/gtk/playback-control.ui:83
+#: src/gtk/playback-control.ui:35
 msgid "Toggle Play"
 msgstr "Comute Riprodûs"
 
-#: src/gtk/playback-control.ui:89
+#: src/gtk/playback-control.ui:41
 msgctxt "a11y"
 msgid "Toggle play"
 msgstr "Comute riprodûs"
 
-#: src/gtk/playback-control.ui:98
+#: src/gtk/playback-control.ui:50
 msgid "Play the Next Song"
 msgstr "Riprodûs la cjançon sucessive"
 
-#: src/gtk/playback-control.ui:103
+#: src/gtk/playback-control.ui:55
 msgctxt "a11y"
 msgid "Skip forward"
 msgstr "Salte indenant"
 
-#: src/gtk/playback-control.ui:126
+#: src/gtk/playback-control.ui:78
 msgid "Toggle Playlist"
 msgstr "Comute liste di riproduzion"
 
-#: src/gtk/playback-control.ui:131
+#: src/gtk/playback-control.ui:83
 msgctxt "a11y"
 msgid "Toggle playlist"
 msgstr "Comute liste di riproduzion"
 
-#: src/gtk/playback-control.ui:140
+#: src/gtk/playback-control.ui:92
 msgid "Shuffle the Playlist"
 msgstr "Messede la liste di riproduzion"
 
-#: src/gtk/playback-control.ui:142
+#: src/gtk/playback-control.ui:94
 msgctxt "a11y"
 msgid "Shuffle"
 msgstr "Messede"
 
-#: src/gtk/playback-control.ui:161 src/playback_control.rs:153
+#: src/gtk/playback-control.ui:113 src/playback_control.rs:114
 msgid "Enable Repeat"
 msgstr "Abilite Ripeti"
 
-#: src/gtk/playback-control.ui:166
+#: src/gtk/playback-control.ui:118
 msgctxt "a11y"
 msgid "Repeat"
 msgstr "Ripet"
 
-#: src/gtk/playback-control.ui:177
+#: src/gtk/playback-control.ui:129
 msgid "Main Menu"
 msgstr "Menù principâl"
 
-#: src/gtk/playback-control.ui:183
+#: src/gtk/playback-control.ui:135
 msgctxt "a11y"
 msgid "Primary menu"
 msgstr "Menù primari"
 
-#: src/gtk/playback-control.ui:199
+#: src/gtk/playback-control.ui:151
 msgid "Copy"
 msgstr "Copie"
 
-#: src/gtk/playback-control.ui:205
+#: src/gtk/playback-control.ui:157
 msgid "Add _Song"
 msgstr "Zonte _cjançon"
 
-#: src/gtk/playback-control.ui:209
+#: src/gtk/playback-control.ui:161
 msgid "Add _Folder"
 msgstr "Zonte c_artele"
 
-#: src/gtk/playback-control.ui:213
+#: src/gtk/playback-control.ui:165
 msgid "Clear"
 msgstr "Nete"
 
-#: src/gtk/playback-control.ui:219
+#: src/gtk/playback-control.ui:171
 msgid "_Match Cover Art"
 msgstr "_Imbine ae grafiche de cuvierte"
 
-#: src/gtk/playback-control.ui:223
+#: src/gtk/playback-control.ui:175
 msgid "_Background Playback"
 msgstr "Riproduzion in _sotfont"
 
-#: src/gtk/playback-control.ui:229
+#: src/gtk/playback-control.ui:181
 msgid "_ReplayGain"
 msgstr "_ReplayGain"
 
-#: src/gtk/playback-control.ui:231
+#: src/gtk/playback-control.ui:183
+msgctxt "replaygain-menu"
 msgid "_Album"
 msgstr "_Album"
 
-#: src/gtk/playback-control.ui:236
-msgid "_Track"
-msgstr "_Linie"
+#: src/gtk/playback-control.ui:188
+msgctxt "replaygain-menu"
+msgid "_Song"
+msgstr "_Cjançon"
 
-#: src/gtk/playback-control.ui:241
-msgid "_Off"
-msgstr "_Disativât"
+#: src/gtk/playback-control.ui:193
+msgctxt "replaygain-menu"
+msgid "_Disabled"
+msgstr "_Disabilitât"
 
-#: src/gtk/playback-control.ui:249
+#: src/gtk/playback-control.ui:201
 msgid "_Keyboard Shortcuts"
 msgstr "Scurtis di _tastiere"
 
-#: src/gtk/playback-control.ui:253
+#: src/gtk/playback-control.ui:205
 msgid "_About Amberol"
 msgstr "_Informazions su Amberol"
 
-#: src/gtk/playback-control.ui:257
+#: src/gtk/playback-control.ui:209
 msgid "_Quit"
 msgstr "_Jes"
 
-#: src/gtk/playlist-view.ui:19
+#: src/gtk/playlist-view.ui:18
 msgid "Playlist"
 msgstr "Liste di riproduzion"
 
@@ -317,19 +310,19 @@ msgstr "Selezione cjançons te liste di riproduzion"
 msgid "Close the Playlist"
 msgstr "Siere la liste di riproduzion"
 
-#: src/gtk/playlist-view.ui:135
+#: src/gtk/playlist-view.ui:133
 msgid "Select All Songs"
 msgstr "Selezione dutis lis cjançons"
 
-#: src/gtk/playlist-view.ui:148
+#: src/gtk/playlist-view.ui:146
 msgid "Remove Selected Songs"
 msgstr "Gjave lis cjançons selezionadis"
 
-#: src/gtk/window.ui:12
-msgid "Drop a song to add it to the queue"
-msgstr "Mole une cjançon par zontâle te code"
+#: src/gtk/window.ui:13
+msgid "Drop a song to add it to the playlist"
+msgstr "Mole une cjançon par zontâle te liste di riproduzion"
 
-#: src/gtk/window.ui:49
+#: src/gtk/window.ui:43
 msgid ""
 "Select a file or a folder, or drag files from your file manager to the "
 "application window to add songs to the playlist"
@@ -338,103 +331,105 @@ msgstr ""
 "files sul barcon de aplicazion, par zontâ lis cjançons ae liste di "
 "riproduzion"
 
-#: src/gtk/window.ui:58
+#: src/gtk/window.ui:52
 msgid "Restore Playlist"
 msgstr "Ripristine liste di riproduzion"
 
-#: src/gtk/window.ui:68
+#: src/gtk/window.ui:62
 msgid "Add Folder"
 msgstr "Zonte cartele"
 
-#: src/gtk/window.ui:77
+#: src/gtk/window.ui:71
 msgid "Add Song"
 msgstr "Zonte cjançon"
 
+#: src/gtk/window.ui:148
+msgctxt "a11y"
+msgid "Elapsed time"
+msgstr "Timp passât"
+
+#: src/gtk/window.ui:160
+msgctxt "a11y"
+msgid "Remaining time"
+msgstr "Timp che al reste"
+
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:233
+#: src/application.rs:229
 msgid "translator-credits"
 msgstr "Fabio Tomat <f.t.public@gmail.com>"
 
-#: src/application.rs:247
+#: src/application.rs:241
 msgid "Amberol needs to run in the background to play music"
 msgstr "Par riprodusi musiche Amberol al scugne zirâ in sotfont"
 
-#: src/playback_control.rs:157
-msgid "Repeat All Tracks"
-msgstr "Ripet dutis lis liniis"
+#: src/playback_control.rs:118
+msgid "Repeat All Songs"
+msgstr "Ripet dutis lis cjançons"
 
-#: src/playback_control.rs:161
-msgid "Repeat the Current Track"
-msgstr "Ripet la linie corinte"
+#: src/playback_control.rs:122
+msgid "Repeat the Current Song"
+msgstr "Ripet la cjançon corinte"
 
-#: src/window.rs:397
-msgid "_Add Song"
-msgstr "_Zonte cjançon"
-
-#: src/window.rs:398 src/window.rs:438
-msgid "_Cancel"
-msgstr "_Anule"
-
-#: src/window.rs:400
-msgid "Open File"
-msgstr "Vierç file"
-
-#: src/window.rs:407
+#: src/window.rs:432
 msgid "Audio files"
 msgstr "Files audio"
 
-#: src/window.rs:416 src/window.rs:1306
+#: src/window.rs:437
+msgid "_Add Song"
+msgstr "_Zonte cjançon"
+
+#: src/window.rs:440
+msgid "Open File"
+msgstr "Vierç file"
+
+#: src/window.rs:445 src/window.rs:465 src/window.rs:1354
 msgid "Unable to access files"
 msgstr "Impussibil acedi ai files"
 
-#: src/window.rs:437
+#: src/window.rs:457
 msgid "_Add Folder"
 msgstr "_Zonte cartele"
 
-#: src/window.rs:440
+#: src/window.rs:459
 msgid "Open Folder"
 msgstr "Vierç cartele"
 
-#: src/window.rs:451
-msgid "Unable to access folders"
-msgstr "Impussibil acedi aes cartelis"
-
-#: src/window.rs:469
+#: src/window.rs:482
 msgid "No available song found"
 msgstr "Nissune cjançon disponibile cjatade"
 
-#: src/window.rs:526
+#: src/window.rs:537
 msgid "No songs found"
 msgstr "Nissune cjançon cjatade"
 
-#: src/window.rs:556
+#: src/window.rs:567
 msgid "Added a new song"
 msgstr "Zontade une gnove cjançon"
 
-#: src/window.rs:557
+#: src/window.rs:568
 msgid "Play"
 msgstr "Riprodûs"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:566
+#: src/window.rs:577
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "Zontade une cjançon"
 msgstr[1] "Zontadis {} cjançons"
 
-#: src/window.rs:1056
+#: src/window.rs:1118
 msgid "Unable to access dropped files"
 msgstr "Impussibil acedi ai files molâts"
 
-#: src/window.rs:1149
+#: src/window.rs:1212
 msgid "{} minute"
 msgid_plural "{} minutes"
 msgstr[0] "{} minût"
 msgstr[1] "{} minûts"
 
-#: src/window.rs:1160
+#: src/window.rs:1223
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
 msgstr[0] "a restin {hours} ore {minutes}"
@@ -443,19 +438,19 @@ msgstr[1] "a restin {hours} oris {minutes}"
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1170
+#: src/window.rs:1233
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "al reste {} minût"
 msgstr[1] "a restin {} minûts"
 
-#: src/window.rs:1286
+#: src/window.rs:1333
 msgid "No song selected"
 msgstr "Nissune cjançon selezionade"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1291
+#: src/window.rs:1338
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "{} cjançon selezionade"
@@ -464,6 +459,21 @@ msgstr[1] "{} cjançons selezionadis"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1344
+#: src/window.rs:1392
 msgid "Currently playing “{title}” by “{artist}”"
 msgstr "Cumò in riproduzion “{title}” di “{artist}”"
+
+#~ msgid "_Track"
+#~ msgstr "_Linie"
+
+#~ msgid "_Off"
+#~ msgstr "_Disativât"
+
+#~ msgid "Repeat All Tracks"
+#~ msgstr "Ripet dutis lis liniis"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Anule"
+
+#~ msgid "Unable to access folders"
+#~ msgstr "Impussibil acedi aes cartelis"
