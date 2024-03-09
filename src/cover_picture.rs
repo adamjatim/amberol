@@ -3,6 +3,7 @@
 
 use std::cell::{Cell, RefCell};
 
+use glib::clone;
 use gtk::{gdk, gio, glib, graphene, gsk, prelude::*, subclass::prelude::*};
 
 #[derive(Clone, Copy, Debug, glib::Enum, PartialEq)]
@@ -60,6 +61,13 @@ mod imp {
 
             self.obj().add_css_class("cover");
             self.obj().set_overflow(gtk::Overflow::Hidden);
+
+            self.obj().connect_notify_local(
+                Some("scale-factor"),
+                clone!(@weak self as obj => move |picture, _| {
+                    picture.queue_draw();
+                }),
+            );
         }
 
         fn properties() -> &'static [ParamSpec] {
@@ -108,8 +116,9 @@ mod imp {
         fn snapshot(&self, snapshot: &gtk::Snapshot) {
             if let Some(ref cover) = *self.cover.borrow() {
                 let widget = self.obj();
-                let width = widget.width() as f64;
-                let height = widget.height() as f64;
+                let scale_factor = widget.scale_factor() as f64;
+                let width = widget.width() as f64 * scale_factor;
+                let height = widget.height() as f64 * scale_factor;
                 let ratio = cover.intrinsic_aspect_ratio();
                 let w;
                 let h;
@@ -125,6 +134,7 @@ mod imp {
                 let y = (height - h).floor() / 2.0;
 
                 snapshot.save();
+                snapshot.scale(1.0 / scale_factor as f32, 1.0 / scale_factor as f32);
                 snapshot.translate(&graphene::Point::new(x as f32, y as f32));
                 snapshot.append_scaled_texture(
                     cover,
