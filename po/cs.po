@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: amberol main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
-"POT-Creation-Date: 2023-04-06 11:27+0000\n"
-"PO-Revision-Date: 2023-04-04 13:12+0200\n"
+"POT-Creation-Date: 2023-05-23 19:06+0000\n"
+"PO-Revision-Date: 2023-06-02 16:22+0200\n"
 "Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: data/io.bassi.Amberol.desktop.in.in:3
 #: data/io.bassi.Amberol.appdata.xml.in.in:6
@@ -177,128 +177,121 @@ msgctxt "shortcut window"
 msgid "Seek forward in the current song"
 msgstr "Skok vpřed o 10 sekund"
 
-#: src/gtk/playback-control.ui:35
-msgctxt "a11y"
-msgid "Elapsed time"
-msgstr "Uběhnutý čas"
-
-#: src/gtk/playback-control.ui:47
-msgctxt "a11y"
-msgid "Remaining time"
-msgstr "Zbývající čas"
-
-#: src/gtk/playback-control.ui:69
+#: src/gtk/playback-control.ui:21
 msgid "Play the Previous Song"
 msgstr "Přehrát předchozí skladbu"
 
-#: src/gtk/playback-control.ui:74
+#: src/gtk/playback-control.ui:26
 msgctxt "a11y"
 msgid "Skip backwards"
 msgstr "Skočit zpět"
 
-#: src/gtk/playback-control.ui:83
+#: src/gtk/playback-control.ui:35
 msgid "Toggle Play"
 msgstr "Pozastavit nebo hrát dál"
 
-#: src/gtk/playback-control.ui:89
+#: src/gtk/playback-control.ui:41
 msgctxt "a11y"
 msgid "Toggle play"
 msgstr "Pozastavit nebo hrát dál"
 
-#: src/gtk/playback-control.ui:98
+#: src/gtk/playback-control.ui:50
 msgid "Play the Next Song"
 msgstr "Přehrát další skladbu"
 
-#: src/gtk/playback-control.ui:103
+#: src/gtk/playback-control.ui:55
 msgctxt "a11y"
 msgid "Skip forward"
 msgstr "Skočit vpřed"
 
-#: src/gtk/playback-control.ui:126
+#: src/gtk/playback-control.ui:78
 msgid "Toggle Playlist"
 msgstr "Zobrazit/skrýt seznam skladeb"
 
-#: src/gtk/playback-control.ui:131
+#: src/gtk/playback-control.ui:83
 msgctxt "a11y"
 msgid "Toggle playlist"
 msgstr "Zobrazit/skrýt seznam skladeb"
 
-#: src/gtk/playback-control.ui:140
+#: src/gtk/playback-control.ui:92
 msgid "Shuffle the Playlist"
 msgstr "Promíchat seznam skladeb"
 
-#: src/gtk/playback-control.ui:142
+#: src/gtk/playback-control.ui:94
 msgctxt "a11y"
 msgid "Shuffle"
 msgstr "Náhodné"
 
-#: src/gtk/playback-control.ui:161 src/playback_control.rs:153
+#: src/gtk/playback-control.ui:113 src/playback_control.rs:114
 msgid "Enable Repeat"
 msgstr "Povolit opakování"
 
-#: src/gtk/playback-control.ui:166
+#: src/gtk/playback-control.ui:118
 msgctxt "a11y"
 msgid "Repeat"
 msgstr "Opakovat"
 
-#: src/gtk/playback-control.ui:177
+#: src/gtk/playback-control.ui:129
 msgid "Main Menu"
 msgstr "Hlavní nabídka"
 
-#: src/gtk/playback-control.ui:183
+#: src/gtk/playback-control.ui:135
 msgctxt "a11y"
 msgid "Primary menu"
 msgstr "Primární nabídka"
 
-#: src/gtk/playback-control.ui:199
+#: src/gtk/playback-control.ui:151
 msgid "Copy"
 msgstr "Kopírovat"
 
-#: src/gtk/playback-control.ui:205
+#: src/gtk/playback-control.ui:157
 msgid "Add _Song"
 msgstr "Přidat _skladbu"
 
-#: src/gtk/playback-control.ui:209
+#: src/gtk/playback-control.ui:161
 msgid "Add _Folder"
 msgstr "Přidat _složku"
 
-#: src/gtk/playback-control.ui:213
+#: src/gtk/playback-control.ui:165
 msgid "Clear"
 msgstr "Vyčistit"
 
-#: src/gtk/playback-control.ui:219
+#: src/gtk/playback-control.ui:171
 msgid "_Match Cover Art"
 msgstr "_Ladit s obrázkem alba"
 
-#: src/gtk/playback-control.ui:223
+#: src/gtk/playback-control.ui:175
 msgid "_Background Playback"
 msgstr "Přehrávání na _pozadí"
 
-#: src/gtk/playback-control.ui:229
+#: src/gtk/playback-control.ui:181
 msgid "_ReplayGain"
 msgstr "_ReplayGain"
 
-#: src/gtk/playback-control.ui:231
+#: src/gtk/playback-control.ui:183
+msgctxt "replaygain-menu"
 msgid "_Album"
 msgstr "_Album"
 
-#: src/gtk/playback-control.ui:236
-msgid "_Track"
-msgstr "_Stopa"
+#: src/gtk/playback-control.ui:188
+msgctxt "replaygain-menu"
+msgid "_Song"
+msgstr "_Skladba"
 
-#: src/gtk/playback-control.ui:241
-msgid "_Off"
-msgstr "_Vypnout"
+#: src/gtk/playback-control.ui:193
+msgctxt "replaygain-menu"
+msgid "_Disabled"
+msgstr "_Zakázáno"
 
-#: src/gtk/playback-control.ui:249
+#: src/gtk/playback-control.ui:201
 msgid "_Keyboard Shortcuts"
 msgstr "_Klávesové zkratky"
 
-#: src/gtk/playback-control.ui:253
+#: src/gtk/playback-control.ui:205
 msgid "_About Amberol"
 msgstr "_O aplikaci Amberol"
 
-#: src/gtk/playback-control.ui:257
+#: src/gtk/playback-control.ui:209
 msgid "_Quit"
 msgstr "_Ukončit"
 
@@ -327,8 +320,8 @@ msgid "Remove Selected Songs"
 msgstr "Odebrat vybrané skladby"
 
 #: src/gtk/window.ui:12
-msgid "Drop a song to add it to the queue"
-msgstr "Přetáhnout pro přidání skladby do řady"
+msgid "Drop a song to add it to the playlist"
+msgstr "Přetáhněte skladbu pro její přidání do seznamu skladeb"
 
 #: src/gtk/window.ui:49
 msgid ""
@@ -350,93 +343,95 @@ msgstr "Přidat složku"
 msgid "Add Song"
 msgstr "Přidat skladbu"
 
+#: src/gtk/window.ui:161
+msgctxt "a11y"
+msgid "Elapsed time"
+msgstr "Uběhnutý čas"
+
+#: src/gtk/window.ui:173
+msgctxt "a11y"
+msgid "Remaining time"
+msgstr "Zbývající čas"
+
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:227
+#: src/application.rs:229
 msgid "translator-credits"
 msgstr "Písek Pískovec <pisekpiskovec@gmail.com>"
 
-#: src/application.rs:239
+#: src/application.rs:241
 msgid "Amberol needs to run in the background to play music"
 msgstr "Amberol musí běžet na pozadí, aby hrál hudbu"
 
-#: src/playback_control.rs:157
-msgid "Repeat All Tracks"
+#: src/playback_control.rs:118
+msgid "Repeat All Songs"
 msgstr "Opakovat všechny skladby"
 
-#: src/playback_control.rs:161
-msgid "Repeat the Current Track"
+#: src/playback_control.rs:122
+msgid "Repeat the Current Song"
 msgstr "Opakovat současnou skladbu"
 
-#: src/window.rs:390
-msgid "_Add Song"
-msgstr "_Přidat skladbu"
-
-#: src/window.rs:391 src/window.rs:431
-msgid "_Cancel"
-msgstr "_Zrušit"
-
-#: src/window.rs:393
-msgid "Open File"
-msgstr "Otevřít soubor"
-
-#: src/window.rs:400
+#: src/window.rs:432
 msgid "Audio files"
 msgstr "Zvukové soubory"
 
-#: src/window.rs:409 src/window.rs:1300
+#: src/window.rs:437
+msgid "_Add Song"
+msgstr "_Přidat skladbu"
+
+#: src/window.rs:440
+msgid "Open File"
+msgstr "Otevřít soubor"
+
+#: src/window.rs:445 src/window.rs:465 src/window.rs:1365
 msgid "Unable to access files"
 msgstr "Nelze získat přístup k souborům"
 
-#: src/window.rs:430
+#: src/window.rs:457
 msgid "_Add Folder"
 msgstr "_Přidat složku"
 
-#: src/window.rs:433
+#: src/window.rs:459
 msgid "Open Folder"
 msgstr "Otevřít složku"
 
-#: src/window.rs:444
-msgid "Unable to access folders"
-msgstr "Nelze získat přístup ke složkám"
-
-#: src/window.rs:462
+#: src/window.rs:482
 msgid "No available song found"
 msgstr "Nenalezeny dostupné skladby"
 
-#: src/window.rs:519
+#: src/window.rs:539
 msgid "No songs found"
 msgstr "Nalezeny žádné skladby"
 
-#: src/window.rs:549
+#: src/window.rs:569
 msgid "Added a new song"
 msgstr "Nová skladba přidána"
 
-#: src/window.rs:550
+#: src/window.rs:570
 msgid "Play"
 msgstr "Přehrát"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:559
+#: src/window.rs:579
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "Přidána jedna skladba"
 msgstr[1] "Přidány {} skladby"
 msgstr[2] "Přidáno {} skladeb"
 
-#: src/window.rs:1050
+#: src/window.rs:1129
 msgid "Unable to access dropped files"
 msgstr "Nelze získat přístup k vloženým souborům"
 
-#: src/window.rs:1143
+#: src/window.rs:1223
 msgid "{} minute"
 msgid_plural "{} minutes"
 msgstr[0] "{} minuta"
 msgstr[1] "{} minuty"
 msgstr[2] "{} minut"
 
-#: src/window.rs:1154
+#: src/window.rs:1234
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
 msgstr[0] "Zbývá {hours} hodina {minutes}"
@@ -446,20 +441,20 @@ msgstr[2] "Zbývá {hours} hodin {minutes}"
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1164
+#: src/window.rs:1244
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "Zbývá {} minuta"
 msgstr[1] "Zbývá {} minuty"
 msgstr[2] "Zbývá {} minut"
 
-#: src/window.rs:1280
+#: src/window.rs:1344
 msgid "No song selected"
 msgstr "Nevybrána žádná skladba"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1285
+#: src/window.rs:1349
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "Vybrána {} skladba"
@@ -469,9 +464,24 @@ msgstr[2] "Vybráno {} skladeb"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1338
+#: src/window.rs:1403
 msgid "Currently playing “{title}” by “{artist}”"
 msgstr "Právě hraje “{title}” od “{artist}”"
+
+#~ msgid "_Track"
+#~ msgstr "_Stopa"
+
+#~ msgid "_Off"
+#~ msgstr "_Vypnout"
+
+#~ msgid "Repeat All Tracks"
+#~ msgstr "Opakovat všechny skladby"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Zrušit"
+
+#~ msgid "Unable to access folders"
+#~ msgstr "Nelze získat přístup ke složkám"
 
 #~ msgid "Add File"
 #~ msgstr "Přidat soubor"
