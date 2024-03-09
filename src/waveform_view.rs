@@ -516,7 +516,7 @@ impl WaveformView {
             if let Some(first_frame_time) = this.imp().first_frame_time.get() {
                 if frame_time < first_frame_time {
                     warn!("Frame clock going backwards");
-                    return glib::Continue(true);
+                    return glib::ControlFlow::Continue;
                 }
 
                 let has_peaks = match *this.imp().peaks.borrow() {
@@ -550,7 +550,7 @@ impl WaveformView {
                         this.imp().first_frame_time.replace(None);
                         this.imp().tick_id.replace(None);
                         this.queue_resize();
-                        return glib::Continue(false);
+                        return glib::ControlFlow::Break;
                     } else {
                         this.imp().factor.replace(Some(delta));
                         this.queue_draw();
@@ -567,12 +567,12 @@ impl WaveformView {
                     this.imp().factor.replace(None);
                     this.imp().tick_id.replace(None);
                     this.queue_resize();
-                    return glib::Continue(false);
+                    return glib::ControlFlow::Break;
                 }
             } else {
                 this.imp().first_frame_time.replace(Some(frame_time));
             }
-            glib::Continue(true)
+            glib::ControlFlow::Continue
         }));
 
         self.imp().tick_id.replace(Some(tick_id));
