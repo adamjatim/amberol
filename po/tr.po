@@ -2,24 +2,29 @@
 # Copyright (C) 2022-2023 amberol's COPYRIGHT HOLDER
 # This file is distributed under the same license as the amberol package.
 #
-# Sabri Ünal <libreajans@gmail.com>, 2022, 2023.
 # Emin Tufan Çetin <etcetin@gmail.com>, 2022-2023.
+# Sabri Ünal <libreajans@gmail.com>, 2022-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: amberol main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
-"POT-Creation-Date: 2023-04-24 22:31+0000\n"
-"PO-Revision-Date: 2023-04-25 23:57+0300\n"
+"POT-Creation-Date: 2023-05-23 19:06+0000\n"
+"PO-Revision-Date: 2023-06-06 13:58+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.2.2\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: Gtranslator 42.0\n"
 "X-Project-Style: gnome\n"
+"X-DL-Team: tr\n"
+"X-DL-Module: amberol\n"
+"X-DL-Branch: main\n"
+"X-DL-Domain: po\n"
+"X-DL-State: Translating\n"
 
 #: data/io.bassi.Amberol.desktop.in.in:3
 #: data/io.bassi.Amberol.appdata.xml.in.in:6
@@ -362,13 +367,13 @@ msgid "Remaining time"
 msgstr "Kalan süre"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:227
+#: src/application.rs:229
 msgid "translator-credits"
 msgstr ""
 "Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Sabri Ünal <libreajans@gmail.com>"
 
-#: src/application.rs:239
+#: src/application.rs:241
 msgid "Amberol needs to run in the background to play music"
 msgstr "Amberol, müzik çalmak için arka planda çalışmalıdır"
 
@@ -380,72 +385,64 @@ msgstr "Tüm Şarkıları Yinele"
 msgid "Repeat the Current Song"
 msgstr "Geçerli Şarkıyı Yinele"
 
-#: src/window.rs:403
-msgid "_Add Song"
-msgstr "Şarkı _Ekle"
-
-#: src/window.rs:404 src/window.rs:444
-msgid "_Cancel"
-msgstr "_Vazgeç"
-
-#: src/window.rs:406
-msgid "Open File"
-msgstr "Dosya Aç"
-
-#: src/window.rs:413
+#: src/window.rs:432
 msgid "Audio files"
 msgstr "Ses dosyaları"
 
-#: src/window.rs:422 src/window.rs:1315
+#: src/window.rs:437
+msgid "_Add Song"
+msgstr "Şarkı _Ekle"
+
+#: src/window.rs:440
+msgid "Open File"
+msgstr "Dosya Aç"
+
+#: src/window.rs:445 src/window.rs:465 src/window.rs:1365
 msgid "Unable to access files"
 msgstr "Dosyalara erişilemiyor"
 
-#: src/window.rs:443
+#: src/window.rs:457
 msgid "_Add Folder"
 msgstr "_Klasör Ekle"
 
-#: src/window.rs:446
+#: src/window.rs:459
 msgid "Open Folder"
 msgstr "Klasör Aç"
 
-#: src/window.rs:457
-msgid "Unable to access folders"
-msgstr "Klasörlere erişilemiyor"
-
-#: src/window.rs:475
+#: src/window.rs:482
 msgid "No available song found"
 msgstr "Kullanılabilir şarkı bulunamadı"
 
-#: src/window.rs:532
+#: src/window.rs:539
 msgid "No songs found"
 msgstr "Şarkı bulunamadı"
 
-#: src/window.rs:562
+#: src/window.rs:569
 msgid "Added a new song"
 msgstr "Yeni şarkı eklendi"
 
-#: src/window.rs:563
+#: src/window.rs:570
 msgid "Play"
 msgstr "Çal"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:572
+#: src/window.rs:579
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "{} şarkı eklendi"
 
-#: src/window.rs:1062
+#: src/window.rs:1129
 msgid "Unable to access dropped files"
 msgstr "Bırakılan dosyalara erişilemiyor"
 
-#: src/window.rs:1152
+#: src/window.rs:1223
 msgid "{} minute"
 msgid_plural "{} minutes"
 msgstr[0] "{} dakika"
 
-#: src/window.rs:1163
+#: src/window.rs:1234
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
 msgstr[0] "{hours} saat {minutes} kaldı"
@@ -453,18 +450,18 @@ msgstr[0] "{hours} saat {minutes} kaldı"
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1173
+#: src/window.rs:1244
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "{} dakika kaldı"
 
-#: src/window.rs:1295
+#: src/window.rs:1344
 msgid "No song selected"
 msgstr "Şarkı seçilmedi"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1300
+#: src/window.rs:1349
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "{} şarkı seçildi"
@@ -472,6 +469,12 @@ msgstr[0] "{} şarkı seçildi"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1353
+#: src/window.rs:1403
 msgid "Currently playing “{title}” by “{artist}”"
 msgstr "“{artist}”, “{title}” çalıyor"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Vazgeç"
+
+#~ msgid "Unable to access folders"
+#~ msgstr "Klasörlere erişilemiyor"
