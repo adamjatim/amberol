@@ -6,7 +6,7 @@
 
   <name xml:lang="en">Amberol</name>
   <shortdesc xml:lang="en">Plays music, and nothing else</shortdesc>
-  <homepage rdf:resource="https://apps.gnome.org/app/io.bassi.Amberol/" />
+  <homepage rdf:resource="https://apps.gnome.org/Amberol/" />
   <bug-database rdf:resource="https://gitlab.gnome.org/World/amberol/-/issues/"/>
 
   <programming-language>Rust</programming-language>
