@@ -6,8 +6,8 @@
 msgid ""
 msgstr "Project-Id-Version: amberol main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
-"POT-Creation-Date: 2023-02-22 13:07+0000\n"
-"PO-Revision-Date: 2023-03-04 20:28+0000\n"
+"POT-Creation-Date: 2023-05-23 19:06+0000\n"
+"PO-Revision-Date: 2023-07-20 20:28+0000\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -73,15 +73,15 @@ msgstr "Emmanuele Bassi"
 msgid "Playback in progress"
 msgstr "Erreprodukzioa abian"
 
-#: src/audio/song.rs:337
+#: src/audio/song.rs:325
 msgid "Unknown artist"
 msgstr "Artista ezezaguna"
 
-#: src/audio/song.rs:344
+#: src/audio/song.rs:332
 msgid "Unknown title"
 msgstr "Izenburu ezezaguna"
 
-#: src/audio/song.rs:351
+#: src/audio/song.rs:339
 msgid "Unknown album"
 msgstr "Album ezezaguna"
 
@@ -170,128 +170,121 @@ msgctxt "shortcut window"
 msgid "Seek forward in the current song"
 msgstr "Bilatu aurrerantz uneko abestian"
 
-#: src/gtk/playback-control.ui:35
-msgctxt "a11y"
-msgid "Elapsed time"
-msgstr "Igarotako denbora"
-
-#: src/gtk/playback-control.ui:47
-msgctxt "a11y"
-msgid "Remaining time"
-msgstr "Falta den denbora"
-
-#: src/gtk/playback-control.ui:69
+#: src/gtk/playback-control.ui:21
 msgid "Play the Previous Song"
 msgstr "Erreproduzitu aurreko abestia"
 
-#: src/gtk/playback-control.ui:74
+#: src/gtk/playback-control.ui:26
 msgctxt "a11y"
 msgid "Skip backwards"
 msgstr "Saltatu atzerantz"
 
-#: src/gtk/playback-control.ui:83
+#: src/gtk/playback-control.ui:35
 msgid "Toggle Play"
 msgstr "Txandakatu erreprodukzioa"
 
-#: src/gtk/playback-control.ui:89
+#: src/gtk/playback-control.ui:41
 msgctxt "a11y"
 msgid "Toggle play"
 msgstr "Txandakatu erreprodukzioa"
 
-#: src/gtk/playback-control.ui:98
+#: src/gtk/playback-control.ui:50
 msgid "Play the Next Song"
 msgstr "Erreproduzitu hurrengo abestia"
 
-#: src/gtk/playback-control.ui:103
+#: src/gtk/playback-control.ui:55
 msgctxt "a11y"
 msgid "Skip forward"
 msgstr "Saltatu aurrerantz"
 
-#: src/gtk/playback-control.ui:126
+#: src/gtk/playback-control.ui:78
 msgid "Toggle Playlist"
 msgstr "Txandakatu erreprodukzio-zerrenda"
 
-#: src/gtk/playback-control.ui:131
+#: src/gtk/playback-control.ui:83
 msgctxt "a11y"
 msgid "Toggle playlist"
 msgstr "Txandakatu erreprodukzio-zerrenda"
 
-#: src/gtk/playback-control.ui:140
+#: src/gtk/playback-control.ui:92
 msgid "Shuffle the Playlist"
 msgstr "Erreproduzitu zerrenda ausaz"
 
-#: src/gtk/playback-control.ui:142
+#: src/gtk/playback-control.ui:94
 msgctxt "a11y"
 msgid "Shuffle"
 msgstr "Ausaz"
 
-#: src/gtk/playback-control.ui:161 src/playback_control.rs:153
+#: src/gtk/playback-control.ui:113 src/playback_control.rs:114
 msgid "Enable Repeat"
 msgstr "Gaitu errepikapena"
 
-#: src/gtk/playback-control.ui:166
+#: src/gtk/playback-control.ui:118
 msgctxt "a11y"
 msgid "Repeat"
 msgstr "Errepikatu"
 
-#: src/gtk/playback-control.ui:177
+#: src/gtk/playback-control.ui:129
 msgid "Main Menu"
 msgstr "Menu nagusia"
 
-#: src/gtk/playback-control.ui:183
+#: src/gtk/playback-control.ui:135
 msgctxt "a11y"
 msgid "Primary menu"
 msgstr "Menu nagusia"
 
-#: src/gtk/playback-control.ui:199
+#: src/gtk/playback-control.ui:151
 msgid "Copy"
 msgstr "Kopiatu"
 
-#: src/gtk/playback-control.ui:205
+#: src/gtk/playback-control.ui:157
 msgid "Add _Song"
 msgstr "Gehitu _abestia"
 
-#: src/gtk/playback-control.ui:209
+#: src/gtk/playback-control.ui:161
 msgid "Add _Folder"
 msgstr "Gehitu _karpeta"
 
-#: src/gtk/playback-control.ui:213
+#: src/gtk/playback-control.ui:165
 msgid "Clear"
 msgstr "Garbitu"
 
-#: src/gtk/playback-control.ui:219
+#: src/gtk/playback-control.ui:171
 msgid "_Match Cover Art"
 msgstr "_Egin bat azalarekin"
 
-#: src/gtk/playback-control.ui:223
+#: src/gtk/playback-control.ui:175
 msgid "_Background Playback"
 msgstr "A_tzeko planoko erreprodukzioa"
 
-#: src/gtk/playback-control.ui:229
+#: src/gtk/playback-control.ui:181
 msgid "_ReplayGain"
 msgstr "_ReplayGain"
 
-#: src/gtk/playback-control.ui:231
+#: src/gtk/playback-control.ui:183
+msgctxt "replaygain-menu"
 msgid "_Album"
 msgstr "_Albuma"
 
-#: src/gtk/playback-control.ui:236
-msgid "_Track"
-msgstr "_Pista"
+#: src/gtk/playback-control.ui:188
+msgctxt "replaygain-menu"
+msgid "_Song"
+msgstr "A_bestia"
 
-#: src/gtk/playback-control.ui:241
-msgid "_Off"
-msgstr "_Desaktibatuta"
+#: src/gtk/playback-control.ui:193
+msgctxt "replaygain-menu"
+msgid "_Disabled"
+msgstr "_Desgaituta"
 
-#: src/gtk/playback-control.ui:249
+#: src/gtk/playback-control.ui:201
 msgid "_Keyboard Shortcuts"
 msgstr "La_sterbideak"
 
-#: src/gtk/playback-control.ui:253
+#: src/gtk/playback-control.ui:205
 msgid "_About Amberol"
 msgstr "Amberol aplikazioari _buruz"
 
-#: src/gtk/playback-control.ui:257
+#: src/gtk/playback-control.ui:209
 msgid "_Quit"
 msgstr "I_rten"
 
@@ -320,8 +313,8 @@ msgid "Remove Selected Songs"
 msgstr "Kendu hautatutako abestiak"
 
 #: src/gtk/window.ui:12
-msgid "Drop a song to add it to the queue"
-msgstr "Jaregin abesti bat ilaran gehitzeko"
+msgid "Drop a song to add it to the playlist"
+msgstr "Jaregin abesti bat erreprodukzio-zerrendari gehitzeko"
 
 #: src/gtk/window.ui:49
 msgid ""
@@ -341,91 +334,93 @@ msgstr "Gehitu karpeta"
 msgid "Add Song"
 msgstr "Gehitu abestia"
 
+#: src/gtk/window.ui:161
+msgctxt "a11y"
+msgid "Elapsed time"
+msgstr "Igarotako denbora"
+
+#: src/gtk/window.ui:173
+msgctxt "a11y"
+msgid "Remaining time"
+msgstr "Falta den denbora"
+
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:233
+#: src/application.rs:229
 msgid "translator-credits"
 msgstr "translator-credits"
 
-#: src/application.rs:247
+#: src/application.rs:241
 msgid "Amberol needs to run in the background to play music"
 msgstr "Amberol atzeko planoan exekutatu behar da musika erreproduzitu ahal izateko"
 
-#: src/playback_control.rs:157
-msgid "Repeat All Tracks"
-msgstr "Errepikatu pista guztiak"
+#: src/playback_control.rs:118
+msgid "Repeat All Songs"
+msgstr "Errepikatu abesti guztiak"
 
-#: src/playback_control.rs:161
-msgid "Repeat the Current Track"
-msgstr "Errepikatu uneko pista"
+#: src/playback_control.rs:122
+msgid "Repeat the Current Song"
+msgstr "Errepikatu uneko abestia"
 
-#: src/window.rs:397
-msgid "_Add Song"
-msgstr "_Gehitu abestia"
-
-#: src/window.rs:398 src/window.rs:438
-msgid "_Cancel"
-msgstr "_Utzi"
-
-#: src/window.rs:400
-msgid "Open File"
-msgstr "Ireki fitxategia"
-
-#: src/window.rs:407
+#: src/window.rs:432
 msgid "Audio files"
 msgstr "Audio-fitxategiak"
 
-#: src/window.rs:416 src/window.rs:1306
+#: src/window.rs:437
+msgid "_Add Song"
+msgstr "_Gehitu abestia"
+
+#: src/window.rs:440
+msgid "Open File"
+msgstr "Ireki fitxategia"
+
+#: src/window.rs:445 src/window.rs:465 src/window.rs:1365
 msgid "Unable to access files"
 msgstr "Ezin dira fitxategiak atzitu"
 
-#: src/window.rs:437
+#: src/window.rs:457
 msgid "_Add Folder"
 msgstr "_Gehitu karpeta"
 
-#: src/window.rs:440
+#: src/window.rs:459
 msgid "Open Folder"
 msgstr "Ireki karpeta"
 
-#: src/window.rs:451
-msgid "Unable to access folders"
-msgstr "Ezin dira karpetak atzitu"
-
-#: src/window.rs:469
+#: src/window.rs:482
 msgid "No available song found"
 msgstr "Ez da aurkitu bat datorren abestirik"
 
-#: src/window.rs:526
+#: src/window.rs:539
 msgid "No songs found"
 msgstr "Ez da abestirik aurkitu"
 
-#: src/window.rs:556
+#: src/window.rs:569
 msgid "Added a new song"
 msgstr "Beste abesti bat gehitu da"
 
-#: src/window.rs:557
+#: src/window.rs:570
 msgid "Play"
 msgstr "Erreproduzitu"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:566
+#: src/window.rs:579
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "Abesti bat gehitu da"
 msgstr[1] "{} abesti gehitu dira"
 
-#: src/window.rs:1056
+#: src/window.rs:1129
 msgid "Unable to access dropped files"
 msgstr "Ezin dira jaregindako fitxategiak atzitu"
 
-#: src/window.rs:1149
+#: src/window.rs:1223
 msgid "{} minute"
 msgid_plural "{} minutes"
 msgstr[0] "Minutu {}"
 msgstr[1] "{} minutu"
 
-#: src/window.rs:1160
+#: src/window.rs:1234
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
 msgstr[0] "Ordu {hours} eta {minutes} minutu geratzen dira"
@@ -434,19 +429,19 @@ msgstr[1] "{hours} ordu eta {minutes} minutu geratzen dira"
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1170
+#: src/window.rs:1244
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "Minutu {} geratzen da"
 msgstr[1] "{} minutu geratzen dira"
 
-#: src/window.rs:1286
+#: src/window.rs:1344
 msgid "No song selected"
 msgstr "Ez da abestirik hautatu"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1291
+#: src/window.rs:1349
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "Abesti {} hautatu da"
@@ -455,9 +450,24 @@ msgstr[1] "{} abesti hautatu dira"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1344
+#: src/window.rs:1403
 msgid "Currently playing “{title}” by “{artist}”"
 msgstr "Orain erreproduzitzen: “{title}”, egilea: “{artist}”"
+
+#~ msgid "_Track"
+#~ msgstr "_Pista"
+
+#~ msgid "_Off"
+#~ msgstr "_Desaktibatuta"
+
+#~ msgid "Repeat All Tracks"
+#~ msgstr "Errepikatu pista guztiak"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Utzi"
+
+#~ msgid "Unable to access folders"
+#~ msgstr "Ezin dira karpetak atzitu"
 
 #~ msgid "Add File"
 #~ msgstr "Gehitu fitxategia"
