@@ -17,7 +17,7 @@ indent_size = 2
 [*.ui]
 indent_size = 2
 
-[*.xml]
+[*.{xml,xml.in,xml.in.in}]
 indent_size = 2
 
 [meson.build]
