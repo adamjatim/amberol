@@ -7,8 +7,8 @@ button.large {
 
 .main-box {
   padding: 6px;
-  margin-left: 24px;
-  margin-right: 24px;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
 songcover {
@@ -22,6 +22,10 @@ songcover image.card {
               0px 6px 32px rgba(0,0,0,0.1);
   border-radius: 12px;
   margin: 6px;
+}
+
+.main-window > overlay-split-view > .sidebar-pane {
+  background: transparent;
 }
 
 .main-window songcover picture.cover {
@@ -87,7 +91,7 @@ queuerow checkbutton.selection-mode {
 }
 
 .queue-length {
-  padding: 12px;
+  padding: 9px 12px;
 }
 
 dragoverlay {
@@ -97,14 +101,11 @@ dragoverlay {
 .drag-overlay-status-page {
   background-color: alpha(@accent_bg_color, 0.5);
   color: @accent_fg_color;
+  padding: 32px;
 }
 
 .blurred {
   filter: blur(6px);
-}
-
-scrolledwindow undershoot.top {
-  box-shadow: inset 0 1px @borders;
 }
 
 .main-window {
@@ -120,11 +121,7 @@ scrolledwindow undershoot.top {
   background-color: rgba(0, 0, 0, 0.08);
 }
 
-.folded playlistview {
-  background: @window_bg_color;
-}
-
-.main-window .folded playlistview {
+.main-window > overlay-split-view > widget.background > playlistview {
   background: linear-gradient(127deg, alpha(@background_color_0, .55), alpha(@background_color_0, 0) 70.71%),
               linear-gradient(217deg, alpha(@background_color_1, .55), alpha(@background_color_1, 0) 70.71%),
               linear-gradient(336deg, alpha(@background_color_2, .55), alpha(@background_color_2, 0) 70.71%),
@@ -141,24 +138,10 @@ scrolledwindow undershoot.top {
   outline-color: alpha(currentColor, .25);
 }
 
-.main-window searchbar {
-  background: transparent;
-}
-
-.main-window searchbar > revealer > box {
-  box-shadow: inset 0 1px @borders;
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
 .main-window scale highlight,
 .main-window progressbar progress {
   background: currentColor;
   color: inherit;
-}
-
-actionbar.flat > revealer > box {
-  background: none;
-  box-shadow: inset 0 1px @borders;
 }
 
 volume > scale { color: @dimmed_color; }
