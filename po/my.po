@@ -1,0 +1,457 @@
+# Burmese translation for amberol.
+# Copyright (C) 2024 amberol's COPYRIGHT HOLDER
+# This file is distributed under the same license as the amberol package.
+# zayar lwin <zyl.pol.mm@zohomail.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: amberol main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
+"POT-Creation-Date: 2024-01-09 11:28+0000\n"
+"PO-Revision-Date: 2024-02-03 13:16+0630\n"
+"Last-Translator: Zayar Lwin <zyl.pol.mm@zohomail.com>\n"
+"Language-Team: Burmese <my@li.org>\n"
+"Language: my\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: data/io.bassi.Amberol.desktop.in.in:3
+#: data/io.bassi.Amberol.appdata.xml.in.in:6
+msgid "Amberol"
+msgstr "အန်ဘာရော"
+
+#: data/io.bassi.Amberol.desktop.in.in:4
+msgid "Music Player"
+msgstr "သီချင်းဖွင့်ကိရိယာ"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/io.bassi.Amberol.desktop.in.in:12
+msgid "music;player;media;audio;playlist;"
+msgstr "သီချင်း;သီချင်းဖွင့်ကိရိယာ;မီဒီယာ;အော်ဒီယို;အသံ;သီချင်းစာရင်း;"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:7
+msgid "Plays music, and nothing else"
+msgstr "သီချင်းဖွင့်ပေးယုံကလွဲပြီး ကျန်တာလုပ်မရပါ"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:9
+msgid ""
+"Amberol is a music player with no delusions of grandeur. If you just want to "
+"play music available on your local system then Amberol is the music player "
+"you are looking for."
+msgstr ""
+"အန်ဘာရောသည် ဟိတ်ကြီးဟန်ကြီးမရှိသော သီချင်းဖွင့်ကိရိယာတစ်ခုဖြစ်သည်။ သင့်စက်တွင်းမှာရှိသော "
+"တေးသီးချင်းများကိုသာ နားဆင်လိုပါက အန်ဘာရောကိုသာ အသုံးပြုလိုက်ပါ။"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:14
+msgid "Current features:"
+msgstr "လက်ရှိစွမ်းရည်များ-"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:16
+msgid "adaptive UI"
+msgstr "ပြောင်းလွယ်ပြင်လွယ်ရှိသောUI"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:17
+msgid "UI recoloring using the album art"
+msgstr "အယ်ဘမ်ပုံရိပ်ကိုအသုံးပြု၍ UI အရောင် ပြန်ချယ်နိုင်ခြင်း"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:18
+msgid "drag and drop support to queue songs"
+msgstr "သီချင်းအသစ်ထည့်ရန် ဆွဲ၍ပစ်ထည့်ခြင်း လုပ်ဆောင်နိုင်မှုကို ထည့်ပေးထားသည်"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:19
+msgid "shuffle and repeat"
+msgstr "ကျပမ်းနှင့် ထပ်တလဲလဲ ဖွင့်ပေးခြင်း"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:20
+msgid "MPRIS integration"
+msgstr "MPRISပေါင်းစည်းမှု"
+
+#: data/io.bassi.Amberol.appdata.xml.in.in:44
+msgid "Emmanuele Bassi"
+msgstr "အန်မန်နွန်ဘက်စီ"
+
+#: src/audio/inhibit_controller.rs:40
+msgid "Playback in progress"
+msgstr "သီချင်းဖွင့်ထားသည်"
+
+#: src/audio/song.rs:325
+msgid "Unknown artist"
+msgstr "အမည်မသိအဆိုတော်"
+
+#: src/audio/song.rs:332
+msgid "Unknown title"
+msgstr "ခေါင်းစဉ် မသိ"
+
+#: src/audio/song.rs:339
+msgid "Unknown album"
+msgstr "အယ်ဘမ် မသိ"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "အထွေထွေဆိုင်ရာ"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Toggle primary menu"
+msgstr "ပင်မမီနူးဖွင့်ရန်"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Copy song details to the clipboard"
+msgstr "ကလစ်ဘုတ်သို့ သီချင်း၏အသေးစိတ်အချက်အလက်များ ကူးယူရန်"
+
+#: src/gtk/help-overlay.ui:26
+msgctxt "shortcut window"
+msgid "Show shortcuts"
+msgstr "ဖြတ်လမ်းများပြရန်"
+
+#: src/gtk/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "ထွက်ရန်"
+
+#: src/gtk/help-overlay.ui:40
+msgctxt "shortcut window"
+msgid "Playlist"
+msgstr "သီချင်းစာရင်း"
+
+#: src/gtk/help-overlay.ui:43
+msgctxt "shortcut window"
+msgid "Add a song to the playlist"
+msgstr "သီချင်းစာရင်းသို့ သီချင်းထည့်ရန်"
+
+#: src/gtk/help-overlay.ui:49
+msgctxt "shortcut window"
+msgid "Add a folder to the playlist"
+msgstr "သီချင်းစာရင်းသို့ ဖိုင်တွဲထည့်ရန်"
+
+#: src/gtk/help-overlay.ui:55
+msgctxt "shortcut window"
+msgid "Clear the playlist"
+msgstr "သီချင်းစာရင်း ဖျက်ပစ်ရန်"
+
+#: src/gtk/help-overlay.ui:61
+msgctxt "shortcut window"
+msgid "Toggle the playlist pane"
+msgstr "သီချင်းစာရင်း ဘေးဘက်ပြား ဖွင့်ရန်"
+
+#: src/gtk/help-overlay.ui:67
+msgctxt "shortcut window"
+msgid "Toggle shuffling songs"
+msgstr "သီချင်းများ ကျပမ်းဖွင့်ရန်"
+
+#: src/gtk/help-overlay.ui:75
+msgctxt "shortcut window"
+msgid "Playback"
+msgstr "သီချင်းဖွင့်ခြင်းဆိုင်ရာ"
+
+#: src/gtk/help-overlay.ui:78
+msgctxt "shortcut window"
+msgid "Toggle play/pause"
+msgstr "ဖွင့်/ပိတ်"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Previous song"
+msgstr "ယခင်သီချင်း"
+
+#: src/gtk/help-overlay.ui:90
+msgctxt "shortcut window"
+msgid "Next song"
+msgstr "နောက်သီချင်း"
+
+#: src/gtk/help-overlay.ui:96
+msgctxt "shortcut window"
+msgid "Seek backwards in the current song"
+msgstr "လက်ရှိသီချင်းတွင် နောက်ပြန်လှည့်ကြည့်ရန်"
+
+#: src/gtk/help-overlay.ui:102
+msgctxt "shortcut window"
+msgid "Seek forward in the current song"
+msgstr "လက်ရှိသီချင်းတွင် ရှေ့သို့သွားကြည့်ရန်"
+
+#: src/gtk/playback-control.ui:21
+msgid "Play the Previous Song"
+msgstr "ယခင်သီချင်းကိုဖွင့်မည်"
+
+#: src/gtk/playback-control.ui:26
+msgctxt "a11y"
+msgid "Skip backwards"
+msgstr "ပြန်လှည့်"
+
+#: src/gtk/playback-control.ui:35
+msgid "Toggle Play"
+msgstr "ဖွင့်မည်"
+
+#: src/gtk/playback-control.ui:41
+msgctxt "a11y"
+msgid "Toggle play"
+msgstr "ဖွင့်မည်"
+
+#: src/gtk/playback-control.ui:50
+msgid "Play the Next Song"
+msgstr "နောက်သီချင်းကိုဖွင့်မည်"
+
+#: src/gtk/playback-control.ui:55
+msgctxt "a11y"
+msgid "Skip forward"
+msgstr "ကျော်မည်"
+
+#: src/gtk/playback-control.ui:78
+msgid "Toggle Playlist"
+msgstr "သီချင်းစာရင်းဖွင့်"
+
+#: src/gtk/playback-control.ui:83
+msgctxt "a11y"
+msgid "Toggle playlist"
+msgstr "သီချင်းစာရင်းဖွင့်"
+
+#: src/gtk/playback-control.ui:92
+msgid "Shuffle the Playlist"
+msgstr "သီချင်းစာရင်းကို ကျပန်းလှည့်ပစ်မည်"
+
+#: src/gtk/playback-control.ui:94
+msgctxt "a11y"
+msgid "Shuffle"
+msgstr "ကျပမ်း"
+
+#: src/gtk/playback-control.ui:113 src/playback_control.rs:114
+msgid "Enable Repeat"
+msgstr "ထပ်တလဲလဲဖွင့်ခြင်းလုပ်မည်"
+
+#: src/gtk/playback-control.ui:118
+msgctxt "a11y"
+msgid "Repeat"
+msgstr "ထပ်လုပ်"
+
+#: src/gtk/playback-control.ui:129
+msgid "Main Menu"
+msgstr "ပင်မမီနူး"
+
+#: src/gtk/playback-control.ui:135
+msgctxt "a11y"
+msgid "Primary menu"
+msgstr "ပင်မမီနူး"
+
+#: src/gtk/playback-control.ui:151
+msgid "Copy"
+msgstr "ကူးယူ"
+
+#: src/gtk/playback-control.ui:157
+msgid "Add _Song"
+msgstr "_သီချင်းထည့်"
+
+#: src/gtk/playback-control.ui:161
+msgid "Add _Folder"
+msgstr "_ဖိုင်တွဲထည့်"
+
+#: src/gtk/playback-control.ui:165
+msgid "Clear"
+msgstr "ရှင်းလင်း"
+
+#: src/gtk/playback-control.ui:171
+msgid "_Match Cover Art"
+msgstr "အဖုံးရှိပုံနှင့်_ကိုက်ညီစေမည်"
+
+#: src/gtk/playback-control.ui:175
+msgid "_Background Playback"
+msgstr "_နောက်ကွယ်သီချင်းဖွင့်မှု"
+
+#: src/gtk/playback-control.ui:181
+msgid "_ReplayGain"
+msgstr "_ကျယ်လောင်မှုညှိရန်"
+
+#: src/gtk/playback-control.ui:183
+msgctxt "replaygain-menu"
+msgid "_Album"
+msgstr "_အယ်ဘမ်"
+
+#: src/gtk/playback-control.ui:188
+msgctxt "replaygain-menu"
+msgid "_Song"
+msgstr "_သီချင်း"
+
+#: src/gtk/playback-control.ui:193
+msgctxt "replaygain-menu"
+msgid "_Disabled"
+msgstr "_ပိတ်ထားသည်"
+
+#: src/gtk/playback-control.ui:201
+msgid "_Keyboard Shortcuts"
+msgstr "ကီး_ဘုတ်ဖြတ်လမ်းခလုတ်များ"
+
+#: src/gtk/playback-control.ui:205
+msgid "_About Amberol"
+msgstr "အန်ဘာရော_အကြောင်း"
+
+#: src/gtk/playback-control.ui:209
+msgid "_Quit"
+msgstr "_ထွက်မည်"
+
+#: src/gtk/playlist-view.ui:18
+msgid "Playlist"
+msgstr "သီချင်းစာရင်း"
+
+#: src/gtk/playlist-view.ui:49
+msgid "Search Songs in the Playlist"
+msgstr "သီချင်းစာရင်းရှိသီချင်းများရှာဖွေမည်"
+
+#: src/gtk/playlist-view.ui:61
+msgid "Select Songs in the Playlist"
+msgstr "သီချင်းစာရင်းရှိသီချင်းများရွေးမည်"
+
+#: src/gtk/playlist-view.ui:74
+msgid "Close the Playlist"
+msgstr "သီချင်းစာရင်းပိတ်မည်"
+
+#: src/gtk/playlist-view.ui:133
+msgid "Select All Songs"
+msgstr "သီချင်းအားလုံးရွေး"
+
+#: src/gtk/playlist-view.ui:146
+msgid "Remove Selected Songs"
+msgstr "ရွေးထားသောသီချင်းများဖယ်ပစ်မည်"
+
+#: src/gtk/window.ui:13
+msgid "Drop a song to add it to the playlist"
+msgstr "သီချင်းစာရင်းသို့ထည့်ရန် သီချင်းကို ပစ်ချလိုက်ပါ"
+
+#: src/gtk/window.ui:43
+msgid ""
+"Select a file or a folder, or drag files from your file manager to the "
+"application window to add songs to the playlist"
+msgstr ""
+"ဖိုင် သို့ ဖိုင်တွဲကိုရွေးပါ သို့မဟုတ် ဖိုင်မန်နေဂျာမှတဆင့် ဖိုင်များကို ဆွဲယူ၍ အပ္ပလီကေးရှင်းဝင်းဒိုးထဲ့သို့ "
+"ပစ်ချခြင်းအားဖြင့် သီချင်းစာရင်းသို့ သီချင်းများထည့်နိုင်သည်"
+
+#: src/gtk/window.ui:52
+msgid "Restore Playlist"
+msgstr "ယခင်သီချင်းစာရင်းပြန်သုံးမည်"
+
+#: src/gtk/window.ui:62
+msgid "Add Folder"
+msgstr "ဖိုင်တွဲထည့်"
+
+#: src/gtk/window.ui:71
+msgid "Add Song"
+msgstr "သီချင်းထည့်"
+
+#: src/gtk/window.ui:148
+msgctxt "a11y"
+msgid "Elapsed time"
+msgstr "ကုန်လွန်အချိန်"
+
+#: src/gtk/window.ui:160
+msgctxt "a11y"
+msgid "Remaining time"
+msgstr "ကျန်ရှိအချိန်"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/application.rs:229
+msgid "translator-credits"
+msgstr "ဇေယျာလွင်"
+
+#: src/application.rs:241
+msgid "Amberol needs to run in the background to play music"
+msgstr "နောက်ကွယ်တွင် သီချင်းဖွင့်နိုင်ရန် အန်ဘာရောကို နောက်ကွယ်တွင် မောင်းနှင်နေဖို့ လိုအပ်သည်"
+
+#: src/playback_control.rs:118
+msgid "Repeat All Songs"
+msgstr "သီချင်းအားလုံး ထပ်တလဲလဲဖွင့်မည်"
+
+#: src/playback_control.rs:122
+msgid "Repeat the Current Song"
+msgstr "လက်ရှိသီချင်းကို ထပ်တလဲလဲဖွင့်မည်"
+
+#: src/window.rs:432
+msgid "Audio files"
+msgstr "အသံဖိုင်များ"
+
+#: src/window.rs:437
+msgid "_Add Song"
+msgstr "သီချင်း_ထည့်မည်"
+
+#: src/window.rs:440
+msgid "Open File"
+msgstr "ဖိုင်ဖွင့်"
+
+#: src/window.rs:445 src/window.rs:465 src/window.rs:1354
+msgid "Unable to access files"
+msgstr "ဖိုင်ရယူခွင့်မရှိပါ"
+
+#: src/window.rs:457
+msgid "_Add Folder"
+msgstr "ဖိုင်တွဲ_ထည့်"
+
+#: src/window.rs:459
+msgid "Open Folder"
+msgstr "ဖိုင်တွဲဖွင့်"
+
+#: src/window.rs:482
+msgid "No available song found"
+msgstr "သီချင်းမတွေ့ပါ"
+
+#: src/window.rs:537
+msgid "No songs found"
+msgstr "သီချင်းများမတွေ့ပါ"
+
+#: src/window.rs:567
+msgid "Added a new song"
+msgstr "သီချင်းအသစ်တစ်ပုဒ်ထည့်ပြီးပါပြီ"
+
+#: src/window.rs:568
+msgid "Play"
+msgstr "ဖွင့်"
+
+#. Translators: the `{}` must be left unmodified;
+#. it will be expanded to the number of songs added
+#. to the playlist
+#: src/window.rs:577
+msgid "Added one song"
+msgid_plural "Added {} songs"
+msgstr[0] "သီချင်း {}ပုဒ်ထည့်ပြီးပါပြီ"
+
+#: src/window.rs:1118
+msgid "Unable to access dropped files"
+msgstr "ပစ်ချခဲ့သောဖိုင်များကို မရယူနိုင်ခဲ့ပါ"
+
+#: src/window.rs:1212
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{} မိနစ်"
+
+#: src/window.rs:1223
+msgid "{hours} hour {minutes} remaining"
+msgid_plural "{hours} hours {minutes} remaining"
+msgstr[0] "{hours}နာရီ {minutes}မိနစ် ကျန်ပါသေးသည်"
+
+#. Translators: the '{}' must be left unmodified, and
+#. it will be replaced by the number of minutes remaining
+#. in the playlist
+#: src/window.rs:1233
+msgid "{} minute remaining"
+msgid_plural "{} minutes remaining"
+msgstr[0] "{}မိနစ် ကျန်ပါသေးသည်"
+
+#: src/window.rs:1333
+msgid "No song selected"
+msgstr "သီချင်းမရွေးထားပါ"
+
+#. Translators: The '{}' must be left unmodified, and
+#. it is expanded to the number of songs selected
+#: src/window.rs:1338
+msgid "{} song selected"
+msgid_plural "{} songs selected"
+msgstr[0] "သီချင်း {}ပုဒ် ရွေးထားသည်"
+
+#. Translators: `{title}` and `{artist}` must be left
+#. untranslated; they will expand to the title and
+#. artist of the currently playing song, respectively
+#: src/window.rs:1392
+msgid "Currently playing “{title}” by “{artist}”"
+msgstr "လက်ရှိတွင် “{artist}”သီဆိုသော “{title}”ကို ဖွင့်ထားသည်"
