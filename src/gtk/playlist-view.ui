@@ -3,19 +3,18 @@
   <requires lib="gtk" version="4.0"/>
   <template class="AmberolPlaylistView" parent="GtkWidget">
     <child>
-      <object class="GtkBox" id="playlist_box">
-        <property name="orientation">vertical</property>
-        <child>
+      <object class="AdwToolbarView">
+        <child type="top">
           <object class="GtkBox">
             <child>
               <object class="GtkBox" id="queue_length_box">
                 <property name="orientation">vertical</property>
                 <property name="spacing">2</property>
                 <property name="hexpand">true</property>
-                <property name="width-request">200</property>
                 <child>
                   <object class="GtkLabel">
                     <property name="xalign">0</property>
+                    <property name="ellipsize">end</property>
                     <property name="label" translatable="yes">Playlist</property>
                     <style>
                       <class name="heading"/>
@@ -25,6 +24,7 @@
                 <child>
                   <object class="GtkLabel" id="queue_length_label">
                     <property name="xalign">0</property>
+                    <property name="ellipsize">end</property>
                     <style>
                       <class name="caption"/>
                     </style>
@@ -81,7 +81,7 @@
             </child>
           </object>
         </child>
-        <child>
+        <child type="top">
           <object class="GtkSearchBar" id="playlist_searchbar">
             <property name="child">
               <object class="GtkSearchEntry" id="playlist_searchentry">
@@ -90,7 +90,7 @@
             </property>
           </object>
         </child>
-        <child>
+        <property name="content">
           <object class="GtkOverlay" id="playlist_overlay">
             <child type="overlay">
               <object class="GtkProgressBar" id="playlist_progress">
@@ -107,8 +107,6 @@
                 <property name="hscrollbar-policy">never</property>
                 <property name="vscrollbar-policy">automatic</property>
                 <property name="propagate-natural-height">true</property>
-                <property name="max-content-width">320</property>
-                <property name="width-request">320</property>
                 <property name="vexpand">true</property>
                 <property name="child">
                   <object class="GtkListView" id="queue_view">
@@ -122,8 +120,8 @@
               </object>
             </child>
           </object>
-        </child>
-        <child>
+        </property>
+        <child type="bottom">
           <object class="GtkActionBar" id="queue_actionbar">
             <property name="revealed">false</property>
             <style>

@@ -3,8 +3,9 @@
   <requires lib="gtk" version="4.0"/>
   <template class="AmberolWindow" parent="AdwApplicationWindow">
     <property name="handle-menubar-accel">true</property>
-    <property name="default-width">600</property>
-    <property name="resizable">true</property>
+    <property name="width-request">360</property>
+    <property name="height-request">660</property>
+    <property name="default-width">800</property>
     <property name="content">
       <object class="GtkWindowHandle">
         <child>
@@ -21,22 +22,15 @@
                       <object class="GtkStackPage">
                         <property name="name">initial-view</property>
                         <property name="child">
-                          <object class="GtkBox">
-                            <property name="orientation">vertical</property>
-                            <property name="spacing">6</property>
-                            <child>
-                              <object class="GtkHeaderBar">
-                                <style>
-                                  <class name="flat"/>
-                                </style>
-                                <child type="title">
-                                  <object class="GtkBox">
-                                    <property name="visible">false</property>
-                                  </object>
-                                </child>
+                          <object class="AdwToolbarView">
+
+                            <child type="top">
+                              <object class="AdwHeaderBar">
+                                <property name="show-title">false</property>
                               </object>
                             </child>
-                            <child>
+
+                            <property name="content">
                               <object class="AdwClamp">
                                 <property name="maximum-size">450</property>
                                 <property name="vexpand">true</property>
@@ -86,8 +80,8 @@
                                   </object>
                                 </property>
                               </object>
+                            </property>
 
-                            </child>
                           </object>
                         </property>
                       </object>
@@ -96,27 +90,21 @@
                       <object class="GtkStackPage">
                         <property name="name">main-view</property>
                         <property name="child">
-                          <object class="AdwFlap" id="queue_revealer">
-                            <property name="reveal-flap">true</property>
+                          <object class="AdwOverlaySplitView" id="split_view">
+                            <property name="max-sidebar-width">330</property>
+                            <property name="sidebar-width-fraction">0.4</property>
 
-                            <child type="content">
-                              <object class="GtkBox">
-                                <property name="orientation">vertical</property>
+                            <property name="content">
+                              <object class="AdwToolbarView">
 
                                 <!-- Header Bar -->
-                                <child>
-                                  <object class="GtkHeaderBar">
-                                    <style>
-                                      <class name="flat"/>
-                                    </style>
-                                    <child type="title">
-                                      <object class="GtkBox">
-                                        <property name="visible">false</property>
-                                      </object>
-                                    </child>
+                                <child type="top">
+                                  <object class="AdwHeaderBar">
+                                    <property name="show-title">false</property>
                                   </object>
                                 </child>
-                                <child>
+
+                                <property name="content">
                                   <object class="GtkBox" id="main_box">
                                     <property name="orientation">vertical</property>
                                     <property name="valign">center</property>
@@ -137,7 +125,6 @@
                                       <object class="GtkBox">
                                         <property name="orientation">vertical</property>
                                         <property name="spacing">2</property>
-                                        <property name="margin-bottom">12</property>
                                         <property name="width-request">256</property>
                                         <child>
                                           <object class="GtkBox">
@@ -198,14 +185,14 @@
                                     </child>
                                   </object>
 
-                                </child>
+                                </property>
                               </object>
-                            </child>
+                            </property>
 
                             <!-- Playlist view -->
-                            <child type="flap">
+                            <property name="sidebar">
                               <object class="AmberolPlaylistView" id="playlist_view"/>
-                            </child>
+                            </property>
                           </object>
                         </property>
                       </object>
@@ -219,5 +206,11 @@
         </child>
       </object>
     </property>
+    <child>
+      <object class="AdwBreakpoint">
+        <condition>max-width: 560sp</condition>
+        <setter object="split_view" property="collapsed">True</setter>
+      </object>
+    </child>
   </template>
 </interface>

@@ -16,7 +16,6 @@
               <object class="GtkLabel" id="song_title_label">
                 <property name="xalign">0.5</property>
                 <property name="ellipsize">end</property>
-                <property name="width-chars">20</property>
                 <style>
                   <class name="song-title"/>
                 </style>
@@ -26,7 +25,6 @@
               <object class="GtkLabel" id="song_artist_label">
                 <property name="xalign">0.5</property>
                 <property name="ellipsize">end</property>
-                <property name="width-chars">25</property>
                 <style>
                   <class name="song-artist"/>
                 </style>
@@ -36,7 +34,6 @@
               <object class="GtkLabel" id="song_album_label">
                 <property name="xalign">0.5</property>
                 <property name="ellipsize">end</property>
-                <property name="width-chars">25</property>
                 <style>
                   <class name="song-album"/>
                 </style>
