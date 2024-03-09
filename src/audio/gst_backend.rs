@@ -26,19 +26,19 @@ impl GstReplayGain {
         let rg_volume = gst::ElementFactory::make_with_name("rgvolume", Some("rg volume"))?;
         let rg_limiter = gst::ElementFactory::make_with_name("rglimiter", Some("rg limiter"))?;
 
-        let filter_bin = gst::Bin::new(Some("filter bin"));
+        let filter_bin = gst::Bin::builder().name("filter bin").build();
         filter_bin.add(&rg_volume)?;
         filter_bin.add(&rg_limiter)?;
         rg_volume.link(&rg_limiter)?;
 
         let pad_src = rg_limiter.static_pad("src").unwrap();
         pad_src.set_active(true).unwrap();
-        let ghost_src = gst::GhostPad::with_target(Some("src"), &pad_src)?;
+        let ghost_src = gst::GhostPad::with_target(&pad_src)?;
         filter_bin.add_pad(&ghost_src)?;
 
         let pad_sink = rg_volume.static_pad("sink").unwrap();
         pad_sink.set_active(true).unwrap();
-        let ghost_sink = gst::GhostPad::with_target(Some("sink"), &pad_sink)?;
+        let ghost_sink = gst::GhostPad::with_target(&pad_sink)?;
         filter_bin.add_pad(&ghost_sink)?;
 
         Ok(Self {

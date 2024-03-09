@@ -135,7 +135,7 @@ impl fmt::Debug for AudioPlayer {
 
 impl AudioPlayer {
     pub fn new(app_sender: Sender<ApplicationAction>) -> Rc<Self> {
-        let (sender, r) = glib::MainContext::channel(glib::PRIORITY_DEFAULT);
+        let (sender, r) = glib::MainContext::channel(glib::Priority::DEFAULT);
         let receiver = RefCell::new(Some(r));
 
         let mut controllers: Vec<Box<dyn Controller>> = Vec::new();
@@ -177,7 +177,7 @@ impl AudioPlayer {
         );
     }
 
-    fn process_action(&self, action: PlaybackAction) -> glib::Continue {
+    fn process_action(&self, action: PlaybackAction) -> glib::ControlFlow {
         match action {
             PlaybackAction::Play => self.set_playback_state(PlaybackState::Playing),
             PlaybackAction::Pause => self.set_playback_state(PlaybackState::Paused),
@@ -193,7 +193,7 @@ impl AudioPlayer {
             // _ => debug!("Received action {:?}", action),
         }
 
-        glib::Continue(true)
+        glib::ControlFlow::Continue
     }
 
     fn set_playback_state(&self, state: PlaybackState) {

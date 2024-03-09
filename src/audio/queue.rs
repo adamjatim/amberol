@@ -13,7 +13,7 @@ mod imp {
 
     use super::*;
 
-    #[derive(Debug, Default)]
+    #[derive(Debug)]
     pub struct Queue {
         pub model: ShuffleListModel,
         pub store: gio::ListStore,
@@ -28,7 +28,7 @@ mod imp {
         type Type = super::Queue;
 
         fn new() -> Self {
-            let store = gio::ListStore::new(Song::static_type());
+            let store = gio::ListStore::new::<Song>();
             let model = ShuffleListModel::new(Some(&store));
 
             Self {

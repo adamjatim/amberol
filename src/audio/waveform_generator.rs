@@ -20,7 +20,7 @@ mod imp {
     pub struct WaveformGenerator {
         pub song: RefCell<Option<Song>>,
         pub peaks: RefCell<Option<Vec<(f64, f64)>>>,
-        pub pipeline: RefCell<Option<gst::Element>>,
+        pub pipeline: RefCell<Option<(gst::Element, gst::bus::BusWatchGuard)>>,
     }
 
     #[glib::object_subclass]
@@ -31,7 +31,7 @@ mod imp {
 
     impl ObjectImpl for WaveformGenerator {
         fn dispose(&self) {
-            if let Some(pipeline) = self.pipeline.take() {
+            if let Some((pipeline, _bus_watch)) = self.pipeline.take() {
                 pipeline.send_event(gst::event::Eos::new());
                 match pipeline.set_state(gst::State::Null) {
                     Ok(_) => {}
@@ -156,7 +156,7 @@ impl WaveformGenerator {
     }
 
     fn generate_peaks(&self) {
-        if let Some(pipeline) = self.imp().pipeline.take() {
+        if let Some((pipeline, _bus_watch)) = self.imp().pipeline.take() {
             // Stop any running pipeline, and ensure that we have nothing to
             // report
             self.imp().peaks.replace(None);
@@ -211,7 +211,7 @@ impl WaveformGenerator {
             .expect("Pipeline without bus. Shouldn't happen!");
 
         debug!("Adding bus watch");
-        bus.add_watch_local(clone!(@weak self as this, @weak pipeline => @default-return glib::Continue(false), move |_, msg| {
+        let bus_watch = bus.add_watch_local(clone!(@weak self as this, @weak pipeline => @default-return glib::ControlFlow::Break, move |_, msg| {
             use gst::MessageView;
 
             match msg.view() {
@@ -221,7 +221,7 @@ impl WaveformGenerator {
                     // We're done
                     this.imp().pipeline.replace(None);
                     this.save_peaks();
-                    return glib::Continue(false);
+                    return glib::ControlFlow::Break;
                 }
                 MessageView::Error(err) => {
                     warn!("Pipeline error: {:?}", err);
@@ -229,7 +229,7 @@ impl WaveformGenerator {
                     // We're done
                     this.imp().pipeline.replace(None);
                     this.save_peaks();
-                    return glib::Continue(false);
+                    return glib::ControlFlow::Break;
                 }
                 MessageView::Element(element) => {
                     if let Some(s) = element.structure() {
@@ -249,13 +249,13 @@ impl WaveformGenerator {
                 _ => (),
             };
 
-            glib::Continue(true)
+            glib::ControlFlow::Continue
         }))
         .expect("failed to add bus watch");
 
         match pipeline.set_state(gst::State::Playing) {
             Ok(_) => {
-                self.imp().pipeline.replace(Some(pipeline));
+                self.imp().pipeline.replace(Some((pipeline, bus_watch)));
             }
             Err(err) => {
                 warn!("Unable to generate the waveform: {}", err);
