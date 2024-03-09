@@ -8,8 +8,8 @@ project('amberol', 'rust',
   default_options: [ 'warning_level=2', ],
 )
 
-dependency('gtk4', version: '>= 4.10.0')
-dependency('libadwaita-1', version: '>= 1.2')
+dependency('gtk4', version: '>= 4.11.3')
+dependency('libadwaita-1', version: '>= 1.4')
 dependency('gstreamer-1.0', version: '>= 1.20')
 dependency('gstreamer-audio-1.0', version: '>= 1.20')
 dependency('gstreamer-player-1.0', version: '>= 1.20')
