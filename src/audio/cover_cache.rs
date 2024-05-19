@@ -89,24 +89,21 @@ impl CoverCache {
         // to be in a hot cache; looking for a separate file will blow a bunch of
         // caches out of the water, which will slow down loading the song into the
         // playlist model
-        match path {
-            Some(p) => {
-                let ext_covers = vec!["Cover.jpg", "Cover.png", "cover.jpg", "cover.png"];
+        if let Some(p) = path {
+            let ext_covers = vec!["Cover.jpg", "Cover.png", "cover.jpg", "cover.png"];
 
-                for name in ext_covers {
-                    let mut cover_file = PathBuf::from(p);
-                    cover_file.push(name);
-                    debug!("Looking for external cover file: {:?}", &cover_file);
+            for name in ext_covers {
+                let mut cover_file = PathBuf::from(p);
+                cover_file.push(name);
+                debug!("Looking for external cover file: {:?}", &cover_file);
 
-                    let f = gio::File::for_path(&cover_file);
-                    if let Ok((res, _)) = f.load_bytes(None::<&gio::Cancellable>) {
-                        debug!("Loading cover from external cover file");
-                        return Some(res);
-                    }
+                let f = gio::File::for_path(&cover_file);
+                if let Ok((res, _)) = f.load_bytes(None::<&gio::Cancellable>) {
+                    debug!("Loading cover from external cover file");
+                    return Some(res);
                 }
             }
-            None => (),
-        };
+        }
 
         debug!("No cover art");
 
@@ -176,13 +173,13 @@ impl CoverCache {
                 // Cache the pixel buffer, so that the MPRIS controller can
                 // reference it later
                 let cache_path = if let Some(ref pixbuf) = cover_pixbuf {
-                    utils::cache_cover_art(&uuid, &pixbuf)
+                    utils::cache_cover_art(&uuid, pixbuf)
                 } else {
                     None
                 };
 
                 // The texture we draw on screen
-                let texture = cover_pixbuf.as_ref().map(|p| gdk::Texture::for_pixbuf(&p));
+                let texture = cover_pixbuf.as_ref().map(gdk::Texture::for_pixbuf);
 
                 // The color palette we use for styling the UI
                 let palette = if let Some(ref pixbuf) = cover_pixbuf {
@@ -201,9 +198,9 @@ impl CoverCache {
 
                     self.add_entry(&uuid, res.clone());
 
-                    return Some((res, uuid));
+                    Some((res, uuid))
                 } else {
-                    return None;
+                    None
                 }
             }
         }

@@ -30,7 +30,7 @@ impl Controller for InhibitController {
             .unwrap();
         let win = app
             .active_window()
-            .and_then(|win| Some(win.downcast::<gtk::Window>().unwrap()));
+            .map(|win| win.downcast::<gtk::Window>().unwrap());
 
         if playback_state == &PlaybackState::Playing {
             if self.cookie.get() == 0 {

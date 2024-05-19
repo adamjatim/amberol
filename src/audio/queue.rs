@@ -315,7 +315,7 @@ impl Queue {
     pub fn contains(&self, s: &Song) -> bool {
         for i in 0..self.imp().store.n_items() {
             let song = self.imp().store.item(i).unwrap();
-            if song.downcast_ref::<Song>().unwrap().equals(&s) {
+            if song.downcast_ref::<Song>().unwrap().equals(s) {
                 return true;
             }
         }

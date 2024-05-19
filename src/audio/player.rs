@@ -7,7 +7,8 @@ use std::{
     rc::Rc,
 };
 
-use glib::{clone, Receiver, Sender};
+use async_channel::{Receiver, Sender};
+use glib::clone;
 use gtk::glib;
 use log::{debug, error};
 
@@ -36,31 +37,21 @@ pub enum PlaybackAction {
     Raise,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Default)]
 pub enum PlaybackState {
+    #[default]
     Stopped,
     Playing,
     Paused,
 }
 
-impl Default for PlaybackState {
-    fn default() -> Self {
-        PlaybackState::Stopped
-    }
-}
-
-#[derive(Clone, Copy, Debug, glib::Enum, PartialEq)]
+#[derive(Clone, Copy, Debug, glib::Enum, PartialEq, Default)]
 #[enum_type(name = "AmberolRepeatMode")]
 pub enum RepeatMode {
+    #[default]
     Consecutive,
     RepeatAll,
     RepeatOne,
-}
-
-impl Default for RepeatMode {
-    fn default() -> Self {
-        RepeatMode::Consecutive
-    }
 }
 
 impl Display for RepeatMode {
@@ -135,7 +126,7 @@ impl fmt::Debug for AudioPlayer {
 
 impl AudioPlayer {
     pub fn new(app_sender: Sender<ApplicationAction>) -> Rc<Self> {
-        let (sender, r) = glib::MainContext::channel(glib::Priority::DEFAULT);
+        let (sender, r) = async_channel::unbounded();
         let receiver = RefCell::new(Some(r));
 
         let mut controllers: Vec<Box<dyn Controller>> = Vec::new();
@@ -171,10 +162,15 @@ impl AudioPlayer {
 
     fn setup_channel(self: Rc<Self>) {
         let receiver = self.receiver.borrow_mut().take().unwrap();
-        receiver.attach(
-            None,
-            clone!(@strong self as this => move |action| this.clone().process_action(action)),
-        );
+
+        glib::MainContext::default().spawn_local(clone!(@strong self as this => async move {
+            use futures::prelude::*;
+
+            let mut receiver = std::pin::pin!(receiver);
+            while let Some(action) = receiver.next().await {
+                this.process_action(action);
+            }
+        }));
     }
 
     fn process_action(&self, action: PlaybackAction) -> glib::ControlFlow {
@@ -502,7 +498,7 @@ impl AudioPlayer {
     }
 
     fn present(&self) {
-        if let Err(e) = self.app_sender.send(ApplicationAction::Present) {
+        if let Err(e) = self.app_sender.send_blocking(ApplicationAction::Present) {
             error!("Unable to send Present: {e}");
         }
     }

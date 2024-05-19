@@ -100,7 +100,7 @@ impl Default for ShuffleListModel {
 impl ShuffleListModel {
     pub fn new(model: Option<&impl IsA<gio::ListModel>>) -> Self {
         glib::Object::builder::<Self>()
-            .property("model", &model.map(|m| m.as_ref()))
+            .property("model", model.map(|m| m.as_ref()))
             .build()
     }
 

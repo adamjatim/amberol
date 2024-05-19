@@ -3,7 +3,8 @@
 
 use std::{cell::RefCell, sync::Arc, time::Duration};
 
-use glib::{clone, Sender};
+use async_channel::Sender;
+use glib::clone;
 use gtk::{gio, glib, prelude::*};
 use log::error;
 use mpris_player::{LoopStatus, Metadata, MprisPlayer, OrgMprisMediaPlayer2Player, PlaybackStatus};
@@ -53,17 +54,17 @@ impl MprisController {
             clone!(@weak self.mpris as mpris, @strong self.sender as sender => move || {
                 match mpris.get_playback_status().unwrap().as_ref() {
                     "Paused" => {
-                        if let Err(e) = sender.send(PlaybackAction::Play) {
+                        if let Err(e) = sender.send_blocking(PlaybackAction::Play) {
                             error!("Unable to send Play: {e}");
                         }
                     },
                     "Stopped" => {
-                        if let Err(e) = sender.send(PlaybackAction::Stop) {
+                        if let Err(e) = sender.send_blocking(PlaybackAction::Stop) {
                             error!("Unable to send Stop: {e}");
                         }
                     },
                     _ => {
-                        if let Err(e) = sender.send(PlaybackAction::Pause) {
+                        if let Err(e) = sender.send_blocking(PlaybackAction::Pause) {
                             error!("Unable to send Pause: {e}");
                         }
                     },
@@ -73,42 +74,42 @@ impl MprisController {
 
         self.mpris
             .connect_play(clone!(@strong self.sender as sender => move || {
-                if let Err(e) = sender.send(PlaybackAction::Play) {
+                if let Err(e) = sender.send_blocking(PlaybackAction::Play) {
                     error!("Unable to send Play: {e}");
                 }
             }));
 
         self.mpris
             .connect_stop(clone!(@strong self.sender as sender => move || {
-                if let Err(e) = sender.send(PlaybackAction::Stop) {
+                if let Err(e) = sender.send_blocking(PlaybackAction::Stop) {
                     error!("Unable to send Stop: {e}");
                 }
             }));
 
         self.mpris
             .connect_pause(clone!(@strong self.sender as sender => move || {
-                if let Err(e) = sender.send(PlaybackAction::Pause) {
+                if let Err(e) = sender.send_blocking(PlaybackAction::Pause) {
                     error!("Unable to send Pause: {e}");
                 }
             }));
 
         self.mpris
             .connect_previous(clone!(@strong self.sender as sender => move || {
-                if let Err(e) = sender.send(PlaybackAction::SkipPrevious) {
+                if let Err(e) = sender.send_blocking(PlaybackAction::SkipPrevious) {
                     error!("Unable to send SkipPrevious: {e}");
                 }
             }));
 
         self.mpris
             .connect_next(clone!(@strong self.sender as sender => move || {
-                if let Err(e) = sender.send(PlaybackAction::SkipNext) {
+                if let Err(e) = sender.send_blocking(PlaybackAction::SkipNext) {
                     error!("Unable to send SkipNext: {e}");
                 }
             }));
 
         self.mpris
             .connect_raise(clone!(@strong self.sender as sender => move || {
-                if let Err(e) = sender.send(PlaybackAction::Raise) {
+                if let Err(e) = sender.send_blocking(PlaybackAction::Raise) {
                     error!("Unable to send Raise: {e}");
                 }
             }));
@@ -121,7 +122,7 @@ impl MprisController {
                     LoopStatus::Playlist => RepeatMode::RepeatAll,
                 };
 
-                if let Err(e) = sender.send(PlaybackAction::Repeat(mode)) {
+                if let Err(e) = sender.send_blocking(PlaybackAction::Repeat(mode)) {
                     error!("Unable to send Repeat({mode}): {e}");
                 }
             }));
@@ -130,7 +131,7 @@ impl MprisController {
             .connect_seek(clone!(@strong self.sender as sender => move |position| {
                 let pos = Duration::from_micros(position as u64).as_secs();
 
-                if let Err(e) = sender.send(PlaybackAction::Seek(pos)) {
+                if let Err(e) = sender.send_blocking(PlaybackAction::Seek(pos)) {
                     error!("Unable to send Seek({pos}): {e}");
                 }
             }));
@@ -151,7 +152,7 @@ impl MprisController {
             // the cover art, instead of requiring this ridiculous
             // charade
             if let Some(cache) = song.cover_cache() {
-                let file = gio::File::for_path(&cache);
+                let file = gio::File::for_path(cache);
                 match file.query_info(
                     "standard::type",
                     gio::FileQueryInfoFlags::NONE,

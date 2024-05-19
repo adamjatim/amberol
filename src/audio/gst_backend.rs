@@ -1,7 +1,8 @@
 // SPDX-FileCopyrightText: 2022  Emmanuele Bassi
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-use glib::{clone, Sender};
+use async_channel::Sender;
+use glib::clone;
 use gst::prelude::*;
 use gtk::glib;
 use log::{debug, error, warn};
@@ -92,7 +93,7 @@ impl GstBackend {
 
         self.gst_player
             .connect_end_of_stream(clone!(@strong self.sender as sender => move |_| {
-                if let Err(e) = sender.send(PlaybackAction::PlayNext) {
+                if let Err(e) = sender.send_blocking(PlaybackAction::PlayNext) {
                     error!("Failed to send PlayNext: {e}");
                 }
             }));
@@ -101,7 +102,7 @@ impl GstBackend {
             clone!(@strong self.sender as sender => move |_, clock| {
                 if let Some(clock) = clock {
                     let pos = clock.seconds();
-                    if let Err(e) = sender.send(PlaybackAction::UpdatePosition(pos)) {
+                    if let Err(e) = sender.send_blocking(PlaybackAction::UpdatePosition(pos)) {
                         error!("Failed to send UpdatePosition({pos}): {e}");
                     }
                 }
@@ -115,7 +116,7 @@ impl GstBackend {
                     gst_audio::StreamVolumeFormat::Cubic,
                     player.volume(),
                 );
-                if let Err(e) = sender.send(PlaybackAction::VolumeChanged(volume)) {
+                if let Err(e) = sender.send_blocking(PlaybackAction::VolumeChanged(volume)) {
                     error!("Failed to send VolumeChanged({volume}): {e}");
                 }
             }),
@@ -182,9 +183,9 @@ impl GstBackend {
     }
 
     pub fn set_replaygain(&self, replaygain: ReplayGainMode) {
-        self.replaygain
-            .as_ref()
-            .map(|r| r.set_mode(self.gst_player.pipeline(), replaygain));
+        if let Some(ref r) = self.replaygain {
+            r.set_mode(self.gst_player.pipeline(), replaygain);
+        }
     }
 
     pub fn replaygain_available(&self) -> bool {
