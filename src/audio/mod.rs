@@ -41,7 +41,7 @@ mod controller;
 pub use controller::Controller;
 
 mod cover_cache;
-pub use cover_cache::{CoverArt, CoverCache};
+pub use cover_cache::CoverCache;
 
 mod inhibit_controller;
 mod mpris_controller;

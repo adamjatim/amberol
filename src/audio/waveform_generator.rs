@@ -181,7 +181,7 @@ impl WaveformGenerator {
         self.imp().peaks.replace(Some(peaks));
 
         let pipeline_str = "uridecodebin name=uridecodebin ! audioconvert ! audio/x-raw,channels=2 ! level name=level interval=250000000 ! fakesink name=faked";
-        let pipeline = match gst::parse_launch(pipeline_str) {
+        let pipeline = match gst::parse::launch(pipeline_str) {
             Ok(pipeline) => pipeline,
             Err(err) => {
                 warn!("Unable to generate the waveform: {}", err);
