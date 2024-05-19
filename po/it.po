@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: amberol main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
-"POT-Creation-Date: 2022-10-11 16:54+0000\n"
-"PO-Revision-Date: 2022-10-14 10:48+0200\n"
+"POT-Creation-Date: 2023-11-27 13:06+0000\n"
+"PO-Revision-Date: 2024-03-19 23:16+0200\n"
 "Last-Translator: NicKoehler <grillinicolavocal@gmail.com>\n"
 "Language-Team: Italian <https://l10n.gnome.org/teams/it/>\n"
 "Language: it\n"
@@ -34,7 +34,7 @@ msgstr "musica;lettore;media;audio;playlist;"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:7
 msgid "Plays music, and nothing else"
-msgstr "Riproduci musica e nient'altro"
+msgstr "Riproduce musica e nient'altro"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:9
 msgid ""
@@ -55,7 +55,7 @@ msgstr "interfaccia utente adattiva"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:17
 msgid "UI recoloring using the album art"
-msgstr "Interfaccia utente ricolorata in base alla copertina dell'album"
+msgstr "interfaccia utente ricolorata in base alla copertina dell'album"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:18
 msgid "drag and drop support to queue songs"
@@ -63,13 +63,13 @@ msgstr "supporta l'aggiunta alla coda dei brani tramite trascinamento"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:19
 msgid "shuffle and repeat"
-msgstr "mescola e ripeti"
+msgstr "mescolamento e ripetizione"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:20
 msgid "MPRIS integration"
-msgstr "Integrazione MPRIS"
+msgstr "integrazione MPRIS"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:41
+#: data/io.bassi.Amberol.appdata.xml.in.in:44
 msgid "Emmanuele Bassi"
 msgstr "Emmanuele Bassi"
 
@@ -77,22 +77,22 @@ msgstr "Emmanuele Bassi"
 msgid "Playback in progress"
 msgstr "Riproduzione in corso"
 
-#: src/audio/song.rs:328
+#: src/audio/song.rs:325
 msgid "Unknown artist"
 msgstr "Artista sconosciuto"
 
-#: src/audio/song.rs:335
+#: src/audio/song.rs:332
 msgid "Unknown title"
 msgstr "Titolo sconosciuto"
 
-#: src/audio/song.rs:342
+#: src/audio/song.rs:339
 msgid "Unknown album"
 msgstr "Album sconosciuto"
 
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr "Generale"
+msgstr "Generali"
 
 #: src/gtk/help-overlay.ui:14
 msgctxt "shortcut window"
@@ -106,13 +106,13 @@ msgstr "Copia i dettagli del brano negli appunti"
 
 #: src/gtk/help-overlay.ui:26
 msgctxt "shortcut window"
-msgid "Show Shortcuts"
+msgid "Show shortcuts"
 msgstr "Mostra scorciatoie"
 
 #: src/gtk/help-overlay.ui:32
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr "Esci"
+msgstr "Esce"
 
 #: src/gtk/help-overlay.ui:40
 msgctxt "shortcut window"
@@ -122,12 +122,12 @@ msgstr "Playlist"
 #: src/gtk/help-overlay.ui:43
 msgctxt "shortcut window"
 msgid "Add a song to the playlist"
-msgstr "Aggiungi un brano alla playlist"
+msgstr "Aggiunge un brano alla playlist"
 
 #: src/gtk/help-overlay.ui:49
 msgctxt "shortcut window"
 msgid "Add a folder to the playlist"
-msgstr "Aggiungi una cartella alla playlist"
+msgstr "Aggiunge una cartella alla playlist"
 
 #: src/gtk/help-overlay.ui:55
 msgctxt "shortcut window"
@@ -137,12 +137,12 @@ msgstr "Svuota la playlist"
 #: src/gtk/help-overlay.ui:61
 msgctxt "shortcut window"
 msgid "Toggle the playlist pane"
-msgstr "Mostra/Nascondi pannello playlist"
+msgstr "Mostra/Nasconde il pannello playlist"
 
 #: src/gtk/help-overlay.ui:67
 msgctxt "shortcut window"
 msgid "Toggle shuffling songs"
-msgstr "Attiva/Disattiva riproduzione casuale"
+msgstr "Attiva/Disattiva la riproduzione casuale"
 
 #: src/gtk/help-overlay.ui:75
 msgctxt "shortcut window"
@@ -151,8 +151,8 @@ msgstr "Riproduzione"
 
 #: src/gtk/help-overlay.ui:78
 msgctxt "shortcut window"
-msgid "Toggle Play/Pause"
-msgstr "Riproduci/Pausa"
+msgid "Toggle play/pause"
+msgstr "Riproduce/Mette in pausa"
 
 #: src/gtk/help-overlay.ui:84
 msgctxt "shortcut window"
@@ -167,135 +167,132 @@ msgstr "Brano successivo"
 #: src/gtk/help-overlay.ui:96
 msgctxt "shortcut window"
 msgid "Seek backwards in the current song"
-msgstr "Scorri indietro il brano corrente"
+msgstr "Scorre indietro il brano corrente"
 
 #: src/gtk/help-overlay.ui:102
 msgctxt "shortcut window"
 msgid "Seek forward in the current song"
-msgstr "Scorri avanti il brano corrente"
+msgstr "Scorre avanti il brano corrente"
 
-#: src/gtk/playback-control.ui:30
-msgctxt "a11y"
-msgid "Elapsed time"
-msgstr "Tempo trascorso"
-
-#: src/gtk/playback-control.ui:42
-msgctxt "a11y"
-msgid "Remaining time"
-msgstr "Tempo rimanente"
-
-#: src/gtk/playback-control.ui:64
+#: src/gtk/playback-control.ui:21
 msgid "Play the Previous Song"
-msgstr "Riproduci il brano precedente"
+msgstr "Riproduce il brano precedente"
 
-#: src/gtk/playback-control.ui:69
+#: src/gtk/playback-control.ui:26
 msgctxt "a11y"
 msgid "Skip backwards"
 msgstr "Salta indietro"
 
-#: src/gtk/playback-control.ui:78
+#: src/gtk/playback-control.ui:35
 msgid "Toggle Play"
 msgstr "Riproduci/Pausa"
 
-#: src/gtk/playback-control.ui:84
+#: src/gtk/playback-control.ui:41
 msgctxt "a11y"
 msgid "Toggle play"
 msgstr "Riproduci/Pausa"
 
-#: src/gtk/playback-control.ui:93
+#: src/gtk/playback-control.ui:50
 msgid "Play the Next Song"
-msgstr "Riproduci il brano successivo"
+msgstr "Riproduce il brano successivo"
 
-#: src/gtk/playback-control.ui:98
+#: src/gtk/playback-control.ui:55
 msgctxt "a11y"
 msgid "Skip forward"
 msgstr "Salta avanti"
 
-#: src/gtk/playback-control.ui:121
+#: src/gtk/playback-control.ui:78
 msgid "Toggle Playlist"
-msgstr "Mostra/Nascondi playlist"
+msgstr "Mostra/Nasconde la playlist"
 
-#: src/gtk/playback-control.ui:126
+#: src/gtk/playback-control.ui:83
 msgctxt "a11y"
 msgid "Toggle playlist"
-msgstr "Mostra/Nascondi playlist"
+msgstr "Mostra/Nasconde la playlist"
 
-#: src/gtk/playback-control.ui:135
+#: src/gtk/playback-control.ui:92
 msgid "Shuffle the Playlist"
 msgstr "Mescola la playlist"
 
-#: src/gtk/playback-control.ui:137
+#: src/gtk/playback-control.ui:94
 msgctxt "a11y"
 msgid "Shuffle"
 msgstr "Mescola"
 
-#: src/gtk/playback-control.ui:156 src/playback_control.rs:153
+#: src/gtk/playback-control.ui:113 src/playback_control.rs:114
 msgid "Enable Repeat"
 msgstr "Abilita ripetizione"
 
-#: src/gtk/playback-control.ui:161
+#: src/gtk/playback-control.ui:118
 msgctxt "a11y"
 msgid "Repeat"
 msgstr "Ripeti"
 
-#: src/gtk/playback-control.ui:172
+#: src/gtk/playback-control.ui:129
 msgid "Main Menu"
 msgstr "Menù principale"
 
-#: src/gtk/playback-control.ui:177
+#: src/gtk/playback-control.ui:135
 msgctxt "a11y"
 msgid "Primary menu"
 msgstr "Menù primario"
 
-#: src/gtk/playback-control.ui:193
+#: src/gtk/playback-control.ui:151
 msgid "Copy"
 msgstr "Copia"
 
-#: src/gtk/playback-control.ui:199
+#: src/gtk/playback-control.ui:157
 msgid "Add _Song"
 msgstr "Aggiungi _brano"
 
-#: src/gtk/playback-control.ui:203
+#: src/gtk/playback-control.ui:161
 msgid "Add _Folder"
 msgstr "Aggiungi _cartella"
 
-#: src/gtk/playback-control.ui:207
+#: src/gtk/playback-control.ui:165
 msgid "Clear"
 msgstr "Svuota"
 
-#: src/gtk/playback-control.ui:213
+#: src/gtk/playback-control.ui:171
 msgid "_Match Cover Art"
 msgstr "_Abbina alla copertina"
 
-#: src/gtk/playback-control.ui:219
+#: src/gtk/playback-control.ui:175
+msgid "_Background Playback"
+msgstr "Riproduzione sullo _sfondo"
+
+#: src/gtk/playback-control.ui:181
 msgid "_ReplayGain"
 msgstr "_ReplayGain"
 
-#: src/gtk/playback-control.ui:221
+#: src/gtk/playback-control.ui:183
+msgctxt "replaygain-menu"
 msgid "_Album"
 msgstr "_Album"
 
-#: src/gtk/playback-control.ui:226
-msgid "_Track"
+#: src/gtk/playback-control.ui:188
+msgctxt "replaygain-menu"
+msgid "_Song"
 msgstr "_Brano"
 
-#: src/gtk/playback-control.ui:231
-msgid "_Off"
-msgstr "_Spento"
+#: src/gtk/playback-control.ui:193
+msgctxt "replaygain-menu"
+msgid "_Disabled"
+msgstr "_Disabilitato"
 
-#: src/gtk/playback-control.ui:239
+#: src/gtk/playback-control.ui:201
 msgid "_Keyboard Shortcuts"
 msgstr "_Scorciatoie da tastiera"
 
-#: src/gtk/playback-control.ui:243
+#: src/gtk/playback-control.ui:205
 msgid "_About Amberol"
 msgstr "_Informazioni su Amberol"
 
-#: src/gtk/playback-control.ui:247
+#: src/gtk/playback-control.ui:209
 msgid "_Quit"
 msgstr "_Esci"
 
-#: src/gtk/playlist-view.ui:19
+#: src/gtk/playlist-view.ui:18
 msgid "Playlist"
 msgstr "Playlist"
 
@@ -311,19 +308,19 @@ msgstr "Seleziona brani nella playlist"
 msgid "Close the Playlist"
 msgstr "Chiudi la playlist"
 
-#: src/gtk/playlist-view.ui:135
+#: src/gtk/playlist-view.ui:133
 msgid "Select All Songs"
 msgstr "Seleziona tutti i brani"
 
-#: src/gtk/playlist-view.ui:148
+#: src/gtk/playlist-view.ui:146
 msgid "Remove Selected Songs"
-msgstr "Rimuovi i brani selezionati"
+msgstr "Rimuove i brani selezionati"
 
-#: src/gtk/window.ui:12
-msgid "Drop a song to add it to the queue"
-msgstr "Rilascia un brano per aggiungerlo alla coda"
+#: src/gtk/window.ui:13
+msgid "Drop a song to add it to the playlist"
+msgstr "Rilascia un brano per aggiungerlo alla playlist"
 
-#: src/gtk/window.ui:49
+#: src/gtk/window.ui:43
 msgid ""
 "Select a file or a folder, or drag files from your file manager to the "
 "application window to add songs to the playlist"
@@ -331,95 +328,106 @@ msgstr ""
 "Selezionare un file o una cartella oppure trascinare i file dal file manager "
 "alla finestra dell'applicazione per aggiungere i brani alla playlist"
 
-#: src/gtk/window.ui:58
+#: src/gtk/window.ui:52
+msgid "Restore Playlist"
+msgstr "Ripristina playlist"
+
+#: src/gtk/window.ui:62
 msgid "Add Folder"
 msgstr "Aggiungi cartella"
 
-#: src/gtk/window.ui:68
-msgid "Add File"
-msgstr "Aggiungi file"
+#: src/gtk/window.ui:71
+msgid "Add Song"
+msgstr "Aggiungi brano"
+
+#: src/gtk/window.ui:148
+msgctxt "a11y"
+msgid "Elapsed time"
+msgstr "Tempo trascorso"
+
+#: src/gtk/window.ui:160
+msgctxt "a11y"
+msgid "Remaining time"
+msgstr "Tempo rimanente"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:188
+#: src/application.rs:229
 msgid "translator-credits"
 msgstr "NicKoehler"
 
-#: src/playback_control.rs:157
-msgid "Repeat All Tracks"
-msgstr "Ripeti tutti i brani"
+#: src/application.rs:241
+msgid "Amberol needs to run in the background to play music"
+msgstr ""
+"Amberol necessita di essere eseguito in background per riprodurre musica"
 
-#: src/playback_control.rs:161
-msgid "Repeat the Current Track"
-msgstr "Ripeti il brano corrente"
+#: src/playback_control.rs:118
+msgid "Repeat All Songs"
+msgstr "Ripete tutti i brani"
 
-#: src/window.rs:409
-msgid "_Add Song"
-msgstr "_Aggiungi brano"
+#: src/playback_control.rs:122
+msgid "Repeat the Current Song"
+msgstr "Ripete il brano corrente"
 
-#: src/window.rs:410 src/window.rs:450
-msgid "_Cancel"
-msgstr "_Annulla"
-
-#: src/window.rs:412
-msgid "Open File"
-msgstr "Apri file"
-
-#: src/window.rs:419
+#: src/window.rs:432
 msgid "Audio files"
 msgstr "File audio"
 
-#: src/window.rs:428 src/window.rs:1276
+#: src/window.rs:437
+msgid "_Add Song"
+msgstr "_Aggiungi brano"
+
+#: src/window.rs:440
+msgid "Open File"
+msgstr "Apri file"
+
+#: src/window.rs:445 src/window.rs:465 src/window.rs:1354
 msgid "Unable to access files"
 msgstr "Impossibile accedere ai file"
 
-#: src/window.rs:449
+#: src/window.rs:457
 msgid "_Add Folder"
 msgstr "_Aggiungi cartella"
 
-#: src/window.rs:452
+#: src/window.rs:459
 msgid "Open Folder"
 msgstr "Apri cartella"
 
-#: src/window.rs:463
-msgid "Unable to access folders"
-msgstr "Impossibile accedere alle cartelle"
-
-#: src/window.rs:475
+#: src/window.rs:482
 msgid "No available song found"
 msgstr "Nessun brano trovato"
 
-#: src/window.rs:523
+#: src/window.rs:537
 msgid "No songs found"
 msgstr "Nessun brano trovato"
 
-#: src/window.rs:549
+#: src/window.rs:567
 msgid "Added a new song"
 msgstr "Aggiunto un nuovo brano"
 
-#: src/window.rs:550
+#: src/window.rs:568
 msgid "Play"
 msgstr "Riproduci"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:559
+#: src/window.rs:577
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "Aggiunto un brano"
 msgstr[1] "Aggiunti {} brani"
 
-#: src/window.rs:1012
+#: src/window.rs:1118
 msgid "Unable to access dropped files"
 msgstr "Impossibile accedere ai file eliminati"
 
-#: src/window.rs:1106
+#: src/window.rs:1212
 msgid "{} minute"
 msgid_plural "{} minutes"
 msgstr[0] "{} minuto"
 msgstr[1] "{} minuti"
 
-#: src/window.rs:1117
+#: src/window.rs:1223
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
 msgstr[0] "{hours} ora e {minutes} rimanenti"
@@ -428,19 +436,19 @@ msgstr[1] "{hours} ore e {minutes} rimanenti"
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1127
+#: src/window.rs:1233
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "{} minuto rimanente"
 msgstr[1] "{} minuti rimanenti"
 
-#: src/window.rs:1256
+#: src/window.rs:1333
 msgid "No song selected"
 msgstr "Nessun brano selezionato"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1261
+#: src/window.rs:1338
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "{} brano selezionato"
@@ -449,18 +457,30 @@ msgstr[1] "{} brani selezionati"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1314
+#: src/window.rs:1392
 msgid "Currently playing “{title}” by “{artist}”"
 msgstr "“{title}” di “{artist}” in riproduzione"
 
-#: src/window.rs:1360
-msgid "Amberol needs to run in the background to play music"
-msgstr ""
-"Amberol necessita di essere eseguito in background per riprodurre musica"
+#~ msgid "_Track"
+#~ msgstr "_Brano"
 
-#: src/window.rs:1373
-msgid "Amberol cannot run in the background"
-msgstr "Amberol non può essere eseguito in background"
+#~ msgid "_Off"
+#~ msgstr "_Spento"
+
+#~ msgid "Add File"
+#~ msgstr "Aggiungi file"
+
+#~ msgid "Repeat All Tracks"
+#~ msgstr "Ripeti tutti i brani"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Annulla"
+
+#~ msgid "Unable to access folders"
+#~ msgstr "Impossibile accedere alle cartelle"
+
+#~ msgid "Amberol cannot run in the background"
+#~ msgstr "Amberol non può essere eseguito in background"
 
 #~ msgid "Plays music and nothing else"
 #~ msgstr "Riproduci musica e nient'altro"
