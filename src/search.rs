@@ -74,6 +74,12 @@ glib::wrapper! {
 
 }
 
+impl Default for FuzzyFilter {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl FuzzyFilter {
     pub fn new() -> Self {
         glib::Object::new()
@@ -84,7 +90,7 @@ impl FuzzyFilter {
     }
 
     pub fn set_search(&self, search: Option<String>) {
-        if &*self.imp().search.borrow() != &search {
+        if *self.imp().search.borrow() != search {
             *self.imp().search.borrow_mut() = search.map(|x| x.to_lowercase());
             self.changed(gtk::FilterChange::Different);
         }

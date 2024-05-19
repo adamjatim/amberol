@@ -129,7 +129,7 @@ mod imp {
 
     impl WidgetImpl for WaveformView {
         fn focus(&self, direction: gtk::DirectionType) -> bool {
-            debug!("WaveformView::focus({})", direction);
+            debug!("WaveformView::focus({:?})", direction);
             let widget = self.obj();
             if !widget.is_focus() {
                 widget.grab_focus();
@@ -195,11 +195,7 @@ mod imp {
                 color.alpha() * empty_opacity,
             );
 
-            let is_rtl = match widget.direction() {
-                gtk::TextDirection::Rtl => true,
-                _ => false,
-            };
-
+            let is_rtl = widget.direction() == gtk::TextDirection::Rtl;
             let bar_size = 2;
             let space_size = 2;
             let block_size = bar_size + space_size;
@@ -229,23 +225,19 @@ mod imp {
                 } else {
                     self.position.get()
                 };
-                let mut cursor_pos: [f64; 2] = [
-                    position * waveform_width as f64,
-                    position * waveform_width as f64,
-                ];
+                let mut cursor_pos: [f64; 2] =
+                    [position * waveform_width, position * waveform_width];
                 if let Some(hover) = self.hover_position.get() {
                     if is_rtl {
                         if hover <= position {
-                            cursor_pos[1] = hover * waveform_width as f64;
+                            cursor_pos[1] = hover * waveform_width;
                         } else {
-                            cursor_pos[0] = hover * waveform_width as f64;
+                            cursor_pos[0] = hover * waveform_width;
                         }
+                    } else if hover <= position {
+                        cursor_pos[0] = hover * waveform_width;
                     } else {
-                        if hover <= position {
-                            cursor_pos[0] = hover * waveform_width as f64;
-                        } else {
-                            cursor_pos[1] = hover * waveform_width as f64;
-                        }
+                        cursor_pos[1] = hover * waveform_width;
                     }
                 }
 
@@ -288,11 +280,7 @@ mod imp {
                         } else {
                             offset as f32
                         };
-                        let y = f32::clamp(
-                            center_y as f32 - right as f32 * h as f32,
-                            0.0,
-                            h as f32 / 2.0,
-                        );
+                        let y = f32::clamp(center_y - right as f32 * h as f32, 0.0, h as f32 / 2.0);
                         let width: f32 = 2.0;
                         let height = f32::clamp(
                             right as f32 * h as f32 + left as f32 * h as f32,
@@ -323,29 +311,25 @@ mod imp {
                                     &graphene::Rect::new(x, y, width, height),
                                 );
                             }
+                        } else if offset < cursor_pos[0] {
+                            snapshot
+                                .append_color(&color, &graphene::Rect::new(x, y, width, height));
+                        } else if offset < cursor_pos[1] {
+                            let hover_color = gdk::RGBA::new(
+                                color.red(),
+                                color.green(),
+                                color.blue(),
+                                color.alpha() * hover_opacity,
+                            );
+                            snapshot.append_color(
+                                &hover_color,
+                                &graphene::Rect::new(x, y, width, height),
+                            );
                         } else {
-                            if offset < cursor_pos[0] {
-                                snapshot.append_color(
-                                    &color,
-                                    &graphene::Rect::new(x, y, width, height),
-                                );
-                            } else if offset < cursor_pos[1] {
-                                let hover_color = gdk::RGBA::new(
-                                    color.red(),
-                                    color.green(),
-                                    color.blue(),
-                                    color.alpha() * hover_opacity,
-                                );
-                                snapshot.append_color(
-                                    &hover_color,
-                                    &graphene::Rect::new(x, y, width, height),
-                                );
-                            } else {
-                                snapshot.append_color(
-                                    &empty_color,
-                                    &graphene::Rect::new(x, y, width, height),
-                                );
-                            }
+                            snapshot.append_color(
+                                &empty_color,
+                                &graphene::Rect::new(x, y, width, height),
+                            );
                         }
 
                         accum.left = 0.0;
@@ -364,7 +348,7 @@ mod imp {
                 let mut offset = space_size;
                 while offset < w - space_size {
                     let x = offset as f32;
-                    let y = center_y as f32 - 1.0;
+                    let y = center_y - 1.0;
                     let width = bar_size as f32;
                     let height: f32 = 2.0;
                     snapshot.append_color(&color, &graphene::Rect::new(x, y, width, height));
@@ -428,7 +412,7 @@ impl WaveformView {
         motion_gesture.set_name(Some("waveform-motion"));
         motion_gesture.connect_motion(clone!(@strong self as this => move |_, x, _| {
             let width = this.width() as f64;
-            let position = x as f64 / width;
+            let position = x / width;
             this.imp().hover_position.replace(Some(position));
             this.queue_draw();
         }));
@@ -458,8 +442,8 @@ impl WaveformView {
     fn seek_to_coord(&self, pos: f64) {
         let width = self.width();
         let position = match self.direction() {
-            gtk::TextDirection::Rtl => 1.0 - (pos as f64 / width as f64),
-            _ => pos as f64 / width as f64,
+            gtk::TextDirection::Rtl => 1.0 - (pos / width as f64),
+            _ => pos / width as f64,
         };
         debug!(
             "Seeking to coord {} (width: {}, position: {})",
@@ -495,11 +479,7 @@ impl WaveformView {
             tick_id.remove();
         }
 
-        let peak_pairs = match peaks {
-            Some(p) => Some(self.normalize_peaks(p)),
-            None => None,
-        };
-
+        let peak_pairs = peaks.map(|p| self.normalize_peaks(p));
         let enable_animations = self.settings().is_gtk_enable_animations();
         if !enable_animations {
             self.imp().peaks.replace(peak_pairs);
@@ -519,15 +499,8 @@ impl WaveformView {
                     return glib::ControlFlow::Continue;
                 }
 
-                let has_peaks = match *this.imp().peaks.borrow() {
-                    Some(_) => true,
-                    None => false,
-                };
-
-                let has_next_peaks = match *this.imp().next_peaks.borrow() {
-                    Some(_) => true,
-                    None => false,
-                };
+                let has_peaks = this.imp().peaks.borrow().is_some();
+                let has_next_peaks = this.imp().next_peaks.borrow().is_some();
 
                 if has_peaks && has_next_peaks {
                     // Animate the existing peaks to zero

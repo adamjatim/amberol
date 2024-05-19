@@ -8,7 +8,7 @@ use std::{
 };
 
 use adw::subclass::prelude::*;
-use glib::{clone, closure_local, FromVariant};
+use glib::{clone, closure_local};
 use gtk::{gdk, gio, glib, prelude::*, CompositeTemplate};
 use log::debug;
 
@@ -104,27 +104,39 @@ mod imp {
 
             klass.install_action("win.play", None, move |win, _, _| {
                 debug!("Window::win.play()");
-                win.player().map(|p| p.toggle_play());
+                if let Some(p) = win.player() {
+                    p.toggle_play();
+                }
             });
             klass.install_action("win.seek-backwards", None, move |win, _, _| {
                 debug!("Window::win.seek-backwards");
-                win.player().map(|p| p.seek_backwards());
+                if let Some(p) = win.player() {
+                    p.seek_backwards();
+                }
             });
             klass.install_action("win.seek-forward", None, move |win, _, _| {
                 debug!("Window::win.seek-forward");
-                win.player().map(|p| p.seek_forward());
+                if let Some(p) = win.player() {
+                    p.seek_forward();
+                }
             });
             klass.install_action("win.previous", None, move |win, _, _| {
                 debug!("Window::win.previous()");
-                win.player().map(|p| p.skip_previous());
+                if let Some(p) = win.player() {
+                    p.skip_previous();
+                }
             });
             klass.install_action("win.next", None, move |win, _, _| {
                 debug!("Window::win.next()");
-                win.player().map(|p| p.skip_next());
+                if let Some(p) = win.player() {
+                    p.skip_next();
+                }
             });
             klass.install_action("queue.repeat-mode", None, move |win, _, _| {
                 debug!("Window::queue.repeat()");
-                win.player().map(|p| p.toggle_repeat_mode());
+                if let Some(p) = win.player() {
+                    p.toggle_repeat_mode();
+                }
             });
             klass.install_action("queue.add-song", None, move |win, _, _| {
                 debug!("Window::win.add-song()");
@@ -152,14 +164,18 @@ mod imp {
             klass.install_property_action("queue.search", "playlist-search");
             klass.install_property_action("win.replaygain", "replaygain-mode");
 
-            klass.install_action("win.skip-to", Some("u"), move |win, _, param| {
-                if let Some(pos) = param.and_then(u32::from_variant) {
-                    if let Some(player) = win.player() {
-                        player.skip_to(pos);
-                        player.play();
+            klass.install_action(
+                "win.skip-to",
+                Some(glib::VariantTy::UINT32),
+                move |win, _, param| {
+                    if let Some(pos) = param.and_then(u32::from_variant) {
+                        if let Some(player) = win.player() {
+                            player.skip_to(pos);
+                            player.play();
+                        }
                     }
-                }
-            });
+                },
+            );
         }
 
         fn instance_init(obj: &glib::subclass::InitializingObject<Self>) {
@@ -261,7 +277,7 @@ glib::wrapper! {
 }
 
 impl Window {
-    pub fn new<P: glib::IsA<gtk::Application>>(application: &P) -> Self {
+    pub fn new<P: IsA<gtk::Application>>(application: &P) -> Self {
         let win = glib::Object::builder::<Window>()
             .property("application", application)
             .build();
@@ -349,7 +365,9 @@ impl Window {
     }
 
     fn clear_queue(&self) {
-        self.player().map(|p| p.clear_queue());
+        if let Some(p) = self.player() {
+            p.clear_queue();
+        }
     }
 
     fn playlist_visible(&self) -> bool {
@@ -434,10 +452,10 @@ impl Window {
             filters.append(&filter);
 
             let dialog = gtk::FileDialog::builder()
-                .accept_label(&i18n("_Add Song"))
+                .accept_label(i18n("_Add Song"))
                 .filters(&filters)
                 .modal(true)
-                .title(&i18n("Open File"))
+                .title(i18n("Open File"))
                 .build();
 
             if let Ok(files) = dialog.open_multiple_future(Some(&win)).await {
@@ -454,18 +472,16 @@ impl Window {
         let ctx = glib::MainContext::default();
         ctx.spawn_local(clone!(@weak self as win => async move {
             let dialog = gtk::FileDialog::builder()
-                .accept_label(&i18n("_Add Folder"))
+                .accept_label(i18n("_Add Folder"))
                 .modal(true)
-                .title(&i18n("Open Folder"))
+                .title(i18n("Open Folder"))
                 .build();
 
-            if let Ok(res) = dialog.select_multiple_folders_future(Some(&win)).await {
-                if let Some(files) = res {
-                    if files.n_items() == 0 {
-                        win.add_toast(i18n("Unable to access files"));
-                    } else {
-                        win.add_files_to_queue(&files);
-                    }
+            if let Ok(files) = dialog.select_multiple_folders_future(Some(&win)).await {
+                if files.n_items() == 0 {
+                    win.add_toast(i18n("Unable to access files"));
+                } else {
+                    win.add_files_to_queue(&files);
                 }
             }
         }));
@@ -508,19 +524,16 @@ impl Window {
                 files.next()
                     .map(|f| {
                         win.imp().playlist_view.update_loading(cur_file, n_files);
-                        match Song::from_uri(f.uri().as_str()) {
-                            Ok(s) => {
-                                if let Some(player) = win.player() {
-                                    let queue = player.queue();
-                                    if queue.contains(&s) {
-                                        duplicates += 1;
-                                    } else {
-                                        songs.push(s);
-                                        cur_file += 1;
-                                    }
+                        if let Ok(s) = Song::from_uri(f.uri().as_str()) {
+                            if let Some(player) = win.player() {
+                                let queue = player.queue();
+                                if queue.contains(&s) {
+                                    duplicates += 1;
+                                } else {
+                                    songs.push(s);
+                                    cur_file += 1;
                                 }
                             }
-                            Err(_) => ()
                         }
                     })
                     .map(|_| glib::ControlFlow::Continue)
@@ -536,52 +549,50 @@ impl Window {
                             if duplicates == 0 {
                                 win.add_toast(i18n("No songs found"));
                             }
-                        } else {
-                            if let Some(player) = win.player() {
-                                let queue = player.queue();
-                                let was_empty = queue.is_empty();
+                        } else if let Some(player) = win.player() {
+                            let queue = player.queue();
+                            let was_empty = queue.is_empty();
 
-                                win.imp().playlist_view.end_loading();
+                            win.imp().playlist_view.end_loading();
 
-                                // Bulk add to avoid hammering the UI with list model updates
-                                queue.add_songs(&songs);
+                            // Bulk add to avoid hammering the UI with list model updates
+                            queue.add_songs(&songs);
 
-                                // Store the current state of the playlist
-                                utils::store_playlist(&queue);
+                            // Store the current state of the playlist
+                            utils::store_playlist(queue);
 
-                                debug!("Queue was empty: {}, new size: {}", was_empty, queue.n_songs());
+                            debug!("Queue was empty: {}, new size: {}", was_empty, queue.n_songs());
+                            if was_empty {
+                                player.skip_to(0);
+                            }
+
+                            // Allow jumping to the song we just added
+                            if songs.len() == 1 {
+                                // If we added a single song, and the queue was empty, we
+                                // dispense with the pleasantries and we start playing
+                                // immediately; otherwise, we let the user choose whether
+                                // to jump to the newly added song
                                 if was_empty {
-                                    player.skip_to(0);
-                                }
-
-                                // Allow jumping to the song we just added
-                                if songs.len() == 1 {
-                                    // If we added a single song, and the queue was empty, we
-                                    // dispense with the pleasantries and we start playing
-                                    // immediately; otherwise, we let the user choose whether
-                                    // to jump to the newly added song
-                                    if was_empty {
-                                        player.play();
-                                    } else {
-                                        win.add_skip_to_toast(
-                                            i18n("Added a new song"),
-                                            i18n("Play"),
-                                            queue.n_songs() - 1,
-                                        );
-                                    }
+                                    player.play();
                                 } else {
-                                    let msg = ni18n_f(
-                                        // Translators: the `{}` must be left unmodified;
-                                        // it will be expanded to the number of songs added
-                                        // to the playlist
-                                        "Added one song",
-                                        "Added {} songs",
-                                        songs.len() as u32,
-                                        &[&songs.len().to_string()],
+                                    win.add_skip_to_toast(
+                                        i18n("Added a new song"),
+                                        i18n("Play"),
+                                        queue.n_songs() - 1,
                                     );
-
-                                    win.add_toast(msg);
                                 }
+                            } else {
+                                let msg = ni18n_f(
+                                    // Translators: the `{}` must be left unmodified;
+                                    // it will be expanded to the number of songs added
+                                    // to the playlist
+                                    "Added one song",
+                                    "Added {} songs",
+                                    songs.len() as u32,
+                                    &[&songs.len().to_string()],
+                                );
+
+                                win.add_toast(msg);
                             }
                         }
 
@@ -736,7 +747,9 @@ impl Window {
                     }
 
                     if queue.n_songs() == 1 {
-                        win.player().map(|p| p.skip_next());
+                        if let Some(p) = win.player() {
+                            p.skip_next();
+                        }
                     }
 
                     win.update_playlist_time();
@@ -825,7 +838,9 @@ impl Window {
                 false,
                 closure_local!(@watch self as win => move |_vc: VolumeControl, volume: f64| {
                     debug!("Volume changed: {}", volume);
-                    win.player().map(|p| p.set_volume(volume));
+                    if let Some(p) = win.player() {
+                        p.set_volume(volume);
+                    }
                 }),
             );
 
@@ -841,13 +856,11 @@ impl Window {
                             song.set_selected(true);
                         }
                     }
-                } else {
-                    if let Some(player) = win.player() {
-                        let queue = player.queue();
-                        for idx in 0..queue.n_songs() {
-                            let song = queue.song_at(idx).unwrap();
-                            song.set_selected(true);
-                        }
+                } else if let Some(player) = win.player() {
+                    let queue = player.queue();
+                    for idx in 0..queue.n_songs() {
+                        let song = queue.song_at(idx).unwrap();
+                        song.set_selected(true);
                     }
                 }
             }));
@@ -873,7 +886,7 @@ impl Window {
                     }
 
                     // Store the current state of the playlist
-                    utils::store_playlist(&queue);
+                    utils::store_playlist(queue);
                 }
             }));
 
@@ -1202,7 +1215,7 @@ impl Window {
                 }
 
                 let remaining_min = ((remaining_time - (remaining_time % 60)) / 60) as u32;
-                let remaining_hrs = ((remaining_min - (remaining_min % 60)) / 60) as u32;
+                let remaining_hrs = (remaining_min - (remaining_min % 60)) / 60;
 
                 let remaining_str = if remaining_hrs > 0 {
                     // Translators: the `{}` must be left unmodified, and
@@ -1363,7 +1376,9 @@ impl Window {
     }
 
     pub fn remove_song(&self, song: &Song) {
-        self.player().map(|p| p.remove_song(song));
+        if let Some(p) = self.player() {
+            p.remove_song(song);
+        }
         self.update_selected_count();
         self.update_playlist_time();
     }
@@ -1415,7 +1430,9 @@ impl Window {
         let imp = self.imp();
 
         if replaygain != imp.replaygain_mode.replace(replaygain) {
-            self.player().map(|p| p.set_replaygain(replaygain));
+            if let Some(p) = self.player() {
+                p.set_replaygain(replaygain);
+            }
             self.imp()
                 .settings
                 .set_enum("replay-gain", replaygain.into())

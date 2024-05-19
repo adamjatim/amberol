@@ -78,6 +78,12 @@ glib::wrapper! {
 
 }
 
+impl Default for FuzzySorter {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl FuzzySorter {
     pub fn new() -> Self {
         glib::Object::new()
@@ -88,7 +94,7 @@ impl FuzzySorter {
     }
 
     pub fn set_search(&self, search: Option<String>) {
-        if &*self.imp().search.borrow() != &search {
+        if *self.imp().search.borrow() != search {
             *self.imp().search.borrow_mut() = search;
             self.changed(gtk::SorterChange::Different);
         }

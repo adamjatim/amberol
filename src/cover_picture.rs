@@ -6,17 +6,12 @@ use std::cell::{Cell, RefCell};
 use glib::clone;
 use gtk::{gdk, gio, glib, graphene, gsk, prelude::*, subclass::prelude::*};
 
-#[derive(Clone, Copy, Debug, glib::Enum, PartialEq)]
+#[derive(Clone, Copy, Debug, glib::Enum, PartialEq, Default)]
 #[enum_type(name = "AmberolCoverSize")]
 pub enum CoverSize {
+    #[default]
     Large = 0,
     Small = 1,
-}
-
-impl Default for CoverSize {
-    fn default() -> Self {
-        CoverSize::Large
-    }
 }
 
 impl AsRef<str> for CoverSize {
