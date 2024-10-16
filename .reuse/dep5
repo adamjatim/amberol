@@ -31,7 +31,7 @@ Files: io.bassi.Amberol.Devel.json
 Copyright: 2022  Emmanuele Bassi
 License: CC0-1.0
 
-Files: data/io.bassi.Amberol.appdata.xml.in.in
+Files: data/io.bassi.Amberol.metainfo.xml.in.in
 Copyright: 2022  Emmanuele Bassi
 License: CC0-1.0
 
@@ -81,4 +81,8 @@ License: GPL-3.0-or-later
 
 Files: src/gtk/style.css src/gtk/style-hc.css
 Copyright: 2022  Emmanuele Bassi
+License: GPL-3.0-or-later
+
+Files: src/gtk/style-dark.css
+Copyright: 2024  Alice Mikhaylenko
 License: GPL-3.0-or-later

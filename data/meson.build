@@ -29,24 +29,24 @@ appstream_data = configuration_data()
 appstream_data.set('APPLICATION_ID', application_id)
 appstream_file = i18n.merge_file(
   input: configure_file(
-    input: 'io.bassi.Amberol.appdata.xml.in.in',
-    output: 'io.bassi.Amberol.appdata.xml.in',
+    input: 'io.bassi.Amberol.metainfo.xml.in.in',
+    output: 'io.bassi.Amberol.metainfo.xml.in',
     configuration: appstream_data,
   ),
-  output: '@0@.appdata.xml'.format(application_id),
+  output: '@0@.metainfo.xml'.format(application_id),
   po_dir: '../po',
   install: true,
-  install_dir: get_option('datadir') / 'appdata',
+  install_dir: get_option('datadir') / 'metainfo',
 )
 
-#appstream_util = find_program('appstream-util', required: false)
-#if appstream_util.found()
-#  test('Validate appstream file',
-#    appstream_util,
-#    args: ['validate', appstream_file],
-#    suite: ['lint'],
-#  )
-#endif
+appstreamcli = find_program('appstreamcli', required: false)
+if appstreamcli.found()
+ test('Validate appstream file',
+   appstreamcli,
+   args: ['validate', '--no-net', '--explain', appstream_file],
+   suite: ['lint'],
+ )
+endif
 
 install_data('io.bassi.Amberol.gschema.xml',
   install_dir: get_option('datadir') / 'glib-2.0/schemas',
