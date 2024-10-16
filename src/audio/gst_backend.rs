@@ -22,13 +22,6 @@ pub struct GstReplayGain {
     rg_volume: gst::Element,
 }
 
-fn send_update_position(sender: &Sender<PlaybackAction>, clock: gst::ClockTime, notify: bool) {
-    let pos = clock.seconds();
-    if let Err(e) = sender.send_blocking(PlaybackAction::UpdatePosition(pos, notify)) {
-        error!("Failed to send UpdatePosition({pos}): {e}");
-    }
-}
-
 impl GstReplayGain {
     pub fn new() -> Result<GstReplayGain, Box<dyn std::error::Error>> {
         let rg_volume = gst::ElementFactory::make_with_name("rgvolume", Some("rg volume"))?;
@@ -98,38 +91,26 @@ impl GstBackend {
             warn!("GStreamer warning: {}", warn);
         });
 
-        self.gst_player.connect_end_of_stream(clone!(
-            #[strong(rename_to = sender)]
-            self.sender,
-            move |_| {
+        self.gst_player
+            .connect_end_of_stream(clone!(@strong self.sender as sender => move |_| {
                 if let Err(e) = sender.send_blocking(PlaybackAction::PlayNext) {
                     error!("Failed to send PlayNext: {e}");
                 }
-            }
-        ));
+            }));
 
-        self.gst_player.connect_position_updated(clone!(
-            #[strong(rename_to = sender)]
-            self.sender,
-            move |_, clock| {
+        self.gst_player.connect_position_updated(
+            clone!(@strong self.sender as sender => move |_, clock| {
                 if let Some(clock) = clock {
-                    send_update_position(&sender, clock, false);
+                    let pos = clock.seconds();
+                    if let Err(e) = sender.send_blocking(PlaybackAction::UpdatePosition(pos)) {
+                        error!("Failed to send UpdatePosition({pos}): {e}");
+                    }
                 }
-            }
-        ));
+            }),
+        );
 
-        self.gst_player.connect_seek_done(clone!(
-            #[strong(rename_to = sender)]
-            self.sender,
-            move |_, clock| {
-                send_update_position(&sender, clock, true);
-            }
-        ));
-
-        self.gst_player.connect_volume_changed(clone!(
-            #[strong(rename_to = sender)]
-            self.sender,
-            move |player| {
+        self.gst_player.connect_volume_changed(
+            clone!(@strong self.sender as sender => move |player| {
                 let volume = gst_audio::StreamVolume::convert_volume(
                     gst_audio::StreamVolumeFormat::Linear,
                     gst_audio::StreamVolumeFormat::Cubic,
@@ -138,8 +119,8 @@ impl GstBackend {
                 if let Err(e) = sender.send_blocking(PlaybackAction::VolumeChanged(volume)) {
                     error!("Failed to send VolumeChanged({volume}): {e}");
                 }
-            }
-        ));
+            }),
+        );
     }
 
     pub fn set_song_uri(&self, uri: Option<&str>) {

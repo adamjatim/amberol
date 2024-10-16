@@ -28,10 +28,10 @@ pub enum PlaybackAction {
     SkipPrevious,
     SkipNext,
 
-    UpdatePosition(u64, bool),
+    UpdatePosition(u64),
     VolumeChanged(f64),
     Repeat(RepeatMode),
-    Seek(i64),
+    Seek(u64),
     PlayNext,
 
     Raise,
@@ -163,18 +163,14 @@ impl AudioPlayer {
     fn setup_channel(self: Rc<Self>) {
         let receiver = self.receiver.borrow_mut().take().unwrap();
 
-        glib::MainContext::default().spawn_local(clone!(
-            #[strong(rename_to = this)]
-            self,
-            async move {
-                use futures::prelude::*;
+        glib::MainContext::default().spawn_local(clone!(@strong self as this => async move {
+            use futures::prelude::*;
 
-                let mut receiver = std::pin::pin!(receiver);
-                while let Some(action) = receiver.next().await {
-                    this.process_action(action);
-                }
+            let mut receiver = std::pin::pin!(receiver);
+            while let Some(action) = receiver.next().await {
+                this.process_action(action);
             }
-        ));
+        }));
     }
 
     fn process_action(&self, action: PlaybackAction) -> glib::ControlFlow {
@@ -184,12 +180,12 @@ impl AudioPlayer {
             PlaybackAction::Stop => self.set_playback_state(PlaybackState::Stopped),
             PlaybackAction::SkipPrevious => self.skip_previous(),
             PlaybackAction::SkipNext => self.skip_next(),
-            PlaybackAction::UpdatePosition(pos, notify) => self.update_position(pos, notify),
+            PlaybackAction::UpdatePosition(pos) => self.update_position(pos),
             PlaybackAction::VolumeChanged(vol) => self.update_volume(vol),
             PlaybackAction::PlayNext => self.play_next(),
             PlaybackAction::Raise => self.present(),
             PlaybackAction::Repeat(mode) => self.update_repeat_mode(mode),
-            PlaybackAction::Seek(offset) => self.seek_offset(offset),
+            PlaybackAction::Seek(pos) => self.seek_position_abs(pos),
             // _ => debug!("Received action {:?}", action),
         }
 
@@ -433,15 +429,6 @@ impl AudioPlayer {
         self.seek(10, SeekDirection::Forward);
     }
 
-    pub fn seek_offset(&self, offset: i64) {
-        let direction = if offset < 0 {
-            SeekDirection::Backwards
-        } else {
-            SeekDirection::Forward
-        };
-        self.seek(offset.unsigned_abs(), direction);
-    }
-
     pub fn seek_position_rel(&self, position: f64) {
         let duration = self.state.duration() as f64;
         let pos = (duration * position).clamp(0.0, duration);
@@ -469,11 +456,11 @@ impl AudioPlayer {
         self.state.set_current_song(song);
     }
 
-    fn update_position(&self, position: u64, notify: bool) {
+    fn update_position(&self, position: u64) {
         self.state.set_position(position);
 
         for c in &self.controllers {
-            c.set_position(position, notify);
+            c.set_position(position);
         }
     }
 
