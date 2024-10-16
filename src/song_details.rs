@@ -4,8 +4,6 @@
 use adw::subclass::prelude::*;
 use gtk::{glib, prelude::*, CompositeTemplate};
 
-use crate::marquee::Marquee;
-
 mod imp {
     use super::*;
 
@@ -14,11 +12,11 @@ mod imp {
     pub struct SongDetails {
         // Template widgets
         #[template_child]
-        pub song_title_label: TemplateChild<Marquee>,
+        pub song_title_label: TemplateChild<gtk::Label>,
         #[template_child]
-        pub song_artist_label: TemplateChild<Marquee>,
+        pub song_artist_label: TemplateChild<gtk::Label>,
         #[template_child]
-        pub song_album_label: TemplateChild<Marquee>,
+        pub song_album_label: TemplateChild<gtk::Label>,
     }
 
     #[glib::object_subclass]
@@ -67,15 +65,15 @@ impl SongDetails {
         Self::default()
     }
 
-    pub fn artist_label(&self) -> Marquee {
+    pub fn artist_label(&self) -> gtk::Label {
         self.imp().song_artist_label.get()
     }
 
-    pub fn title_label(&self) -> Marquee {
+    pub fn title_label(&self) -> gtk::Label {
         self.imp().song_title_label.get()
     }
 
-    pub fn album_label(&self) -> Marquee {
+    pub fn album_label(&self) -> gtk::Label {
         self.imp().song_album_label.get()
     }
 }

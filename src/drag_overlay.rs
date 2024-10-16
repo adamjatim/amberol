@@ -118,12 +118,8 @@ impl DragOverlay {
             }
         }
 
-        let handler_id = drop_target.connect_current_drop_notify(glib::clone!(
-            #[weak(rename_to = revealer)]
-            priv_.revealer,
-            #[weak(rename_to = overlay)]
-            priv_.overlay,
-            move |target| {
+        let handler_id = drop_target.connect_current_drop_notify(
+            glib::clone!(@weak priv_.revealer as revealer, @weak priv_.overlay as overlay => move |target| {
                 let reveal = target.current_drop().is_some();
                 revealer.set_reveal_child(reveal);
                 if reveal {
@@ -131,8 +127,8 @@ impl DragOverlay {
                 } else {
                     overlay.child().unwrap().remove_css_class("blurred");
                 }
-            }
-        ));
+            }),
+        );
         priv_.handler_id.replace(Some(handler_id));
 
         self.add_controller(drop_target.clone());
