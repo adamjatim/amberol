@@ -1,14 +1,14 @@
 # Hebrew translation for amberol.
 # Copyright (C) 2022 amberol's COPYRIGHT HOLDER
 # This file is distributed under the same license as the amberol package.
-# Yosef Or Boczko <yoseforb@gmail.com>, 2022-2023.
+# Yosef Or Boczko <yoseforb@gmail.com>, 2022-2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: amberol main\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
-"POT-Creation-Date: 2023-04-29 18:48+0000\n"
-"PO-Revision-Date: 2023-05-07 15:54+0300\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/-/issues/\n"
+"POT-Creation-Date: 2024-09-24 12:08+0000\n"
+"PO-Revision-Date: 2024-09-25 17:25+0300\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: Hebrew <yoseforb@gmail.com>\n"
 "Language: he\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
 "2 : 3)\n"
-"X-Generator: Gtranslator 42.0\n"
+"X-Generator: Gtranslator 46.1\n"
 
 #: data/io.bassi.Amberol.desktop.in.in:3
 #: data/io.bassi.Amberol.appdata.xml.in.in:6
@@ -71,7 +71,7 @@ msgstr "ערבוב וחזרה"
 msgid "MPRIS integration"
 msgstr "שילוב MPRIS"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:42
+#: data/io.bassi.Amberol.appdata.xml.in.in:48
 msgid "Emmanuele Bassi"
 msgstr "Emmanuele Bassi"
 
@@ -79,15 +79,15 @@ msgstr "Emmanuele Bassi"
 msgid "Playback in progress"
 msgstr "בתהליך ניגון"
 
-#: src/audio/song.rs:325
+#: src/audio/song.rs:317
 msgid "Unknown artist"
 msgstr "אמן לא ידוע"
 
-#: src/audio/song.rs:332
+#: src/audio/song.rs:324
 msgid "Unknown title"
 msgstr "כותרת לא ידועה"
 
-#: src/audio/song.rs:339
+#: src/audio/song.rs:331
 msgid "Unknown album"
 msgstr "אלבום לא ידוע"
 
@@ -294,35 +294,60 @@ msgstr "_על אמברול"
 msgid "_Quit"
 msgstr "_יציאה"
 
-#: src/gtk/playlist-view.ui:19
+#: src/gtk/playlist-view.ui:17
+msgid "Search Songs in the Playlist"
+msgstr "חיפוש שירים ברשימת ההשמעה"
+
+#: src/gtk/playlist-view.ui:28
 msgid "Playlist"
 msgstr "רשימת השמעה"
 
 #: src/gtk/playlist-view.ui:49
-msgid "Search Songs in the Playlist"
-msgstr "חיפוש שירים ברשימת ההשמעה"
-
-#: src/gtk/playlist-view.ui:61
 msgid "Select Songs in the Playlist"
 msgstr "בחירת שירים ברשימת ההשמעה"
 
-#: src/gtk/playlist-view.ui:74
+#: src/gtk/playlist-view.ui:58
 msgid "Close the Playlist"
 msgstr "סגירת רשימת ההשמעה"
 
-#: src/gtk/playlist-view.ui:135
+#: src/gtk/playlist-view.ui:67
+# msgctxt "a11y"
+msgid "Search songs"
+msgstr "חיפוש שירים"
+
+#: src/gtk/playlist-view.ui:70
+msgctxt "a11y"
+msgid "Search"
+msgstr "חיפוש"
+
+#: src/gtk/playlist-view.ui:71
+msgctxt "a11y"
+msgid "Type to search songs"
+msgstr "יש להקליד לחיפוש שירים"
+
+#: src/gtk/playlist-view.ui:117
 msgid "Select All Songs"
 msgstr "בחירת כל השירים"
 
-#: src/gtk/playlist-view.ui:148
+#: src/gtk/playlist-view.ui:130
 msgid "Remove Selected Songs"
 msgstr "הסרת השירים הנבחרים"
 
-#: src/gtk/window.ui:12
+#: src/gtk/queue-row.ui:27
+msgctxt "a11y"
+msgid "No cover available"
+msgstr "אין עטיפה זמינה"
+
+#: src/gtk/queue-row.ui:84
+msgctxt "a11y"
+msgid "Currently playing"
+msgstr "כרגע מנגן"
+
+#: src/gtk/window.ui:13
 msgid "Drop a song to add it to the playlist"
 msgstr "יש לגרור שיר להוספה לרשימת ההשמעה"
 
-#: src/gtk/window.ui:49
+#: src/gtk/window.ui:43
 msgid ""
 "Select a file or a folder, or drag files from your file manager to the "
 "application window to add songs to the playlist"
@@ -330,38 +355,42 @@ msgstr ""
 "להוספת שירים לרשימת ההשמעה יש לבחור קובץ או תיקייה, או לגרור קבצים ממנהל "
 "הקבצים שלך לחלון היישום"
 
-#: src/gtk/window.ui:58
+#: src/gtk/window.ui:52
 msgid "Restore Playlist"
 msgstr "שחזור רשימת השמעה"
 
-#: src/gtk/window.ui:68
+#: src/gtk/window.ui:62
 msgid "Add Folder"
 msgstr "הוספת תיקייה"
 
-#: src/gtk/window.ui:77
+#: src/gtk/window.ui:71
 msgid "Add Song"
 msgstr "הוספת שיר"
 
-#: src/gtk/window.ui:161
+#: src/gtk/window.ui:148
 msgctxt "a11y"
 msgid "Elapsed time"
 msgstr "זמן שעבר"
 
-#: src/gtk/window.ui:173
+#: src/gtk/window.ui:160
 msgctxt "a11y"
 msgid "Remaining time"
 msgstr "זמן שנותר"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:229
+#: src/application.rs:243
 msgid "translator-credits"
 msgstr ""
 "יוסף אור בוצ׳קו <yoseforb@gmail.com>\n"
 "מיזם תרגום GNOME לעברית https://l10n.gnome.org/teams/he/"
 
-#: src/application.rs:241
+#: src/application.rs:255
 msgid "Amberol needs to run in the background to play music"
 msgstr "אמברול צריך לפעול ברקע על מנת לנגן מוזיקה"
+
+#: src/cover_picture.rs:75
+msgid "Cover image"
+msgstr "תמונת עטיפה"
 
 #: src/playback_control.rs:118
 msgid "Repeat All Songs"
@@ -371,58 +400,50 @@ msgstr "חזרה על כל השירים"
 msgid "Repeat the Current Song"
 msgstr "חזרה על השיר הנוכחי"
 
-#: src/window.rs:438
-msgid "_Add Song"
-msgstr "_הוספת שיר"
-
-#: src/window.rs:439 src/window.rs:479
-msgid "_Cancel"
-msgstr "_ביטול"
-
-#: src/window.rs:441
-msgid "Open File"
-msgstr "פתיחת קבוץ"
-
-#: src/window.rs:448
+#: src/window.rs:145
 msgid "Audio files"
 msgstr "קובצי שמע"
 
-#: src/window.rs:457 src/window.rs:1393
+#: src/window.rs:150
+msgid "_Add Song"
+msgstr "_הוספת שיר"
+
+#: src/window.rs:153
+msgid "Open File"
+msgstr "פתיחת קבוץ"
+
+#: src/window.rs:158 src/window.rs:174 src/window.rs:1462
 msgid "Unable to access files"
 msgstr "לא ניתן לגשת לקבצים"
 
-#: src/window.rs:478
+#: src/window.rs:167
 msgid "_Add Folder"
 msgstr "הו_ספת תיקייה"
 
-#: src/window.rs:481
+#: src/window.rs:169
 msgid "Open Folder"
 msgstr "פתיחת תיקיה"
 
-#: src/window.rs:492
-msgid "Unable to access folders"
-msgstr "לא ניתן לגשת לתיקיות"
-
-#: src/window.rs:510
+#: src/window.rs:488
 msgid "No available song found"
 msgstr "לא נמצא שיר זמין"
 
-#: src/window.rs:567
+#: src/window.rs:549
 msgid "No songs found"
 msgstr "לא נמצאו שירים"
 
-#: src/window.rs:597
+#: src/window.rs:582
 msgid "Added a new song"
 msgstr "נוסף שיר חדש"
 
-#: src/window.rs:598
+#: src/window.rs:583
 msgid "Play"
 msgstr "ניגון"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:607
+#: src/window.rs:592
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "נוסף שיר אחד"
@@ -430,11 +451,11 @@ msgstr[1] "נוספו {} שירים"
 msgstr[2] "נוספו שני שירים"
 msgstr[3] "נוספו {} שירים"
 
-#: src/window.rs:1157
+#: src/window.rs:1222
 msgid "Unable to access dropped files"
 msgstr "לא ניתן לגשת לקבצים שנזרקו"
 
-#: src/window.rs:1251
+#: src/window.rs:1316
 msgid "{} minute"
 msgid_plural "{} minutes"
 msgstr[0] "דקה"
@@ -442,7 +463,7 @@ msgstr[1] "{} דקות"
 msgstr[2] "שתי דקות"
 msgstr[3] "{} דקות"
 
-#: src/window.rs:1262
+#: src/window.rs:1327
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
 msgstr[0] "נותרה שעת אחת ו־{minutes} דקות"
@@ -453,7 +474,7 @@ msgstr[3] "נותרו {hours} שעות ו־{minutes} דקות"
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1272
+#: src/window.rs:1337
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "נותרה דקה אחת"
@@ -461,13 +482,13 @@ msgstr[1] "נותרו {} דקות"
 msgstr[2] "נותרו {} דקות"
 msgstr[3] "נותרו {} דקות"
 
-#: src/window.rs:1372
+#: src/window.rs:1441
 msgid "No song selected"
 msgstr "לא נבחרו שירים"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1377
+#: src/window.rs:1446
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "נבחר שיר אחד"
@@ -478,9 +499,15 @@ msgstr[3] "נבחרו {} שירים"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1431
+#: src/window.rs:1502
 msgid "Currently playing “{title}” by “{artist}”"
 msgstr "מתנגן כעת „{title}” בביצוע „{artist}”"
+
+#~ msgid "_Cancel"
+#~ msgstr "_ביטול"
+
+#~ msgid "Unable to access folders"
+#~ msgstr "לא ניתן לגשת לתיקיות"
 
 #~ msgid "_Track"
 #~ msgstr "_רצועה"

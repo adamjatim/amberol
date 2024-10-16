@@ -1,0 +1,11 @@
+.main-window {
+  --sidebar-bg-color: rgb(255 255 255 / 5.5%);
+  --sidebar-backdrop-color: rgb(255 255 255 / 2.75%);
+  --sidebar-shade-color: rgb(0 0 0 / 20%);
+  --sidebar-border-color: rgb(0 0 0 / 28%);
+
+  --accent-bg-color: rgb(255 255 255 / 75%);
+  --accent-fg-color: rgb(0 0 0 / 75%);
+
+  --scrollbar-outline-color: rgb(0 0 0 / 25%);
+}
