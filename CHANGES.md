@@ -2,13 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [2024.1] - 2024-09-21
 
 ### Added
 
+- Add a marquee label for song details [!143]
+- Add more accessibility labels and descriptions
+- Add Romanian translation
+- Add Burmese translation
+- Add Norwegian Bokmål translation
+- Add Hindi translation
+
 ### Changed
 
+- Adjust whitespace for DnD overlay [!153]
+- Port to the new libadwaita widgets [!138]
+- Update dependencies [!144, !155, !160]
+- Translation updates
+
 ### Fixed
+
+- Support higher scaling factors in the cover image [#344]
+- Update application metadata [!145, !157, !164]
 
 ### Removed
 
