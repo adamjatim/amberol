@@ -1,25 +1,25 @@
 # Bulgarian translation of amberol po-file.
 # Copyright (C) 2024 amberol's COPYRIGHT HOLDER
 # This file is distributed under the same license as the amberol package.
-# twlvnn <kraft_werk@tutanota.com>, 2024.
+# twlvnn kraftwerk <kraft_werk@tutanota.com>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: amberol main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/-/issues/\n"
-"POT-Creation-Date: 2024-04-12 07:30+0000\n"
-"PO-Revision-Date: 2024-05-07 20:38+0300\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2024-10-12 00:23+0000\n"
+"PO-Revision-Date: 2024-10-13 08:06+0200\n"
+"Last-Translator: twlvnn kraftwerk <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Gtranslator 46.1\n"
 
 #: data/io.bassi.Amberol.desktop.in.in:3
-#: data/io.bassi.Amberol.appdata.xml.in.in:6
+#: data/io.bassi.Amberol.metainfo.xml.in.in:6
 msgid "Amberol"
 msgstr "Amberol"
 
@@ -34,11 +34,11 @@ msgstr ""
 "музика;устройство;медия;звук;аудио;списък;песни;изпълнение;music;player;"
 "media;audio;playlist;"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:7
+#: data/io.bassi.Amberol.metainfo.xml.in.in:7
 msgid "Plays music, and nothing else"
 msgstr "Просто слушане на музика"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:9
+#: data/io.bassi.Amberol.metainfo.xml.in.in:9
 msgid ""
 "Amberol is a music player with no delusions of grandeur. If you just want to "
 "play music available on your local system then Amberol is the music player "
@@ -48,32 +48,32 @@ msgstr ""
 "искате да слушате музика от локалната ви система, тогава „Amberol“ е "
 "музикалното програма, която търсите."
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:14
+#: data/io.bassi.Amberol.metainfo.xml.in.in:14
 msgid "Current features:"
 msgstr "Функции:"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:16
+#: data/io.bassi.Amberol.metainfo.xml.in.in:16
 msgid "adaptive UI"
 msgstr "адаптивен потребителски интерфейс"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:17
+#: data/io.bassi.Amberol.metainfo.xml.in.in:17
 msgid "UI recoloring using the album art"
 msgstr ""
 "преоцветяване на потребителския интерфейс с помощта на обложката на албума"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:18
+#: data/io.bassi.Amberol.metainfo.xml.in.in:18
 msgid "drag and drop support to queue songs"
 msgstr "изтегляне и пускане в опашката с песни"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:19
+#: data/io.bassi.Amberol.metainfo.xml.in.in:19
 msgid "shuffle and repeat"
 msgstr "разбъркване и повтаряне"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:20
+#: data/io.bassi.Amberol.metainfo.xml.in.in:20
 msgid "MPRIS integration"
 msgstr "Интеграция с MPRIS"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:44
+#: data/io.bassi.Amberol.metainfo.xml.in.in:48
 msgid "Emmanuele Bassi"
 msgstr "Emmanuele Bassi"
 
@@ -81,15 +81,15 @@ msgstr "Emmanuele Bassi"
 msgid "Playback in progress"
 msgstr "В момента се изпълнява музика"
 
-#: src/audio/song.rs:325
+#: src/audio/song.rs:317
 msgid "Unknown artist"
 msgstr "Неизвестен изпълнител"
 
-#: src/audio/song.rs:332
+#: src/audio/song.rs:324
 msgid "Unknown title"
 msgstr "Неизвестно заглавие"
 
-#: src/audio/song.rs:339
+#: src/audio/song.rs:331
 msgid "Unknown album"
 msgstr "Неизвестен албум"
 
@@ -296,29 +296,53 @@ msgstr "_Относно „Amberol“"
 msgid "_Quit"
 msgstr "_Спиране на програмата"
 
-#: src/gtk/playlist-view.ui:18
-msgid "Playlist"
-msgstr "Списък с песни"
-
-#: src/gtk/playlist-view.ui:49
+#: src/gtk/playlist-view.ui:14
 msgid "Search Songs in the Playlist"
 msgstr "Търсене на песни в списъка с песни"
 
-#: src/gtk/playlist-view.ui:61
-msgid "Select Songs in the Playlist"
-msgstr "Избиране на песни в списъка с песни"
+#: src/gtk/playlist-view.ui:24
+msgid "Playlist"
+msgstr "Списък с песни"
 
-#: src/gtk/playlist-view.ui:74
+#: src/gtk/playlist-view.ui:46
 msgid "Close the Playlist"
 msgstr "Затваряне на списъка с песни"
 
-#: src/gtk/playlist-view.ui:133
+#: src/gtk/playlist-view.ui:54
+msgid "Select Songs in the Playlist"
+msgstr "Избиране на песни в списъка с песни"
+
+#: src/gtk/playlist-view.ui:63
+msgid "Search songs"
+msgstr "Търсене на песни"
+
+#: src/gtk/playlist-view.ui:66
+msgctxt "a11y"
+msgid "Search"
+msgstr "Търсене"
+
+#: src/gtk/playlist-view.ui:67
+msgctxt "a11y"
+msgid "Type to search songs"
+msgstr "Въведете, за да търсите песни"
+
+#: src/gtk/playlist-view.ui:113
 msgid "Select All Songs"
 msgstr "Избиране на всички песни"
 
-#: src/gtk/playlist-view.ui:146
+#: src/gtk/playlist-view.ui:126
 msgid "Remove Selected Songs"
 msgstr "Премахване на избраните песни"
+
+#: src/gtk/queue-row.ui:27
+msgctxt "a11y"
+msgid "No cover available"
+msgstr "Няма налична обложка"
+
+#: src/gtk/queue-row.ui:84
+msgctxt "a11y"
+msgid "Currently playing"
+msgstr "В момента слушате"
 
 #: src/gtk/window.ui:13
 msgid "Drop a song to add it to the playlist"
@@ -355,13 +379,17 @@ msgid "Remaining time"
 msgstr "Оставащо време"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:229
+#: src/application.rs:243
 msgid "translator-credits"
 msgstr "twlvnn <kraft_werk@tutanota.com>"
 
-#: src/application.rs:241
+#: src/application.rs:255
 msgid "Amberol needs to run in the background to play music"
 msgstr "„Amberol“ трябва да работи във фонов режим, за да възпроизвежда музика"
+
+#: src/cover_picture.rs:75
+msgid "Cover image"
+msgstr "Обложка"
 
 #: src/playback_control.rs:118
 msgid "Repeat All Songs"
@@ -371,66 +399,66 @@ msgstr "Повтаряне на всички песни"
 msgid "Repeat the Current Song"
 msgstr "Повтаряне на текущата песен"
 
-#: src/window.rs:432
+#: src/window.rs:145
 msgid "Audio files"
 msgstr "Песни"
 
-#: src/window.rs:437
+#: src/window.rs:150
 msgid "_Add Song"
 msgstr "_Добавяне на песен"
 
-#: src/window.rs:440
+#: src/window.rs:153
 msgid "Open File"
 msgstr "Отваряне на файл"
 
-#: src/window.rs:445 src/window.rs:465 src/window.rs:1354
+#: src/window.rs:158 src/window.rs:174 src/window.rs:1462
 msgid "Unable to access files"
 msgstr "Не може да се достъпят файлове"
 
-#: src/window.rs:457
+#: src/window.rs:167
 msgid "_Add Folder"
 msgstr "_Добавяне на папка"
 
-#: src/window.rs:459
+#: src/window.rs:169
 msgid "Open Folder"
 msgstr "Отваряне на папка"
 
-#: src/window.rs:482
+#: src/window.rs:488
 msgid "No available song found"
 msgstr "Не е намерена налична песен"
 
-#: src/window.rs:537
+#: src/window.rs:549
 msgid "No songs found"
 msgstr "Няма намерени песни"
 
-#: src/window.rs:567
+#: src/window.rs:582
 msgid "Added a new song"
 msgstr "Добавена е нова песен"
 
-#: src/window.rs:568
+#: src/window.rs:583
 msgid "Play"
 msgstr "Изпълнение"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:577
+#: src/window.rs:592
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "Добавена е една песен"
 msgstr[1] "Добавени са {} песни"
 
-#: src/window.rs:1118
+#: src/window.rs:1222
 msgid "Unable to access dropped files"
 msgstr "Пуснатите файлове не може да се достъпят"
 
-#: src/window.rs:1212
+#: src/window.rs:1316
 msgid "{} minute"
 msgid_plural "{} minutes"
 msgstr[0] "{} минута"
 msgstr[1] "{} минути"
 
-#: src/window.rs:1223
+#: src/window.rs:1327
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
 msgstr[0] "остават {hours} час {minutes} минути"
@@ -439,19 +467,19 @@ msgstr[1] "остават {hours} часа {minutes} минути"
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1233
+#: src/window.rs:1337
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "остава {} минута"
 msgstr[1] "остават {} минути"
 
-#: src/window.rs:1333
+#: src/window.rs:1441
 msgid "No song selected"
 msgstr "Няма избрана песен"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1338
+#: src/window.rs:1446
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "{} избрана песен"
@@ -460,6 +488,6 @@ msgstr[1] "{} избрани песни"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1392
+#: src/window.rs:1502
 msgid "Currently playing “{title}” by “{artist}”"
 msgstr "В момента слушате „{title}“ от {artist}"
