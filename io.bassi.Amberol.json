@@ -13,8 +13,7 @@
         "--device=dri",
         "--socket=wayland",
         "--socket=pulseaudio",
-        "--filesystem=xdg-music:ro",
-        "--filesystem=xdg-download:ro"
+        "--filesystem=xdg-music:ro"
     ],
     "build-options" : {
         "append-path" : "/usr/lib/sdk/rust-stable/bin",
