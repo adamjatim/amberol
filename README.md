@@ -27,7 +27,7 @@ by using this command:
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     flatpak install flathub io.bassi.Amberol
 
-<a href="https://flathub.org/apps/details/io.bassi.Amberol"><img src="https://flathub.org/assets/badges/flathub-badge-en.png" width="200"/></a>
+<a href="https://flathub.org/apps/details/io.bassi.Amberol"><img src="https://flathub.org/api/badge?svg&locale=en" width="200"/></a>
 
 Getting in touch
 ----------------
