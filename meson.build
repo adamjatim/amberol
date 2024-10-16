@@ -2,14 +2,14 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 project('amberol', 'rust',
-  version: '0.10.4',
+  version: '2024.2',
   license: ['GPL-3.0'],
   meson_version: '>= 0.59.0',
   default_options: [ 'warning_level=2', ],
 )
 
-dependency('gtk4', version: '>= 4.11.3')
-dependency('libadwaita-1', version: '>= 1.4')
+dependency('gtk4', version: '>= 4.13.4')
+dependency('libadwaita-1', version: '>= 1.5')
 dependency('gstreamer-1.0', version: '>= 1.20')
 dependency('gstreamer-audio-1.0', version: '>= 1.20')
 dependency('gstreamer-player-1.0', version: '>= 1.20')
