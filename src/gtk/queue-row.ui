@@ -17,11 +17,15 @@
                         <property name="child">
                           <object class="GtkImage">
                             <property name="icon-name">folder-music-symbolic</property>
-                            <property name="pixel-size">24</property>
+                            <property name="pixel-size">32</property>
                             <style>
                               <class name="dim-label"/>
                               <class name="card"/>
+                              <class name="small"/>
                             </style>
+                            <accessibility>
+                              <property name="label" translatable="yes" context="a11y">No cover available</property>
+                            </accessibility>
                           </object>
                         </property>
                       </object>
@@ -76,6 +80,9 @@
                     <property name="halign">center</property>
                     <property name="valign">center</property>
                     <property name="opacity">0</property>
+                    <accessibility>
+                      <property name="label" translatable="yes" context="a11y">Currently playing</property>
+                    </accessibility>
                   </object>
                 </child>
                 <style>

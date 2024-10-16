@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: amberol main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/-/issues/\n"
-"POT-Creation-Date: 2024-03-25 22:32+0000\n"
-"PO-Revision-Date: 2024-04-29 21:37+0200\n"
+"POT-Creation-Date: 2024-09-24 12:08+0000\n"
+"PO-Revision-Date: 2024-09-30 21:34+0200\n"
 "Last-Translator: \n"
 "Language-Team: Norwegian Bokmål <nb@li.org>\n"
 "Language: nb\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: data/io.bassi.Amberol.desktop.in.in:3
 #: data/io.bassi.Amberol.appdata.xml.in.in:6
@@ -58,7 +58,7 @@ msgstr "Lytt hjemme eller på farten; appen tilpasser seg skjermstørrelsen din"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:17
 msgid "UI recoloring using the album art"
-msgstr "Se appen endre farger ut fra albumomslaget som vises"
+msgstr "Se appen endre farger ut fra omslagsbildet som vises"
 
 #: data/io.bassi.Amberol.appdata.xml.in.in:18
 msgid "drag and drop support to queue songs"
@@ -74,7 +74,7 @@ msgstr ""
 "Se og styr avspillingen fra andre steder, takket være appens integrering med "
 "systemet"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:44
+#: data/io.bassi.Amberol.appdata.xml.in.in:48
 msgid "Emmanuele Bassi"
 msgstr "Emmanuele Bassi"
 
@@ -82,15 +82,15 @@ msgstr "Emmanuele Bassi"
 msgid "Playback in progress"
 msgstr "Spiller av musikk"
 
-#: src/audio/song.rs:325
+#: src/audio/song.rs:317
 msgid "Unknown artist"
 msgstr "Ukjent artist"
 
-#: src/audio/song.rs:332
+#: src/audio/song.rs:324
 msgid "Unknown title"
 msgstr "Ukjent tittel"
 
-#: src/audio/song.rs:339
+#: src/audio/song.rs:331
 msgid "Unknown album"
 msgstr "Ukjent album"
 
@@ -297,29 +297,53 @@ msgstr "_Om Amberol"
 msgid "_Quit"
 msgstr "_Avslutt"
 
-#: src/gtk/playlist-view.ui:18
+#: src/gtk/playlist-view.ui:17
+msgid "Search Songs in the Playlist"
+msgstr "Søk i spilleliste"
+
+#: src/gtk/playlist-view.ui:28
 msgid "Playlist"
 msgstr "Spilleliste"
 
 #: src/gtk/playlist-view.ui:49
-msgid "Search Songs in the Playlist"
-msgstr "Søk i spilleliste"
-
-#: src/gtk/playlist-view.ui:61
 msgid "Select Songs in the Playlist"
 msgstr "Marker låter"
 
-#: src/gtk/playlist-view.ui:74
+#: src/gtk/playlist-view.ui:58
 msgid "Close the Playlist"
 msgstr "Lukk spilleliste"
 
-#: src/gtk/playlist-view.ui:133
+#: src/gtk/playlist-view.ui:67
+msgid "Search songs"
+msgstr "Søk etter låter"
+
+#: src/gtk/playlist-view.ui:70
+msgctxt "a11y"
+msgid "Search"
+msgstr "Søk"
+
+#: src/gtk/playlist-view.ui:71
+msgctxt "a11y"
+msgid "Type to search songs"
+msgstr "Skriv for å søke"
+
+#: src/gtk/playlist-view.ui:117
 msgid "Select All Songs"
 msgstr "Marker alle"
 
-#: src/gtk/playlist-view.ui:146
+#: src/gtk/playlist-view.ui:130
 msgid "Remove Selected Songs"
 msgstr "Fjern utvalg"
+
+#: src/gtk/queue-row.ui:27
+msgctxt "a11y"
+msgid "No cover available"
+msgstr "Fant ikke omslagsbilde"
+
+#: src/gtk/queue-row.ui:84
+msgctxt "a11y"
+msgid "Currently playing"
+msgstr "Spilles nå"
 
 #: src/gtk/window.ui:13
 msgid "Drop a song to add it to the playlist"
@@ -356,13 +380,17 @@ msgid "Remaining time"
 msgstr "Tid igjen"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:229
+#: src/application.rs:243
 msgid "translator-credits"
 msgstr "Brage Fuglseth https://bragefuglseth.dev"
 
-#: src/application.rs:241
+#: src/application.rs:255
 msgid "Amberol needs to run in the background to play music"
 msgstr "Amberol trenger å kjøre i bakgrunnen for å spille musikk"
+
+#: src/cover_picture.rs:75
+msgid "Cover image"
+msgstr "Omslagsbilde"
 
 #: src/playback_control.rs:118
 msgid "Repeat All Songs"
@@ -372,66 +400,66 @@ msgstr "Gjenta alle låter"
 msgid "Repeat the Current Song"
 msgstr "Gjenta nåværende låt"
 
-#: src/window.rs:432
+#: src/window.rs:145
 msgid "Audio files"
 msgstr "Lydfiler"
 
-#: src/window.rs:437
+#: src/window.rs:150
 msgid "_Add Song"
 msgstr "_Legg til låt"
 
-#: src/window.rs:440
+#: src/window.rs:153
 msgid "Open File"
 msgstr "Åpne fil"
 
-#: src/window.rs:445 src/window.rs:465 src/window.rs:1354
+#: src/window.rs:158 src/window.rs:174 src/window.rs:1462
 msgid "Unable to access files"
 msgstr "Åpning av filer mislyktes"
 
-#: src/window.rs:457
+#: src/window.rs:167
 msgid "_Add Folder"
 msgstr "_Legg til mappe"
 
-#: src/window.rs:459
+#: src/window.rs:169
 msgid "Open Folder"
 msgstr "Åpne mappe"
 
-#: src/window.rs:482
+#: src/window.rs:488
 msgid "No available song found"
 msgstr "Ingen tilgjengelig låt funnet"
 
-#: src/window.rs:537
+#: src/window.rs:549
 msgid "No songs found"
 msgstr "Ingen låter funnet"
 
-#: src/window.rs:567
+#: src/window.rs:582
 msgid "Added a new song"
 msgstr "Ny låt lagt til"
 
-#: src/window.rs:568
+#: src/window.rs:583
 msgid "Play"
 msgstr "Spill"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:577
+#: src/window.rs:592
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "Låt lagt til"
 msgstr[1] "{} låter lagt til"
 
-#: src/window.rs:1118
+#: src/window.rs:1222
 msgid "Unable to access dropped files"
 msgstr "Åpning av sluppede filer mislyktes"
 
-#: src/window.rs:1212
+#: src/window.rs:1316
 msgid "{} minute"
 msgid_plural "{} minutes"
 msgstr[0] "{} minutt"
 msgstr[1] "{} minutter"
 
-#: src/window.rs:1223
+#: src/window.rs:1327
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
 msgstr[0] "{hours} time og {minutes} igjen"
@@ -440,19 +468,19 @@ msgstr[1] "{hours} timer og {minutes} igjen"
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1233
+#: src/window.rs:1337
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "{} minutt igjen"
 msgstr[1] "{} minutter igjen"
 
-#: src/window.rs:1333
+#: src/window.rs:1441
 msgid "No song selected"
 msgstr "Marker låter"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1338
+#: src/window.rs:1446
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "{} låt markert"
@@ -461,6 +489,6 @@ msgstr[1] "{} låter markert"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1392
+#: src/window.rs:1502
 msgid "Currently playing “{title}” by “{artist}”"
 msgstr "Spiller «{title}» av «{artist}»"

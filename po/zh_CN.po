@@ -3,22 +3,22 @@
 # This file is distributed under the same license as the amberol package.
 # D <afecr@foxmail.com>, 2022.
 # Dream_ink <Dream_ink@qq.com>, 2023.
-# lumingzh <lumingzh@qq.com>, 2022-2023.
+# lumingzh <lumingzh@qq.com>, 2022-2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: amberol main\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
-"POT-Creation-Date: 2023-07-19 20:11+0000\n"
-"PO-Revision-Date: 2023-07-21 10:21-0400\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/-/issues/\n"
+"POT-Creation-Date: 2024-09-24 12:08+0000\n"
+"PO-Revision-Date: 2024-09-25 09:07+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
-"Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
+"Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Gtranslator 46.1\n"
 
 #: data/io.bassi.Amberol.desktop.in.in:3
 #: data/io.bassi.Amberol.appdata.xml.in.in:6
@@ -71,7 +71,7 @@ msgstr "乱序和重复"
 msgid "MPRIS integration"
 msgstr "MPRIS 集成"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:42
+#: data/io.bassi.Amberol.appdata.xml.in.in:48
 msgid "Emmanuele Bassi"
 msgstr "Emmanuele Bassi"
 
@@ -79,15 +79,15 @@ msgstr "Emmanuele Bassi"
 msgid "Playback in progress"
 msgstr "播放正在进行"
 
-#: src/audio/song.rs:325
+#: src/audio/song.rs:317
 msgid "Unknown artist"
 msgstr "未知艺术家"
 
-#: src/audio/song.rs:332
+#: src/audio/song.rs:324
 msgid "Unknown title"
 msgstr "未知标题"
 
-#: src/audio/song.rs:339
+#: src/audio/song.rs:331
 msgid "Unknown album"
 msgstr "未知专辑"
 
@@ -294,35 +294,59 @@ msgstr "关于 Amberol(_A)"
 msgid "_Quit"
 msgstr "退出(_Q)"
 
-#: src/gtk/playlist-view.ui:19
+#: src/gtk/playlist-view.ui:17
+msgid "Search Songs in the Playlist"
+msgstr "在播放列表中搜索歌曲"
+
+#: src/gtk/playlist-view.ui:28
 msgid "Playlist"
 msgstr "播放列表"
 
 #: src/gtk/playlist-view.ui:49
-msgid "Search Songs in the Playlist"
-msgstr "在播放列表中搜索歌曲"
-
-#: src/gtk/playlist-view.ui:61
 msgid "Select Songs in the Playlist"
 msgstr "选择播放列表中的歌曲"
 
-#: src/gtk/playlist-view.ui:74
+#: src/gtk/playlist-view.ui:58
 msgid "Close the Playlist"
 msgstr "关闭播放列表"
 
-#: src/gtk/playlist-view.ui:135
+#: src/gtk/playlist-view.ui:67
+msgid "Search songs"
+msgstr "搜索歌曲"
+
+#: src/gtk/playlist-view.ui:70
+msgctxt "a11y"
+msgid "Search"
+msgstr "搜索"
+
+#: src/gtk/playlist-view.ui:71
+msgctxt "a11y"
+msgid "Type to search songs"
+msgstr "输入文本以搜索歌曲"
+
+#: src/gtk/playlist-view.ui:117
 msgid "Select All Songs"
 msgstr "选择全部歌曲"
 
-#: src/gtk/playlist-view.ui:148
+#: src/gtk/playlist-view.ui:130
 msgid "Remove Selected Songs"
 msgstr "移除选中歌曲"
 
-#: src/gtk/window.ui:12
+#: src/gtk/queue-row.ui:27
+msgctxt "a11y"
+msgid "No cover available"
+msgstr "无可用封面"
+
+#: src/gtk/queue-row.ui:84
+msgctxt "a11y"
+msgid "Currently playing"
+msgstr "当前播放"
+
+#: src/gtk/window.ui:13
 msgid "Drop a song to add it to the playlist"
 msgstr "拖放歌曲将其添加到播放列表"
 
-#: src/gtk/window.ui:49
+#: src/gtk/window.ui:43
 msgid ""
 "Select a file or a folder, or drag files from your file manager to the "
 "application window to add songs to the playlist"
@@ -330,39 +354,43 @@ msgstr ""
 "选择文件或文件夹，或将文件从您的文件管理器拖动到应用程序窗口，以将歌曲添加到"
 "播放列表"
 
-#: src/gtk/window.ui:58
+#: src/gtk/window.ui:52
 msgid "Restore Playlist"
 msgstr "恢复播放列表"
 
-#: src/gtk/window.ui:68
+#: src/gtk/window.ui:62
 msgid "Add Folder"
 msgstr "添加文件夹"
 
-#: src/gtk/window.ui:77
+#: src/gtk/window.ui:71
 msgid "Add Song"
 msgstr "添加歌曲"
 
-#: src/gtk/window.ui:161
+#: src/gtk/window.ui:148
 msgctxt "a11y"
 msgid "Elapsed time"
 msgstr "已用时间"
 
-#: src/gtk/window.ui:173
+#: src/gtk/window.ui:160
 msgctxt "a11y"
 msgid "Remaining time"
 msgstr "剩余时间"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:229
+#: src/application.rs:243
 msgid "translator-credits"
 msgstr ""
 "D <afecr@foxmail.com>, 2022.\n"
-"lumingzh <lumingzh@qq.com>, 2022-2023.\n"
+"lumingzh <lumingzh@qq.com>, 2022-2024.\n"
 "Dream_ink <Dream_ink@qq.com>, 2023."
 
-#: src/application.rs:241
+#: src/application.rs:255
 msgid "Amberol needs to run in the background to play music"
 msgstr "Amberol 需要在后台运行以播放音乐"
+
+#: src/cover_picture.rs:75
+msgid "Cover image"
+msgstr "封面图像"
 
 #: src/playback_control.rs:118
 msgid "Repeat All Songs"
@@ -372,64 +400,64 @@ msgstr "重复全部歌曲"
 msgid "Repeat the Current Song"
 msgstr "重复当前歌曲"
 
-#: src/window.rs:432
+#: src/window.rs:145
 msgid "Audio files"
 msgstr "音频文件"
 
-#: src/window.rs:437
+#: src/window.rs:150
 msgid "_Add Song"
 msgstr "添加歌曲(_A)"
 
-#: src/window.rs:440
+#: src/window.rs:153
 msgid "Open File"
 msgstr "打开文件"
 
-#: src/window.rs:445 src/window.rs:465 src/window.rs:1365
+#: src/window.rs:158 src/window.rs:174 src/window.rs:1462
 msgid "Unable to access files"
 msgstr "无法访问文件"
 
-#: src/window.rs:457
+#: src/window.rs:167
 msgid "_Add Folder"
 msgstr "添加文件夹(_A)"
 
-#: src/window.rs:459
+#: src/window.rs:169
 msgid "Open Folder"
 msgstr "打开文件夹"
 
-#: src/window.rs:482
+#: src/window.rs:488
 msgid "No available song found"
 msgstr "找不到可用歌曲"
 
-#: src/window.rs:539
+#: src/window.rs:549
 msgid "No songs found"
 msgstr "找不到歌曲"
 
-#: src/window.rs:569
+#: src/window.rs:582
 msgid "Added a new song"
 msgstr "已添加一首新歌曲"
 
-#: src/window.rs:570
+#: src/window.rs:583
 msgid "Play"
 msgstr "播放"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:579
+#: src/window.rs:592
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "已添加 {} 首歌曲"
 
-#: src/window.rs:1129
+#: src/window.rs:1222
 msgid "Unable to access dropped files"
 msgstr "无法访问拖放的文件"
 
-#: src/window.rs:1223
+#: src/window.rs:1316
 msgid "{} minute"
 msgid_plural "{} minutes"
 msgstr[0] "{} 分钟"
 
-#: src/window.rs:1234
+#: src/window.rs:1327
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
 msgstr[0] "剩余 {hours} 小时 {minutes} 分钟"
@@ -437,18 +465,18 @@ msgstr[0] "剩余 {hours} 小时 {minutes} 分钟"
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1244
+#: src/window.rs:1337
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "剩余 {} 分钟"
 
-#: src/window.rs:1344
+#: src/window.rs:1441
 msgid "No song selected"
 msgstr "未选择歌曲"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1349
+#: src/window.rs:1446
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "已选择 {} 首歌曲"
@@ -456,7 +484,7 @@ msgstr[0] "已选择 {} 首歌曲"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1403
+#: src/window.rs:1502
 msgid "Currently playing “{title}” by “{artist}”"
 msgstr "当前正在播放“{artist}”的“{title}”"
 

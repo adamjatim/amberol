@@ -2,21 +2,22 @@
 # Copyright (C) 2022 amberol's COPYRIGHT HOLDER
 # This file is distributed under the same license as the amberol package.
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2022-2023.
+# Julián Villodre <jvillodrede@gmail.com>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: amberol main\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
-"POT-Creation-Date: 2023-05-23 19:06+0000\n"
-"PO-Revision-Date: 2023-08-22 13:47+0200\n"
-"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/-/issues/\n"
+"POT-Creation-Date: 2024-09-24 12:08+0000\n"
+"PO-Revision-Date: 2024-09-27 22:51+0200\n"
+"Last-Translator: Julián Villodre <jvillodrede@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
-"Language: es_ES\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 45.alpha0\n"
+"X-Generator: Gtranslator 46.1\n"
 
 #: data/io.bassi.Amberol.desktop.in.in:3
 #: data/io.bassi.Amberol.appdata.xml.in.in:6
@@ -70,7 +71,7 @@ msgstr "mezclar y repetir"
 msgid "MPRIS integration"
 msgstr "Integración con MPRIS"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:42
+#: data/io.bassi.Amberol.appdata.xml.in.in:48
 msgid "Emmanuele Bassi"
 msgstr "Emmanuele Bassi"
 
@@ -78,15 +79,15 @@ msgstr "Emmanuele Bassi"
 msgid "Playback in progress"
 msgstr "Reproducción en progreso"
 
-#: src/audio/song.rs:325
+#: src/audio/song.rs:317
 msgid "Unknown artist"
 msgstr "Artista desconocido"
 
-#: src/audio/song.rs:332
+#: src/audio/song.rs:324
 msgid "Unknown title"
 msgstr "Título desconocido"
 
-#: src/audio/song.rs:339
+#: src/audio/song.rs:331
 msgid "Unknown album"
 msgstr "Álbum desconocido"
 
@@ -293,35 +294,59 @@ msgstr "Acerca _de Amberol"
 msgid "_Quit"
 msgstr "_Salir"
 
-#: src/gtk/playlist-view.ui:19
+#: src/gtk/playlist-view.ui:17
+msgid "Search Songs in the Playlist"
+msgstr "Buscar canciones en la lista de reproducción"
+
+#: src/gtk/playlist-view.ui:28
 msgid "Playlist"
 msgstr "Lista de reproducción"
 
 #: src/gtk/playlist-view.ui:49
-msgid "Search Songs in the Playlist"
-msgstr "Buscar canciones en la lista de reproducción"
-
-#: src/gtk/playlist-view.ui:61
 msgid "Select Songs in the Playlist"
 msgstr "Seleccionar canciones en la lista de reproducción"
 
-#: src/gtk/playlist-view.ui:74
+#: src/gtk/playlist-view.ui:58
 msgid "Close the Playlist"
 msgstr "Cerrar la lista de reproducción"
 
-#: src/gtk/playlist-view.ui:135
+#: src/gtk/playlist-view.ui:67
+msgid "Search songs"
+msgstr "Buscar canciones"
+
+#: src/gtk/playlist-view.ui:70
+msgctxt "a11y"
+msgid "Search"
+msgstr "Buscar"
+
+#: src/gtk/playlist-view.ui:71
+msgctxt "a11y"
+msgid "Type to search songs"
+msgstr "Escriba para buscar canciones"
+
+#: src/gtk/playlist-view.ui:117
 msgid "Select All Songs"
 msgstr "Seleccionar todas las canciones"
 
-#: src/gtk/playlist-view.ui:148
+#: src/gtk/playlist-view.ui:130
 msgid "Remove Selected Songs"
 msgstr "Quitar las canciones seleccionadas"
 
-#: src/gtk/window.ui:12
+#: src/gtk/queue-row.ui:27
+msgctxt "a11y"
+msgid "No cover available"
+msgstr "No hay una portada disponible"
+
+#: src/gtk/queue-row.ui:84
+msgctxt "a11y"
+msgid "Currently playing"
+msgstr "Sonando ahora mismo"
+
+#: src/gtk/window.ui:13
 msgid "Drop a song to add it to the playlist"
 msgstr "Suelte una canción para añadirla a la cola"
 
-#: src/gtk/window.ui:49
+#: src/gtk/window.ui:43
 msgid ""
 "Select a file or a folder, or drag files from your file manager to the "
 "application window to add songs to the playlist"
@@ -330,36 +355,42 @@ msgstr ""
 "archivos a la ventana de la aplicación para añadir canciones a la lista de "
 "reproducción"
 
-#: src/gtk/window.ui:58
+#: src/gtk/window.ui:52
 msgid "Restore Playlist"
 msgstr "Restaurar lista de reproducción"
 
-#: src/gtk/window.ui:68
+#: src/gtk/window.ui:62
 msgid "Add Folder"
 msgstr "Añadir carpeta"
 
-#: src/gtk/window.ui:77
+#: src/gtk/window.ui:71
 msgid "Add Song"
 msgstr "Añadir canción"
 
-#: src/gtk/window.ui:161
+#: src/gtk/window.ui:148
 msgctxt "a11y"
 msgid "Elapsed time"
 msgstr "Tiempo transcurrido"
 
-#: src/gtk/window.ui:173
+#: src/gtk/window.ui:160
 msgctxt "a11y"
 msgid "Remaining time"
 msgstr "Tiempo restante"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:229
+#: src/application.rs:243
 msgid "translator-credits"
-msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2022 - 2023"
+msgstr ""
+"Julián Villodre <jvillodrede@gmail.com>, 2024\n"
+"Daniel Mustieles <daniel.mustieles@gmail.com>, 2022 - 2023"
 
-#: src/application.rs:241
+#: src/application.rs:255
 msgid "Amberol needs to run in the background to play music"
 msgstr "Amberol debe ejecutarse en segundo plano para reproducir música"
+
+#: src/cover_picture.rs:75
+msgid "Cover image"
+msgstr "Imagen de portada"
 
 #: src/playback_control.rs:118
 msgid "Repeat All Songs"
@@ -369,66 +400,66 @@ msgstr "Repetir todas las canciones"
 msgid "Repeat the Current Song"
 msgstr "Repetir la canción actual"
 
-#: src/window.rs:432
+#: src/window.rs:145
 msgid "Audio files"
 msgstr "Archivos de sonido"
 
-#: src/window.rs:437
+#: src/window.rs:150
 msgid "_Add Song"
 msgstr "_Añadir canción"
 
-#: src/window.rs:440
+#: src/window.rs:153
 msgid "Open File"
 msgstr "Abrir archivo"
 
-#: src/window.rs:445 src/window.rs:465 src/window.rs:1365
+#: src/window.rs:158 src/window.rs:174 src/window.rs:1462
 msgid "Unable to access files"
 msgstr "No se puede acceder a los archivos"
 
-#: src/window.rs:457
+#: src/window.rs:167
 msgid "_Add Folder"
 msgstr "Añadir ca_rpeta"
 
-#: src/window.rs:459
+#: src/window.rs:169
 msgid "Open Folder"
 msgstr "Abrir carpeta"
 
-#: src/window.rs:482
+#: src/window.rs:488
 msgid "No available song found"
 msgstr "No hay ninguna canción disponible"
 
-#: src/window.rs:539
+#: src/window.rs:549
 msgid "No songs found"
 msgstr "No se han encontrado canciones"
 
-#: src/window.rs:569
+#: src/window.rs:582
 msgid "Added a new song"
 msgstr "Se ha añadido una canción nueva"
 
-#: src/window.rs:570
+#: src/window.rs:583
 msgid "Play"
 msgstr "Reproducir"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:579
+#: src/window.rs:592
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "Se ha añadido una canción"
 msgstr[1] "Se han añadido {} canciones"
 
-#: src/window.rs:1129
+#: src/window.rs:1222
 msgid "Unable to access dropped files"
 msgstr "No se puede acceder a los archivos que ha soltado"
 
-#: src/window.rs:1223
+#: src/window.rs:1316
 msgid "{} minute"
 msgid_plural "{} minutes"
 msgstr[0] "{} minuto"
 msgstr[1] "{} minutos"
 
-#: src/window.rs:1234
+#: src/window.rs:1327
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
 msgstr[0] "Queda {hours} hora {minutes}"
@@ -437,19 +468,19 @@ msgstr[1] "Quedan {hours} horas {minutes}"
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1244
+#: src/window.rs:1337
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "Queda {} minuto"
 msgstr[1] "Quedan {} minutos"
 
-#: src/window.rs:1344
+#: src/window.rs:1441
 msgid "No song selected"
 msgstr "Ninguna canción seleccionada"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1349
+#: src/window.rs:1446
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "{} canción seleccionada"
@@ -458,7 +489,7 @@ msgstr[1] "{} canciones seleccionadas"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1403
+#: src/window.rs:1502
 msgid "Currently playing “{title}” by “{artist}”"
 msgstr "Reproduciendo actualmente «{title}» de «{artist}»"
 

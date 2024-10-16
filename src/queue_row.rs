@@ -167,14 +167,16 @@ impl QueueRow {
     }
 
     fn init_widgets(&self) {
-        self.imp().selected_button.connect_active_notify(
-            clone!(@strong self as this => move |button| {
+        self.imp().selected_button.connect_active_notify(clone!(
+            #[strong(rename_to = this)]
+            self,
+            move |button| {
                 if let Some(ref song) = *this.imp().song.borrow() {
                     song.set_selected(button.is_active());
                 }
                 this.notify("selected");
-            }),
-        );
+            }
+        ));
     }
 
     fn set_playing(&self, playing: bool) {

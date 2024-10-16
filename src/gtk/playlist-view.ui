@@ -5,15 +5,21 @@
     <child>
       <object class="AdwToolbarView">
         <child type="top">
-          <object class="GtkBox">
-            <child>
+          <object class="AdwHeaderBar">
+            <child type="start">
+              <object class="GtkToggleButton" id="search_button">
+                <property name="icon-name">system-search-symbolic</property>
+                <property name="action-name">queue.search</property>
+                <property name="valign">center</property>
+                <property name="tooltip-text" translatable="yes">Search Songs in the Playlist</property>
+              </object>
+            </child>
+            <property name="title-widget">
               <object class="GtkBox" id="queue_length_box">
                 <property name="orientation">vertical</property>
-                <property name="spacing">2</property>
-                <property name="hexpand">true</property>
+                <property name="valign">center</property>
                 <child>
                   <object class="GtkLabel">
-                    <property name="xalign">0</property>
                     <property name="ellipsize">end</property>
                     <property name="label" translatable="yes">Playlist</property>
                     <style>
@@ -23,60 +29,29 @@
                 </child>
                 <child>
                   <object class="GtkLabel" id="queue_length_label">
-                    <property name="xalign">0</property>
                     <property name="ellipsize">end</property>
                     <style>
                       <class name="caption"/>
                     </style>
                   </object>
                 </child>
-                <style>
-                  <class name="queue-length"/>
-                </style>
+              </object>
+            </property>
+            <child type="end">
+              <object class="GtkButton" id="back_button">
+                <property name="visible">false</property>
+                <property name="icon-name">go-previous-symbolic</property>
+                <property name="action-name">queue.toggle</property>
+                <property name="valign">center</property>
+                <property name="tooltip-text" translatable="yes">Close the Playlist</property>
               </object>
             </child>
             <child type="end">
-              <object class="GtkBox">
-                <property name="margin-end">12</property>
-                <property name="halign">end</property>
-                <property name="spacing">6</property>
-                <child>
-                  <object class="GtkToggleButton" id="search_button">
-                    <property name="icon-name">system-search-symbolic</property>
-                    <property name="action-name">queue.search</property>
-                    <property name="halign">center</property>
-                    <property name="valign">center</property>
-                    <property name="tooltip-text" translatable="yes">Search Songs in the Playlist</property>
-                    <style>
-                      <class name="flat"/>
-                    </style>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkToggleButton" id="select_button">
-                    <property name="icon-name">selection-mode-symbolic</property>
-                    <property name="action-name">queue.select</property>
-                    <property name="halign">center</property>
-                    <property name="valign">center</property>
-                    <property name="tooltip-text" translatable="yes">Select Songs in the Playlist</property>
-                    <style>
-                      <class name="flat"/>
-                    </style>
-                  </object>
-                </child>
-                <child type="end">
-                  <object class="GtkButton" id="back_button">
-                    <property name="visible">false</property>
-                    <property name="icon-name">go-previous-symbolic</property>
-                    <property name="action-name">queue.toggle</property>
-                    <property name="halign">center</property>
-                    <property name="valign">center</property>
-                    <property name="tooltip-text" translatable="yes">Close the Playlist</property>
-                    <style>
-                      <class name="flat"/>
-                    </style>
-                  </object>
-                </child>
+              <object class="GtkToggleButton" id="select_button">
+                <property name="icon-name">selection-mode-symbolic</property>
+                <property name="action-name">queue.select</property>
+                <property name="valign">center</property>
+                <property name="tooltip-text" translatable="yes">Select Songs in the Playlist</property>
               </object>
             </child>
           </object>
@@ -85,7 +60,12 @@
           <object class="GtkSearchBar" id="playlist_searchbar">
             <property name="child">
               <object class="GtkSearchEntry" id="playlist_searchentry">
-
+                <property name="placeholder-text" translatable="yes">Search songs</property>
+                <property name="hexpand">True</property>
+                <accessibility>
+                  <property name="label" translatable="yes" context="a11y">Search</property>
+                  <property name="description" translatable="yes" context="a11y">Type to search songs</property>
+                </accessibility>
               </object>
             </property>
           </object>
@@ -150,7 +130,6 @@
         </child>
         <style>
           <class name="playlist-background"/>
-          <class name="darken"/>
         </style>
       </object>
     </child>

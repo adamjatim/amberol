@@ -26,7 +26,7 @@
     <file alias="queue-row.ui" preprocess="xml-stripblanks">gtk/queue-row.ui</file>
     <file alias="song-cover.ui" preprocess="xml-stripblanks">gtk/song-cover.ui</file>
     <file alias="song-details.ui" preprocess="xml-stripblanks">gtk/song-details.ui</file>
-    <file alias="style-hc.css">gtk/style-hc.css</file>
+    <file alias="style-dark.css">gtk/style-dark.css</file>
     <file alias="style.css">gtk/style.css</file>
     <file alias="volume-control.ui" preprocess="xml-stripblanks">gtk/volume-control.ui</file>
     <file alias="window.ui" preprocess="xml-stripblanks">gtk/window.ui</file>

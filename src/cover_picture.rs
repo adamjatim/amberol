@@ -6,6 +6,8 @@ use std::cell::{Cell, RefCell};
 use glib::clone;
 use gtk::{gdk, gio, glib, graphene, gsk, prelude::*, subclass::prelude::*};
 
+use crate::i18n::i18n;
+
 #[derive(Clone, Copy, Debug, glib::Enum, PartialEq, Default)]
 #[enum_type(name = "AmberolCoverSize")]
 pub enum CoverSize {
@@ -59,10 +61,18 @@ mod imp {
 
             self.obj().connect_notify_local(
                 Some("scale-factor"),
-                clone!(@weak self as obj => move |picture, _| {
-                    picture.queue_draw();
-                }),
+                clone!(
+                    #[weak(rename_to = _obj)]
+                    self,
+                    move |picture, _| {
+                        picture.queue_draw();
+                    }
+                ),
             );
+
+            self.obj()
+                .upcast_ref::<gtk::Accessible>()
+                .update_property(&[(gtk::accessible::Property::Label(&i18n("Cover image")))]);
         }
 
         fn properties() -> &'static [ParamSpec] {
@@ -145,7 +155,7 @@ mod imp {
 glib::wrapper! {
     pub struct CoverPicture(ObjectSubclass<imp::CoverPicture>)
         @extends gtk::Widget,
-        @implements gio::ActionGroup, gio::ActionMap;
+        @implements gio::ActionGroup, gio::ActionMap, gtk::Accessible;
 }
 
 impl Default for CoverPicture {

@@ -1,14 +1,14 @@
 # Georgian translation for amblerol.
 # Copyright (C) 2023, Amberol authors
 # This file is distributed under the same license as the Amberol package.
-# Ekaterine Papava <papava.e@gtu.ge>, 2023.
+# Ekaterine Papava <papava.e@gtu.ge>, 2023-2024.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/issues\n"
-"POT-Creation-Date: 2023-04-24 22:31+0000\n"
-"PO-Revision-Date: 2023-04-25 06:37+0200\n"
+"Project-Id-Version: amberol\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/amberol/-/issues/\n"
+"POT-Creation-Date: 2024-09-24 12:08+0000\n"
+"PO-Revision-Date: 2024-09-27 15:34+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <(nothing)>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: data/io.bassi.Amberol.desktop.in.in:3
 #: data/io.bassi.Amberol.appdata.xml.in.in:6
@@ -70,7 +70,7 @@ msgstr "შემთხვევით გამეორება"
 msgid "MPRIS integration"
 msgstr "MPRIS ინტეგრაცია"
 
-#: data/io.bassi.Amberol.appdata.xml.in.in:42
+#: data/io.bassi.Amberol.appdata.xml.in.in:48
 msgid "Emmanuele Bassi"
 msgstr "Emmanuele Bassi"
 
@@ -78,15 +78,15 @@ msgstr "Emmanuele Bassi"
 msgid "Playback in progress"
 msgstr "დაკვრა მიმდინარეობს"
 
-#: src/audio/song.rs:325
+#: src/audio/song.rs:317
 msgid "Unknown artist"
 msgstr "უცნობი შემსრულებელი"
 
-#: src/audio/song.rs:332
+#: src/audio/song.rs:324
 msgid "Unknown title"
 msgstr "უცნობი სათაური"
 
-#: src/audio/song.rs:339
+#: src/audio/song.rs:331
 msgid "Unknown album"
 msgstr "უცნობი ალბომი"
 
@@ -293,35 +293,59 @@ msgstr "Amberol-ის _შესახებ"
 msgid "_Quit"
 msgstr "დატოვება"
 
-#: src/gtk/playlist-view.ui:19
+#: src/gtk/playlist-view.ui:17
+msgid "Search Songs in the Playlist"
+msgstr "დასაკრავ სიაში სიმღერების მოძებნა"
+
+#: src/gtk/playlist-view.ui:28
 msgid "Playlist"
 msgstr "დასაკრავი სია"
 
 #: src/gtk/playlist-view.ui:49
-msgid "Search Songs in the Playlist"
-msgstr "დასაკრავ სიაში სიმღერების მოძებნა"
-
-#: src/gtk/playlist-view.ui:61
 msgid "Select Songs in the Playlist"
 msgstr "მონიშნეთ სიმღერები დასაკრავი სიიდან"
 
-#: src/gtk/playlist-view.ui:74
+#: src/gtk/playlist-view.ui:58
 msgid "Close the Playlist"
 msgstr "დასაკრავი სიის დახურვა"
 
-#: src/gtk/playlist-view.ui:135
+#: src/gtk/playlist-view.ui:67
+msgid "Search songs"
+msgstr "სიმღერების ძებნა"
+
+#: src/gtk/playlist-view.ui:70
+msgctxt "a11y"
+msgid "Search"
+msgstr "ძებნა"
+
+#: src/gtk/playlist-view.ui:71
+msgctxt "a11y"
+msgid "Type to search songs"
+msgstr "სიმღერების მოსაძებნად აკრიფეთ"
+
+#: src/gtk/playlist-view.ui:117
 msgid "Select All Songs"
 msgstr "_ყველა სიმღერის მონიშვნა"
 
-#: src/gtk/playlist-view.ui:148
+#: src/gtk/playlist-view.ui:130
 msgid "Remove Selected Songs"
 msgstr "მონიშნული სიმღერების წაშლა"
 
-#: src/gtk/window.ui:12
+#: src/gtk/queue-row.ui:27
+msgctxt "a11y"
+msgid "No cover available"
+msgstr "ყდა ხელმისაწვდომი არაა"
+
+#: src/gtk/queue-row.ui:84
+msgctxt "a11y"
+msgid "Currently playing"
+msgstr "ამჟამად ვუკრავ"
+
+#: src/gtk/window.ui:13
 msgid "Drop a song to add it to the playlist"
 msgstr "სიმღერის რიგში ჩასამატებალად უბრალოდ დააგდეთ ფაილი აქ"
 
-#: src/gtk/window.ui:49
+#: src/gtk/window.ui:43
 msgid ""
 "Select a file or a folder, or drag files from your file manager to the "
 "application window to add songs to the playlist"
@@ -329,36 +353,40 @@ msgstr ""
 "დასაკრავ სიაში ჩასამატებლად აირჩიეთ ფაილი ან საქაღალდე ან გადმოათრიეთ "
 "ფაილები თქვენი ფაილების მმართველიდან"
 
-#: src/gtk/window.ui:58
+#: src/gtk/window.ui:52
 msgid "Restore Playlist"
 msgstr "დასაკრავი სიის აღდგენა"
 
-#: src/gtk/window.ui:68
+#: src/gtk/window.ui:62
 msgid "Add Folder"
 msgstr "საქაღალდის დამატება"
 
-#: src/gtk/window.ui:77
+#: src/gtk/window.ui:71
 msgid "Add Song"
 msgstr "სიმღერის დამატება"
 
-#: src/gtk/window.ui:161
+#: src/gtk/window.ui:148
 msgctxt "a11y"
 msgid "Elapsed time"
 msgstr "გასული დრო"
 
-#: src/gtk/window.ui:173
+#: src/gtk/window.ui:160
 msgctxt "a11y"
 msgid "Remaining time"
 msgstr "დარჩენილი დრო"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/application.rs:227
+#: src/application.rs:243
 msgid "translator-credits"
 msgstr "მთარგმნელის შესახებ"
 
-#: src/application.rs:239
+#: src/application.rs:255
 msgid "Amberol needs to run in the background to play music"
 msgstr "Amberol-ს მუსიკის დასაკრავად ფონურად გაშვება სჭირდება"
+
+#: src/cover_picture.rs:75
+msgid "Cover image"
+msgstr "ყდის სურათი"
 
 #: src/playback_control.rs:118
 msgid "Repeat All Songs"
@@ -368,74 +396,66 @@ msgstr "ყველა სიმღერის გამეორება"
 msgid "Repeat the Current Song"
 msgstr "მიმდინარე სიმღერის გამეორება"
 
-#: src/window.rs:403
-msgid "_Add Song"
-msgstr "_სიმღერის დამატება"
-
-#: src/window.rs:404 src/window.rs:444
-msgid "_Cancel"
-msgstr "_გაუქმება"
-
-#: src/window.rs:406
-msgid "Open File"
-msgstr "ფაილის გახსნა"
-
-#: src/window.rs:413
+#: src/window.rs:145
 msgid "Audio files"
 msgstr "აუდიო ფაილები"
 
-#: src/window.rs:422 src/window.rs:1315
+#: src/window.rs:150
+msgid "_Add Song"
+msgstr "_სიმღერის დამატება"
+
+#: src/window.rs:153
+msgid "Open File"
+msgstr "ფაილის გახსნა"
+
+#: src/window.rs:158 src/window.rs:174 src/window.rs:1462
 msgid "Unable to access files"
 msgstr "ფაილებთან წვდომის შეცდომა"
 
-#: src/window.rs:443
+#: src/window.rs:167
 msgid "_Add Folder"
 msgstr "_საქაღალდის დამატება"
 
-#: src/window.rs:446
+#: src/window.rs:169
 msgid "Open Folder"
 msgstr "საქაღალდის გახსნა"
 
-#: src/window.rs:457
-msgid "Unable to access folders"
-msgstr "საქაღალდეებთან წვდომის შეცდომა"
-
-#: src/window.rs:475
+#: src/window.rs:488
 msgid "No available song found"
 msgstr "სიმღერები მიუწვდომელია"
 
-#: src/window.rs:532
+#: src/window.rs:549
 msgid "No songs found"
 msgstr "სიმღერების გარეშე"
 
-#: src/window.rs:562
+#: src/window.rs:582
 msgid "Added a new song"
 msgstr "ახალი სიმღერა დაემატა"
 
-#: src/window.rs:563
+#: src/window.rs:583
 msgid "Play"
 msgstr "დაკვრა"
 
 #. Translators: the `{}` must be left unmodified;
 #. it will be expanded to the number of songs added
 #. to the playlist
-#: src/window.rs:572
+#: src/window.rs:592
 msgid "Added one song"
 msgid_plural "Added {} songs"
 msgstr[0] "დაემატა {} სიმღერა"
 msgstr[1] "დაემატა {} სიმღერა"
 
-#: src/window.rs:1062
+#: src/window.rs:1222
 msgid "Unable to access dropped files"
 msgstr "დაყრილ ფაილებთან წვდომის შეცდომა"
 
-#: src/window.rs:1152
+#: src/window.rs:1316
 msgid "{} minute"
 msgid_plural "{} minutes"
 msgstr[0] "{} წუთი"
 msgstr[1] "{} წუთი"
 
-#: src/window.rs:1163
+#: src/window.rs:1327
 msgid "{hours} hour {minutes} remaining"
 msgid_plural "{hours} hours {minutes} remaining"
 msgstr[0] "დარჩენილია {hours} საათი და {minutes} წუთი"
@@ -444,19 +464,19 @@ msgstr[1] "დარჩენილია {hours} საათი და {minute
 #. Translators: the '{}' must be left unmodified, and
 #. it will be replaced by the number of minutes remaining
 #. in the playlist
-#: src/window.rs:1173
+#: src/window.rs:1337
 msgid "{} minute remaining"
 msgid_plural "{} minutes remaining"
 msgstr[0] "დარჩენილია {} წუთი"
 msgstr[1] "დარჩენილია {} წუთი"
 
-#: src/window.rs:1295
+#: src/window.rs:1441
 msgid "No song selected"
 msgstr "სიმღერა არჩეული არაა"
 
 #. Translators: The '{}' must be left unmodified, and
 #. it is expanded to the number of songs selected
-#: src/window.rs:1300
+#: src/window.rs:1446
 msgid "{} song selected"
 msgid_plural "{} songs selected"
 msgstr[0] "მონიშნულია {} სიმღერა"
@@ -465,9 +485,15 @@ msgstr[1] "მონიშნულია {} სიმღერა"
 #. Translators: `{title}` and `{artist}` must be left
 #. untranslated; they will expand to the title and
 #. artist of the currently playing song, respectively
-#: src/window.rs:1353
+#: src/window.rs:1502
 msgid "Currently playing “{title}” by “{artist}”"
 msgstr "ვუკრავ “{title}”. შემსრულებელი: “{artist}”"
+
+#~ msgid "_Cancel"
+#~ msgstr "_გაუქმება"
+
+#~ msgid "Unable to access folders"
+#~ msgstr "საქაღალდეებთან წვდომის შეცდომა"
 
 #~ msgid "_Track"
 #~ msgstr "_ტრეკი"

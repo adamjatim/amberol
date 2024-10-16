@@ -10,7 +10,7 @@ use std::{
 
 use glib::{ParamSpec, ParamSpecBoolean, ParamSpecObject, ParamSpecString, ParamSpecUInt, Value};
 use gtk::{gdk, gio, glib, prelude::*, subclass::prelude::*};
-use lofty::{Accessor, TaggedFileExt};
+use lofty::prelude::{Accessor, TaggedFileExt};
 use log::{debug, warn};
 use once_cell::sync::Lazy;
 use sha2::{Digest, Sha256};
@@ -154,7 +154,7 @@ impl SongData {
             _ => None,
         };
 
-        let properties = lofty::AudioFile::properties(&tagged_file);
+        let properties = lofty::prelude::AudioFile::properties(&tagged_file);
         let duration = properties.duration().as_secs();
 
         debug!(
