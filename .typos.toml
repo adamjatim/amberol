@@ -2,3 +2,8 @@
 # SPDX-License-Identifier: CC0-1.0
 [files]
 extend-exclude = ["LICENSES/*", "po/*"]
+
+[default.extend-identifiers]
+# MPRIS has a bad API, and mpris-server goes along with it
+Seeked = "Seeked"
+seeked = "seeked"
